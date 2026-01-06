@@ -1,0 +1,297 @@
+Tous les tours partageant au moins une même destination
+
+PREFIX ctosch: <http://www.cycling-tour-operator.com/schema/>
+
+SELECT DISTINCT ?tour1label ?tour2label ?commonDestlabel
+WHERE {
+  ?tour1 ctosch:includesPath ?commonPath1 .
+  ?commonPath1 ctosch:heldIn ?commonDest.
+  ?tour1 rdfs:label ?tour1label.
+  ?tour2 ctosch:includesPath ?commonPath2 .
+  ?commonPath2 ctosch:heldIn ?commonDest.
+  ?tour2 rdfs:label ?tour2label.
+
+  ?commonDest rdfs:label ?commonDestlabel.
+  FILTER(?tour1 > ?tour2)
+}
+
+------------------------------------------------------------------
+les destinations visités par un client 
+
+PREFIX ctosch: <http://www.cycling-tour-operator.com/schema/>
+PREFIX schema: <https://schema.org/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?clientName (GROUP_CONCAT(DISTINCT ?destinationLabel; separator=" / ") AS ?destinations)
+WHERE {
+  ?booking ctosch:bookedBy ?client ;
+           ctosch:forTourPackage ?tour .
+  ?tour ctosch:includesPath ?path .
+  ?path  ctosch:heldIn ?dest
+  ?dest rdfs:label ?destinationLabel .
+  ?client schema:name ?clientName .
+}
+GROUP BY ?clientName
+----------------------------------------------------------------
+Les guides affectés à plusieurs tours
+
+PREFIX ctosch: <http://www.cycling-tour-operator.com/schema/>
+PREFIX schema: <https://schema.org/>
+
+SELECT ?guideName (COUNT(DISTINCT ?tour) AS ?nbTours)
+WHERE {
+  ?tour a ctosch:TourPackage ;
+        ctosch:assignedGuide ?guide .
+  ?guide schema:name ?guideName .
+}
+GROUP BY ?guideName
+HAVING (?nbTours > 1)
+
+---------------------------------------------------------------------
+les réservations dont les clients ont sélectionné toutes les options disponibles pour leur tour
+
+PREFIX cto: <http://www.cycling-tour-operator.com/data/>
+PREFIX ctosch: <http://www.cycling-tour-operator.com/schema/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?booking ?tour ?tourLabel
+WHERE {
+  ?booking a ctosch:Booking ;
+           ctosch:forTourPackage ?tour .
+
+  ?tour rdfs:label ?tourLabel .
+
+  {
+    SELECT ?tour (COUNT(DISTINCT ?opt) AS ?nbOptionsTour)
+    WHERE {
+      ?tour ctosch:availableOptionalActivity ?opt .
+    }
+    GROUP BY ?tour
+  }
+
+  {
+    SELECT ?booking ?tour (COUNT(DISTINCT ?optSel) AS ?nbOptionsSelected)
+    WHERE {
+      ?booking ctosch:selectedOptions ?optSel ;
+               ctosch:forTourPackage ?tour .
+    }
+    GROUP BY ?booking ?tour
+  }
+  FILTER(?nbOptionsSelected = ?nbOptionsTour)
+}
+
+------------------------------------------------------
+Classement des options les plus populaires
+
+
+PREFIX ctosch: <http://www.cycling-tour-operator.com/schema/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?optionLabel (COUNT(?booking) AS ?nbBookings)
+WHERE {
+  ?booking a ctosch:Booking ;
+           ctosch:selectedOptions ?option .
+  ?option rdfs:label ?optionLabel .
+}
+GROUP BY ?optionLabel
+ORDER BY DESC(?nbBookings)
+
+-----------------------------------------------------
+revenu récolté par tours :
+
+PREFIX ctosch: <http://www.cycling-tour-operator.com/schema/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT ?tourLabel (SUM(xsd:decimal(?tourPrice) * xsd:integer(?n)) AS ?totalRevenue)
+WHERE {
+  ?booking a ctosch:Booking ;
+           ctosch:forTourPackage ?tour ;
+           ctosch:numberOfParticipants ?n .
+  ?tour rdfs:label ?tourLabel ;
+        ctosch:price ?tourPrice .
+}
+GROUP BY ?tourLabel
+ORDER BY DESC(?totalRevenue)
+----------------------------------------------
+le guide favori de chaque client avec qui il a le plus fait de tour
+
+PREFIX ctosch: <http://www.cycling-tour-operator.com/schema/>
+PREFIX schema: <https://schema.org/>
+
+SELECT ?clientName ?favoriteGuide ?maxTours
+WHERE {
+  {
+    SELECT ?clientName (MAX(?nbTours) AS ?maxTours)
+    WHERE {
+      SELECT ?clientName ?guideName (COUNT(?tour) AS ?nbTours)
+      WHERE {
+        ?booking ctosch:bookedBy ?client ;
+                 ctosch:forTourPackage ?tour .
+        ?tour ctosch:assignedGuide ?guide .
+        ?client schema:name ?clientName .
+        ?guide schema:name ?guideName .
+      }
+      GROUP BY ?clientName ?guideName
+    }
+    GROUP BY ?clientName
+  }
+  {
+    SELECT ?clientName ?guideName (COUNT(?tour) AS ?nbTours)
+    WHERE {
+      ?booking ctosch:bookedBy ?client ;
+               ctosch:forTourPackage ?tour .
+      ?tour ctosch:assignedGuide ?guide .
+      ?client schema:name ?clientName .
+      ?guide schema:name ?guideName .
+    }
+    GROUP BY ?clientName ?guideName
+  }
+  FILTER(?nbTours = ?maxTours)
+  BIND(?guideName AS ?favoriteGuide)
+}
+
+-------------------------------------
+
+les types de vélos utilisés dans chaque tour
+PREFIX ctosch: <http://www.cycling-tour-operator.com/schema/>
+PREFIX schema: <https://schema.org/>
+
+SELECT ?tourName (GROUP_CONCAT(DISTINCT ?bikeTypeName; separator=" / ") AS ?bikes) 
+WHERE {
+  ?tour a ctosch:TourPackage ;
+        rdfs:label ?tourName ;
+        ctosch:includesBikeType ?bikeType .
+  ?bikeType rdfs:label ?bikeTypeName .
+}
+GROUP BY  ?tourName
+-----------------------
+les tours avec des destinations ensableuses 
+
+PREFIX ctosch: <http://www.cycling-tour-operator.com/schema/>
+PREFIX dbp: <http://dbpedia.org/resource/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?tourName
+WHERE {
+  ?tour a ctosch:TourPackage ;
+        rdfs:label ?tourName ;
+        ctosch:includesPath ?path .
+  
+
+  ?path ctosch:surfaceType dbp:Sand .
+}
+------------------------------------------------------
+Les tours dont les types de vélos disponibles inclus des types de velos compatibles avec la destination rencontrée
+et extraire les surface de ces velos
+
+PREFIX ctosch: <http://www.cycling-tour-operator.com/schema/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?tourName ?bikeLabel ?surface
+WHERE {
+  ?tour a ctosch:TourPackage ;
+        rdfs:label ?tourName ;
+        ctosch:includesBikeType ?bikeType ;
+        ctosch:includesPath ?path .
+  ?path ctosch:heldIn ?dest ;
+        ctosch:surfaceType ?surface ;
+        ctosch:recommendedBikeType ?bikeType .
+
+  ?bikeType rdfs:label ?bikeLabel .
+}
+ORDER BY ?tourName
+
+--------------------------------------------------------------------
+les chemis avec une difficulté superieur a 4 et les velos associés
+
+PREFIX ctosch: <http://www.cycling-tour-operator.com/schema/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?pathName ?difficulty ?bikeTypeLabel
+WHERE {
+  ?path a ctosch:CyclingPath ;
+        rdfs:label ?pathName ;
+        ctosch:difficultyLevel ?difficulty ;
+        ctosch:recommendedBikeType ?bikeType .
+  ?bikeType rdfs:label ?bikeTypeLabel .
+  FILTER(?difficulty >= 4)
+}
+ORDER BY DESC(?difficulty)
+
+--------------------------------------------------
+destinations avec plusieurs type de velo dispo 
+
+PREFIX ctosch: <http://www.cycling-tour-operator.com/schema/>
+PREFIX schema: <https://schema.org/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?destinationName (COUNT(DISTINCT ?bikeType) AS ?nbBikeTypes)
+WHERE {
+  ?rental a ctosch:BikeRentalShop ;
+          ctosch:locatedIn ?dest ;
+          ctosch:offersBikeType ?bikeType .
+  ?dest rdfs:label ?destinationName .
+}
+GROUP BY ?destinationName
+HAVING(?nbBikeTypes > 1)
+
+---------------------------------------------------------
+
+les bookings  où le partenaire de location couvre 100 % des types de vélos inclus dans le tour.
+
+PREFIX cto: <http://www.cycling-tour-operator.com/data/>
+PREFIX ctosch: <http://www.cycling-tour-operator.com/schema/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?booking ?tourLabel ?rentalLabel
+WHERE {
+  ?booking a ctosch:Booking ;
+           ctosch:forTourPackage ?tour ;
+           ctosch:bikeRentalPartner ?rental .
+
+  ?tour rdfs:label ?tourLabel .
+  ?rental rdfs:label ?rentalLabel .
+
+  FILTER NOT EXISTS {
+    ?tour ctosch:includesBikeType ?bikeType .
+    FILTER NOT EXISTS {
+      ?rental ctosch:offersBikeType ?bikeType .
+    }
+  }
+}
+ORDER BY ?booking
+
+---------------------------------------------------------------
+Réservations confirmés sans options sélectionnées
+
+PREFIX ctosch: <http://www.cycling-tour-operator.com/schema/>
+
+SELECT ?booking
+WHERE {
+  ?booking a ctosch:Booking .
+  ?booking ctosch:status "Confirmed"@en ;
+  FILTER NOT EXISTS { ?booking ctosch:selectedOptions ?opt . }
+}
+
+-----------------------------------------------
+les clients fidele a un seul guide 
+
+PREFIX ctosch: <http://www.cycling-tour-operator.com/schema/>
+PREFIX schema: <https://schema.org/>
+
+SELECT ?clientName ?guideName
+WHERE {
+  {
+    SELECT ?clientName (COUNT(?guide) AS ?nbGuides) ?guideName
+    WHERE {
+      ?booking ctosch:bookedBy ?client ;
+               ctosch:forTourPackage ?tour .
+      ?tour ctosch:assignedGuide ?guide .
+      ?client schema:name ?clientName .
+      ?guide schema:name ?guideName .
+    }
+    GROUP BY ?clientName ?guide
+    HAVING(?nbGuides = 1)   
+  }
+}  

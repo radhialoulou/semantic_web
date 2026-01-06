@@ -1,0 +1,252 @@
+@prefix ctosch: <http://www.cycling-tour-operator.com/schema/> .
+@prefix dbp: <http://dbpedia.org/resource/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+# CLASSES
+ctosch:CyclingDestination a rdfs:Class ;
+    rdfs:label "Destination"@en, "Destination"@fr ;
+    rdfs:comment "Lieu destination du séjour ou du parcours."@fr , "Place of destination for the stay or route."@en .
+
+ctosch:CyclingPath a rdfs:Class ;
+    rdfs:label "Cycling Path"@en, "Parcours cyclable"@fr ;
+    rdfs:comment "Parcours ou véloroute proposée pour le cyclotourisme."@fr , "Route or bike path proposed for cycling tourism."@en .
+
+ctosch:RentalBike a rdfs:Class ;
+    rdfs:label "Rental Bike"@en, "Vélo de location"@fr ;
+    rdfs:comment "Vélo mis à disposition à la location."@fr , "Bike available for rent."@en .
+
+ctosch:Activity a rdfs:Class ;
+    rdfs:label "Activity"@en, "Activité"@fr ;
+    rdfs:comment "Activité organisée (atelier, visite, animation) liée au séjour ou au parcours."@fr , "Organized activity (workshop, visit, animation) related to the stay or route."@en .
+
+ctosch:Event a rdfs:Class ;
+    rdfs:label "Event"@en, "Événement"@fr ;
+    rdfs:comment "Événement ponctuel (festival, compétition, rencontre) lié au cyclotourisme."@fr , "One-time event (festival, competition, meeting) related to cycling tourism."@en .
+
+ctosch:TourPackage a rdfs:Class ;
+    rdfs:label "Tour Package"@en, "Forfait touristique"@fr ;
+    rdfs:comment "Offre commerciale de séjour ou parcours à vélo (pack comprenant services, activités, logements)."@fr , "Commercial offer for a cycling stay or route (package including services, activities, accommodations)."@en .
+
+ctosch:Booking a rdfs:Class ;
+    rdfs:label "Booking"@en, "Réservation"@fr ;
+    rdfs:comment "Réservation d'un service (tour, vélo, activité)."@fr , "Booking of a service (tour, bike, activity)."@en .
+
+ctosch:Client a rdfs:Class;
+    rdfs:subClassOf foaf:Person ;
+    rdfs:label "Client"@en, "Client"@fr ;
+    rdfs:comment "Personne qui réserve ou utilise les services proposés."@fr , "Person who books or uses the offered services."@en .
+
+ctosch:Guide a rdfs:Class ;
+    rdfs:subClassOf foaf:Person ;
+    rdfs:label "Guide"@en, "Guide"@fr ;
+    rdfs:comment "Personne qui accompagne les participants sur les parcours (professionnel ou bénévole)."@fr , "Person who accompanies participants on the routes (professional or volunteer)."@en .
+
+
+ctosch:BikeType a rdfs:Class ;
+    rdfs:label "Bike Type"@en, "Type de vélo"@fr ;
+    rdfs:comment "Type de vélo utilisé pour le parcours (ville, montagne, route, électrique)."@fr , "Type of bike used for the route (city, mountain, road, electric)."@en .
+
+# Additional classes used in data
+ctosch:BikeRentalShop a rdfs:Class ;
+    rdfs:label "Bike Rental Shop"@en, "Magasin de location de vélos"@fr ;
+    rdfs:comment "Shops that rent bikes to clients."@en .
+
+ctosch:TourOption a rdfs:Class ;
+    rdfs:label "Tour Option"@en, "Option de tour"@fr ;
+    rdfs:comment "Optional activities or add-ons available within a tour package."@en .
+
+ctosch:CyclingDiscipline a rdfs:Class ;
+    rdfs:label "Cycling Discipline"@en, "Discipline cycliste"@fr ;
+    rdfs:comment "Discipline or style of cycling (e.g., urban, mountain climbing, desert crossing)."@en .
+
+# PROPERTIES
+ctosch:bestCyclingSeason a rdfs:Property ;
+    rdfs:label "best cycling season"@en, "Meilleure saison"@fr ;
+    rdfs:comment "Season(s) recommended for cycling in the destination."@en ;
+    rdfs:domain ctosch:CyclingDestination ;
+    rdfs:range dbp:Season .
+
+ctosch:CyclingDiscipline a rdfs:Property ;
+    rdfs:label "cycling discipline"@en, "Discipline cycliste"@fr ;
+    rdfs:comment "Type of cycling discipline appropriate for the destination)."@en ;
+    rdfs:domain ctosch:CyclingDestination ;
+    rdfs:range rdfs:Resource .
+
+ctosch:heldIn a rdfs:Property ;
+    rdfs:label "held in"@en, "Tenue dans"@fr ;
+    rdfs:comment "Indicates the destination or administrative area where a cycling path is held."@en ;
+    rdfs:domain ctosch:CyclingPath ;
+    rdfs:range ctosch:CyclingDestination .
+
+ctosch:difficultyLevel a rdfs:Property ;
+    rdfs:label "difficulty level"@en, "Niveau de difficulté"@fr ;
+    rdfs:comment "Numeric difficulty level for the cycling path."@en ;
+    rdfs:domain ctosch:CyclingPath ;
+    rdfs:range xsd:integer .
+
+ctosch:distance a rdfs:Property ;
+    rdfs:label "distance"@en, "Distance"@fr ;
+    rdfs:comment "Length of the cycling path."@en ;
+    rdfs:domain ctosch:CyclingPath ;
+    rdfs:range xsd:float .
+
+ctosch:surfaceType a rdfs:Property ;
+    rdfs:subClassOf dbp:SurfaceType ;
+    rdfs:label "surface type"@en, "Type de surface"@fr ;
+    rdfs:comment "Surface types."@en ;
+    rdfs:domain ctosch:CyclingPath ;
+    rdfs:range rdfs:Resource .
+
+ctosch:recommendedBikeType a rdfs:Property ;
+    rdfs:label "recommended bike type"@en, "Type de vélo recommandé"@fr ;
+    rdfs:comment "Indicates which bike type is recommended for the path."@en ;
+    rdfs:domain ctosch:CyclingPath ;
+    rdfs:range ctosch:BikeType .
+
+ctosch:elevationGain a rdfs:Property ;
+    rdfs:label "elevation gain"@en, "Dénivelé"@fr ;
+    rdfs:comment "Total elevation gain for the path."@en ;
+    rdfs:domain ctosch:CyclingPath ;
+    rdfs:range xsd:float .
+
+ctosch:speaksLanguage a rdfs:Property ;
+    rdfs:label "speaks language"@en, "Langue(s) parlée(s)"@fr ;
+    rdfs:comment "Language(s) spoken by a guide or participant (literal language tags or simple strings)."@en ;
+    rdfs:domain ctosch:Guide , ctosch:Client ;
+    rdfs:range rdfs:Literal .
+
+ctosch:certifiedFor a rdfs:Property ;
+    rdfs:label "certified for"@en, "Certifié pour"@fr ;
+    rdfs:comment "Indicates destinations or areas for which a guide is certified."@en ;
+    rdfs:domain ctosch:Guide ;
+    rdfs:range ctosch:CyclingDestination .
+
+ctosch:includesPath a rdfs:Property ;
+    rdfs:label "includes path"@en, "Inclut le parcours"@fr ;
+    rdfs:comment "Paths included in a tour package."@en ;
+    rdfs:domain ctosch:TourPackage ;
+    rdfs:range ctosch:CyclingPath .
+
+ctosch:duration a rdfs:Property ;
+    rdfs:label "duration (days)"@en, "Durée (jours)"@fr ;
+    rdfs:comment "Duration of the tour in days."@en ;
+    rdfs:domain ctosch:TourPackage ;
+    rdfs:range xsd:integer .
+
+ctosch:assignedGuide a rdfs:Property ;
+    rdfs:label "assigned guide"@en, "Guide assigné"@fr ;
+    rdfs:comment "Guide assigned to the tour."@en ;
+    rdfs:domain ctosch:TourPackage ;
+    rdfs:range ctosch:Guide .
+
+ctosch:includesBikeType a rdfs:Property ;
+    rdfs:label "includes bike type"@en, "Inclut type de vélo"@fr ;
+    rdfs:comment "Bike types included or permitted in the tour."@en ;
+    rdfs:domain ctosch:TourPackage ;
+    rdfs:range ctosch:BikeType .
+
+ctosch:maxParticipants a rdfs:Property ;
+    rdfs:label "max participants"@en, "Nombre maximum de participants"@fr ;
+    rdfs:comment "Maximum number of participants allowed in the tour."@en ;
+    rdfs:domain ctosch:TourPackage ;
+    rdfs:range xsd:integer .
+
+ctosch:startDate a rdfs:Property ;
+    rdfs:label "start date"@en, "Date de début"@fr ;
+    rdfs:comment "Start date of the tour."@en ;
+    rdfs:domain ctosch:TourPackage ;
+    rdfs:range xsd:date .
+
+ctosch:endDate a rdfs:Property ;
+    rdfs:label "end date"@en, "Date de fin"@fr ;
+    rdfs:comment "End date of the tour."@en ;
+    rdfs:domain ctosch:TourPackage ;
+    rdfs:range xsd:date .
+
+ctosch:price a rdfs:Property ;
+    rdfs:label "price"@en, "Prix"@fr ;
+    rdfs:comment "Monetary cost of the tour package."@en ;
+    rdfs:domain ctosch:TourPackage ;
+    rdfs:range xsd:float .
+
+ctosch:locatedIn a rdfs:Property ;
+    rdfs:label "located in"@en, "Situé dans"@fr ;
+    rdfs:comment "Indicates the destination where a shop or service is located."@en ;
+    rdfs:domain ctosch:BikeRentalShop ;
+    rdfs:range ctosch:CyclingDestination .
+
+ctosch:offersBikeType a rdfs:Property ;
+    rdfs:label "offers bike type"@en, "Propose le type de vélo"@fr ;
+    rdfs:comment "Bike types offered by a rental shop."@en ;
+    rdfs:domain ctosch:BikeRentalShop ;
+    rdfs:range ctosch:BikeType .
+
+ctosch:optionPrice a rdfs:Property ;
+    rdfs:label "option price"@en, "Prix de l'option"@fr ;
+    rdfs:comment "Price for an optional activity or tour option."@en ;
+    rdfs:domain ctosch:TourOption ;
+    rdfs:range xsd:float .
+
+ctosch:relatedDestination a rdfs:Property ;
+    rdfs:label "related destination"@en, "Destination liée"@fr ;
+    rdfs:comment "Destination related to an optional activity."@en ;
+    rdfs:domain ctosch:TourOption ;
+    rdfs:range ctosch:CyclingDestination .
+
+ctosch:availableOptionalActivity a rdfs:Property ;
+    rdfs:label "available optional activity"@en, "Activité optionnelle disponible"@fr ;
+    rdfs:comment "Optional activities available for a tour package."@en ;
+    rdfs:domain ctosch:TourPackage ;
+    rdfs:range ctosch:TourOption .
+
+ctosch:bookedBy a rdfs:Property ;
+    rdfs:label "booked by"@en, "Réservé par"@fr ;
+    rdfs:comment "The client who made the booking."@en ;
+    rdfs:domain ctosch:Booking ;
+    rdfs:range ctosch:Client .
+
+ctosch:forTourPackage a rdfs:Property ;
+    rdfs:label "for tour package"@en, "Pour le forfait"@fr ;
+    rdfs:comment "The tour package associated with the booking."@en ;
+    rdfs:domain ctosch:Booking ;
+    rdfs:range ctosch:TourPackage .
+
+ctosch:bookingDate a rdfs:Property ;
+    rdfs:label "booking date"@en, "Date de réservation"@fr ;
+    rdfs:comment "Date when the booking was made."@en ;
+    rdfs:domain ctosch:Booking ;
+    rdfs:range xsd:date .
+
+ctosch:numberOfParticipants a rdfs:Property ;
+    rdfs:label "number of participants"@en, "Nombre de participants"@fr ;
+    rdfs:comment "Number of participants included in the booking."@en ;
+    rdfs:domain ctosch:Booking ;
+    rdfs:range xsd:integer .
+
+ctosch:status a rdfs:Property ;
+    rdfs:label "status"@en, "Statut"@fr ;
+    rdfs:comment "Booking status (Confirmed, Pending, Cancelled, ...)."@en ;
+    rdfs:domain ctosch:Booking ;
+    rdfs:range rdfs:Literal .
+
+ctosch:selectedOptions a rdfs:Property ;
+    rdfs:label "selected options"@en, "Options sélectionnées"@fr ;
+    rdfs:comment "Optional activities selected in the booking."@en ;
+    rdfs:domain ctosch:Booking ;
+    rdfs:range ctosch:TourOption .
+
+ctosch:bikeRentalPartner a rdfs:Property ;
+    rdfs:label "bike rental partner"@en, "Partenaire de location de vélos"@fr ;
+    rdfs:comment "Bike rental partner used for the booking."@en ;
+    rdfs:domain ctosch:Booking ;
+    rdfs:range ctosch:BikeRentalShop .
+
+
+
+
+

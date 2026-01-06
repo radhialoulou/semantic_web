@@ -1,0 +1,166 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix ctosch: <http://www.cycling-tour-operator.com/schema/> .
+@prefix cto: <http://www.cycling-tour-operator.com/data/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+
+
+
+# --- Cycling Destination Shape ---
+
+ctosch:CyclingDestinationShape a sh:NodeShape ;
+	sh:targetClass ctosch:CyclingDestination ;
+	sh:property [
+		sh:path rdfs:label ;
+		sh:minCount 1 ;
+	] ;
+	sh:property [
+        sh:path ctosch:bestCyclingSeason ;
+        sh:nodeKind sh:IRI ;
+        sh:message "bestCyclingSeason should be a URI reference (e.g., dbpedia:Spring)."
+    ] ;
+	sh:property [
+		sh:path ctosch:CyclingDiscipline ;
+		sh:message "CyclingDiscipline should reference a discipline resource (e.g., dbpedia:MountainBiking)" ;
+		sh:minCount 0 ;
+        sh:dataType xsd:string
+	] .
+
+
+# --- CyclingPathShape ---
+ctosch:CyclingPathShape a sh:NodeShape ;
+    sh:targetClass ctosch:CyclingPath ;
+    sh:property [
+        sh:path rdfs:label ;
+        sh:minCount 1 ;
+    ] ;
+    sh:property [
+        sh:path ctosch:heldIn ;
+        sh:minCount 1 ;
+        sh:class ctosch:CyclingDestination ;
+    ] ;
+    sh:property [
+        sh:path ctosch:difficultyLevel ;
+        sh:minCount 0 ;
+        sh:lessThanOrEqualTo 5 ;
+        sh:datatype xsd:integer ;
+    ] ;
+    sh:property [
+        sh:path ctosch:distance ;
+        sh:minCount 0 ;
+        sh:datatype xsd:float ;
+    ] ;
+    sh:property [
+        sh:path ctosch:recommendedBikeType ;
+        sh:minCount 0 ;
+        sh:class ctosch:BikeType ;
+    ] .
+
+# --- Bike Type Shape ---
+
+ctosch:BikeTypeShape a sh:NodeShape ;
+	sh:targetClass ctosch:BikeType ;
+	sh:property [ 
+        sh:path rdfs:label ; 
+        sh:minCount 1 ; 
+    ] .
+
+
+# --- BikeRentalShopShape ---
+ctosch:BikeRentalShopShape a sh:NodeShape ;
+    sh:targetClass ctosch:BikeRentalShop ;
+    sh:property [
+        sh:path rdfs:label ;
+        sh:minCount 1 ;
+    ] ;
+    sh:property [
+        sh:path ctosch:locatedIn ;
+        sh:minCount 1 ;
+        sh:class ctosch:CyclingDestination ;
+    ] ;
+    sh:property [
+        sh:path ctosch:offersBikeType ;
+        sh:minCount 1 ;
+        sh:class ctosch:BikeType ;
+    ] .
+
+# --- GuideShape ---
+ctosch:GuideShape a sh:NodeShape ;
+    sh:targetClass ctosch:Guide ;
+    sh:property [
+        sh:path schema:name ;  
+        sh:minCount 1 ;
+        sh:datatype xsd:string ; 
+    ] .
+
+# --- ClientShape ---
+ctosch:ClientShape a sh:NodeShape ;
+    sh:targetClass ctosch:Client ;
+    sh:property [
+        sh:path schema:name ;   
+        sh:minCount 1 ;
+        sh:datatype xsd:string ; 
+    ] ;
+    sh:property [
+        sh:path schema:email ;  
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+] .
+
+# --- TourPackageShape ---
+ctosch:TourPackageShape a sh:NodeShape ;
+    sh:targetClass ctosch:TourPackage ;
+    sh:property [
+        sh:path rdfs:label ;
+        sh:minCount 1 ;
+    ] ;
+    sh:property [
+        sh:path ctosch:price ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:minInclusive 0 ;
+        sh:datatype xsd:float ;  
+    ] ;
+    sh:property [
+        sh:path ctosch:startDate ;
+        sh:minCount 1 ;
+        sh:datatype xsd:date ;
+    ] ;
+    sh:property [
+        sh:path ctosch:includesPath ; 
+        sh:minCount 1 ;
+    ] ;
+    sh:property [
+        sh:path ctosch:includesBikeType ;
+        sh:minCount 1 ;
+    ] .
+
+# --- Tour Option Shape ---
+
+ctosch:TourOptionShape a sh:NodeShape ;
+	sh:targetClass ctosch:TourOption ;
+	sh:property [ 
+        sh:path ctosch:relatedDestination ; 
+        sh:minCount 0 ; 
+        sh:class ctosch:CyclingDestination 
+    ] .
+
+
+# --- Booking Shape ---
+
+ctosch:BookingShape a sh:NodeShape ;
+    sh:targetClass ctosch:Booking ;
+    sh:property [
+        sh:path ctosch:bookedBy ;
+    sh:minCount 1 ;
+    ] ;
+    sh:property [
+        sh:path ctosch:forTourPackage ;
+        sh:minCount 1 ;
+    ] ;
+    sh:property [
+        sh:path ctosch:status ;
+        sh:minCount 1 ;
+        sh:in ( "Cancelled"@en "Confirmed"@en "Pending"@en) ;
+    ] .

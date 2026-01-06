@@ -1,0 +1,235 @@
+
+@prefix cto: <http://www.cycling-tour-operator.com/data/> .
+@prefix ctosch: <http://www.cycling-tour-operator.com/schema/> .
+@prefix dbp: <http://dbpedia.org/resource/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix schema: <https://schema.org/> .
+
+# destinations
+
+cto:Paris a ctosch:CyclingDestination ;
+    rdfs:label "Paris, France" ;
+    rdfs:comment "Urban cycling through historic streets, along the Seine, and finishing on the Champs-Élysées."@en ,
+                 "Cyclisme urbain à travers des rues historiques, le long de la Seine, avec une arrivée sur les Champs-Élysées."@fr ;
+    schema:country dbp:France ;
+    ctosch:bestCyclingSeason dbp:Spring , dbp:Autumn ;
+    ctosch:CyclingDiscipline cto:Urban_Cycling ;
+    owl:sameAs dbp:Paris .
+
+cto:Tunisia a ctosch:CyclingDestination ;
+    rdfs:label "Tunisia" ;
+    rdfs:comment "An adventure through diverse landscapes, from Mediterranean coastlines to desert oases and ancient Roman ruins."@en ,
+                 "Une aventure à travers des paysages variés, des côtes méditerranéennes aux oasis du désert et aux ruines romaines."@fr ;
+    schema:country dbp:Tunisia ;
+    ctosch:bestCyclingSeason dbp:Spring , dbp:Autumn ;
+    ctosch:CyclingDiscipline cto:Desert_Crossing ;
+    owl:sameAs dbp:Tunisia .
+
+cto:FrenchAlps a ctosch:CyclingDestination ;
+    rdfs:label "Alpes françaises, France" ;
+    rdfs:comment "Home to the most legendary climbs of the Tour de France, from Alpe d'Huez to the Galibier."@en ,
+                 "Le théâtre des ascensions les plus mythiques du Tour de France, de l'Alpe d'Huez au Galibier."@fr ;
+    schema:country dbp:France ;
+    ctosch:bestCyclingSeason dbp:Summer ;
+    ctosch:CyclingDiscipline cto:Mountain_Climbing ;
+    owl:sameAs dbp:French_Alps.
+
+# paths
+
+cto:SeineRiverTrail a ctosch:CyclingPath ;
+    rdfs:label "Seine River Trail"@en ;
+    ctosch:heldIn cto:Paris ;
+    ctosch:difficultyLevel "2"^^xsd:integer ;        # Easy
+    ctosch:distance "15"^^xsd:float ;
+    ctosch:surfaceType dbp:Asphalt;
+    ctosch:recommendedBikeType cto:CityBike.
+
+cto:SaharaAdventureRoute a ctosch:CyclingPath ;
+    rdfs:label "Sahara Adventure Route"@en ;
+    ctosch:heldIn cto:Tunisia ;
+    ctosch:difficultyLevel "5"^^xsd:integer ;        # Very Hard
+    ctosch:distance "120"^^xsd:float ; 
+    ctosch:surfaceType dbp:Sand, dbp:Gravel ;
+    ctosch:recommendedBikeType cto:MountainBike .
+
+cto:GalibierClimb a ctosch:CyclingPath ;
+    rdfs:label "Galibier Climb"@en ;
+    ctosch:heldIn cto:FrenchAlps ;
+    ctosch:difficultyLevel "4"^^xsd:integer ;        # Hard
+    ctosch:distance "18.1"^^xsd:float ;              
+    ctosch:elevationGain "2100"^^xsd:float ;
+    ctosch:recommendedBikeType cto:RoadBike .
+
+# bike type
+
+cto:CityBike a ctosch:BikeType ;
+    rdfs:label "City Bike"@en .
+
+cto:MountainBike a ctosch:BikeType ;
+    rdfs:label "Mountain Bike"@en .
+
+cto:RoadBike a ctosch:BikeType ;
+    rdfs:label "Road Bike"@en .
+
+cto:ElectricBike a ctosch:BikeType ;
+    rdfs:label "Electric Bike"@en .
+
+cto:TrekkingBike a ctosch:BikeType ;
+    rdfs:label "Trekking Bike"@en .
+
+# bike disciplines
+
+cto:Mountain_Climbing a ctosch:CyclingDiscipline ;
+    rdfs:label "Mountain Climbing"@en ;
+    rdfs:comment "Cycling discipline focusing on climbs and mountainous terrain."@en .
+
+cto:Urban_Cycling a ctosch:CyclingDiscipline ;
+    rdfs:label "Urban Cycling"@en ;
+    rdfs:comment "Cycling discipline focused on city rides and urban exploration."@en .
+
+cto:Desert_Crossing a ctosch:CyclingDiscipline ;
+    rdfs:label "Desert Crossing"@en ;
+    rdfs:comment "Cycling discipline focused on desert and off-road rides."@en .
+
+# bike Rentals 
+
+cto:ParisBikeRentals a ctosch:BikeRentalShop ;
+    rdfs:label "Paris Bike Rentals"@en ;
+    schema:address "12 Quai de la Tournelle, 75005 Paris, France" ;
+    schema:telephone "+33 1 42 00 00 00" ;
+    ctosch:locatedIn cto:Paris ;
+    ctosch:offersBikeType cto:CityBike , cto:ElectricBike, cto:RoadBike .
+
+cto:TunisDesertRides a ctosch:BikeRentalShop ;
+    rdfs:label "Tunis Desert Rides"@en ;
+    schema:address "Avenue Habib Bourguiba, Tunis, Tunisia" ;
+    schema:telephone "+216 71 23 45 67" ;
+    ctosch:locatedIn cto:Tunisia ;
+    ctosch:offersBikeType cto:MountainBike , cto:TrekkingBike .
+
+cto:AlpsRideCenter a ctosch:BikeRentalShop ;
+    rdfs:label "Alps Ride Center"@en ;
+    schema:address "Le Bourg-d'Oisans, France" ;
+    schema:telephone "+33 4 76 80 99 88" ;
+    ctosch:locatedIn cto:FrenchAlps ;
+    ctosch:offersBikeType cto:RoadBike , cto:MountainBike .
+
+
+# guides
+
+cto:Guide_JulieMartin a ctosch:Guide ;
+    schema:name "Julie Martin" ;
+    schema:email "julie.martin@cto.com" ;
+    ctosch:speaksLanguage "fr", "en" ;
+    ctosch:certifiedFor cto:FrenchAlps , cto:Paris .
+
+cto:Guide_AhmedBenAli a ctosch:Guide ;
+    schema:name "Ahmed Ben Ali" ;
+    schema:email "ahmed.benali@cto.com" ;
+    ctosch:speaksLanguage "ar", "fr", "en" ;
+    ctosch:certifiedFor cto:Tunisia .
+
+
+# clients
+
+cto:Client_AymericNurdin a ctosch:Client ;
+    schema:name "Aymeric Nurdin" ;
+    schema:email "aymeric.nurdin@univ.cotedazur.fr" ;
+    schema:nationality dbp:United_Kingdom .
+
+cto:Client_RadhiAloulou a ctosch:Client ;
+    schema:name "Radhi Aloulou" ;
+    schema:email "radhi.aloulou@univ.cotedazur.fr" ;
+    schema:nationality dbp:Tunisia .
+
+
+
+
+# tour packages
+
+cto:GrandEuropeanTour a ctosch:TourPackage ;
+    rdfs:label "Grand European Tour"@en ;
+    ctosch:includesPath cto:SeineRiverTrail , cto:GalibierClimb ;
+    ctosch:duration "10"^^xsd:integer ;
+    ctosch:assignedGuide cto:Guide_JulieMartin ;
+    ctosch:includesBikeType cto:CityBike , cto:RoadBike ;
+    ctosch:price "1800"^^xsd:float ;
+    ctosch:maxParticipants "12"^^xsd:integer ;
+    ctosch:startDate "2025-05-01"^^xsd:date ;
+    ctosch:endDate "2025-05-10"^^xsd:date ;
+    ctosch:availableOptionalActivity cto:SeineBoatTour .
+
+cto:UltimateCyclingChallenge a ctosch:TourPackage ;
+    rdfs:label "Ultimate Cycling Challenge"@en ;
+    ctosch:includesPath cto:SeineRiverTrail , cto:GalibierClimb , cto:SaharaAdventureRoute ;
+    ctosch:duration "15"^^xsd:integer ;
+    ctosch:assignedGuide cto:Guide_JulieMartin ;
+    ctosch:includesBikeType cto:CityBike , cto:RoadBike , cto:MountainBike ;
+    ctosch:price "3200"^^xsd:float ;
+    ctosch:maxParticipants "8"^^xsd:integer ;
+    ctosch:startDate "2025-06-01"^^xsd:date ;
+    ctosch:endDate "2025-06-15"^^xsd:date ;
+    ctosch:availableOptionalActivity cto:SeineBoatTour , cto:AlpsPhotographyWorkshop , cto:TunisiaDesertSafari .
+
+cto:DesertAdventureTour a ctosch:TourPackage ;
+    rdfs:label "Desert Adventure Tour"@en ;
+    ctosch:includesPath cto:SaharaAdventureRoute ;
+    ctosch:duration "7"^^xsd:integer ;
+    ctosch:assignedGuide cto:Guide_AhmedBenAli ;
+    ctosch:includesBikeType cto:MountainBike , cto:TrekkingBike ;
+    ctosch:price "1500"^^xsd:float ;
+    ctosch:maxParticipants "10"^^xsd:integer ;
+    ctosch:startDate "2025-03-15"^^xsd:date ;
+    ctosch:endDate "2025-03-22"^^xsd:date .
+
+
+# optional activities
+
+cto:SeineBoatTour a ctosch:TourOption ;
+    rdfs:label "Seine River Boat Tour"@en ;
+    rdfs:comment "Optional boat ride along the Seine in Paris."@en ;
+    ctosch:optionPrice "50"^^xsd:float ;
+    ctosch:relatedDestination cto:Paris .
+
+cto:AlpsPhotographyWorkshop a ctosch:TourOption ;
+    rdfs:label "Alps Photography Workshop"@en ;
+    rdfs:comment "Optional guided photography workshop in the French Alps."@en ;
+    ctosch:optionPrice "120"^^xsd:float ;
+    ctosch:relatedDestination cto:FrenchAlps .
+
+cto:TunisiaDesertSafari a ctosch:TourOption ;
+    rdfs:label "Tunisia Desert Safari"@en ;
+    rdfs:comment "Optional 4x4 desert safari adventure in Tunisia."@en ;
+    ctosch:optionPrice "200"^^xsd:float ;
+    ctosch:relatedDestination cto:Tunisia .
+
+# bookings
+
+cto:Booking1 a ctosch:Booking ;
+    ctosch:bookedBy cto:Client_AymericNurdin ;
+    ctosch:forTourPackage cto:GrandEuropeanTour ;
+    ctosch:bookingDate "2025-02-20"^^xsd:date ;
+    ctosch:numberOfParticipants "1"^^xsd:integer ;
+    ctosch:status "Confirmed"@en ;
+    ctosch:selectedOptions cto:SeineBoatTour ; 
+    ctosch:bikeRentalPartner cto:ParisBikeRentals.
+
+
+cto:Booking2 a ctosch:Booking ;
+    ctosch:bookedBy cto:Client_RadhiAloulou ;
+    ctosch:forTourPackage cto:UltimateCyclingChallenge ;
+    ctosch:bookingDate "2025-03-01"^^xsd:date ;
+    ctosch:numberOfParticipants "2"^^xsd:integer ;
+    ctosch:status "Pending"@en ;
+    ctosch:selectedOptions cto:AlpsPhotographyWorkshop, cto:TunisiaDesertSafari;
+    ctosch:bikeRentalPartner cto:TunisDesertRides.
+
+
+cto:Booking3 a ctosch:Booking ;
+    ctosch:bookedBy cto:Client_AymericNurdin ;
+    ctosch:forTourPackage cto:UltimateCyclingChallenge ;
+    ctosch:bookingDate "2025-04-10"^^xsd:date ;
+    ctosch:numberOfParticipants "1"^^xsd:integer ;
+    ctosch:status "Confirmed"@en ;
+    ctosch:bikeRentalPartner cto:TunisDesertRides .
