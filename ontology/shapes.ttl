@@ -1,0 +1,393 @@
+@prefix : <http://saraaymericradhi.org/movie-ontology#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix schema: <http://schema.org/> .
+
+# ============================================
+# SHACL Shapes for Movie Ontology
+# ============================================
+
+:MovieShape
+    a sh:NodeShape ;
+    sh:targetClass :Movie ;
+    sh:property [
+        sh:path rdfs:label ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:severity sh:Warning ;
+        sh:message "Ideally a Movie resource should have an rdfs:label."@en ;
+    ] ;
+    sh:property [
+        sh:path :hasTitle ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message "A movie must have exactly one title."@en ;
+    ] ;
+    sh:property [
+        sh:path :hasTagline ;
+        sh:datatype xsd:string ;
+        sh:maxCount 1 ;
+        sh:severity sh:Info ;
+    ] ;
+    sh:property [
+        sh:path :hasInformation ;
+        sh:class :MovieInformation ;
+        sh:maxCount 1 ;
+        sh:severity sh:Warning ;
+    ] ;
+    sh:property [
+        sh:path :hasResult ;
+        sh:class :MovieResult ;
+        sh:maxCount 1 ;
+        sh:severity sh:Warning ;
+    ] ;
+    sh:property [
+        sh:path :hasProduction ;
+        sh:class :MovieProduction ;
+        sh:maxCount 1 ;
+        sh:severity sh:Warning ;
+    ] ;
+    sh:property [
+        sh:path :hasContent ;
+        sh:class :MovieContent ;
+        sh:maxCount 1 ;
+        sh:severity sh:Warning ;
+    ] ;
+    sh:property [
+        sh:path :hasWikipediaPage ;
+        sh:nodeKind sh:IRI ;
+        sh:maxCount 1 ;
+        sh:severity sh:Info ;
+    ] ;
+    sh:property [
+        sh:path :hasFrenchAdaptation ;
+        sh:class :FrenchAdaptation ;
+        sh:maxCount 1 ;
+        sh:severity sh:Info ;
+    ] ;
+    sh:property [
+        sh:path :hasThemeSong ;
+        sh:class :Song ;
+        sh:severity sh:Info ;
+    ] ;
+    sh:property [
+        sh:path :hasAward ;
+        sh:class :Award ;
+        sh:severity sh:Info ;
+    ] .
+
+# ============================================
+# Movie Component Shapes
+# ============================================
+
+:MovieInformationShape
+    a sh:NodeShape ;
+    sh:targetClass :MovieInformation ;
+    sh:property [
+        sh:path :hasBudget ;
+        sh:datatype xsd:float ;
+        sh:minInclusive 0 ;
+        sh:severity sh:Warning ;
+    ] ;
+    sh:property [
+        sh:path :hasReleaseDate ;
+        sh:datatype xsd:date ;
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+    ] ;
+    sh:property [
+        sh:path :hasRuntime ;
+        sh:datatype xsd:float ;
+        sh:minInclusive 0 ;
+        sh:severity sh:Warning ;
+    ] ;
+    sh:property [
+        sh:path :hasLanguage ;
+        sh:datatype xsd:string ;
+        sh:severity sh:Info ;
+    ] ;
+    sh:property [
+        sh:path :hasOrigin ;
+        sh:datatype xsd:string ;
+        sh:severity sh:Info ;
+    ] .
+
+:MovieContentShape
+    a sh:NodeShape ;
+    sh:targetClass :MovieContent ;
+    sh:property [
+        sh:path :hasPlot ;
+        sh:datatype xsd:string ;
+        sh:severity sh:Info ;
+    ] ;
+    sh:property [
+        sh:path :hasKeyword ;
+        sh:class :Keyword ;
+        sh:severity sh:Info ;
+    ] ;
+    sh:property [
+        sh:path :hasGenre ;
+        sh:class :Genre ;
+        sh:minCount 1 ;
+        sh:severity sh:Warning ;
+    ] .
+
+:MovieResultShape
+    a sh:NodeShape ;
+    sh:targetClass :MovieResult ;
+    sh:property [
+        sh:path :hasVoteAverage ;
+        sh:datatype xsd:float ;
+        sh:minInclusive 0 ;
+        sh:maxInclusive 10 ;
+        sh:severity sh:Violation ;
+    ] ;
+    sh:property [
+        sh:path :hasVoteCount ;
+        sh:datatype xsd:integer ;
+        sh:minInclusive 0 ;
+        sh:severity sh:Violation ;
+    ] ;
+    sh:property [
+        sh:path :hasRevenue ;
+        sh:datatype xsd:float ;
+        sh:minInclusive 0 ;
+        sh:severity sh:Warning ;
+    ] .
+
+:MovieProductionShape
+    a sh:NodeShape ;
+    sh:targetClass :MovieProduction ;
+    sh:property [
+        sh:path :hasDirector ;
+        sh:class :Person ;
+        sh:minCount 1 ;
+        sh:severity sh:Warning ;
+    ] ;
+    sh:property [
+        sh:path :hasCastMember ;
+        sh:class :CastMember ;
+        sh:severity sh:Info ;
+    ] ;
+    sh:property [
+        sh:path :hasCrewMember ;
+        sh:class :CrewMember ;
+        sh:severity sh:Info ;
+    ] ;
+    sh:property [
+        sh:path :hasProductionCompany ;
+        sh:class foaf:Organization ;
+        sh:severity sh:Info ;
+    ] .
+
+# ============================================
+# Person & Actor Shapes
+# ============================================
+
+:PersonShape
+    a sh:NodeShape ;
+    sh:targetClass :Person ;
+    sh:property [
+        sh:path rdfs:label ;
+        sh:minCount 1 ;
+        sh:severity sh:Warning ;
+    ] ;
+    sh:property [
+        sh:path :personName ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:severity sh:Violation ;
+    ] ;
+    sh:property [
+        sh:path :hasWikipediaPage ;
+        sh:nodeKind sh:IRI ;
+        sh:maxCount 1 ;
+        sh:severity sh:Info ;
+    ] ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "A person cannot be both a CastMember and a CrewMember."@en ;
+        sh:prefixes [
+            sh:declare [
+                sh:prefix "rdf" ;
+                sh:namespace "http://www.w3.org/1999/02/22-rdf-syntax-ns#"^^xsd:anyURI ;
+            ] ;
+            sh:declare [
+                sh:prefix "movie" ;
+                sh:namespace "http://saraaymericradhi.org/movie-ontology#"^^xsd:anyURI ;
+            ] ;
+        ] ;
+        sh:select """
+            SELECT $this
+            WHERE {
+                $this rdf:type movie:CastMember .
+                $this rdf:type movie:CrewMember .
+            }
+        """ ;
+        sh:severity sh:Violation ;
+    ] .
+
+:VoiceActorShape
+    a sh:NodeShape ;
+    sh:targetClass :VoiceActor ;
+    sh:property [
+        sh:path :dubsCharacter ;
+        sh:class :Character ;
+        sh:minCount 1 ;
+        sh:severity sh:Warning ;
+    ] .
+
+:ComposerShape
+    a sh:NodeShape ;
+    sh:targetClass :Composer ;
+    sh:property [
+        sh:path rdfs:label ;
+        sh:minCount 1 ;
+        sh:severity sh:Warning ;
+    ] .
+
+# ============================================
+# Rating & User Shapes
+# ============================================
+
+:RatingShape
+    a sh:NodeShape ;
+    sh:targetClass :Rating ;
+    sh:property [
+        sh:path :hasValue ;
+        sh:datatype xsd:float ;
+        sh:minInclusive 0.5 ;
+        sh:maxInclusive 5.0 ;
+        sh:severity sh:Violation ;
+    ] ;
+    sh:property [
+        sh:path :givenBy ;
+        sh:class :User ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+    ] ;
+    sh:property [
+        sh:path :ratedMovie ;
+        sh:class :Movie ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+    ] .
+
+:UserShape
+    a sh:NodeShape ;
+    sh:targetClass :User ;
+    sh:property [
+        sh:path :hasUserId ;
+        sh:datatype xsd:integer ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+    ] .
+
+# ============================================
+# Content Descriptors
+# ============================================
+
+:GenreShape
+    a sh:NodeShape ;
+    sh:targetClass :Genre ;
+    sh:property [
+        sh:path rdfs:label ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:severity sh:Violation ;
+    ] .
+
+:KeywordShape
+    a sh:NodeShape ;
+    sh:targetClass :Keyword ;
+    sh:property [
+        sh:path rdfs:label ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:severity sh:Violation ;
+    ] .
+
+# ============================================
+# Wikipedia Extraction Related Shapes
+# ============================================
+
+:FrenchAdaptationShape
+    a sh:NodeShape ;
+    sh:targetClass :FrenchAdaptation ;
+    sh:property [
+        sh:path :adaptationYear ;
+        sh:datatype xsd:gYear ;
+        sh:maxCount 1 ;
+        sh:severity sh:Warning ;
+    ] ;
+    sh:property [
+        sh:path :hasAdaptor ;
+        sh:class :Person ;
+        sh:severity sh:Info ;
+    ] ;
+    sh:property [
+        sh:path :hasFrenchVoiceActor ;
+        sh:class :VoiceActor ;
+        sh:severity sh:Info ;
+    ] .
+
+:SongShape
+    a sh:NodeShape ;
+    sh:targetClass :Song ;
+    sh:property [
+        sh:path :songTitle ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:severity sh:Violation ;
+    ] ;
+    sh:property [
+        sh:path :hasComposer ;
+        sh:class :Composer ;
+        sh:severity sh:Info ;
+    ] .
+
+:AwardShape
+    a sh:NodeShape ;
+    sh:targetClass :Award ;
+    sh:property [
+        sh:path :awardName ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:severity sh:Violation ;
+    ] ;
+    sh:property [
+        sh:path :hasYearOfAwardGiving ;
+        sh:datatype xsd:gYear ;
+        sh:maxCount 1 ;
+        sh:severity sh:Warning ;
+    ] ;
+    sh:property [
+        sh:path :awardCategory ;
+        sh:datatype xsd:string ;
+        sh:severity sh:Info ;
+    ] ;
+    sh:property [
+        sh:path :awardedBy ;
+        sh:class foaf:Organization ;
+        sh:severity sh:Info ;
+    ] ;
+    sh:property [
+        sh:path :receivedBy ;
+        sh:class :Person ;
+        sh:severity sh:Info ;
+    ] ;
+    sh:property [
+        sh:path :isNomination ;
+        sh:datatype xsd:boolean ;
+        sh:maxCount 1 ;
+        sh:severity sh:Warning ;
+    ] .
