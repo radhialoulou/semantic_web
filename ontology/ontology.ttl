@@ -508,9 +508,7 @@
     rdfs:label "has user ID"@en ;
     rdfs:comment "The unique identifier of the user (from MovieLens dataset)"@en .
 
-# ============================================
 # French Adaptation
-# ============================================
 
 :hasFrenchAdaptation rdf:type owl:ObjectProperty ;
     rdfs:domain :Movie ;
@@ -551,9 +549,7 @@
     rdfs:label "dubs character"@en;
     rdfs:comment "Links a voice actor to the character they dub"@en .
 
-# ============================================
 # Musical Compositions 
-# ============================================
 
 :hasThemeSong rdf:type owl:ObjectProperty ;
     rdfs:domain :Movie ;
@@ -585,9 +581,7 @@
     owl:equivalentClass schema:MusicGroup .
 
 
-# ============================================
 # Awards and Nominations
-# ============================================
 
 :hasAward rdf:type owl:ObjectProperty ;
     rdfs:domain :Movie ;
@@ -635,9 +629,7 @@
     rdfs:label "is nomination"@en  ;
     rdfs:comment "True if this is only a nomination, false if the award was won"@en .
 
-# ============================================
 # PROPERTY CHAINS 
-# ============================================
 
 :wonAward rdf:type owl:ObjectProperty ;
     rdfs:domain :Person ;
@@ -653,9 +645,7 @@
     rdfs:comment "Direct link from movie to composer through theme song (inferred)"@en ;
     owl:propertyChainAxiom ( :hasThemeSong :hasComposer ) .
 
-# ============================================
 # Defined classes based on awards
-# ============================================
 
 :AwardWinningMovie rdf:type owl:Class ;
     rdfs:subClassOf :Movie ;
