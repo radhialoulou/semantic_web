@@ -128,6 +128,12 @@
     rdfs:label "has tagline"@en ;
     rdfs:comment "Marketing tagline or slogan"@en .
 
+:hasPlot rdf:type owl:DatatypeProperty ;
+    rdfs:domain :MovieContent ;
+    rdfs:range xsd:string ;
+    rdfs:label "has plot"@en ;
+    rdfs:comment "Plot summary of the movie"@en .
+
 
 
 # MOVIE RESULT - Data Properties
