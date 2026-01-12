@@ -1,8 +1,6 @@
 import pandas as pd
 import os
 import re
-import torch
-from sentence_transformers import SentenceTransformer, util
 
 # --- Configuration ---
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -83,7 +81,7 @@ def filter_by_id(input_path, output_path, id_col, valid_ids):
         return None
 
 def step_wiki_matching(target_movies):
-    print(f"   Processing Wiki Plots (Embeddings Matching)...")
+    print(f"   Processing Wiki Plots (Fuzzy Matching)...")
     if not os.path.exists(WIKI_PATH):
         print("   Warning: Wiki file not found.")
         return
@@ -91,58 +89,37 @@ def step_wiki_matching(target_movies):
     try:
         df_wiki = pd.read_csv(WIKI_PATH)
         
-        # Charger le modèle
-        print("   -> Loading Embedding Model...")
-        model = SentenceTransformer('all-MiniLM-L6-v2')
-        
-        # Préparer les données
-        target_titles = [m['title'] if isinstance(m['title'], str) else "" for m in target_movies]
-        wiki_titles = df_wiki['Title'].fillna("").astype(str).tolist()
-        
-        print("   -> Encoding titles...")
-        # Encode
-        target_embeddings = model.encode(target_titles, convert_to_tensor=True, show_progress_bar=False)
-        wiki_embeddings = model.encode(wiki_titles, convert_to_tensor=True, show_progress_bar=False)
-        
-        # Compute Similarity
-        cosine_scores = util.cos_sim(target_embeddings, wiki_embeddings)
-        
+        # Build map: normalized_title -> list of indices
+        wiki_map = {}
+        for idx, row in df_wiki.iterrows():
+            n_title = normalize_title(row['Title'])
+            if n_title not in wiki_map:
+                wiki_map[n_title] = []
+            wiki_map[n_title].append(idx)
+            
         matched_indices = set()
-        match_count = 0
         
-        print("   -> Finding matches...")
-        for i in range(len(target_movies)):
-            movie = target_movies[i]
-            movie_year = movie['release_year']
+        for movie in target_movies:
+            n_title = normalize_title(movie['title'])
+            candidates = wiki_map.get(n_title)
             
-            # Top 5 candidats
-            top_results = torch.topk(cosine_scores[i], k=5)
-            
-            best_idx = None
-            
-            for score, idx in zip(top_results.values, top_results.indices):
-                score = score.item()
-                idx = idx.item()
-                
-                wiki_year = df_wiki.iloc[idx]['Release Year']
-                
-                # Check Year (+/- 1 an)
-                is_year_valid = False
-                if pd.notna(movie_year) and pd.notna(wiki_year):
-                    if abs(movie_year - wiki_year) <= 1:
-                        is_year_valid = True
-                        
-                if is_year_valid and score > 0.5:
-                    best_idx = idx
-                    break 
-            
-            if best_idx is not None:
-                matched_indices.add(best_idx)
-                match_count += 1
+            if candidates:
+                if len(candidates) == 1:
+                     matched_indices.add(candidates[0])
+                else:
+                    # Match by year if ambiguous
+                    year = movie['release_year']
+                    best_idx = candidates[0]
+                    if pd.notna(year):
+                        for idx in candidates:
+                            if abs(df_wiki.loc[idx, 'Release Year'] - year) <= 1:
+                                best_idx = idx
+                                break
+                    matched_indices.add(best_idx)
 
         df_final = df_wiki.loc[sorted(list(matched_indices))]
         df_final.to_csv(WIKI_OUT, index=False)
-        print(f"   -> Matched {len(df_final)} plots (Coverage: {match_count}/{len(target_movies)}).")
+        print(f"   -> Matched {len(df_final)} plots.")
         
     except Exception as e:
         print(f"   Error processing wiki plots: {e}")
