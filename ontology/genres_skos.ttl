@@ -1,0 +1,212 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix : <http://saraaymericradhi.org/movie-ontology/genres#> .
+@prefix movie: <http://saraaymericradhi.org/movie-ontology#> .
+
+# Genre SKOS Concept Scheme
+
+:GenreScheme a skos:ConceptScheme ;
+    rdfs:label "Movie Genre Taxonomy"@en ;
+    rdfs:comment "A SKOS taxonomy of movie genres based on the top 30 most frequent genres in the dataset."@en ;
+    skos:hasTopConcept :FilmGenre .
+# Top concept 
+
+:FilmGenre a skos:Concept, movie:Genre ;
+    skos:prefLabel "Genre"@en ;
+    skos:definition "A category of movies characterized by similarities in form, style, or subject matter."@en ;
+    skos:topConceptOf :GenreScheme ;
+    skos:narrower :ActionAdventureGenres, :DramaGenres, :SpeculativeGenres, :OtherGenres .
+
+# Broader categories (second level)
+
+:ActionAdventureGenres a skos:Concept, movie:Genre ;
+    skos:prefLabel "Action & Adventure Genres"@en ;
+    skos:definition "Genres characterized by action sequences, excitement, and physical activity."@en ;
+    skos:broader :FilmGenre ;
+    skos:inScheme :GenreScheme ;
+    skos:narrower :Action, :Adventure, :Thriller, :War, :Western .
+
+:DramaGenres a skos:Concept, movie:Genre ;
+    skos:prefLabel "Drama Genres"@en ;
+    skos:definition "Genres focused on emotional themes, character development, and realistic storytelling."@en ;
+    skos:broader :FilmGenre ;
+    skos:inScheme :GenreScheme ;
+    skos:narrower :Drama, :Romance, :Crime, :History .
+
+:SpeculativeGenres a skos:Concept, movie:Genre ;
+    skos:prefLabel "Speculative Genres"@en ;
+    skos:definition "Genres involving imaginary elements such as science fiction, fantasy, and horror."@en ;
+    skos:broader :FilmGenre ;
+    skos:inScheme :GenreScheme ;
+    skos:narrower :ScienceFiction, :Fantasy, :Horror, :Mystery .
+
+:OtherGenres a skos:Concept, movie:Genre ;
+    skos:prefLabel "Other Genres"@en ;
+    skos:definition "Additional genres including family, animation, comedy, and music."@en ;
+    skos:broader :FilmGenre ;
+    skos:inScheme :GenreScheme ;
+    skos:narrower :Family, :Comedy, :Animation, :Music .
+
+# Leaf concepts - Action & Adventure genres
+
+:Action a skos:Concept, movie:Genre ;
+    skos:prefLabel "Action"@en ;
+    skos:altLabel "Action Film"@en ;
+    skos:definition "A genre featuring fast-paced sequences, physical stunts, and chase scenes."@en ;
+    skos:broader :ActionAdventureGenres ;
+    skos:inScheme :GenreScheme ;
+    skos:notation "28"^^xsd:integer ;
+    skos:related :Adventure, :Thriller .
+
+:Adventure a skos:Concept, movie:Genre ;
+    skos:prefLabel "Adventure"@en ;
+    skos:altLabel "Adventure Film"@en ;
+    skos:definition "A genre featuring protagonists on journeys or quests, often in exotic locations."@en ;
+    skos:broader :ActionAdventureGenres ;
+    skos:inScheme :GenreScheme ;
+    skos:notation "12"^^xsd:integer ;
+    skos:related :Action, :Fantasy .
+
+:Thriller a skos:Concept, movie:Genre ;
+    skos:prefLabel "Thriller"@en ;
+    skos:altLabel "Suspense"@en ;
+    skos:definition "A genre characterized by suspense, tension, and excitement."@en ;
+    skos:broader :ActionAdventureGenres ;
+    skos:inScheme :GenreScheme ;
+    skos:notation "53"^^xsd:integer ;
+    skos:related :Crime, :Mystery .
+
+:War a skos:Concept, movie:Genre ;
+    skos:prefLabel "War"@en ;
+    skos:altLabel "War Film"@en ;
+    skos:definition "A genre featuring warfare, typically about naval, air, or land battles."@en ;
+    skos:broader :ActionAdventureGenres ;
+    skos:inScheme :GenreScheme ;
+    skos:notation "10752"^^xsd:integer ;
+    skos:related :Action, :History .
+
+:Western a skos:Concept, movie:Genre ;
+    skos:prefLabel "Western"@en ;
+    skos:altLabel "Western Film"@en ;
+    skos:definition "A genre set in the American Old West, typically in the late 19th century."@en ;
+    skos:broader :ActionAdventureGenres ;
+    skos:inScheme :GenreScheme ;
+    skos:notation "37"^^xsd:integer ;
+    skos:related :Adventure, :Action .
+
+# Leaf concepts - Drama genres
+
+:Drama a skos:Concept, movie:Genre ;
+    skos:prefLabel "Drama"@en ;
+    skos:altLabel "Dramatic Film"@en ;
+    skos:definition "A genre focused on realistic characters dealing with emotional themes."@en ;
+    skos:broader :DramaGenres ;
+    skos:inScheme :GenreScheme ;
+    skos:notation "18"^^xsd:integer ;
+    skos:related :Romance, :Crime .
+
+:Romance a skos:Concept, movie:Genre ;
+    skos:prefLabel "Romance"@en ;
+    skos:altLabel "Romantic Film"@en ;
+    skos:definition "A genre centered on romantic love stories between protagonists."@en ;
+    skos:broader :DramaGenres ;
+    skos:inScheme :GenreScheme ;
+    skos:notation "10749"^^xsd:integer ;
+    skos:related :Drama, :Comedy .
+
+:Crime a skos:Concept, movie:Genre ;
+    skos:prefLabel "Crime"@en ;
+    skos:altLabel "Crime Film"@en ;
+    skos:definition "A genre dealing with criminals, crime, and the criminal justice system."@en ;
+    skos:broader :DramaGenres ;
+    skos:inScheme :GenreScheme ;
+    skos:notation "80"^^xsd:integer ;
+    skos:related :Thriller, :Drama .
+
+:History a skos:Concept, movie:Genre ;
+    skos:prefLabel "History"@en ;
+    skos:altLabel "Historical Film"@en ;
+    skos:definition "A genre set in the past, often depicting real historical events or periods."@en ;
+    skos:broader :DramaGenres ;
+    skos:inScheme :GenreScheme ;
+    skos:notation "36"^^xsd:integer ;
+    skos:related :Drama, :War .
+
+# Leaf concepts - Speculative genres
+
+:ScienceFiction a skos:Concept, movie:Genre ;
+    skos:prefLabel "Science Fiction"@en ;
+    skos:altLabel "Sci-Fi"@en, "SF"@en ;
+    skos:definition "A genre dealing with imaginative concepts such as futuristic science and technology."@en ;
+    skos:broader :SpeculativeGenres ;
+    skos:inScheme :GenreScheme ;
+    skos:notation "878"^^xsd:integer ;
+    skos:related :Fantasy, :Action .
+
+:Fantasy a skos:Concept, movie:Genre ;
+    skos:prefLabel "Fantasy"@en ;
+    skos:altLabel "Fantasy Film"@en ;
+    skos:definition "A genre featuring magical elements, mythical creatures, and imaginary worlds."@en ;
+    skos:broader :SpeculativeGenres ;
+    skos:inScheme :GenreScheme ;
+    skos:notation "14"^^xsd:integer ;
+    skos:related :ScienceFiction, :Adventure .
+
+:Horror a skos:Concept, movie:Genre ;
+    skos:prefLabel "Horror"@en ;
+    skos:altLabel "Horror Film"@en ;
+    skos:definition "A genre intended to frighten, scare, or disgust through suspense and shock."@en ;
+    skos:broader :SpeculativeGenres ;
+    skos:inScheme :GenreScheme ;
+    skos:notation "27"^^xsd:integer ;
+    skos:related :Thriller, :Mystery .
+
+:Mystery a skos:Concept, movie:Genre ;
+    skos:prefLabel "Mystery"@en ;
+    skos:altLabel "Mystery Film"@en ;
+    skos:definition "A genre centered on solving a crime, puzzle, or unexplained event."@en ;
+    skos:broader :SpeculativeGenres ;
+    skos:inScheme :GenreScheme ;
+    skos:notation "9648"^^xsd:integer ;
+    skos:related :Thriller, :Crime .
+
+# Leaf concepts - Other genres
+
+:Family a skos:Concept, movie:Genre ;
+    skos:prefLabel "Family"@en ;
+    skos:altLabel "Family Film"@en ;
+    skos:definition "A genre appropriate for and appealing to all ages, particularly families."@en ;
+    skos:broader :OtherGenres ;
+    skos:inScheme :GenreScheme ;
+    skos:notation "10751"^^xsd:integer ;
+    skos:related :Animation, :Comedy .
+
+:Comedy a skos:Concept, movie:Genre ;
+    skos:prefLabel "Comedy"@en ;
+    skos:altLabel "Comedy Film"@en ;
+    skos:definition "A genre intended to make audiences laugh through humor and entertainment."@en ;
+    skos:broader :OtherGenres ;
+    skos:inScheme :GenreScheme ;
+    skos:notation "35"^^xsd:integer ;
+    skos:related :Romance, :Family .
+
+:Animation a skos:Concept, movie:Genre ;
+    skos:prefLabel "Animation"@en ;
+    skos:altLabel "Animated Film"@en ;
+    skos:definition "A genre using animation techniques to create moving images."@en ;
+    skos:broader :OtherGenres ;
+    skos:inScheme :GenreScheme ;
+    skos:notation "16"^^xsd:integer ;
+    skos:related :Family, :Comedy .
+
+:Music a skos:Concept, movie:Genre ;
+    skos:prefLabel "Music"@en ;
+    skos:altLabel "Musical Film"@en ;
+    skos:definition "A genre featuring songs and music as a major element of the narrative."@en ;
+    skos:broader :OtherGenres ;
+    skos:inScheme :GenreScheme ;
+    skos:notation "10402"^^xsd:integer ;
+    skos:related :Drama, :Comedy .

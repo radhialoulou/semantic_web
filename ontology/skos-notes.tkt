@@ -1,0 +1,7 @@
+On a défini Genre et Keyword comme étant des classes pour affiner la définition de notre ontologies avec les propriétés range et domain Les concepts sont des instances de skos Concept mais aussi de Keyword et Genre
+
+Cela permet une validation sémantique : si quelqu'un lie un film à un objet qui n'est pas typé comme :Genre, un raisonneur pourra détecter l'erreur. Si tu n'utilisais que skos:Concept, n'importe quel concept de n'importe quel dictionnaire (un pays, une couleur) pourrait être utilisé comme genre.
+
+Dans nos definitions de Skos il est inutile de précisier qu'il sont de classe skos:concept car ils le sont implicitement défini par inference  PUISQUE :Genre et :Keyword hérite de skos:Concept
+
+L'Ontologie (ontology.ttl) gère la structure des données  Le SKOS (keywords_skos.ttl) gère la terminologie

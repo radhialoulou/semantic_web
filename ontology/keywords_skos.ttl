@@ -1,0 +1,336 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix : <http://saraaymericradhi.org/movie-ontology/keywords#> .
+@prefix movie: <http://saraaymericradhi.org/movie-ontology#> .
+
+# Keyword SKOS Concept Scheme
+
+:KeywordScheme a skos:ConceptScheme ;
+    rdfs:label "Movie Keyword Taxonomy"@en ;
+    rdfs:comment "A SKOS taxonomy of movie keywords based on the top 30 most frequent keywords in the dataset."@en ;
+    skos:hasTopConcept :FilmKeyword .
+
+# Top concept
+
+:FilmKeyword a skos:Concept, movie:Keyword ;
+    skos:prefLabel "Keyword"@en ;
+    skos:definition "A descriptive term used to tag and categorize movies by their themes, content, or characteristics."@en ;
+    skos:topConceptOf :KeywordScheme ;
+    skos:narrower :ProductionKeywords, :ThemeKeywords, :ContentKeywords, :SettingKeywords, :CharacterKeywords .
+
+# Broader categories (second level)
+
+:ProductionKeywords a skos:Concept, movie:Keyword ;
+    skos:prefLabel "Production Keywords"@en ;
+    skos:definition "Keywords related to production characteristics, franchises, and technical aspects."@en ;
+    skos:broader :FilmKeyword ;
+    skos:inScheme :KeywordScheme ;
+    skos:narrower :ThreeD, :AfterCreditsStinger, :DuringCreditsStinger, :IMAX, :Sequel, :BasedOnNovel, :BasedOnComic, :BasedOnYoungAdultNovel .
+
+:ThemeKeywords a skos:Concept , movie:Keyword;
+    skos:prefLabel "Theme Keywords"@en ;
+    skos:definition "Keywords describing the main themes and emotional elements of movies."@en ;
+    skos:broader :FilmKeyword ;
+    skos:inScheme :KeywordScheme ;
+    skos:narrower :Friendship, :Revenge, :Violence, :Murder, :Magic .
+
+:ContentKeywords a skos:Concept, movie:Keyword ;
+    skos:prefLabel "Content Keywords"@en ;
+    skos:definition "Keywords describing specific content types, characters, and story elements."@en ;
+    skos:broader :FilmKeyword ;
+    skos:inScheme :KeywordScheme ;
+    skos:narrower :Superhero, :MarvelComic, :MarvelCinematicUniverse, :Dystopia, :Alien, :SuperPowers, :ArtificialIntelligence, :Hero, :Mutant .
+
+:SettingKeywords a skos:Concept, movie:Keyword ;
+    skos:prefLabel "Setting Keywords"@en ;
+    skos:definition "Keywords describing the setting, environment, or location of movies."@en ;
+    skos:broader :FilmKeyword ;
+    skos:inScheme :KeywordScheme ;
+    skos:narrower :Space, :SpaceOpera, :Spaceship, :Future, :NewYorkCity .
+
+:CharacterKeywords a skos:Concept, movie:Keyword ;
+    skos:prefLabel "Character Keywords"@en ;
+    skos:definition "Keywords describing character types and roles in movies."@en ;
+    skos:broader :FilmKeyword ;
+    skos:inScheme :KeywordScheme ;
+    skos:narrower :FemaleProtagonist, :Wizard, :TimeTravel .
+
+# Leaf concepts - Production keywords (third level)
+
+:ThreeD a skos:Concept, movie:Keyword ;
+    skos:prefLabel "3D"@en ;
+    skos:altLabel "Three-Dimensional"@en, "3D Film"@en ;
+    skos:definition "Movies presented in stereoscopic 3D format for enhanced visual depth."@en ;
+    skos:broader :ProductionKeywords ;
+    skos:inScheme :KeywordScheme ;
+    skos:notation "209714"^^xsd:integer ;
+    skos:related :IMAX .
+
+:AfterCreditsStinger a skos:Concept, movie:Keyword ;
+    skos:prefLabel "After Credits Stinger"@en ;
+    skos:altLabel "Post-Credits Scene"@en, "End Credits Scene"@en ;
+    skos:definition "A short scene that appears after the credits roll, often teasing future content."@en ;
+    skos:broader :ProductionKeywords ;
+    skos:inScheme :KeywordScheme ;
+    skos:notation "179430"^^xsd:integer ;
+    skos:related :DuringCreditsStinger, :MarvelCinematicUniverse .
+
+:DuringCreditsStinger a skos:Concept, movie:Keyword ;
+    skos:prefLabel "During Credits Stinger"@en ;
+    skos:altLabel "Mid-Credits Scene"@en ;
+    skos:definition "A short scene that appears during the credits roll."@en ;
+    skos:broader :ProductionKeywords ;
+    skos:inScheme :KeywordScheme ;
+    skos:notation "179431"^^xsd:integer ;
+    skos:related :AfterCreditsStinger, :MarvelCinematicUniverse .
+
+:IMAX a skos:Concept, movie:Keyword ;
+    skos:prefLabel "IMAX"@en ;
+    skos:altLabel "IMAX Film"@en ;
+    skos:definition "Movies filmed or optimized for IMAX large-format screens."@en ;
+    skos:broader :ProductionKeywords ;
+    skos:inScheme :KeywordScheme ;
+    skos:notation "156395"^^xsd:integer ;
+    skos:related :ThreeD .
+
+:Sequel a skos:Concept, movie:Keyword ;
+    skos:prefLabel "Sequel"@en ;
+    skos:altLabel "Follow-up"@en, "Continuation"@en ;
+    skos:definition "A movie that continues the story of a previous film."@en ;
+    skos:broader :ProductionKeywords ;
+    skos:inScheme :KeywordScheme ;
+    skos:notation "9663"^^xsd:integer .
+
+:BasedOnNovel a skos:Concept, movie:Keyword ;
+    skos:prefLabel "Based on Novel"@en ;
+    skos:altLabel "Book Adaptation"@en, "Literary Adaptation"@en ;
+    skos:definition "A movie adapted from a written novel or book."@en ;
+    skos:broader :ProductionKeywords ;
+    skos:inScheme :KeywordScheme ;
+    skos:notation "818"^^xsd:integer ;
+    skos:related :BasedOnComic, :BasedOnYoungAdultNovel .
+
+:BasedOnComic a skos:Concept, movie:Keyword ;
+    skos:prefLabel "Based on Comic"@en ;
+    skos:altLabel "Comic Book Adaptation"@en, "Graphic Novel Adaptation"@en ;
+    skos:definition "A movie adapted from a comic book or graphic novel."@en ;
+    skos:broader :ProductionKeywords ;
+    skos:inScheme :KeywordScheme ;
+    skos:notation "9717"^^xsd:integer ;
+    skos:related :BasedOnNovel, :Superhero, :MarvelComic .
+
+:BasedOnYoungAdultNovel a skos:Concept, movie:Keyword ;
+    skos:prefLabel "Based on Young Adult Novel"@en ;
+    skos:altLabel "YA Adaptation"@en ;
+    skos:definition "A movie adapted from a young adult novel."@en ;
+    skos:broader :ProductionKeywords ;
+    skos:inScheme :KeywordScheme ;
+    skos:notation "223438"^^xsd:integer ;
+    skos:related :BasedOnNovel .
+
+# Leaf concepts - Theme keywords (third level)
+
+:Friendship a skos:Concept, movie:Keyword ;
+    skos:prefLabel "Friendship"@en ;
+    skos:altLabel "Friends"@en, "Companionship"@en ;
+    skos:definition "Movies centered on themes of friendship and camaraderie."@en ;
+    skos:broader :ThemeKeywords ;
+    skos:inScheme :KeywordScheme ;
+    skos:notation "6054"^^xsd:integer .
+
+:Revenge a skos:Concept, movie:Keyword ;
+    skos:prefLabel "Revenge"@en ;
+    skos:altLabel "Vengeance"@en, "Retribution"@en ;
+    skos:definition "Movies featuring revenge or vengeance as a central theme."@en ;
+    skos:broader :ThemeKeywords ;
+    skos:inScheme :KeywordScheme ;
+    skos:notation "9748"^^xsd:integer ;
+    skos:related :Violence, :Murder .
+
+:Violence a skos:Concept, movie:Keyword ;
+    skos:prefLabel "Violence"@en ;
+    skos:altLabel "Violent Content"@en ;
+    skos:definition "Movies featuring significant violent content or action."@en ;
+    skos:broader :ThemeKeywords ;
+    skos:inScheme :KeywordScheme ;
+    skos:notation "14819"^^xsd:integer ;
+    skos:related :Murder, :Revenge .
+
+:Murder a skos:Concept, movie:Keyword ;
+    skos:prefLabel "Murder"@en ;
+    skos:altLabel "Killing"@en, "Homicide"@en ;
+    skos:definition "Movies involving murder as a plot element."@en ;
+    skos:broader :ThemeKeywords ;
+    skos:inScheme :KeywordScheme ;
+    skos:notation "9826"^^xsd:integer ;
+    skos:related :Violence, :Revenge .
+
+:Magic a skos:Concept, movie:Keyword ;
+    skos:prefLabel "Magic"@en ;
+    skos:altLabel "Sorcery"@en, "Witchcraft"@en ;
+    skos:definition "Movies featuring magical elements, spells, or supernatural powers."@en ;
+    skos:broader :ThemeKeywords ;
+    skos:inScheme :KeywordScheme ;
+    skos:notation "2343"^^xsd:integer ;
+    skos:related :Wizard .
+
+# Leaf concepts - Content keywords (third level)
+
+:Superhero a skos:Concept, movie:Keyword ;
+    skos:prefLabel "Superhero"@en ;
+    skos:altLabel "Super Hero"@en, "Comic Book Hero"@en ;
+    skos:definition "Movies featuring characters with superhuman abilities fighting for justice."@en ;
+    skos:broader :ContentKeywords ;
+    skos:inScheme :KeywordScheme ;
+    skos:notation "9715"^^xsd:integer ;
+    skos:related :MarvelComic, :BasedOnComic, :SuperPowers .
+
+:MarvelComic a skos:Concept, movie:Keyword ;
+    skos:prefLabel "Marvel Comic"@en ;
+    skos:altLabel "Marvel Comics"@en ;
+    skos:definition "Movies based on characters and stories from Marvel Comics."@en ;
+    skos:broader :ContentKeywords ;
+    skos:inScheme :KeywordScheme ;
+    skos:notation "8828"^^xsd:integer ;
+    skos:related :Superhero, :MarvelCinematicUniverse, :BasedOnComic .
+
+:MarvelCinematicUniverse a skos:Concept, movie:Keyword ;
+    skos:prefLabel "Marvel Cinematic Universe"@en ;
+    skos:altLabel "MCU"@en ;
+    skos:definition "Movies that are part of the interconnected Marvel Cinematic Universe franchise."@en ;
+    skos:broader :ContentKeywords ;
+    skos:inScheme :KeywordScheme ;
+    skos:notation "180547"^^xsd:integer ;
+    skos:related :MarvelComic, :Superhero, :AfterCreditsStinger .
+
+:Dystopia a skos:Concept, movie:Keyword ;
+    skos:prefLabel "Dystopia"@en ;
+    skos:altLabel "Dystopian"@en, "Dystopian Future"@en ;
+    skos:definition "Movies set in an imagined state or society with great suffering or injustice."@en ;
+    skos:broader :ContentKeywords ;
+    skos:inScheme :KeywordScheme ;
+    skos:notation "4565"^^xsd:integer ;
+    skos:related :Future, :Alien .
+
+:Alien a skos:Concept, movie:Keyword ;
+    skos:prefLabel "Alien"@en ;
+    skos:altLabel "Extraterrestrial"@en, "ET"@en ;
+    skos:definition "Movies featuring extraterrestrial life forms or beings from other planets."@en ;
+    skos:broader :ContentKeywords ;
+    skos:inScheme :KeywordScheme ;
+    skos:notation "9951"^^xsd:integer ;
+    skos:related :Space, :Spaceship .
+
+:SuperPowers a skos:Concept, movie:Keyword ;
+    skos:prefLabel "Super Powers"@en ;
+    skos:altLabel "Superpowers"@en, "Special Abilities"@en ;
+    skos:definition "Movies featuring characters with extraordinary abilities beyond normal human capabilities."@en ;
+    skos:broader :ContentKeywords ;
+    skos:inScheme :KeywordScheme ;
+    skos:notation "163455"^^xsd:integer ;
+    skos:related :Superhero, :Mutant .
+
+:ArtificialIntelligence a skos:Concept, movie:Keyword ;
+    skos:prefLabel "Artificial Intelligence"@en ;
+    skos:altLabel "AI"@en, "Machine Intelligence"@en ;
+    skos:definition "Movies featuring artificial intelligence, robots, or sentient machines."@en ;
+    skos:broader :ContentKeywords ;
+    skos:inScheme :KeywordScheme ;
+    skos:notation "310"^^xsd:integer ;
+    skos:related :Future, :Dystopia .
+
+:Hero a skos:Concept, movie:Keyword ;
+    skos:prefLabel "Hero"@en ;
+    skos:altLabel "Protagonist"@en ;
+    skos:definition "Movies centered on heroic characters and their journeys."@en ;
+    skos:broader :ContentKeywords ;
+    skos:inScheme :KeywordScheme ;
+    skos:notation "1701"^^xsd:integer ;
+    skos:related :Superhero .
+
+:Mutant a skos:Concept, movie:Keyword ;
+    skos:prefLabel "Mutant"@en ;
+    skos:altLabel "Mutants"@en, "Mutation"@en ;
+    skos:definition "Movies featuring mutated beings with special abilities, often due to genetic changes."@en ;
+    skos:broader :ContentKeywords ;
+    skos:inScheme :KeywordScheme ;
+    skos:notation "1852"^^xsd:integer ;
+    skos:related :Superhero, :SuperPowers .
+
+# Leaf concepts - Setting keywords (third level)
+
+:Space a skos:Concept, movie:Keyword ;
+    skos:prefLabel "Space"@en ;
+    skos:altLabel "Outer Space"@en, "Cosmic"@en ;
+    skos:definition "Movies set in or heavily featuring outer space."@en ;
+    skos:broader :SettingKeywords ;
+    skos:inScheme :KeywordScheme ;
+    skos:notation "9882"^^xsd:integer ;
+    skos:related :SpaceOpera, :Spaceship, :Alien .
+
+:SpaceOpera a skos:Concept, movie:Keyword ;
+    skos:prefLabel "Space Opera"@en ;
+    skos:altLabel "Space Adventure"@en ;
+    skos:definition "A subgenre of science fiction featuring space warfare, melodramatic adventure, and interplanetary battles."@en ;
+    skos:broader :SettingKeywords ;
+    skos:inScheme :KeywordScheme ;
+    skos:notation "161176"^^xsd:integer ;
+    skos:related :Space, :Spaceship .
+
+:Spaceship a skos:Concept, movie:Keyword ;
+    skos:prefLabel "Spaceship"@en ;
+    skos:altLabel "Spacecraft"@en, "Space Vessel"@en ;
+    skos:definition "Movies prominently featuring spaceships or spacecraft."@en ;
+    skos:broader :SettingKeywords ;
+    skos:inScheme :KeywordScheme ;
+    skos:notation "9831"^^xsd:integer ;
+    skos:related :Space, :SpaceOpera, :Alien .
+
+:Future a skos:Concept, movie:Keyword ;
+    skos:prefLabel "Future"@en ;
+    skos:altLabel "Futuristic"@en, "Future Setting"@en ;
+    skos:definition "Movies set in the future or featuring futuristic elements."@en ;
+    skos:broader :SettingKeywords ;
+    skos:inScheme :KeywordScheme ;
+    skos:notation "2964"^^xsd:integer ;
+    skos:related :Dystopia, :ArtificialIntelligence, :Space .
+
+:NewYorkCity a skos:Concept, movie:Keyword ;
+    skos:prefLabel "New York City"@en ;
+    skos:altLabel "NYC"@en, "New York"@en ;
+    skos:definition "Movies set in or prominently featuring New York City."@en ;
+    skos:broader :SettingKeywords ;
+    skos:inScheme :KeywordScheme ;
+    skos:notation "14512"^^xsd:integer .
+
+# Leaf concepts - Character keywords (third level)
+
+:FemaleProtagonist a skos:Concept , movie:Keyword ;
+    skos:prefLabel "Female Protagonist"@en ;
+    skos:altLabel "Female Lead"@en, "Woman Hero"@en ;
+    skos:definition "Movies featuring a female character as the main protagonist."@en ;
+    skos:broader :CharacterKeywords ;
+    skos:inScheme :KeywordScheme ;
+    skos:notation "11322"^^xsd:integer ;
+    skos:related :Hero .
+
+:Wizard a skos:Concept, movie:Keyword ;
+    skos:prefLabel "Wizard"@en ;
+    skos:altLabel "Sorcerer"@en, "Mage"@en ;
+    skos:definition "Movies featuring wizard characters who practice magic."@en ;
+    skos:broader :CharacterKeywords ;
+    skos:inScheme :KeywordScheme ;
+    skos:notation "177912"^^xsd:integer ;
+    skos:related :Magic .
+
+:TimeTravel a skos:Concept, movie:Keyword ;
+    skos:prefLabel "Time Travel"@en ;
+    skos:altLabel "Temporal Travel"@en, "Time Machine"@en ;
+    skos:definition "Movies featuring travel through time as a plot element."@en ;
+    skos:broader :CharacterKeywords ;
+    skos:inScheme :KeywordScheme ;
+    skos:notation "4379"^^xsd:integer ;
+    skos:related :Future .

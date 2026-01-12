@@ -30,9 +30,7 @@
 [] rdf:type owl:AllDisjointClasses ;
    owl:members ( :AdultMovie :TeenMovie :ChildrenMovie ) .
 
-# ============================================
 # MOVIE COMPONENT PROPERTIES
-# ============================================
 
 :hasInformation rdf:type owl:ObjectProperty ;
     rdfs:domain :Movie ;
@@ -64,9 +62,7 @@
     rdfs:label "has Wikipedia page"@en ;
     rdfs:comment "Links an entity to its Wikipedia page"@en .
 
-# ============================================
 # MOVIE COMPONENT CLASSES
-# ============================================
 
 :MovieInformation rdf:type owl:Class ;
     rdfs:label "Movie Information"@en ;
@@ -88,9 +84,7 @@
    owl:members ( :MovieInformation :MovieResult :MovieProduction :MovieContent ) .
 
 
-# ============================================
 # MOVIE INFORMATION - Data Properties
-# ============================================
 
 :hasBudget rdf:type owl:DatatypeProperty , owl:FunctionalProperty ;
     rdfs:domain :MovieInformation ;
@@ -136,9 +130,7 @@
 
 
 
-# ============================================
 # MOVIE RESULT - Data Properties
-# ============================================
 
 :hasVoteAverage rdf:type owl:DatatypeProperty , owl:FunctionalProperty ;
     rdfs:domain :MovieResult ;
@@ -161,9 +153,7 @@
     rdfs:comment "Box office revenue in USD"@en .
 
 
-# ============================================
 # MOVIE PRODUCTION - Object & Data Properties
-# ============================================
 
 :hasDirector rdf:type owl:ObjectProperty ;
     rdfs:domain :MovieProduction ;
@@ -196,9 +186,7 @@
     rdfs:comment "Country where the movie was produced (ISO 3166-1)"@en .
 
 
-# ============================================
 # PERSONS INVOLVED - Classes & Properties
-# ============================================
 
 :Person rdf:type owl:Class ;
     rdfs:label "Person"@en ;
@@ -269,9 +257,7 @@
     rdfs:label "performed by"@en ;
     rdfs:comment "The actor who performed this role"@en .
 
-# ============================================
 # MOVIE CONTENT - Object Properties
-# ============================================
 
 :hasGenre rdf:type owl:ObjectProperty ;
     rdfs:domain :MovieContent ;
@@ -317,9 +303,7 @@
     rdfs:label "collection name"@en ;
     rdfs:comment "Name of the collection"@en .
     
-# ============================================
 # PROPERTY CHAINS - Inférences automatiques
-# ============================================
 
 :directedBy rdf:type owl:ObjectProperty ;
     rdfs:domain :Movie ;
@@ -342,9 +326,7 @@
     rdfs:comment "Direct link from Movie to Genre (inferred)"@en ;
     owl:propertyChainAxiom ( :hasContent :hasGenre ) .
 
-# ============================================
 # PROPRIÉTÉS AVANCÉES
-# ============================================
 
 :sameCollection rdf:type owl:ObjectProperty ,
                           owl:SymmetricProperty ,
@@ -355,7 +337,7 @@
     rdfs:comment "Movies belonging to the same franchise/collection"@en .
     owl:propertyChainAxiom ( :belongsToCollection ^:belongsToCollection ) .
     
-# 1. Co-réalisateurs : deux personnes qui ont co-dirigé un film
+# Co-réalisateurs : deux personnes qui ont co-dirigé un film
 :coDirectedWith rdf:type owl:ObjectProperty , owl:SymmetricProperty ;
     rdfs:subPropertyOf :collaboratesWith ;
     rdfs:domain :Person ;
@@ -364,7 +346,7 @@
     rdfs:comment "Two directors who directed the same movie together"@en ;
     owl:propertyChainAxiom ( [ owl:inverseOf :hasDirector ] [ owl:inverseOf :hasProduction ] :hasProduction :hasDirector ) .
 
-# 2. Co-acteurs : deux acteurs qui ont joué dans le même film
+# Co-acteurs : deux acteurs qui ont joué dans le même film
 :coActedWith rdf:type owl:ObjectProperty , owl:SymmetricProperty ;
     rdfs:subPropertyOf :collaboratesWith ;
     rdfs:domain :Person ;
@@ -373,7 +355,7 @@
     rdfs:comment "Two actors who acted in the same movie together"@en ;
     owl:propertyChainAxiom ( [ owl:inverseOf :performedBy ] [ owl:inverseOf :hasCastMember ] [ owl:inverseOf :hasProduction ] :hasProduction :hasCastMember :performedBy ) .
 
-# 3. Co-membres d'équipe : deux personnes du crew qui ont travaillé sur le même film
+# Co-membres d'équipe : deux personnes du crew qui ont travaillé sur le même film
 :coCrewWith rdf:type owl:ObjectProperty , owl:SymmetricProperty ;
     rdfs:subPropertyOf :collaboratesWith ;
     rdfs:domain :Person ;
@@ -405,7 +387,7 @@
         )
     ] .
 
-# 2. Highly Rated Movie : Film avec note >= 8.0
+#  Highly Rated Movie : Film avec note >= 8.0
 :HighlyRatedMovie rdf:type owl:Class ;
     rdfs:subClassOf :Movie ;
     rdfs:label "Highly Rated Movie"@en ;
@@ -429,7 +411,7 @@
         )
     ] .
 
-# 3. Masterpiece : Blockbuster ET Highly Rated (intersection)
+#  Masterpiece : Blockbuster ET Highly Rated (intersection)
 :Masterpiece rdf:type owl:Class ;
     rdfs:label "Masterpiece"@en ;
     rdfs:comment "A blockbuster that is also highly rated (revenue >= $100M AND rating >= 8.0)"@en ;
@@ -438,14 +420,14 @@
         owl:intersectionOf ( :Blockbuster :HighlyRatedMovie )
     ] .
 
-# 8. Profitable Movie : Revenue > Budget (nécessite SPARQL ou règles)
+# Profitable Movie : Revenue > Budget (nécessite SPARQL ou règles)
 :ProfitableMovie rdf:type owl:Class ;
     rdfs:subClassOf :Movie ;
     rdfs:label "Profitable Movie"@en ;
     rdfs:comment "A movie where revenue exceeded budget"@en .
 
 
-# 13. Prolific Director : Réalisateur de plus de 5 films
+# Prolific Director : Réalisateur de plus de 5 films
 :ProlificDirector rdf:type owl:Class ;
     rdfs:subClassOf :Director ;
     rdfs:label "Prolific Director"@en ;
@@ -461,7 +443,7 @@
         )
     ] .
 
-# 14. Lead Actor : Acteur avec castOrder = 0
+# Lead Actor : Acteur avec castOrder = 0
 :LeadActor rdf:type owl:Class ;
     rdfs:subClassOf :CastMember ;
     rdfs:label "Lead Actor"@en ;
@@ -476,9 +458,8 @@
             ]
         )
     ] .
-# ============================================
+
 # RATING SYSTEM - Classes et Propriétés
-# ============================================
 
 :Rating rdf:type owl:Class ;
     rdfs:label "Rating"@en ;
@@ -490,9 +471,7 @@
     rdfs:comment "A user who rates movies"@en ;
     rdfs:subClassOf foaf:Person .
 
-# ============================================
 # Object Properties - Relations
-# ============================================
 
 :hasRating rdf:type owl:ObjectProperty ;
     rdfs:domain :Movie ;
@@ -515,9 +494,7 @@
     rdfs:comment "Links a rating to the user who gave it"@en ;
     owl:inverseOf :gaveRating.
 
-# ============================================
 # Data Properties - Attributs
-# ============================================
 
 :hasValue rdf:type owl:DatatypeProperty , owl:FunctionalProperty ;
     rdfs:domain :Rating ;
