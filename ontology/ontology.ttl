@@ -508,4 +508,175 @@
     rdfs:label "has user ID"@en ;
     rdfs:comment "The unique identifier of the user (from MovieLens dataset)"@en .
 
+# ============================================
+# French Adaptation
+# ============================================
 
+:hasFrenchAdaptation rdf:type owl:ObjectProperty ;
+    rdfs:domain :Movie ;
+    rdfs:range :FrenchAdaptation ;
+    rdfs:label "has French adaptation"@en  ;
+    rdfs:comment "Links a movie to its French adaptation/dubbing information"@en .
+
+:FrenchAdaptation rdf:type owl:Class ;
+    rdfs:label "French Adaptation"@en ;
+    rdfs:comment "Information about the French version of a movie (dubbing, voice actors)"@en .
+
+:adaptationYear rdf:type owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:domain :FrenchAdaptation ;
+    rdfs:range xsd:gYear ;
+    rdfs:label "adaptation year"@en ;
+    rdfs:comment "Year when the French adaptation was made"@en .
+
+:hasAdaptor rdf:type owl:ObjectProperty ;
+    rdfs:domain :FrenchAdaptation ;
+    rdfs:range :Person ;
+    rdfs:label "has adaptor"@en  ;
+    rdfs:comment "Person(s) who adapted the movie to French"@en .
+
+:hasFrenchVoiceActor rdf:type owl:ObjectProperty ;
+    rdfs:domain :FrenchAdaptation ;
+    rdfs:range :VoiceActor ;
+    rdfs:label "has French voice actor"@en ;
+    rdfs:comment "Voice actor in the French version"@en .
+
+:VoiceActor rdf:type owl:Class ;
+    rdfs:subClassOf :Person ;
+    rdfs:label "Voice Actor"@en;
+    rdfs:comment "An actor who provides voice for dubbed versions"@en .
+
+:dubsCharacter rdf:type owl:ObjectProperty ;
+    rdfs:domain :VoiceActor ;
+    rdfs:range :Character ;
+    rdfs:label "dubs character"@en;
+    rdfs:comment "Links a voice actor to the character they dub"@en .
+
+# ============================================
+# Musical Compositions 
+# ============================================
+
+:hasThemeSong rdf:type owl:ObjectProperty ;
+    rdfs:domain :Movie ;
+    rdfs:range :Song ;
+    rdfs:label "has theme song"@en  ;
+    rdfs:comment "The main theme song or soundtrack of the movie"@en .
+
+:Song rdf:type owl:Class ;
+    rdfs:label "Song"@en ;
+    rdfs:comment "A musical piece or song"@en ;
+    owl:equivalentClass schema:MusicRecording .
+
+:songTitle rdf:type owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:domain :Song ;
+    rdfs:range xsd:string ;
+    rdfs:label "song title"@en ;
+    rdfs:comment "Title of the song"@en .
+
+:hasComposer rdf:type owl:ObjectProperty ;
+    rdfs:domain :Song ;
+    rdfs:range :Composer ;
+    rdfs:label "has composer"@en ;
+    rdfs:comment "The composer(s) of the song"@en .
+
+:Composer rdf:type owl:Class ;
+    rdfs:subClassOf :Person ;
+    rdfs:label "Composer"@en;
+    rdfs:comment "A person who composes music"@en ;
+    owl:equivalentClass schema:MusicGroup .
+
+
+# ============================================
+# Awards and Nominations
+# ============================================
+
+:hasAward rdf:type owl:ObjectProperty ;
+    rdfs:domain :Movie ;
+    rdfs:range :Award ;
+    rdfs:label "has award"@en ;
+    rdfs:comment "An award received by the movie"@en .
+
+:Award rdf:type owl:Class ;
+    rdfs:label "Award"@en ;
+    rdfs:comment "A prize or award given to a movie"@en .
+
+:awardName rdf:type owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:domain :Award ;
+    rdfs:range xsd:string ;
+    rdfs:label "award name"@en ;
+    rdfs:comment "Name of the award (e.g., 'Best Picture', 'Palme d'Or')"@en .
+
+:hasYearOfAwardGiving rdf:type owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:domain :Award ;
+    rdfs:range xsd:gYear ;
+    rdfs:label "year of award giving"@en;
+    rdfs:comment "Year when the award was given"@en .
+
+:awardCategory rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Award ;
+    rdfs:range xsd:string ;
+    rdfs:label "award category"@en;
+    rdfs:comment "Category of the award (e.g., 'Best Director', 'Best Actor')"@en .
+
+:awardedBy rdf:type owl:ObjectProperty ;
+    rdfs:domain :Award ;
+    rdfs:range foaf:Organization ;
+    rdfs:label "awarded by"@en ;
+    rdfs:comment "Organization that gave the award (e.g., Academy of Motion Picture Arts and Sciences)"@en .
+
+:receivedBy rdf:type owl:ObjectProperty ;
+    rdfs:domain :Award ;
+    rdfs:range :Person ;
+    rdfs:label "received by"@en ;
+    rdfs:comment "Person who received the award (if applicable)"@en .
+
+:isNomination rdf:type owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:domain :Award ;
+    rdfs:range xsd:boolean ;
+    rdfs:label "is nomination"@en  ;
+    rdfs:comment "True if this is only a nomination, false if the award was won"@en .
+
+# ============================================
+# PROPERTY CHAINS 
+# ============================================
+
+:wonAward rdf:type owl:ObjectProperty ;
+    rdfs:domain :Person ;
+    rdfs:range :Award ;
+    rdfs:label "won award"@en , "a gagné le prix"@fr ;
+    rdfs:comment "Award won by a person (inferred)"@en ;
+    owl:inverseOf :receivedBy .
+
+:hasComposerOf rdf:type owl:ObjectProperty ;
+    rdfs:domain :Movie ;
+    rdfs:range :Composer ;
+    rdfs:label "has composer of"@en , "a pour compositeur de"@fr ;
+    rdfs:comment "Direct link from movie to composer through theme song (inferred)"@en ;
+    owl:propertyChainAxiom ( :hasThemeSong :hasComposer ) .
+
+# ============================================
+# Defined classes based on awards
+# ============================================
+
+:AwardWinningMovie rdf:type owl:Class ;
+    rdfs:subClassOf :Movie ;
+    rdfs:label "Award-Winning Movie"@en , "Film Primé"@fr ;
+    rdfs:comment "A movie that has won at least one award"@en ;
+    owl:equivalentClass [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :Movie
+            [ rdf:type owl:Restriction ;
+              owl:onProperty :hasAward ;
+              owl:someValuesFrom [
+                  rdf:type owl:Restriction ;
+                  owl:onProperty :isNomination ;
+                  owl:hasValue "false"^^xsd:boolean
+              ]
+            ]
+        )
+    ] .
+
+:OscarWinner rdf:type owl:Class ;
+    rdfs:subClassOf :AwardWinningMovie ;
+    rdfs:label "Oscar Winner"@en , "Oscarisé"@fr ;
+    rdfs:comment "A movie that has won at least one Oscar (Academy Award)"@en .
