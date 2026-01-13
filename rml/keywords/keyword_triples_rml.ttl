@@ -1,0 +1,1031 @@
+@prefix : <http://saraaymericradhi.org/movie-ontology#> .
+@prefix keywords: <http://saraaymericradhi.org/movie-ontology/keywords#> .
+@prefix rml: <http://w3id.org/rml/> .
+
+<http://saraaymericradhi.org/movie/100402> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/100402/content> .
+
+<http://saraaymericradhi.org/movie/100402/content> a :MovieContent;
+  :hasKeyword keywords:AfterCreditsStinger, keywords:BasedOnComic, keywords:DuringCreditsStinger,
+    keywords:Future, keywords:MarvelCinematicUniverse, keywords:MarvelComic, keywords:Superhero,
+    keywords:ThreeD .
+
+<http://saraaymericradhi.org/movie/101> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/101/content> .
+
+<http://saraaymericradhi.org/movie/101/content> a :MovieContent;
+  :hasKeyword keywords:Murder, keywords:Revenge .
+
+<http://saraaymericradhi.org/movie/101299> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/101299/content> .
+
+<http://saraaymericradhi.org/movie/101299/content> a :MovieContent;
+  :hasKeyword keywords:BasedOnNovel, keywords:BasedOnYoungAdultNovel, keywords:Dystopia,
+    keywords:FemaleProtagonist, keywords:Future, keywords:IMAX, keywords:Murder, keywords:Sequel .
+
+<http://saraaymericradhi.org/movie/10138> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/10138/content> .
+
+<http://saraaymericradhi.org/movie/10138/content> a :MovieContent;
+  :hasKeyword keywords:AfterCreditsStinger, keywords:BasedOnComic, keywords:MarvelCinematicUniverse,
+    keywords:MarvelComic, keywords:Revenge, keywords:Superhero .
+
+<http://saraaymericradhi.org/movie/10191> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/10191/content> .
+
+<http://saraaymericradhi.org/movie/10191/content> a :MovieContent;
+  :hasKeyword keywords:Friendship .
+
+<http://saraaymericradhi.org/movie/10193> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/10193/content> .
+
+<http://saraaymericradhi.org/movie/10193/content> a :MovieContent;
+  :hasKeyword keywords:DuringCreditsStinger .
+
+<http://saraaymericradhi.org/movie/10195> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/10195/content> .
+
+<http://saraaymericradhi.org/movie/10195/content> a :MovieContent;
+  :hasKeyword keywords:AfterCreditsStinger, keywords:BasedOnComic, keywords:MarvelCinematicUniverse,
+    keywords:MarvelComic, keywords:Superhero, keywords:ThreeD .
+
+<http://saraaymericradhi.org/movie/102382> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/102382/content> .
+
+<http://saraaymericradhi.org/movie/102382/content> a :MovieContent;
+  :hasKeyword keywords:BasedOnComic, keywords:MarvelComic, keywords:Sequel, keywords:SuperPowers .
+
+<http://saraaymericradhi.org/movie/102651> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/102651/content> .
+
+<http://saraaymericradhi.org/movie/102651/content> a :MovieContent;
+  :hasKeyword keywords:ThreeD .
+
+<http://saraaymericradhi.org/movie/102899> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/102899/content> .
+
+<http://saraaymericradhi.org/movie/102899/content> a :MovieContent;
+  :hasKeyword keywords:AfterCreditsStinger, keywords:BasedOnComic, keywords:DuringCreditsStinger,
+    keywords:MarvelCinematicUniverse, keywords:MarvelComic, keywords:Superhero, keywords:ThreeD .
+
+<http://saraaymericradhi.org/movie/105> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/105/content> .
+
+<http://saraaymericradhi.org/movie/105/content> a :MovieContent;
+  :hasKeyword keywords:TimeTravel .
+
+<http://saraaymericradhi.org/movie/10528> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/10528/content> .
+
+<http://saraaymericradhi.org/movie/10528/content> a :MovieContent;
+  :hasKeyword keywords:Murder .
+
+<http://saraaymericradhi.org/movie/109445> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/109445/content> .
+
+<http://saraaymericradhi.org/movie/109445/content> a :MovieContent;
+  :hasKeyword keywords:AfterCreditsStinger, keywords:ThreeD .
+
+<http://saraaymericradhi.org/movie/11> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/11/content> .
+
+<http://saraaymericradhi.org/movie/11/content> a :MovieContent;
+  :hasKeyword keywords:SpaceOpera .
+
+<http://saraaymericradhi.org/movie/1124> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/1124/content> .
+
+<http://saraaymericradhi.org/movie/1124/content> a :MovieContent;
+  :hasKeyword keywords:Magic .
+
+<http://saraaymericradhi.org/movie/11324> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/11324/content> .
+
+<http://saraaymericradhi.org/movie/11324/content> a :MovieContent;
+  :hasKeyword keywords:BasedOnNovel .
+
+<http://saraaymericradhi.org/movie/118340> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/118340/content> .
+
+<http://saraaymericradhi.org/movie/118340/content> a :MovieContent;
+  :hasKeyword keywords:AfterCreditsStinger, keywords:DuringCreditsStinger, keywords:MarvelCinematicUniverse,
+    keywords:MarvelComic, keywords:Space, keywords:Spaceship .
+
+<http://saraaymericradhi.org/movie/119450> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/119450/content> .
+
+<http://saraaymericradhi.org/movie/119450/content> a :MovieContent;
+  :hasKeyword keywords:Dystopia, keywords:Sequel, keywords:ThreeD .
+
+<http://saraaymericradhi.org/movie/12> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/12/content> .
+
+<http://saraaymericradhi.org/movie/12/content> a :MovieContent;
+  :hasKeyword keywords:AfterCreditsStinger, keywords:DuringCreditsStinger .
+
+<http://saraaymericradhi.org/movie/120> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/120/content> .
+
+<http://saraaymericradhi.org/movie/120/content> a :MovieContent;
+  :hasKeyword keywords:BasedOnNovel, keywords:Wizard .
+
+<http://saraaymericradhi.org/movie/121> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/121/content> .
+
+<http://saraaymericradhi.org/movie/121/content> a :MovieContent;
+  :hasKeyword keywords:BasedOnNovel, keywords:Wizard .
+
+<http://saraaymericradhi.org/movie/12155> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/12155/content> .
+
+<http://saraaymericradhi.org/movie/12155/content> a :MovieContent;
+  :hasKeyword keywords:BasedOnNovel, keywords:ThreeD .
+
+<http://saraaymericradhi.org/movie/122> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/122/content> .
+
+<http://saraaymericradhi.org/movie/122/content> a :MovieContent;
+  :hasKeyword keywords:BasedOnNovel, keywords:Violence .
+
+<http://saraaymericradhi.org/movie/12444> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/12444/content> .
+
+<http://saraaymericradhi.org/movie/12444/content> a :MovieContent;
+  :hasKeyword keywords:Magic .
+
+<http://saraaymericradhi.org/movie/12445> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/12445/content> .
+
+<http://saraaymericradhi.org/movie/12445/content> a :MovieContent;
+  :hasKeyword keywords:Magic, keywords:ThreeD, keywords:Wizard .
+
+<http://saraaymericradhi.org/movie/127380> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/127380/content> .
+
+<http://saraaymericradhi.org/movie/127380/content> a :MovieContent;
+  :hasKeyword keywords:Sequel .
+
+<http://saraaymericradhi.org/movie/127585> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/127585/content> .
+
+<http://saraaymericradhi.org/movie/127585/content> a :MovieContent;
+  :hasKeyword keywords:AfterCreditsStinger, keywords:BasedOnComic, keywords:MarvelComic,
+    keywords:Mutant, keywords:TimeTravel .
+
+<http://saraaymericradhi.org/movie/129> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/129/content> .
+
+<http://saraaymericradhi.org/movie/129/content> a :MovieContent;
+  :hasKeyword keywords:Magic .
+
+<http://saraaymericradhi.org/movie/13> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/13/content> .
+
+<http://saraaymericradhi.org/movie/13/content> a :MovieContent;
+  :hasKeyword keywords:BasedOnNovel, keywords:Friendship .
+
+<http://saraaymericradhi.org/movie/131631> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/131631/content> .
+
+<http://saraaymericradhi.org/movie/131631/content> a :MovieContent;
+  :hasKeyword keywords:BasedOnYoungAdultNovel, keywords:Dystopia, keywords:FemaleProtagonist,
+    keywords:Sequel .
+
+<http://saraaymericradhi.org/movie/131634> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/131634/content> .
+
+<http://saraaymericradhi.org/movie/131634/content> a :MovieContent;
+  :hasKeyword keywords:BasedOnYoungAdultNovel, keywords:Dystopia, keywords:ThreeD .
+
+<http://saraaymericradhi.org/movie/13475> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/13475/content> .
+
+<http://saraaymericradhi.org/movie/13475/content> a :MovieContent;
+  :hasKeyword keywords:SpaceOpera, keywords:TimeTravel .
+
+<http://saraaymericradhi.org/movie/135397> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/135397/content> .
+
+<http://saraaymericradhi.org/movie/135397/content> a :MovieContent;
+  :hasKeyword keywords:Sequel, keywords:ThreeD .
+
+<http://saraaymericradhi.org/movie/137113> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/137113/content> .
+
+<http://saraaymericradhi.org/movie/137113/content> a :MovieContent;
+  :hasKeyword keywords:Alien, keywords:Dystopia .
+
+<http://saraaymericradhi.org/movie/140607> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/140607/content> .
+
+<http://saraaymericradhi.org/movie/140607/content> a :MovieContent;
+  :hasKeyword keywords:IMAX, keywords:SpaceOpera, keywords:Spaceship, keywords:ThreeD .
+
+<http://saraaymericradhi.org/movie/14160> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/14160/content> .
+
+<http://saraaymericradhi.org/movie/14160/content> a :MovieContent;
+  :hasKeyword keywords:DuringCreditsStinger .
+
+<http://saraaymericradhi.org/movie/150540> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/150540/content> .
+
+<http://saraaymericradhi.org/movie/150540/content> a :MovieContent;
+  :hasKeyword keywords:DuringCreditsStinger, keywords:ThreeD .
+
+<http://saraaymericradhi.org/movie/152601> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/152601/content> .
+
+<http://saraaymericradhi.org/movie/152601/content> a :MovieContent;
+  :hasKeyword keywords:ArtificialIntelligence .
+
+<http://saraaymericradhi.org/movie/155> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/155/content> .
+
+<http://saraaymericradhi.org/movie/155/content> a :MovieContent;
+  :hasKeyword keywords:BasedOnComic, keywords:IMAX, keywords:SuperPowers, keywords:Superhero .
+
+<http://saraaymericradhi.org/movie/157336> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/157336/content> .
+
+<http://saraaymericradhi.org/movie/157336/content> a :MovieContent;
+  :hasKeyword keywords:ArtificialIntelligence, keywords:Dystopia, keywords:IMAX, keywords:Space,
+    keywords:Spaceship .
+
+<http://saraaymericradhi.org/movie/157350> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/157350/content> .
+
+<http://saraaymericradhi.org/movie/157350/content> a :MovieContent;
+  :hasKeyword keywords:BasedOnNovel, keywords:BasedOnYoungAdultNovel, keywords:Dystopia .
+
+<http://saraaymericradhi.org/movie/165> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/165/content> .
+
+<http://saraaymericradhi.org/movie/165/content> a :MovieContent;
+  :hasKeyword keywords:Sequel, keywords:TimeTravel .
+
+<http://saraaymericradhi.org/movie/168259> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/168259/content> .
+
+<http://saraaymericradhi.org/movie/168259/content> a :MovieContent;
+  :hasKeyword keywords:Revenge .
+
+<http://saraaymericradhi.org/movie/16869> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/16869/content> .
+
+<http://saraaymericradhi.org/movie/16869/content> a :MovieContent;
+  :hasKeyword keywords:Violence .
+
+<http://saraaymericradhi.org/movie/1726> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/1726/content> .
+
+<http://saraaymericradhi.org/movie/1726/content> a :MovieContent;
+  :hasKeyword keywords:AfterCreditsStinger, keywords:BasedOnComic, keywords:MarvelCinematicUniverse,
+    keywords:MarvelComic, keywords:Superhero .
+
+<http://saraaymericradhi.org/movie/1771> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/1771/content> .
+
+<http://saraaymericradhi.org/movie/1771/content> a :MovieContent;
+  :hasKeyword keywords:AfterCreditsStinger, keywords:BasedOnComic, keywords:MarvelCinematicUniverse,
+    keywords:MarvelComic, keywords:Superhero, keywords:ThreeD .
+
+<http://saraaymericradhi.org/movie/177572> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/177572/content> .
+
+<http://saraaymericradhi.org/movie/177572/content> a :MovieContent;
+  :hasKeyword keywords:AfterCreditsStinger, keywords:Hero, keywords:Revenge, keywords:ThreeD .
+
+<http://saraaymericradhi.org/movie/18> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/18/content> .
+
+<http://saraaymericradhi.org/movie/18/content> a :MovieContent;
+  :hasKeyword keywords:Alien, keywords:Future, keywords:NewYorkCity, keywords:SpaceOpera .
+
+<http://saraaymericradhi.org/movie/1858> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/1858/content> .
+
+<http://saraaymericradhi.org/movie/1858/content> a :MovieContent;
+  :hasKeyword keywords:Alien, keywords:DuringCreditsStinger .
+
+<http://saraaymericradhi.org/movie/1865> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/1865/content> .
+
+<http://saraaymericradhi.org/movie/1865/content> a :MovieContent;
+  :hasKeyword keywords:AfterCreditsStinger, keywords:ThreeD .
+
+<http://saraaymericradhi.org/movie/18785> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/18785/content> .
+
+<http://saraaymericradhi.org/movie/18785/content> a :MovieContent;
+  :hasKeyword keywords:DuringCreditsStinger .
+
+<http://saraaymericradhi.org/movie/1891> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/1891/content> .
+
+<http://saraaymericradhi.org/movie/1891/content> a :MovieContent;
+  :hasKeyword keywords:SpaceOpera, keywords:Spaceship .
+
+<http://saraaymericradhi.org/movie/1892> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/1892/content> .
+
+<http://saraaymericradhi.org/movie/1892/content> a :MovieContent;
+  :hasKeyword keywords:SpaceOpera, keywords:Spaceship .
+
+<http://saraaymericradhi.org/movie/1893> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/1893/content> .
+
+<http://saraaymericradhi.org/movie/1893/content> a :MovieContent;
+  :hasKeyword keywords:SpaceOpera .
+
+<http://saraaymericradhi.org/movie/1894> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/1894/content> .
+
+<http://saraaymericradhi.org/movie/1894/content> a :MovieContent;
+  :hasKeyword keywords:SpaceOpera, keywords:Violence .
+
+<http://saraaymericradhi.org/movie/1895> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/1895/content> .
+
+<http://saraaymericradhi.org/movie/1895/content> a :MovieContent;
+  :hasKeyword keywords:SpaceOpera .
+
+<http://saraaymericradhi.org/movie/1930> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/1930/content> .
+
+<http://saraaymericradhi.org/movie/1930/content> a :MovieContent;
+  :hasKeyword keywords:DuringCreditsStinger, keywords:MarvelComic, keywords:SuperPowers .
+
+<http://saraaymericradhi.org/movie/194662> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/194662/content> .
+
+<http://saraaymericradhi.org/movie/194662/content> a :MovieContent;
+  :hasKeyword keywords:NewYorkCity, keywords:Superhero .
+
+<http://saraaymericradhi.org/movie/198663> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/198663/content> .
+
+<http://saraaymericradhi.org/movie/198663/content> a :MovieContent;
+  :hasKeyword keywords:BasedOnNovel, keywords:BasedOnYoungAdultNovel, keywords:Dystopia .
+
+<http://saraaymericradhi.org/movie/19995> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/19995/content> .
+
+<http://saraaymericradhi.org/movie/19995/content> a :MovieContent;
+  :hasKeyword keywords:Alien, keywords:Future, keywords:Space, keywords:ThreeD .
+
+<http://saraaymericradhi.org/movie/20352> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/20352/content> .
+
+<http://saraaymericradhi.org/movie/20352/content> a :MovieContent;
+  :hasKeyword keywords:DuringCreditsStinger, keywords:ThreeD .
+
+<http://saraaymericradhi.org/movie/2048> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/2048/content> .
+
+<http://saraaymericradhi.org/movie/2048/content> a :MovieContent;
+  :hasKeyword keywords:ArtificialIntelligence, keywords:BasedOnNovel, keywords:Dystopia,
+    keywords:Future, keywords:Hero, keywords:Murder, keywords:ThreeD .
+
+<http://saraaymericradhi.org/movie/206647> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/206647/content> .
+
+<http://saraaymericradhi.org/movie/206647/content> a :MovieContent;
+  :hasKeyword keywords:BasedOnNovel, keywords:Sequel .
+
+<http://saraaymericradhi.org/movie/207703> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/207703/content> .
+
+<http://saraaymericradhi.org/movie/207703/content> a :MovieContent;
+  :hasKeyword keywords:BasedOnComic, keywords:DuringCreditsStinger, keywords:MarvelComic .
+
+<http://saraaymericradhi.org/movie/2080> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/2080/content> .
+
+<http://saraaymericradhi.org/movie/2080/content> a :MovieContent;
+  :hasKeyword keywords:AfterCreditsStinger, keywords:DuringCreditsStinger, keywords:MarvelComic,
+    keywords:Mutant, keywords:Superhero .
+
+<http://saraaymericradhi.org/movie/209112> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/209112/content> .
+
+<http://saraaymericradhi.org/movie/209112/content> a :MovieContent;
+  :hasKeyword keywords:BasedOnComic, keywords:Revenge, keywords:SuperPowers, keywords:Superhero .
+
+<http://saraaymericradhi.org/movie/210577> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/210577/content> .
+
+<http://saraaymericradhi.org/movie/210577/content> a :MovieContent;
+  :hasKeyword keywords:BasedOnNovel .
+
+<http://saraaymericradhi.org/movie/211672> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/211672/content> .
+
+<http://saraaymericradhi.org/movie/211672/content> a :MovieContent;
+  :hasKeyword keywords:AfterCreditsStinger, keywords:DuringCreditsStinger, keywords:ThreeD .
+
+<http://saraaymericradhi.org/movie/218> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/218/content> .
+
+<http://saraaymericradhi.org/movie/218/content> a :MovieContent;
+  :hasKeyword keywords:ArtificialIntelligence, keywords:Dystopia .
+
+<http://saraaymericradhi.org/movie/22> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/22/content> .
+
+<http://saraaymericradhi.org/movie/22/content> a :MovieContent;
+  :hasKeyword keywords:AfterCreditsStinger .
+
+<http://saraaymericradhi.org/movie/222935> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/222935/content> .
+
+<http://saraaymericradhi.org/movie/222935/content> a :MovieContent;
+  :hasKeyword keywords:BasedOnNovel, keywords:BasedOnYoungAdultNovel .
+
+<http://saraaymericradhi.org/movie/23483> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/23483/content> .
+
+<http://saraaymericradhi.org/movie/23483/content> a :MovieContent;
+  :hasKeyword keywords:Murder, keywords:Superhero, keywords:Violence .
+
+<http://saraaymericradhi.org/movie/24> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/24/content> .
+
+<http://saraaymericradhi.org/movie/24/content> a :MovieContent;
+  :hasKeyword keywords:Revenge .
+
+<http://saraaymericradhi.org/movie/240832> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/240832/content> .
+
+<http://saraaymericradhi.org/movie/240832/content> a :MovieContent;
+  :hasKeyword keywords:ArtificialIntelligence, keywords:IMAX .
+
+<http://saraaymericradhi.org/movie/24428> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/24428/content> .
+
+<http://saraaymericradhi.org/movie/24428/content> a :MovieContent;
+  :hasKeyword keywords:AfterCreditsStinger, keywords:BasedOnComic, keywords:DuringCreditsStinger,
+    keywords:MarvelCinematicUniverse, keywords:MarvelComic, keywords:Superhero .
+
+<http://saraaymericradhi.org/movie/244786> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/244786/content> .
+
+<http://saraaymericradhi.org/movie/244786/content> a :MovieContent;
+  :hasKeyword keywords:NewYorkCity, keywords:Violence .
+
+<http://saraaymericradhi.org/movie/245891> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/245891/content> .
+
+<http://saraaymericradhi.org/movie/245891/content> a :MovieContent;
+  :hasKeyword keywords:Murder, keywords:Revenge .
+
+<http://saraaymericradhi.org/movie/246655> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/246655/content> .
+
+<http://saraaymericradhi.org/movie/246655/content> a :MovieContent;
+  :hasKeyword keywords:AfterCreditsStinger, keywords:BasedOnComic, keywords:MarvelComic,
+    keywords:Mutant, keywords:Superhero .
+
+<http://saraaymericradhi.org/movie/259316> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/259316/content> .
+
+<http://saraaymericradhi.org/movie/259316/content> a :MovieContent;
+  :hasKeyword keywords:Magic, keywords:NewYorkCity, keywords:Wizard .
+
+<http://saraaymericradhi.org/movie/262500> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/262500/content> .
+
+<http://saraaymericradhi.org/movie/262500/content> a :MovieContent;
+  :hasKeyword keywords:BasedOnNovel, keywords:Dystopia, keywords:Sequel, keywords:ThreeD .
+
+<http://saraaymericradhi.org/movie/263115> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/263115/content> .
+
+<http://saraaymericradhi.org/movie/263115/content> a :MovieContent;
+  :hasKeyword keywords:BasedOnComic, keywords:Dystopia, keywords:Future, keywords:MarvelComic,
+    keywords:Mutant, keywords:Sequel, keywords:SuperPowers, keywords:Superhero .
+
+<http://saraaymericradhi.org/movie/264660> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/264660/content> .
+
+<http://saraaymericradhi.org/movie/264660/content> a :MovieContent;
+  :hasKeyword keywords:ArtificialIntelligence, keywords:Friendship .
+
+<http://saraaymericradhi.org/movie/269149> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/269149/content> .
+
+<http://saraaymericradhi.org/movie/269149/content> a :MovieContent;
+  :hasKeyword keywords:FemaleProtagonist, keywords:ThreeD .
+
+<http://saraaymericradhi.org/movie/271110> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/271110/content> .
+
+<http://saraaymericradhi.org/movie/271110/content> a :MovieContent;
+  :hasKeyword keywords:AfterCreditsStinger, keywords:BasedOnComic, keywords:DuringCreditsStinger,
+    keywords:IMAX, keywords:MarvelCinematicUniverse, keywords:MarvelComic, keywords:Sequel,
+    keywords:Superhero, keywords:ThreeD .
+
+<http://saraaymericradhi.org/movie/272> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/272/content> .
+
+<http://saraaymericradhi.org/movie/272/content> a :MovieContent;
+  :hasKeyword keywords:BasedOnComic, keywords:Hero, keywords:SuperPowers, keywords:Superhero .
+
+<http://saraaymericradhi.org/movie/274> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/274/content> .
+
+<http://saraaymericradhi.org/movie/274/content> a :MovieContent;
+  :hasKeyword keywords:BasedOnNovel .
+
+<http://saraaymericradhi.org/movie/274870> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/274870/content> .
+
+<http://saraaymericradhi.org/movie/274870/content> a :MovieContent;
+  :hasKeyword keywords:Space, keywords:Spaceship, keywords:ThreeD .
+
+<http://saraaymericradhi.org/movie/280> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/280/content> .
+
+<http://saraaymericradhi.org/movie/280/content> a :MovieContent;
+  :hasKeyword keywords:Dystopia, keywords:Violence .
+
+<http://saraaymericradhi.org/movie/281957> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/281957/content> .
+
+<http://saraaymericradhi.org/movie/281957/content> a :MovieContent;
+  :hasKeyword keywords:BasedOnNovel, keywords:Murder, keywords:Revenge, keywords:Violence .
+
+<http://saraaymericradhi.org/movie/283995> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/283995/content> .
+
+<http://saraaymericradhi.org/movie/283995/content> a :MovieContent;
+  :hasKeyword keywords:AfterCreditsStinger, keywords:BasedOnComic, keywords:DuringCreditsStinger,
+    keywords:Sequel, keywords:Space, keywords:Superhero .
+
+<http://saraaymericradhi.org/movie/284052> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/284052/content> .
+
+<http://saraaymericradhi.org/movie/284052/content> a :MovieContent;
+  :hasKeyword keywords:AfterCreditsStinger, keywords:BasedOnComic, keywords:DuringCreditsStinger,
+    keywords:Magic, keywords:MarvelCinematicUniverse, keywords:MarvelComic, keywords:Superhero,
+    keywords:Wizard .
+
+<http://saraaymericradhi.org/movie/285> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/285/content> .
+
+<http://saraaymericradhi.org/movie/285/content> a :MovieContent;
+  :hasKeyword keywords:AfterCreditsStinger .
+
+<http://saraaymericradhi.org/movie/286217> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/286217/content> .
+
+<http://saraaymericradhi.org/movie/286217/content> a :MovieContent;
+  :hasKeyword keywords:BasedOnNovel, keywords:DuringCreditsStinger, keywords:Space,
+    keywords:Spaceship .
+
+<http://saraaymericradhi.org/movie/293660> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/293660/content> .
+
+<http://saraaymericradhi.org/movie/293660/content> a :MovieContent;
+  :hasKeyword keywords:AfterCreditsStinger, keywords:BasedOnComic, keywords:DuringCreditsStinger,
+    keywords:MarvelComic, keywords:Superhero .
+
+<http://saraaymericradhi.org/movie/297761> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/297761/content> .
+
+<http://saraaymericradhi.org/movie/297761/content> a :MovieContent;
+  :hasKeyword keywords:Superhero .
+
+<http://saraaymericradhi.org/movie/297762> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/297762/content> .
+
+<http://saraaymericradhi.org/movie/297762/content> a :MovieContent;
+  :hasKeyword keywords:BasedOnComic, keywords:Hero, keywords:SuperPowers, keywords:Superhero .
+
+<http://saraaymericradhi.org/movie/321612> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/321612/content> .
+
+<http://saraaymericradhi.org/movie/321612/content> a :MovieContent;
+  :hasKeyword keywords:Magic, keywords:ThreeD .
+
+<http://saraaymericradhi.org/movie/329865> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/329865/content> .
+
+<http://saraaymericradhi.org/movie/329865/content> a :MovieContent;
+  :hasKeyword keywords:Alien, keywords:FemaleProtagonist .
+
+<http://saraaymericradhi.org/movie/330459> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/330459/content> .
+
+<http://saraaymericradhi.org/movie/330459/content> a :MovieContent;
+  :hasKeyword keywords:Alien, keywords:FemaleProtagonist, keywords:Space, keywords:SpaceOpera,
+    keywords:Spaceship .
+
+<http://saraaymericradhi.org/movie/337339> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/337339/content> .
+
+<http://saraaymericradhi.org/movie/337339/content> a :MovieContent;
+  :hasKeyword keywords:NewYorkCity, keywords:Sequel, keywords:ThreeD .
+
+<http://saraaymericradhi.org/movie/348> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/348/content> .
+
+<http://saraaymericradhi.org/movie/348/content> a :MovieContent;
+  :hasKeyword keywords:Alien, keywords:Dystopia, keywords:FemaleProtagonist, keywords:Space,
+    keywords:Spaceship .
+
+<http://saraaymericradhi.org/movie/36657> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/36657/content> .
+
+<http://saraaymericradhi.org/movie/36657/content> a :MovieContent;
+  :hasKeyword keywords:BasedOnComic, keywords:MarvelComic, keywords:Mutant, keywords:Superhero .
+
+<http://saraaymericradhi.org/movie/37165> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/37165/content> .
+
+<http://saraaymericradhi.org/movie/37165/content> a :MovieContent;
+  :hasKeyword keywords:Dystopia .
+
+<http://saraaymericradhi.org/movie/37724> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/37724/content> .
+
+<http://saraaymericradhi.org/movie/37724/content> a :MovieContent;
+  :hasKeyword keywords:IMAX .
+
+<http://saraaymericradhi.org/movie/381288> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/381288/content> .
+
+<http://saraaymericradhi.org/movie/381288/content> a :MovieContent;
+  :hasKeyword keywords:SuperPowers, keywords:Violence .
+
+<http://saraaymericradhi.org/movie/393> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/393/content> .
+
+<http://saraaymericradhi.org/movie/393/content> a :MovieContent;
+  :hasKeyword keywords:AfterCreditsStinger, keywords:DuringCreditsStinger .
+
+<http://saraaymericradhi.org/movie/41154> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/41154/content> .
+
+<http://saraaymericradhi.org/movie/41154/content> a :MovieContent;
+  :hasKeyword keywords:Alien, keywords:TimeTravel .
+
+<http://saraaymericradhi.org/movie/424> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/424/content> .
+
+<http://saraaymericradhi.org/movie/424/content> a :MovieContent;
+  :hasKeyword keywords:Hero .
+
+<http://saraaymericradhi.org/movie/44214> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/44214/content> .
+
+<http://saraaymericradhi.org/movie/44214/content> a :MovieContent;
+  :hasKeyword keywords:NewYorkCity .
+
+<http://saraaymericradhi.org/movie/45243> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/45243/content> .
+
+<http://saraaymericradhi.org/movie/45243/content> a :MovieContent;
+  :hasKeyword keywords:DuringCreditsStinger .
+
+<http://saraaymericradhi.org/movie/49026> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/49026/content> .
+
+<http://saraaymericradhi.org/movie/49026/content> a :MovieContent;
+  :hasKeyword keywords:IMAX, keywords:Superhero .
+
+<http://saraaymericradhi.org/movie/49047> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/49047/content> .
+
+<http://saraaymericradhi.org/movie/49047/content> a :MovieContent;
+  :hasKeyword keywords:Space .
+
+<http://saraaymericradhi.org/movie/49051> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/49051/content> .
+
+<http://saraaymericradhi.org/movie/49051/content> a :MovieContent;
+  :hasKeyword keywords:Wizard .
+
+<http://saraaymericradhi.org/movie/49521> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/49521/content> .
+
+<http://saraaymericradhi.org/movie/49521/content> a :MovieContent;
+  :hasKeyword keywords:BasedOnComic, keywords:SuperPowers, keywords:Superhero .
+
+<http://saraaymericradhi.org/movie/49538> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/49538/content> .
+
+<http://saraaymericradhi.org/movie/49538/content> a :MovieContent;
+  :hasKeyword keywords:BasedOnComic, keywords:MarvelComic, keywords:Mutant, keywords:Superhero .
+
+<http://saraaymericradhi.org/movie/497> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/497/content> .
+
+<http://saraaymericradhi.org/movie/497/content> a :MovieContent;
+  :hasKeyword keywords:BasedOnNovel .
+
+<http://saraaymericradhi.org/movie/54138> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/54138/content> .
+
+<http://saraaymericradhi.org/movie/54138/content> a :MovieContent;
+  :hasKeyword keywords:Alien, keywords:Friendship, keywords:IMAX, keywords:Sequel, keywords:Space,
+    keywords:SpaceOpera, keywords:ThreeD .
+
+<http://saraaymericradhi.org/movie/550> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/550/content> .
+
+<http://saraaymericradhi.org/movie/550/content> a :MovieContent;
+  :hasKeyword keywords:Dystopia, keywords:Violence .
+
+<http://saraaymericradhi.org/movie/557> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/557/content> .
+
+<http://saraaymericradhi.org/movie/557/content> a :MovieContent;
+  :hasKeyword keywords:MarvelComic, keywords:Superhero .
+
+<http://saraaymericradhi.org/movie/558> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/558/content> .
+
+<http://saraaymericradhi.org/movie/558/content> a :MovieContent;
+  :hasKeyword keywords:MarvelComic, keywords:Sequel, keywords:Superhero .
+
+<http://saraaymericradhi.org/movie/562> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/562/content> .
+
+<http://saraaymericradhi.org/movie/562/content> a :MovieContent;
+  :hasKeyword keywords:BasedOnNovel, keywords:Murder, keywords:Violence .
+
+<http://saraaymericradhi.org/movie/56292> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/56292/content> .
+
+<http://saraaymericradhi.org/movie/56292/content> a :MovieContent;
+  :hasKeyword keywords:IMAX, keywords:Sequel .
+
+<http://saraaymericradhi.org/movie/57158> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/57158/content> .
+
+<http://saraaymericradhi.org/movie/57158/content> a :MovieContent;
+  :hasKeyword keywords:Wizard .
+
+<http://saraaymericradhi.org/movie/58> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/58/content> .
+
+<http://saraaymericradhi.org/movie/58/content> a :MovieContent;
+  :hasKeyword keywords:AfterCreditsStinger .
+
+<http://saraaymericradhi.org/movie/597> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/597/content> .
+
+<http://saraaymericradhi.org/movie/597/content> a :MovieContent;
+  :hasKeyword keywords:IMAX, keywords:ThreeD .
+
+<http://saraaymericradhi.org/movie/59967> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/59967/content> .
+
+<http://saraaymericradhi.org/movie/59967/content> a :MovieContent;
+  :hasKeyword keywords:Dystopia, keywords:Future, keywords:Murder, keywords:TimeTravel,
+    keywords:Violence .
+
+<http://saraaymericradhi.org/movie/603> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/603/content> .
+
+<http://saraaymericradhi.org/movie/603/content> a :MovieContent;
+  :hasKeyword keywords:ArtificialIntelligence, keywords:Dystopia .
+
+<http://saraaymericradhi.org/movie/607> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/607/content> .
+
+<http://saraaymericradhi.org/movie/607/content> a :MovieContent;
+  :hasKeyword keywords:Alien .
+
+<http://saraaymericradhi.org/movie/61791> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/61791/content> .
+
+<http://saraaymericradhi.org/movie/61791/content> a :MovieContent;
+  :hasKeyword keywords:Dystopia .
+
+<http://saraaymericradhi.org/movie/62177> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/62177/content> .
+
+<http://saraaymericradhi.org/movie/62177/content> a :MovieContent;
+  :hasKeyword keywords:AfterCreditsStinger, keywords:ThreeD .
+
+<http://saraaymericradhi.org/movie/64682> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/64682/content> .
+
+<http://saraaymericradhi.org/movie/64682/content> a :MovieContent;
+  :hasKeyword keywords:BasedOnNovel, keywords:ThreeD .
+
+<http://saraaymericradhi.org/movie/64688> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/64688/content> .
+
+<http://saraaymericradhi.org/movie/64688/content> a :MovieContent;
+  :hasKeyword keywords:DuringCreditsStinger .
+
+<http://saraaymericradhi.org/movie/64690> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/64690/content> .
+
+<http://saraaymericradhi.org/movie/64690/content> a :MovieContent;
+  :hasKeyword keywords:Violence .
+
+<http://saraaymericradhi.org/movie/6479> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/6479/content> .
+
+<http://saraaymericradhi.org/movie/6479/content> a :MovieContent;
+  :hasKeyword keywords:Dystopia .
+
+<http://saraaymericradhi.org/movie/671> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/671/content> .
+
+<http://saraaymericradhi.org/movie/671/content> a :MovieContent;
+  :hasKeyword keywords:BasedOnYoungAdultNovel, keywords:Magic .
+
+<http://saraaymericradhi.org/movie/672> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/672/content> .
+
+<http://saraaymericradhi.org/movie/672/content> a :MovieContent;
+  :hasKeyword keywords:AfterCreditsStinger, keywords:Magic .
+
+<http://saraaymericradhi.org/movie/673> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/673/content> .
+
+<http://saraaymericradhi.org/movie/673/content> a :MovieContent;
+  :hasKeyword keywords:AfterCreditsStinger, keywords:Magic, keywords:TimeTravel .
+
+<http://saraaymericradhi.org/movie/674> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/674/content> .
+
+<http://saraaymericradhi.org/movie/674/content> a :MovieContent;
+  :hasKeyword keywords:BasedOnYoungAdultNovel, keywords:Magic, keywords:Wizard .
+
+<http://saraaymericradhi.org/movie/675> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/675/content> .
+
+<http://saraaymericradhi.org/movie/675/content> a :MovieContent;
+  :hasKeyword keywords:Magic .
+
+<http://saraaymericradhi.org/movie/68718> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/68718/content> .
+
+<http://saraaymericradhi.org/movie/68718/content> a :MovieContent;
+  :hasKeyword keywords:AfterCreditsStinger, keywords:Friendship, keywords:Hero, keywords:Revenge .
+
+<http://saraaymericradhi.org/movie/68721> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/68721/content> .
+
+<http://saraaymericradhi.org/movie/68721/content> a :MovieContent;
+  :hasKeyword keywords:AfterCreditsStinger, keywords:BasedOnComic, keywords:MarvelCinematicUniverse,
+    keywords:MarvelComic, keywords:Superhero, keywords:ThreeD .
+
+<http://saraaymericradhi.org/movie/68726> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/68726/content> .
+
+<http://saraaymericradhi.org/movie/68726/content> a :MovieContent;
+  :hasKeyword keywords:DuringCreditsStinger, keywords:Dystopia, keywords:IMAX, keywords:ThreeD .
+
+<http://saraaymericradhi.org/movie/70160> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/70160/content> .
+
+<http://saraaymericradhi.org/movie/70160/content> a :MovieContent;
+  :hasKeyword keywords:BasedOnYoungAdultNovel, keywords:Dystopia, keywords:FemaleProtagonist .
+
+<http://saraaymericradhi.org/movie/70981> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/70981/content> .
+
+<http://saraaymericradhi.org/movie/70981/content> a :MovieContent;
+  :hasKeyword keywords:AfterCreditsStinger, keywords:Alien, keywords:Dystopia .
+
+<http://saraaymericradhi.org/movie/72105> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/72105/content> .
+
+<http://saraaymericradhi.org/movie/72105/content> a :MovieContent;
+  :hasKeyword keywords:Friendship .
+
+<http://saraaymericradhi.org/movie/72190> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/72190/content> .
+
+<http://saraaymericradhi.org/movie/72190/content> a :MovieContent;
+  :hasKeyword keywords:Dystopia .
+
+<http://saraaymericradhi.org/movie/752> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/752/content> .
+
+<http://saraaymericradhi.org/movie/752/content> a :MovieContent;
+  :hasKeyword keywords:Dystopia, keywords:Revenge .
+
+<http://saraaymericradhi.org/movie/75612> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/75612/content> .
+
+<http://saraaymericradhi.org/movie/75612/content> a :MovieContent;
+  :hasKeyword keywords:Dystopia, keywords:IMAX, keywords:Space .
+
+<http://saraaymericradhi.org/movie/75656> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/75656/content> .
+
+<http://saraaymericradhi.org/movie/75656/content> a :MovieContent;
+  :hasKeyword keywords:Magic, keywords:NewYorkCity .
+
+<http://saraaymericradhi.org/movie/76170> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/76170/content> .
+
+<http://saraaymericradhi.org/movie/76170/content> a :MovieContent;
+  :hasKeyword keywords:BasedOnComic, keywords:DuringCreditsStinger, keywords:MarvelComic,
+    keywords:Mutant, keywords:Superhero .
+
+<http://saraaymericradhi.org/movie/76338> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/76338/content> .
+
+<http://saraaymericradhi.org/movie/76338/content> a :MovieContent;
+  :hasKeyword keywords:AfterCreditsStinger, keywords:BasedOnComic, keywords:DuringCreditsStinger,
+    keywords:MarvelCinematicUniverse, keywords:MarvelComic, keywords:Superhero, keywords:ThreeD .
+
+<http://saraaymericradhi.org/movie/76341> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/76341/content> .
+
+<http://saraaymericradhi.org/movie/76341/content> a :MovieContent;
+  :hasKeyword keywords:Dystopia, keywords:Future .
+
+<http://saraaymericradhi.org/movie/767> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/767/content> .
+
+<http://saraaymericradhi.org/movie/767/content> a :MovieContent;
+  :hasKeyword keywords:Magic .
+
+<http://saraaymericradhi.org/movie/77> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/77/content> .
+
+<http://saraaymericradhi.org/movie/77/content> a :MovieContent;
+  :hasKeyword keywords:Revenge .
+
+<http://saraaymericradhi.org/movie/77338> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/77338/content> .
+
+<http://saraaymericradhi.org/movie/77338/content> a :MovieContent;
+  :hasKeyword keywords:DuringCreditsStinger, keywords:Friendship .
+
+<http://saraaymericradhi.org/movie/78> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/78/content> .
+
+<http://saraaymericradhi.org/movie/78/content> a :MovieContent;
+  :hasKeyword keywords:ArtificialIntelligence, keywords:Dystopia .
+
+<http://saraaymericradhi.org/movie/808> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/808/content> .
+
+<http://saraaymericradhi.org/movie/808/content> a :MovieContent;
+  :hasKeyword keywords:Magic .
+
+<http://saraaymericradhi.org/movie/82690> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/82690/content> .
+
+<http://saraaymericradhi.org/movie/82690/content> a :MovieContent;
+  :hasKeyword keywords:AfterCreditsStinger, keywords:DuringCreditsStinger .
+
+<http://saraaymericradhi.org/movie/82693> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/82693/content> .
+
+<http://saraaymericradhi.org/movie/82693/content> a :MovieContent;
+  :hasKeyword keywords:BasedOnNovel, keywords:Friendship .
+
+<http://saraaymericradhi.org/movie/82992> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/82992/content> .
+
+<http://saraaymericradhi.org/movie/82992/content> a :MovieContent;
+  :hasKeyword keywords:Sequel .
+
+<http://saraaymericradhi.org/movie/862> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/862/content> .
+
+<http://saraaymericradhi.org/movie/862/content> a :MovieContent;
+  :hasKeyword keywords:Friendship .
+
+<http://saraaymericradhi.org/movie/863> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/863/content> .
+
+<http://saraaymericradhi.org/movie/863/content> a :MovieContent;
+  :hasKeyword keywords:DuringCreditsStinger, keywords:Friendship .
+
+<http://saraaymericradhi.org/movie/920> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/920/content> .
+
+<http://saraaymericradhi.org/movie/920/content> a :MovieContent;
+  :hasKeyword keywords:AfterCreditsStinger, keywords:DuringCreditsStinger, keywords:Friendship .
+
+<http://saraaymericradhi.org/movie/93456> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/93456/content> .
+
+<http://saraaymericradhi.org/movie/93456/content> a :MovieContent;
+  :hasKeyword keywords:DuringCreditsStinger, keywords:ThreeD .
+
+<http://saraaymericradhi.org/movie/9806> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/9806/content> .
+
+<http://saraaymericradhi.org/movie/9806/content> a :MovieContent;
+  :hasKeyword keywords:Hero, keywords:Superhero .
+
+<http://saraaymericradhi.org/movie/99861> a :Movie;
+  :hasContent <http://saraaymericradhi.org/movie/99861/content> .
+
+<http://saraaymericradhi.org/movie/99861/content> a :MovieContent;
+  :hasKeyword keywords:BasedOnComic, keywords:DuringCreditsStinger, keywords:MarvelCinematicUniverse,
+    keywords:MarvelComic, keywords:Sequel, keywords:Superhero, keywords:ThreeD .

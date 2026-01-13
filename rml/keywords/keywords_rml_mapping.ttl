@@ -1,0 +1,48 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix : <http://saraaymericradhi.org/movie-ontology#> .
+@prefix keywords: <http://saraaymericradhi.org/movie-ontology/keywords#> .
+@base <http://saraaymericradhi.org/movie-ontology/mappings/> .
+
+<#MovieKeywordMapping> a rr:TriplesMap ;
+  rml:logicalSource [
+    rml:source "/data/keywords/keywords_for_rml.csv" ;
+    rml:referenceFormulation ql:CSV
+  ] ;
+
+  # Map the movie by its ID (using strict URI scheme)
+  rr:subjectMap [
+    rr:template "http://saraaymericradhi.org/movie/{movieId}" ;
+    rr:class :Movie
+  ] ;
+
+  # Link movie to its content node
+  rr:predicateObjectMap [
+    rr:predicate :hasContent ;
+    rr:objectMap [
+      rr:template "http://saraaymericradhi.org/movie/{movieId}/content" ;
+      rr:termType rr:IRI
+    ]
+  ] .
+
+<#MovieContentMapping> a rr:TriplesMap ;
+  rml:logicalSource [
+    rml:source "/data/keywords/keywords_for_rml.csv" ;
+    rml:referenceFormulation ql:CSV
+  ] ;
+
+  # The content node
+  rr:subjectMap [
+    rr:template "http://saraaymericradhi.org/movie/{movieId}/content" ;
+    rr:class :MovieContent
+  ] ;
+
+  # Link content to keyword URI
+  rr:predicateObjectMap [
+    rr:predicate :hasKeyword ;
+    rr:objectMap [
+      rr:column "keywordUri" ;
+      rr:termType rr:IRI
+    ]
+  ] .
