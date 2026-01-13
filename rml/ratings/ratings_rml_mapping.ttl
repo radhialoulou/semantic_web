@@ -1,0 +1,71 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix : <http://saraaymericradhi.org/movie-ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@base <http://saraaymericradhi.org/movie-ontology/mappings/> .
+
+<#MovieRatingLinkMapping> a rr:TriplesMap ;
+  rml:logicalSource [
+    rml:source "/data/movies/ratings_top200.csv" ;
+    rml:referenceFormulation ql:CSV
+  ] ;
+
+  rr:subjectMap [
+    rr:template "http://saraaymericradhi.org/movie/{movieId}" ;
+    rr:class :Movie
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate :hasRating ;
+    rr:objectMap [
+      rr:template "http://saraaymericradhi.org/movie/rating/{userId}_{movieId}" ;
+      rr:termType rr:IRI
+    ]
+  ] .
+
+<#RatingMapping> a rr:TriplesMap ;
+  rml:logicalSource [
+    rml:source "/data/movies/ratings_top200.csv" ;
+    rml:referenceFormulation ql:CSV
+  ] ;
+
+  rr:subjectMap [
+    rr:template "http://saraaymericradhi.org/movie/rating/{userId}_{movieId}" ;
+    rr:class :Rating
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate :hasValue ;
+    rr:objectMap [
+      rr:column "rating" ;
+      rr:datatype xsd:float
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate :givenBy ;
+    rr:objectMap [
+      rr:template "http://saraaymericradhi.org/movie/user/{userId}" ;
+      rr:termType rr:IRI
+    ]
+  ] .
+
+<#UserMapping> a rr:TriplesMap ;
+  rml:logicalSource [
+    rml:source "/data/movies/ratings_top200.csv" ;
+    rml:referenceFormulation ql:CSV
+  ] ;
+
+  rr:subjectMap [
+    rr:template "http://saraaymericradhi.org/movie/user/{userId}" ;
+    rr:class :User
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate :hasUserId ;
+    rr:objectMap [
+      rr:column "userId" ;
+      rr:datatype xsd:integer
+    ]
+  ] .
