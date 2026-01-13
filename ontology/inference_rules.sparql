@@ -1,0 +1,64 @@
+# =============================================================================
+# SPARQL CONSTRUCT Rules - Inférence Director/Writer
+# =============================================================================
+# Exécuter ces requêtes après le chargement des données RML
+# pour inférer les classes Director/Writer et les propriétés hasDirector/hasWriter
+
+PREFIX movie: <http://saraaymericradhi.org/movie-ontology#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+# =============================================================================
+# 1. Inférer la classe Director
+# CrewMember avec job="Director" → rdf:type Director
+# =============================================================================
+
+CONSTRUCT {
+    ?crew rdf:type movie:Director .
+}
+WHERE {
+    ?crew rdf:type movie:CrewMember ;
+          movie:job "Director" .
+}
+
+# =============================================================================
+# 2. Inférer la classe Writer
+# CrewMember avec job="Writer" → rdf:type Writer
+# =============================================================================
+
+CONSTRUCT {
+    ?crew rdf:type movie:Writer .
+}
+WHERE {
+    ?crew rdf:type movie:CrewMember ;
+          movie:job "Writer" .
+}
+
+# =============================================================================
+# 3. Inférer hasDirector
+# MovieProduction hasCrewMember ?crew, ?crew a Director → hasDirector ?crew
+# =============================================================================
+
+CONSTRUCT {
+    ?production movie:hasDirector ?director .
+}
+WHERE {
+    ?production rdf:type movie:MovieProduction ;
+                movie:hasCrewMember ?director .
+    ?director rdf:type movie:Director .
+}
+
+# =============================================================================
+# 4. Inférer hasWriter
+# MovieProduction hasCrewMember ?crew, ?crew a Writer → hasWriter ?crew
+# =============================================================================
+
+CONSTRUCT {
+    ?production movie:hasWriter ?writer .
+}
+WHERE {
+    ?production rdf:type movie:MovieProduction ;
+                movie:hasCrewMember ?writer .
+    ?writer rdf:type movie:Writer .
+}
+
