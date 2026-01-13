@@ -98,12 +98,6 @@
     rdfs:label "has release date"@en ;
     rdfs:comment "Official release date of the movie"@en .
 
-:hasWriter rdf:type owl:ObjectProperty ;
-    rdfs:domain :MovieProduction ;
-    rdfs:range :Person ;
-    rdfs:label "has writer"@en ;
-    rdfs:comment "Relates a movie production to its writer(s)"@en .
-
 :hasLanguage rdf:type owl:DatatypeProperty ;
     rdfs:domain :MovieInformation ;
     rdfs:range xsd:string ;
@@ -162,10 +156,18 @@
 # MOVIE PRODUCTION - Object & Data Properties
 
 :hasDirector rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf :hasCrewMember ;
     rdfs:domain :MovieProduction ;
-    rdfs:range :Person ;
+    rdfs:range :Director ;
     rdfs:label "has director"@en ;
     rdfs:comment "The director(s) of the movie"@en .
+
+:hasWriter rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf :hasCrewMember ;
+    rdfs:domain :MovieProduction ;
+    rdfs:range :Writer ;
+    rdfs:label "has writer"@en ;
+    rdfs:comment "The writer(s)/screenwriter(s) of the movie"@en .
 
 :hasCastMember rdf:type owl:ObjectProperty ;
     rdfs:domain :MovieProduction ;
@@ -215,6 +217,16 @@
     rdfs:subClassOf :Person ;
     rdfs:label "Crew Member"@en ;
     rdfs:comment "A technical or production crew member"@en .
+
+:Director rdf:type owl:Class ;
+    rdfs:subClassOf :CrewMember ;
+    rdfs:label "Director"@en ;
+    rdfs:comment "A person who directs a movie (crew member with job 'Director')"@en .
+
+:Writer rdf:type owl:Class ;
+    rdfs:subClassOf :CrewMember ;
+    rdfs:label "Writer"@en ;
+    rdfs:comment "A person who writes the screenplay (crew member with job 'Writer')"@en .
 
 :job rdf:type owl:DatatypeProperty ;
     rdfs:domain :CrewMember ;
@@ -297,11 +309,6 @@
     rdfs:label "Collection"@en ;
     rdfs:comment "A movie collection or franchise"@en .
 
-:belongsToCollection rdf:type owl:ObjectProperty ;
-    rdfs:domain :Movie ;
-    rdfs:range :Collection ;
-    rdfs:label "belongs to collection"@en ;
-    rdfs:comment "The collection/franchise the movie belongs to"@en .
 
 :collectionName rdf:type owl:DatatypeProperty ;
     rdfs:domain :Collection ;
@@ -313,10 +320,17 @@
 
 :directedBy rdf:type owl:ObjectProperty ;
     rdfs:domain :Movie ;
-    rdfs:range :Person ;
+    rdfs:range :Director ;
     rdfs:label "directed by"@en ;
     rdfs:comment "Direct link from Movie to Director (inferred)"@en ;
     owl:propertyChainAxiom ( :hasProduction :hasDirector ) .
+
+:writtenBy rdf:type owl:ObjectProperty ;
+    rdfs:domain :Movie ;
+    rdfs:range :Writer ;
+    rdfs:label "written by"@en ;
+    rdfs:comment "Direct link from Movie to Writer (inferred)"@en ;
+    owl:propertyChainAxiom ( :hasProduction :hasWriter ) .
 
 :actedIn rdf:type owl:ObjectProperty ;
     rdfs:domain :CastMember ;
@@ -340,8 +354,8 @@
     rdfs:domain :Movie ;
     rdfs:range :Movie ;
     rdfs:label "same collection"@en ;
-    rdfs:comment "Movies belonging to the same franchise/collection"@en .
-    owl:propertyChainAxiom ( :belongsToCollection ^:belongsToCollection ) .
+    rdfs:comment "Movies belonging to the same franchise/collection"@en ;
+    owl:propertyChainAxiom ( :hasContent :hasCollection ^:hasCollection ^:hasContent ) .
     
 # Co-réalisateurs : deux personnes qui ont co-dirigé un film
 :coDirectedWith rdf:type owl:ObjectProperty , owl:SymmetricProperty ;
