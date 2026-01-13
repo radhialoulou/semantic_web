@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineSemantic - Trouvez votre prochain film</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #e50914;
+            --dark: #141414;
+            --light: #f5f5f1;
+            --gray: #808080;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: var(--dark);
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Layout */
+        .app-container {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            min-height: 100vh;
+        }
+
+        /* Sidebar Filters */
+        .sidebar {
+            background-color: #000;
+            padding: 30px;
+            border-right: 1px solid #333;
+            overflow-y: auto;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            box-sizing: border-box;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .filter-section {
+            margin-bottom: 25px;
+        }
+
+        .filter-section h3 {
+            font-size: 14px;
+            text-transform: uppercase;
+            color: var(--gray);
+            margin-bottom: 15px;
+            letter-spacing: 0.5px;
+        }
+
+        /* Form Controls */
+        label { display: block; margin-bottom: 8px; font-size: 14px; }
+        
+        select, input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            background: #333;
+            border: 1px solid #444;
+            border-radius: 4px;
+            color: white;
+            font-size: 14px;
+            box-sizing: border-box;
+            transition: border-color 0.2s;
+        }
+        
+        select:focus, input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .range-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .range-slider-container {
+            position: relative;
+            padding-top: 20px;
+        }
+        
+        input[type=range] {
+            width: 100%;
+            background: transparent;
+            cursor: pointer;
+        }
+
+        /* Checkbox Grid for Genres */
+        .genre-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            font-size: 13px;
+        }
+        
+        .checkbox-label input {
+            margin-right: 8px;
+            accent-color: var(--primary);
+        }
+
+        /* Results Area */
+        .main-content {
+            padding: 40px;
+            background: #181818;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .results-count {
+            color: var(--gray);
+        }
+
+        /* Movie Grid */
+        .movie-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        /* Movie Card */
+        .movie-card {
+            background: #2f2f2f;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .movie-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+            z-index: 2;
+        }
+
+        .card-image {
+            height: 200px; /* Placeholder height */
+            background: linear-gradient(45deg, #1a1a1a, #2a2a2a);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #555;
+            font-size: 40px;
+            position: relative;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .card-rating {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0,0,0,0.8);
+            border: 1px solid #444;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+            color: #46d369;
+        }
+
+        .card-content {
+            padding: 15px;
+        }
+
+        .card-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin: 0 0 10px 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-meta {
+            font-size: 12px;
+            color: #aaa;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .card-genres {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-bottom: 12px;
+        }
+
+        .genre-pill {
+            font-size: 10px;
+            padding: 2px 6px;
+            border-radius: 10px;
+            background: #444;
+            color: #ddd;
+        }
+
+        .card-people {
+            font-size: 12px;
+            color: #ccc;
+            border-top: 1px solid #444;
+            padding-top: 10px;
+        }
+        .card-people i { width: 15px; color: var(--primary); }
+
+        .btn-reset {
+            background-color: transparent;
+            border: 1px solid #666;
+            color: white;
+            padding: 8px 15px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 12px;
+            transition: all 0.2s;
+        }
+        .btn-reset:hover { border-color: white; }
+
+        .btn-sparql {
+            background-color: #333;
+            color: #ddd;
+            border: 1px dashed #666;
+            padding: 8px 15px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 12px;
+            width: 100%;
+            margin-top: 10px;
+            text-align: center;
+        }
+        .btn-sparql:hover { background-color: #444; color: white; border-color: #888; }
+
+        #sparql-container {
+            background-color: #282a36;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 13px;
+            border-left: 5px solid #bd93f9;
+            display: none;
+            white-space: pre-wrap;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+
+<div class="app-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="logo">
+            <i class="fas fa-project-diagram"></i> CineSemantic
+        </div>
+
+        <div class="filter-section">
+            <h3><i class="fas fa-search"></i> Recherche Rapide</h3>
+            <input type="text" id="f-search" placeholder="Titre, Mots-clés..." onkeyup="filterMovies()">
+        </div>
+
+        <div class="filter-section">
+            <h3><i class="fas fa-film"></i> Genres (:hasGenre)</h3>
+            <div class="genre-grid" id="genre-container">
+                <!-- Checkboxes generated by JS -->
+            </div>
+        </div>
+
+        <div class="filter-section">
+            <h3><i class="fas fa-star"></i> Note Minimale (:voteAvg)</h3>
+            <div class="range-group">
+                <input type="range" id="f-rating" min="0" max="10" step="0.5" value="0" oninput="updateRatingDisplay(this.value); filterMovies()">
+                <span id="rating-val" style="font-weight:bold; color:var(--primary); width:30px;">0+</span>
+            </div>
+        </div>
+
+        <div class="filter-section">
+            <h3><i class="fas fa-calendar-alt"></i> Année de sortie</h3>
+            <div class="range-group">
+                <select id="f-year-min" onchange="filterMovies()" style="width:48%">
+                    <option value="1900">Min</option>
+                    <!-- Years injected by JS -->
+                </select>
+                <select id="f-year-max" onchange="filterMovies()" style="width:48%">
+                    <option value="2026">Max</option>
+                    <!-- Years injected by JS -->
+                </select>
+            </div>
+        </div>
+
+        <div class="filter-section">
+            <h3><i class="fas fa-users"></i> Équipe Technique</h3>
+            <label>Réalisateur (:hasDirector)</label>
+            <input type="text" id="f-director" placeholder="ex: Christopher Nolan" onkeyup="filterMovies()">
+            
+            <label style="margin-top:10px;">Acteur (:hasCastMember)</label>
+            <input type="text" id="f-actor" placeholder="ex: Leonardo DiCaprio" onkeyup="filterMovies()">
+        </div>
+
+        <button class="btn-reset" onclick="resetFilters()">Réinitialiser les filtres</button>
+        <button class="btn-sparql" onclick="toggleSparql()"><i class="fas fa-code"></i> Voir la requête SPARQL</button>
+        
+        <div style="margin-top:30px; font-size:11px; color:#555; line-height:1.4;">
+            <p><strong>Info Demo:</strong> Cette interface simule l'interrogation de l'ontologie via des propriétés spécifiques (indiquées entre parenthèses). Aucune connexion serveur requise.</p>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="header-content">
+            <h2>Films Recommandés</h2>
+            <div class="results-count" id="count-display">Chargement...</div>
+        </div>
+
+        <div id="sparql-container">
+            <!-- SPARQL Query will appear here -->
+        </div>
+
+        <div id="movie-grid" class="movie-grid">
+            <!-- Cards generated by JS -->
+        </div>
+
+        <div id="empty-state" style="display:none; text-align:center; padding:50px; color:#666;">
+            <i class="fas fa-search" style="font-size:48px; margin-bottom:20px;"></i>
+            <p>Aucun film ne correspond à vos critères de recherche.</p>
+        </div>
+    </main>
+</div>
+
+<script>
+    // --- MOCK DATABASE (Richer dataset for 'User' scenario) ---
+    const movieData = [
+        {
+            id: 1,
+            title: "Inception",
+            year: 2010,
+            duration: 148,
+            rating: 8.8,
+            genres: ["Science Fiction", "Action", "Adventure"],
+            director: "Christopher Nolan",
+            cast: ["Leonardo DiCaprio", "Joseph Gordon-Levitt", "Elliot Page"],
+            keywords: ["dream", "subconscious", "thief"],
+            posterColor: "#2c3e50"
+        },
+        {
+            id: 2,
+            title: "The Intouchables",
+            year: 2011,
+            duration: 112,
+            rating: 8.5,
+            genres: ["Drama", "Comedy"],
+            director: "Olivier Nakache",
+            cast: ["François Cluzet", "Omar Sy"],
+            keywords: ["friendship", "disability", "paris"],
+            posterColor: "#d35400"
+        },
+        {
+            id: 3,
+            title: "Avatar",
+            year: 2009,
+            duration: 162,
+            rating: 7.8,
+            genres: ["Science Fiction", "Action", "Fantasy"],
+            director: "James Cameron",
+            cast: ["Sam Worthington", "Zoe Saldana"],
+            keywords: ["alien", "planet", "nature"],
+            posterColor: "#2980b9"
+        },
+        {
+            id: 4,
+            title: "Parasite",
+            year: 2019,
+            duration: 132,
+            rating: 8.6,
+            genres: ["Comedy", "Thriller", "Drama"],
+            director: "Bong Joon-ho",
+            cast: ["Song Kang-ho", "Lee Sun-kyun"],
+            keywords: ["class struggle", "family", "korea"],
+            posterColor: "#27ae60"
+        },
+        {
+            id: 5,
+            title: "The Dark Knight",
+            year: 2008,
+            duration: 152,
+            rating: 9.0,
+            genres: ["Action", "Crime", "Drama"],
+            director: "Christopher Nolan",
+            cast: ["Christian Bale", "Heath Ledger", "Michael Caine"],
+            keywords: ["superhero", "vigilante", "gotham"],
+            posterColor: "#1a1a1a"
+        },
+        {
+            id: 6,
+            title: "Pulp Fiction",
+            year: 1994,
+            duration: 154,
+            rating: 8.9,
+            genres: ["Crime", "Drama"],
+            director: "Quentin Tarantino",
+            cast: ["John Travolta", "Uma Thurman", "Samuel L. Jackson"],
+            keywords: ["violence", "gangster", "cult"],
+            posterColor: "#8e44ad"
+        },
+        {
+            id: 7,
+            title: "Amélie",
+            year: 2001,
+            duration: 122,
+            rating: 8.3,
+            genres: ["Comedy", "Romance"],
+            director: "Jean-Pierre Jeunet",
+            cast: ["Audrey Tautou", "Mathieu Kassovitz"],
+            keywords: ["paris", "love", "quirky"],
+            posterColor: "#c0392b"
+        },
+        {
+            id: 8,
+            title: "Interstellar",
+            year: 2014,
+            duration: 169,
+            rating: 8.6,
+            genres: ["Science Fiction", "Drama", "Adventure"],
+            director: "Christopher Nolan",
+            cast: ["Matthew McConaughey", "Anne Hathaway", "Jessica Chastain"],
+            keywords: ["space", "black hole", "future"],
+            posterColor: "#34495e"
+        },
+        {
+            id: 9,
+            title: "Spirited Away",
+            year: 2001,
+            duration: 125,
+            rating: 8.6,
+            genres: ["Animation", "Family", "Fantasy"],
+            director: "Hayao Miyazaki",
+            cast: ["Daveigh Chase", "Suzanne Pleshette"],
+            keywords: ["magic", "spirit", "japan"],
+            posterColor: "#e67e22"
+        },
+        {
+            id: 10,
+            title: "The Matrix",
+            year: 1999,
+            duration: 136,
+            rating: 8.7,
+            genres: ["Action", "Science Fiction"],
+            director: "Lana Wachowski",
+            cast: ["Keanu Reeves", "Laurence Fishburne"],
+            keywords: ["ai", "simulation", "cyberpunk"],
+            posterColor: "#16a085"
+        },
+        {
+            id: 11,
+            title: "Get Out",
+            year: 2017,
+            duration: 104,
+            rating: 7.7,
+            genres: ["Horror", "Mystery", "Thriller"],
+            director: "Jordan Peele",
+            cast: ["Daniel Kaluuya", "Allison Williams"],
+            keywords: ["racism", "hypnosis", "secrets"],
+            posterColor: "#444"
+        },
+         {
+            id: 12,
+            title: "La Haine",
+            year: 1995,
+            duration: 98,
+            rating: 8.1,
+            genres: ["Drama", "Crime"],
+            director: "Mathieu Kassovitz",
+            cast: ["Vincent Cassel", "Hubert Koundé"],
+            keywords: ["urban", "black and white", "france"],
+            posterColor: "#000"
+        }
+    ];
+
+    // --- INIT ---
+    // Extract unique genres
+    const allGenres = [...new Set(movieData.flatMap(m => m.genres))].sort();
+
+    // Populate Filters
+    function initFilters() {
+        // Genres
+        const genreContainer = document.getElementById('genre-container');
+        allGenres.forEach(genre => {
+            const label = document.createElement('label');
+            label.className = 'checkbox-label';
+            label.innerHTML = `<input type="checkbox" value="${genre}" onchange="filterMovies()"> ${genre}`;
+            genreContainer.appendChild(label);
+        });
+
+        // Years
+        const yearSelects = [document.getElementById('f-year-min'), document.getElementById('f-year-max')];
+        const years = [...new Set(movieData.map(m => m.year))].sort((a,b) => a-b);
+        yearSelects.forEach(sel => {
+            years.forEach(y => {
+                const opt = document.createElement('option');
+                opt.value = y;
+                opt.text = y;
+                sel.appendChild(opt);
+            });
+        });
+    }
+
+    // --- MAIN FILTER LOGIC ---
+    function filterMovies() {
+        // Get values
+        const search = document.getElementById('f-search').value.toLowerCase();
+        const minRating = parseFloat(document.getElementById('f-rating').value);
+        const minYear = parseInt(document.getElementById('f-year-min').value);
+        const maxYear = parseInt(document.getElementById('f-year-max').value);
+        const directorSearch = document.getElementById('f-director').value.toLowerCase();
+        const actorSearch = document.getElementById('f-actor').value.toLowerCase();
+
+        // Get checked genres
+        const checkedGenres = Array.from(document.querySelectorAll('#genre-container input:checked')).map(cb => cb.value);
+
+        // Filter
+        const filtered = movieData.filter(m => {
+            // Text Search (Title + Keywords)
+            const matchesSearch = !search || 
+                                  m.title.toLowerCase().includes(search) || 
+                                  m.keywords.some(k => k.toLowerCase().includes(search));
+
+            // Rating
+            const matchesRating = m.rating >= minRating;
+
+            // Year
+            const matchesYear = m.year >= minYear && m.year <= maxYear;
+
+            // Director
+            const matchesDirector = !directorSearch || m.director.toLowerCase().includes(directorSearch);
+
+            // Actor
+            const matchesActor = !actorSearch || m.cast.some(c => c.toLowerCase().includes(actorSearch));
+
+            // Genre (OR logic within genres - typical for movie finders, or AND depending on preference. Let's use AND for narrowing)
+            // If No genre checked, show all. If genres checked, movie must have ALL checked genres (Strict) OR ANY (Loose). 
+            // Better UX usually -> ANY (User wants Action OR Sci-Fi). Let's go with ANY.
+            const matchesGenre = checkedGenres.length === 0 || checkedGenres.some(g => m.genres.includes(g));
+
+            return matchesSearch && matchesRating && matchesYear && matchesDirector && matchesActor && matchesGenre;
+        });
+
+        renderMovies(filtered);
+        updateSparql();
+    }
+
+    // --- RENDER ---
+    function renderMovies(movies) {
+        const grid = document.getElementById('movie-grid');
+        const empty = document.getElementById('empty-state');
+        const count = document.getElementById('count-display');
+        
+        grid.innerHTML = '';
+        count.textContent = `${movies.length} film(s) trouvé(s)`;
+
+        if (movies.length === 0) {
+            empty.style.display = 'block';
+            return;
+        } else {
+            empty.style.display = 'none';
+        }
+
+        movies.forEach(m => {
+            const card = document.createElement('div');
+            card.className = 'movie-card';
+            
+            // Generate genre pills
+            const pills = m.genres.map(g => `<span class="genre-pill">${g}</span>`).join('');
+            
+            // Generate cast string
+            const castStr = m.cast.slice(0, 2).join(', ') + (m.cast.length > 2 ? '...' : '');
+
+            card.innerHTML = `
+                <div class="card-image" style="background:${m.posterColor}">
+                    <i class="fas fa-film"></i>
+                    <div class="card-rating">${m.rating}</div>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title" title="${m.title}">${m.title}</h3>
+                    <div class="card-meta">
+                        <span>${m.year}</span>
+                        <span>${Math.floor(m.duration/60)}h ${m.duration%60}min</span>
+                    </div>
+                    <div class="card-genres">${pills}</div>
+                    <div class="card-people">
+                        <div><i class="fas fa-video"></i> ${m.director}</div>
+                        <div style="margin-top:4px;"><i class="fas fa-user"></i> ${castStr}</div>
+                    </div>
+                </div>
+            `;
+            grid.appendChild(card);
+        });
+    }
+
+    function updateRatingDisplay(val) {
+        document.getElementById('rating-val').textContent = val + '+';
+    }
+
+    function resetFilters() {
+        document.getElementById('f-search').value = '';
+        document.getElementById('f-rating').value = 0;
+        updateRatingDisplay(0);
+        document.getElementById('f-year-min').value = 1900;
+        document.getElementById('f-year-max').value = 2026;
+        document.getElementById('f-director').value = '';
+        document.getElementById('f-actor').value = '';
+        
+        document.querySelectorAll('#genre-container input').forEach(cb => cb.checked = false);
+        
+        filterMovies();
+    }
+
+    function toggleSparql() {
+        const container = document.getElementById('sparql-container');
+        if (container.style.display === 'none' || container.style.display === '') {
+            container.style.display = 'block';
+        } else {
+            container.style.display = 'none';
+        }
+    }
+
+    function updateSparql() {
+        const search = document.getElementById('f-search').value;
+        const rating = document.getElementById('f-rating').value;
+        const yearMin = document.getElementById('f-year-min').value;
+        const yearMax = document.getElementById('f-year-max').value;
+        const director = document.getElementById('f-director').value;
+        const actor = document.getElementById('f-actor').value;
+        
+        // Get checked genres
+        const genres = Array.from(document.querySelectorAll('#genre-container input:checked')).map(cb => cb.value);
+
+        let query = `PREFIX : <http://saraaymericradhi.org/movie-ontology#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?movie ?title ?voteAvg ?releaseDate
+WHERE {
+  ?movie a :Movie ;
+         :hasTitle ?title .
+
+  # Note Minimale (:voteAvg)
+  ?movie :hasResult [ :hasVoteAverage ?voteAvg ] .
+  FILTER(?voteAvg >= ${rating})
+
+  # Filtre par Année (:hasReleaseDate)
+  ?movie :hasInformation [ :hasReleaseDate ?releaseDate ] .
+  FILTER(YEAR(?releaseDate) >= ${yearMin} && YEAR(?releaseDate) <= ${yearMax})`;
+
+        if (search) {
+            query += `\n\n  # Recherche textuelle (Titre)
+  FILTER(CONTAINS(LCASE(?title), "${search.toLowerCase()}"))`;
+        }
+
+        if (director) {
+            query += `\n\n  # Filtre Réalisateur (:directedBy)
+  ?movie :directedBy ?director .
+  ?director :personName ?dirName .
+  FILTER(CONTAINS(LCASE(?dirName), "${director.toLowerCase()}"))`;
+        }
+
+        if (actor) {
+            query += `\n\n  # Filtre Acteur (:hasCastMember)
+  ?movie :hasProduction [ :hasCastMember [ :performedBy [ :personName ?actorName ] ] ] .
+  FILTER(CONTAINS(LCASE(?actorName), "${actor.toLowerCase()}"))`;
+        }
+
+        if (genres.length > 0) {
+            query += `\n\n  # Filtre Genres (:hasGenre)
+  ?movie :hasContent [ :hasGenre [ rdfs:label ?genreLabel ] ] .
+  FILTER(?genreLabel IN (${genres.map(g => `"${g}"`).join(', ')}))`;
+        }
+
+        query += `\n} LIMIT 50`;
+
+        document.getElementById('sparql-container').textContent = query;
+    }
+
+    // Initialize
+    window.onload = () => {
+        initFilters();
+        filterMovies();
+    };
+
+</script>
+
+</body>
+</html>
