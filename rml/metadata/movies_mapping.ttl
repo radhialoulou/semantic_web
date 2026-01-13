@@ -1,0 +1,302 @@
+@base <http://saraaymericradhi.org/rml/> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <http://schema.org/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix movie: <http://saraaymericradhi.org/movie-ontology#> .
+@prefix genres: <http://saraaymericradhi.org/movie-ontology/genres#> .
+
+# =============================================================================
+# SOURCE: Movies Metadata (normalized CSV)
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# TriplesMap: Movie
+# -----------------------------------------------------------------------------
+<#MovieMap>
+    rml:logicalSource [
+        rml:source "movies_normalized.csv" ;
+        rml:referenceFormulation ql:CSV
+    ] ;
+    
+    rr:subjectMap [
+        rr:template "http://saraaymericradhi.org/movie/{id}" ;
+        rr:class movie:Movie
+    ] ;
+    
+    # Direct properties on Movie
+    rr:predicateObjectMap [
+        rr:predicate movie:hasTitle ;
+        rr:objectMap [ rml:reference "title" ; rr:datatype xsd:string ]
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate movie:hasTagline ;
+        rr:objectMap [ rml:reference "tagline" ; rr:datatype xsd:string ]
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate rdfs:label ;
+        rr:objectMap [ rml:reference "title" ; rr:language "en" ]
+    ] ;
+    
+    # Link to IMDB
+    rr:predicateObjectMap [
+        rr:predicate schema:sameAs ;
+        rr:objectMap [ rr:template "https://www.imdb.com/title/{imdb_id}/" ; rr:termType rr:IRI ]
+    ] ;
+    
+    # Link to MovieInformation
+    rr:predicateObjectMap [
+        rr:predicate movie:hasInformation ;
+        rr:objectMap [ rr:template "http://saraaymericradhi.org/movie/{id}/information" ]
+    ] ;
+    
+    # Link to MovieResult
+    rr:predicateObjectMap [
+        rr:predicate movie:hasResult ;
+        rr:objectMap [ rr:template "http://saraaymericradhi.org/movie/{id}/result" ]
+    ] ;
+    
+    # Link to MovieProduction
+    rr:predicateObjectMap [
+        rr:predicate movie:hasProduction ;
+        rr:objectMap [ rr:template "http://saraaymericradhi.org/movie/{id}/production" ]
+    ] ;
+    
+    # Link to MovieContent
+    rr:predicateObjectMap [
+        rr:predicate movie:hasContent ;
+        rr:objectMap [ rr:template "http://saraaymericradhi.org/movie/{id}/content" ]
+    ] .
+
+
+# -----------------------------------------------------------------------------
+# TriplesMap: MovieInformation
+# -----------------------------------------------------------------------------
+<#MovieInformationMap>
+    rml:logicalSource [
+        rml:source "movies_normalized.csv" ;
+        rml:referenceFormulation ql:CSV
+    ] ;
+    
+    rr:subjectMap [
+        rr:template "http://saraaymericradhi.org/movie/{id}/information" ;
+        rr:class movie:MovieInformation
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate movie:hasBudget ;
+        rr:objectMap [ rml:reference "budget" ; rr:datatype xsd:float ]
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate movie:hasReleaseDate ;
+        rr:objectMap [ rml:reference "release_date" ; rr:datatype xsd:date ]
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate movie:hasRuntime ;
+        rr:objectMap [ rml:reference "runtime" ; rr:datatype xsd:float ]
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate movie:hasLanguage ;
+        rr:objectMap [ rml:reference "original_language" ; rr:datatype xsd:string ]
+    ] .
+
+
+# -----------------------------------------------------------------------------
+# TriplesMap: MovieResult
+# -----------------------------------------------------------------------------
+<#MovieResultMap>
+    rml:logicalSource [
+        rml:source "movies_normalized.csv" ;
+        rml:referenceFormulation ql:CSV
+    ] ;
+    
+    rr:subjectMap [
+        rr:template "http://saraaymericradhi.org/movie/{id}/result" ;
+        rr:class movie:MovieResult
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate movie:hasVoteAverage ;
+        rr:objectMap [ rml:reference "vote_average" ; rr:datatype xsd:float ]
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate movie:hasVoteCount ;
+        rr:objectMap [ rml:reference "vote_count" ; rr:datatype xsd:integer ]
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate movie:hasRevenue ;
+        rr:objectMap [ rml:reference "revenue" ; rr:datatype xsd:float ]
+    ] .
+
+
+# -----------------------------------------------------------------------------
+# TriplesMap: MovieProduction
+# -----------------------------------------------------------------------------
+<#MovieProductionMap>
+    rml:logicalSource [
+        rml:source "movies_normalized.csv" ;
+        rml:referenceFormulation ql:CSV
+    ] ;
+    
+    rr:subjectMap [
+        rr:template "http://saraaymericradhi.org/movie/{id}/production" ;
+        rr:class movie:MovieProduction
+    ] .
+
+
+# -----------------------------------------------------------------------------
+# TriplesMap: MovieContent
+# -----------------------------------------------------------------------------
+<#MovieContentMap>
+    rml:logicalSource [
+        rml:source "movies_normalized.csv" ;
+        rml:referenceFormulation ql:CSV
+    ] ;
+    
+    rr:subjectMap [
+        rr:template "http://saraaymericradhi.org/movie/{id}/content" ;
+        rr:class movie:MovieContent
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate movie:hasPlot ;
+        rr:objectMap [ rml:reference "overview" ; rr:datatype xsd:string ]
+    ] .
+
+
+# =============================================================================
+# SOURCE: Genres (from normalized genres CSV)
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# TriplesMap: MovieContent -> Genre (links to SKOS)
+# -----------------------------------------------------------------------------
+<#MovieGenreMap>
+    rml:logicalSource [
+        rml:source "movies_genres.csv" ;
+        rml:referenceFormulation ql:CSV
+    ] ;
+    
+    rr:subjectMap [
+        rr:template "http://saraaymericradhi.org/movie/{movie_id}/content" ;
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate movie:hasGenre ;
+        rr:objectMap [ rr:template "http://saraaymericradhi.org/movie-ontology/genres#{genre_name}" ]
+    ] .
+
+
+# =============================================================================
+# SOURCE: Production Companies (from normalized CSV)
+# =============================================================================
+
+<#ProductionCompanyMap>
+    rml:logicalSource [
+        rml:source "movies_companies.csv" ;
+        rml:referenceFormulation ql:CSV
+    ] ;
+    
+    rr:subjectMap [
+        rr:template "http://saraaymericradhi.org/movie/company/{company_id}" ;
+        rr:class foaf:Organization
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate foaf:name ;
+        rr:objectMap [ rml:reference "company_name" ; rr:datatype xsd:string ]
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate rdfs:label ;
+        rr:objectMap [ rml:reference "company_name" ; rr:language "en" ]
+    ] .
+
+
+<#MovieProductionCompanyLinkMap>
+    rml:logicalSource [
+        rml:source "movies_companies.csv" ;
+        rml:referenceFormulation ql:CSV
+    ] ;
+    
+    rr:subjectMap [
+        rr:template "http://saraaymericradhi.org/movie/{movie_id}/production" ;
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate movie:hasProductionCompany ;
+        rr:objectMap [ rr:template "http://saraaymericradhi.org/movie/company/{company_id}" ]
+    ] .
+
+
+# =============================================================================
+# SOURCE: Production Countries (from normalized CSV)
+# =============================================================================
+
+<#MovieProductionCountryMap>
+    rml:logicalSource [
+        rml:source "movies_countries.csv" ;
+        rml:referenceFormulation ql:CSV
+    ] ;
+    
+    rr:subjectMap [
+        rr:template "http://saraaymericradhi.org/movie/{movie_id}/production" ;
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate movie:hasProductionCountry ;
+        rr:objectMap [ rml:reference "country_code" ; rr:datatype xsd:string ]
+    ] .
+
+
+# =============================================================================
+# SOURCE: Collections (from normalized CSV)
+# =============================================================================
+
+<#CollectionMap>
+    rml:logicalSource [
+        rml:source "movies_collections.csv" ;
+        rml:referenceFormulation ql:CSV
+    ] ;
+    
+    rr:subjectMap [
+        rr:template "http://saraaymericradhi.org/movie/collection/{collection_id}" ;
+        rr:class movie:Collection
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate movie:collectionName ;
+        rr:objectMap [ rml:reference "collection_name" ; rr:datatype xsd:string ]
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate rdfs:label ;
+        rr:objectMap [ rml:reference "collection_name" ; rr:language "en" ]
+    ] .
+
+
+<#MovieContentCollectionLinkMap>
+    rml:logicalSource [
+        rml:source "movies_collections.csv" ;
+        rml:referenceFormulation ql:CSV
+    ] ;
+    
+    rr:subjectMap [
+        rr:template "http://saraaymericradhi.org/movie/{movie_id}/content" ;
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate movie:hasCollection ;
+        rr:objectMap [ rr:template "http://saraaymericradhi.org/movie/collection/{collection_id}" ]
+    ] .
