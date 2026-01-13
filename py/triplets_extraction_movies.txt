@@ -1,0 +1,1423 @@
+FILM : Edge of Tomorrow
+Edge of Tomorrow | hasFrenchAdaptationYear | 2014
+Edge of Tomorrow | hasFrenchAdaptor | Doug Liman
+Edge of Tomorrow | hasThemeSongTitle | Not specified in context
+Edge of Tomorrow | hasThemeSongCompositor | Not specified in context
+Edge of Tomorrow | hasAwardName | Not mentioned in context
+Edge of Tomorrow | hasAwardYear | Not mentioned in context
+--------------------------------------------------
+FILM : Ex Machina
+Ex Machina | hasThemeSongTitle | "Closer to the Edge" (by Sia)
+Ex Machina | hasAwardName | Academy of Science Fiction, Fantasy & Horror Films - Saturn Award
+Ex Machina | hasAwardYear | 2016
+--------------------------------------------------
+FILM : Fantastic Beasts and Where to Find Them
+Fantastic Beasts and Where to Find Them | hasFrenchAdaptationYear | 2016
+Fantastic Beasts and Where to Find Them | hasFrenchVoiceCast (Not specified in the context)
+Fantastic Beasts and Where to Find Them | hasThemeSongTitle (Not specified in the context)
+Fantastic Beasts and Where to Find Them | hasThemeSongCompositor | James Newton Howard
+Fantastic Beasts and Where to Find Them | hasAwardName (Not specified in the context)
+Fantastic Beasts and Where to Find Them | hasAwardYear (Not specified in the context)
+--------------------------------------------------
+FILM : Fast  Furious 6
+Fast and Furious 6 | hasAwardName | None (as of provided context)
+Fast and Furious 6 | hasFrenchAdaptationYear | 2013
+Fast and Furious 6 | hasFrenchVoiceCast | Not specified in the context
+Fast and Furious 6 | hasThemeSongTitle | None (as of provided context)
+Fast and Furious 6 | hasThemeSongCompositor | Lucas Vidal
+Fast and Furious 6 | hasAwardYear | None (as of provided context)
+Fast and Furious 6 | hasFrenchAdaptor | Not specified in the context
+--------------------------------------------------
+FILM : Fight Club
+Fight Club | hasThemeSongTitle | "Nobody's Here" by the Dust Brothers
+Fight Club | hasAwardName | Academy Award for Best Sound Editing
+Fight Club | hasAwardYear | 1999 (for the film)
+--------------------------------------------------
+FILM : Finding Dory
+Finding Dory | hasFrenchAdaptationYear | 2016
+Finding Dory | hasFrenchTitle | Le Monde de Dory
+Finding Dory | hasFrenchQuebecTitle | Trouver Doris
+Finding Dory | hasThemeSongTitle | Blackbird, Cheek To Cheek From Top Hat, The Tra La La Song, Theme From S.W.A.T., (Every Time I Turn Around) Back In Love Again, The Planets Op 32 - Mars, C.C. Rider, Everybody Loves Babies, Viva Las Vegas, Alla En El Rancho Grande, Ladies Night, What The World Needs Now Is Love
+Finding Dory | hasThemeSongCompositor | Thomas Newman
+--------------------------------------------------
+FILM : Finding Nemo
+Finding Nemo | hasFrenchAdaptationYear | 2003
+Finding Nemo | hasFrenchVoiceCast | Voix françaises
+Finding Nemo | hasThemeSongCompositor | Thomas Newman
+Finding Nemo | hasAwardName | Oscar for Best Animated Feature Film
+Finding Nemo | hasAwardYear | 2004
+--------------------------------------------------
+FILM : Forrest Gump
+Forrest Gump | hasFrenchAdaptationYear | 1994
+Forrest Gump | hasFrenchVoiceCast | Non spécifié (contexte ne mentionne pas)
+Forrest Gump | hasThemeSongTitle | Non spécifié (contexte ne mentionne pas)
+Forrest Gump | hasThemeSongCompositor | Non spécifié (contexte ne mentionne pas)
+Forrest Gump | hasAwardName | Oscar
+Forrest Gump | hasAwardYear | 1995
+--------------------------------------------------
+FILM : Frozen
+Frozen | hasAwardName | Academy Award for Best Animated Feature Film
+Frozen | hasAwardYear | 2014
+Frozen | hasThemeSongTitle | Let It Go
+Frozen | hasThemeSongCompositor | Kristen Anderson-Lopez, Robert Lopez
+--------------------------------------------------
+FILM : Furious 7
+Furious 7 | hasFrenchAdaptationYear | 2015
+Furious 7 | hasFrenchAdaptor | James Wan
+Furious 7 | hasThemeSongTitle | Not specified in context
+Furious 7 | hasThemeSongCompositor | Brian Tyler
+Furious 7 | hasAwardName | Not mentioned in context
+Furious 7 | hasAwardYear | Not mentioned in context
+--------------------------------------------------
+FILM : Fury
+Movie Title | Relation | Value
+Fury (2014) | hasAwardName | Academy Award for Best Sound Editing
+Fury (2014) | hasAwardYear | 2015
+The Fury (1978) | hasThemeSongTitle | "Red, Red Kroovy"
+The Fury (1978) | hasThemeSongCompositor | John Williams
+Fury (roman) | hasAuthor | Salman Rushdie
+Billy Fury | hasProfession | Singer and songwriter
+Nick Fury | belongsTo | Marvel Comics
+Hawker Fury | isVehicleType | Aircraft
+--------------------------------------------------
+FILM : Gladiator
+Movie Title | Relation                   | Value
+-----------------------------------|---------------------------|------------
+Gladiator (2000)                | hasFrenchAdaptationYear    | Not specified
+Gladiator (2000)                | hasFrenchAdaptor           | Not specified
+Gladiator (1992)                | hasFrenchAdaptationYear    | Not specified
+Gladiator (1986)                | hasFrenchAdaptationYear    | Not specified
+Gladiator (Comics)              | hasThemeSongTitle          | Not specified
+The Gladiator (Comics)          | hasThemeSongTitle          | Not specified
+Gladiator (DJ Arafat's Album)   | hasThemeSongTitle          | Not specified
+Gladiator (1896-1909)           | hasAwardName               | Not specified
+Gloster Gladiator (Aircraft)    | hasAwardName               | Not specified
+--------------------------------------------------
+FILM : Gone Girl
+Gone Girl | hasFrenchAdaptationYear | 2014
+Gone Girl | hasFrenchTitle | Les Apparences au Québec
+Gone Girl | hasAwardName | British Academy Film Award
+Gone Girl | hasAwardYear | Not specified (nomination only)
+--------------------------------------------------
+FILM : Gravity
+Gravity | hasThemeSongTitle | Maya Sakamoto (Single Collection+ Nikopachi)
+Gravity | hasThemeSongTitle | Embrace (Out of Nothing)
+Gravity | hasThemeSongTitle | John Mayer (Try! and Continuum)
+Gravity | hasThemeSongTitle | Sara Bareilles (Little Voice)
+Gravity | hasThemeSongTitle | Pixie Lott (Turn It Up)
+Gravity | hasThemeSongTitle | Zlata Ognevich (Eurovision 2013)
+Gravity | hasThemeSongTitle | Against the Current (EP)
+Gravity | hasThemeSongTitle | Hovig (Eurovision 2017)
+Gravity | hasThemeSongTitle | Bullet for My Valentine (2018 album)
+--------------------------------------------------
+FILM : Guardians of the Galaxy
+Guardians of the Galaxy | hasThemeSongTitle | Awesome Mix Vol. 1
+Guardians of the Galaxy (2014-2019) | hasAwardName | People's Choice Award for Favorite Movie
+Guardians of the Galaxy (2014-2019) | hasAwardYear | 2015
+Guardians of the Galaxy Vol. 2 | hasThemeSongCompositor | Tyler Bates, Steve Jablonsky
+Guardians of the Galaxy Vol. 3 | hasMember | Cosmo
+--------------------------------------------------
+FILM : Harry Potter and the Chamber of Secrets
+Harry Potter and the Chamber of Secrets | hasFrenchAdaptationYear | 1999
+Harry Potter et la Chambre des secrets | hasPublicationDateUK | 2 July 1998
+Harry Potter et la Chambre des secrets | hasPublicationDateFR | 23 March 1999
+Harry Potter and the Chamber of Secrets | hasPublicationDateUS | 2 June 1999
+Harry Potter et la Chambre des secrets | hasIllustrator | Jean-Claude Götting
+Harry Potter and the Chamber of Secrets | hasThemeSongTitle | Not specified in context
+--------------------------------------------------
+FILM : Harry Potter and the Deathly Hallows Part 1
+Harry Potter and the Deathly Hallows Part 1 | hasAwardName | None (No award received in this context)
+Harry Potter and the Deathly Hallows Part 1 | hasFrenchAdaptor | David Yates
+Harry Potter and the Deathly Hallows Part 1 | hasFrenchVoiceCast | Daniel Radcliffe, Rupert Grint, Emma Watson (Main characters), Alexandre Desplat (Composer)
+Harry Potter and the Deathly Hallows Part 1 | hasThemeSongTitle | None (No theme song mentioned in this context)
+Harry Potter and the Deathly Hallows Part 1 | hasThemeSongCompositor | Alexandre Desplat
+Harry Potter and the Deathly Hallows Part 1 | hasAwardYear | None (No award received in this context)
+Harry Potter and the Deathly Hallows Part 1 | hasFrenchAdaptationYear | 2010 (Year of release in France)
+--------------------------------------------------
+FILM : Harry Potter and the Deathly Hallows Part 2
+Harry Potter and the Deathly Hallows Part 2 | hasAwardName | Oscar
+Harry Potter and the Deathly Hallows Part 2 | hasAwardYear | 2012 (for Best Visual Effects)
+Harry Potter and the Deathly Hallows Part 2 | hasThemeSongTitle | "Little Bit Longer" by Nick Cave and Warren Ellis
+Harry Potter and the Deathly Hallows Part 2 | hasThemeSongCompositor | Alexandre Desplat
+Harry Potter and the Deathly Hallows Part 2 | hasFrenchAdaptor | Steve Kloves
+Harry Potter and the Deathly Hallows Part 2 | hasFrenchVoiceCast | Daniel Radcliffe, Rupert Grint, Emma Watson (as main characters)
+--------------------------------------------------
+FILM : Harry Potter and the Goblet of Fire
+Harry Potter and the Goblet of Fire | hasAwardName | Tournoi des Trois Sorciers
+Harry Potter and the Goblet of Fire | hasFrenchAdaptationYear | 2000
+Harry Potter and the Goblet of Fire | hasThemeSongTitle | Non spécifié
+Harry Potter and the Goblet of Fire | hasThemeSongCompositor | Non spécifié
+--------------------------------------------------
+FILM : Harry Potter and the Half-Blood Prince
+Harry Potter and the Half-Blood Prince | hasFrenchAdaptationYear | 2005
+Harry Potter and the Half-Blood Prince | hasFrenchVoiceCast | Not specified in context
+Harry Potter and the Half-Blood Prince | hasThemeSongTitle | Not specified in context
+Harry Potter and the Half-Blood Prince | hasThemeSongCompositor | Not specified in context
+Harry Potter and the Half-Blood Prince | hasAwardName | Not mentioned in context
+Harry Potter and the Half-Blood Prince | hasAwardYear | Not mentioned in context
+Harry Potter et le Prince de sang-mêlé | hasFrenchAdaptor | Not specified in context
+--------------------------------------------------
+FILM : Harry Potter and the Order of the Phoenix
+Harry Potter and the Order of the Phoenix | hasPublicationYear, 2003
+Harry Potter and the Order of the Phoenix | hasFrenchAdaptationYear, 2003
+Harry Potter et l'Ordre du Phénix (Harry Potter and the Order of the Phoenix) | hasFrenchPublicationYear, 2003
+Harry Potter and the Order of the Phoenix | hasNumberOfChapters, 38
+Harry Potter and the Order of the Phoenix | hasThemeSongTitle, Not specified (no theme song mentioned in context)
+Harry Potter and the Order of the Phoenix | hasThemeSongCompositor, Not specified (no theme song compositor mentioned in context)
+Harry Potter and the Order of the Phoenix | hasAwardName, Not specified (no awards mentioned in context)
+Harry Potter and the Order of the Phoenix | hasAwardYear, Not specified (no awards mentioned in context)
+--------------------------------------------------
+FILM : Harry Potter and the Philosophers Stone
+Harry Potter and the Philosopher's Stone | hasAwardName | Bloomsbury Children's Books Publication Award (1997)
+Harry Potter and the Philosopher's Stone | hasFrenchAdaptor | Jean-François Ménard
+Harry Potter and the Philosopher's Stone | hasFrenchVoiceCast | Not specified in context
+Harry Potter and the Philosopher's Stone | hasThemeSongTitle | Not specified in context
+Harry Potter and the Philosopher's Stone | hasThemeSongCompositor | Not specified in context
+Harry Potter and the Philosopher's Stone | hasFrenchAdaptationYear | 1998
+Harry Potter and the Philosopher's Stone | hasAwardYear | 1997
+--------------------------------------------------
+FILM : Harry Potter and the Prisoner of Azkaban
+Harry Potter and the Prisoner of Azkaban | hasFrenchAdaptationYear | 1999
+Harry Potter and the Prisoner of Azkaban | hasFrenchVoiceCast | Non-specified (as per context provided)
+Harry Potter and the Prisoner of Azkaban | hasAwardName | Not applicable (as no award mentioned in context)
+Harry Potter and the Prisoner of Azkaban | hasAwardYear | Not applicable (as no award mentioned in context)
+Harry Potter and the Prisoner of Azkaban | hasThemeSongTitle | Not applicable (as no theme song title mentioned in context)
+Harry Potter and the Prisoner of Azkaban | hasThemeSongCompositor | Not applicable (as no theme song compositor mentioned in context)
+--------------------------------------------------
+FILM : Her
+Movie Title | Relation | Value
+Her | hasAwardName | Academy Award for Best Original Screenplay
+Her | hasAwardYear | 2014
+Her | hasThemeSongTitle | None (as per provided context)
+Her | hasThemeSongCompositor | None (as per provided context)
+Her | hasFrenchAdaptationYear | None (as per provided context)
+Her | hasFrenchAdaptor | None (as per provided context)
+Her | hasFrenchVoiceCast | None (as per provided context)
+--------------------------------------------------
+FILM : How to Train Your Dragon
+How to Train Your Dragon | hasFrenchAdaptationYear | 2025
+How to Train Your Dragon | hasFrenchTitle | Dragons
+How to Train Your Dragon | hasDirector | Dean DeBlois
+How to Train Your Dragon | hasComposer | John Powell
+How to Train Your Dragon | hasProducer | Marc Platt, Dean DeBlois, Adam Siegel
+How to Train Your Dragon | hasDistributor | Universal Pictures
+--------------------------------------------------
+FILM : I Am Legend
+I Am Legend | hasFrenchAdaptationYear | 2007
+I Am Legend | hasFrenchTitle | Je suis une légende
+I Am Legend | hasDirector | Francis Lawrence
+I Am Legend | hasScenarioWriters | Mark Protosevich, Akiva Goldsman, John William Corrington, Joyce H. Corrington
+I Am Legend | hasThemeSongCompositor | James Newton Howard
+--------------------------------------------------
+FILM : I Robot
+I Robot | hasFrenchAdaptationYear | Not Specified
+I Robot | hasFrenchAdaptor | Not Specified
+I Robot | hasFrenchVoiceCast | Not Specified
+I, Robot (film) | hasThemeSongTitle | I Robot (album and song by Alan Parsons Project)
+I Robot (album) | hasThemeSongCompositor | Not Specified
+I, Robot (film) | hasAwardName | Not Specified
+I, Robot (film) | hasAwardYear | Not Specified
+I Robot (game) | hasFrenchAdaptationYear | Not Specified
+I Robot (game) | hasFrenchAdaptor | Not Specified
+I Robot (game) | hasFrenchVoiceCast | Not Specified
+Les Robots (I, Robot) (newspaper story by Eando Binder) | hasFrenchAdaptationYear | Not Specified
+Les Robots (I, Robot) (collection of short stories by Isaac Asimov) | hasFrenchAdaptationYear | Not Specified
+Les Robots (I, Robot) (newspaper story by Cory Doctorow) | hasFrenchAdaptationYear | Not Specified
+--------------------------------------------------
+FILM : Ice Age
+Ice Age | hasAwardName | None (The film was not awarded any specific award in the given context)
+Ice Age | hasFrenchAdaptationYear | 2002
+Ice Age | hasFrenchVoiceCast | Not specified in the given context
+Ice Age | hasThemeSongTitle | Not specified in the given context
+Ice Age | hasThemeSongCompositor | Not specified in the given context
+--------------------------------------------------
+FILM : Inception
+Inception | hasThemeSongTitle | Non (theme song not specified in the context)
+Inception | hasThemeSongCompositor | Hans Zimmer
+Inception | hasAwardName | Oscar
+Inception | hasAwardYear | 2011 (for Best Cinematography, Best Sound Editing, Best Visual Effects, and Best Sound Mixing)
+Inception | hasFrenchAdaptationYear | Non (French adaptation year not specified in the context)
+Inception | hasFrenchAdaptor | Non (French adaptor not specified in the context)
+Inception | hasFrenchVoiceCast | Non (French voice cast not specified in the context)
+--------------------------------------------------
+FILM : Inglourious Basterds
+Inglourious Basterds | hasFrenchAdaptationYear | 2009
+Inglourious Basterds | hasFrenchVoiceCast | Non specified
+Inglourious Basterds | hasThemeSongTitle | Non specified
+Inglourious Basterds | hasThemeSongCompositor | Non specified
+Inglourious Basterds | hasAwardName | Festival de Cannes
+Inglourious Basterds | hasAwardYear | 2009
+Christoph Waltz | hasAwardName | Multiple awards for Best Supporting Actor
+Christoph Waltz | hasAwardYear | 2009
+--------------------------------------------------
+FILM : Inside Out
+Inside Out | hasThemeSongTitle, Inside Out (Anthrax)
+Inside Out | hasThemeSongTitle, Inside Out (Avalanche City)
+Inside Out | hasThemeSongTitle, Inside Out (Britney Spears)
+Inside Out | hasThemeSongTitle, Inside Out (Bryan Adams)
+Inside Out | hasThemeSongTitle, Cadia
+Inside Out | hasThemeSongTitle, Cause and Effect
+Inside Out | hasThemeSongTitle, Crash Vegas
+Inside Out | hasThemeSongTitle, Culture Beat
+Inside Out | hasThemeSongTitle, Eve 6
+Inside Out | hasThemeSongTitle, Gentle Giant
+Inside Out | hasThemeSongTitle, Imelda May
+Inside Out | hasThemeSongTitle, Into a Circle
+Inside Out | hasThemeSongTitle, The Mighty Lemon Drops
+Inside Out | hasThemeSongTitle, Odyssey
+Inside Out | hasThemeSongTitle, Phil Collins
+Inside Out | hasThemeSongTitle, Shara Nelson
+Inside Out | hasThemeSongTitle, Spoon
+Inside Out | hasThemeSongTitle, The Traveling Wilburys
+Inside Out | hasThemeSongTitle, Vonray
+Inside Out | hasThemeSongTitle, XYZ
+Inside Out (en) | hasAwardName, Inside Out LGBT Film Festival Award
+--------------------------------------------------
+FILM : Interstellar
+Interstellar | hasThemeSongTitle | Non (The context does not provide information about the theme song title)
+Interstellar | hasThemeSongCompositor | Hans Zimmer
+Interstellar | hasAwardName | Academy Award for Best Visual Effects (won in 2015)
+Interstellar | hasAwardYear | 2015
+Interstellar | hasFrenchAdaptationYear | 2014 (Interstellaire)
+Interstellar | hasFrenchAdaptor | Christopher Nolan, Jonathan Nolan
+Interstellar | hasFrenchVoiceCast | Matthew McConaughey (Joseph Cooper), Anne Hathaway (Amelia Brand), Michael Caine (Professor Brand), Jessica Chastain (Murphy Cooper), Casey Affleck (Tom Cooper), Matt Damon (Dr Mann)
+--------------------------------------------------
+FILM : Iron Man 2
+Iron Man 2 | hasFrenchAdaptationYear | 2010
+Iron Man 2 | hasAwardName | Not specified
+Iron Man 2 | hasThemeSongTitle | Not specified
+Iron Man 2 | hasThemeSongCompositor | John Debney
+Iron Man 2 | hasFrenchVoiceCast | Not specified
+--------------------------------------------------
+FILM : Iron Man 3
+Iron Man 3 | hasAwardName | PG-13 - Parents Strongly Cautioned
+Iron Man 3 | hasFrenchAdaptationYear | 2013
+Iron Man 3 | hasThemeSongTitle | Not specified in context
+--------------------------------------------------
+FILM : Iron Man
+Movie Title | Relation | Value
+hasThemeSongTitle | Iron Man (Black Sabbath)
+hasThemeSongTitle | Iron Man (Ozzy Osbourne)
+hasFrenchAdaptationYear | 2008
+hasFrenchAdaptor | Unknown (Iron Man film soundtrack)
+hasAwardName | Academy Award for Best Visual Effects
+hasAwardYear | 2009 (for Iron Man)
+hasAwardName | Saturn Award for Best Action Figure or Collectible
+hasAwardYear | 2010 (for Iron Man 2)
+hasThemeSongTitle | Iron Man 2 (AC/DC)
+--------------------------------------------------
+FILM : Jurassic Park
+Jurassic Park | hasAwardName | Oscar
+Jurassic Park | hasAwardYear | 1994
+Jurassic Park | hasThemeSongTitle | "Adventures in the Unknown"
+Jurassic Park | hasThemeSongCompositor | John Williams
+Jurassic Park | hasFrenchAdaptor | David Koepp
+Jurassic Park | hasFrenchVoiceCast | Non-specified (French adaptation)
+--------------------------------------------------
+FILM : Jurassic World
+Jurassic World | hasFrenchAdaptationYear | 2015
+Jurassic World | hasFrenchVoiceCast | Non spécifié
+Jurassic World | hasThemeSongTitle | Non spécifié
+Jurassic World | hasThemeSongCompositor | Non spécifié
+Jurassic World | hasAwardName | Non spécifié
+Jurassic World | hasAwardYear | Non spécifié
+--------------------------------------------------
+FILM : Kick-Ass
+Kick-Ass | hasThemeSongTitle | Kick Ass (We Are Young)
+Kick-Ass | hasFrenchAdaptationYear | Not specified in context
+Kick-Ass | hasFrenchAdaptor | Not specified in context
+Kick-Ass | hasAwardName | Not mentioned in context
+Kick-Ass | hasAwardYear | Not mentioned in context
+Kick-Ass (film) | hasThemeSongTitle | Kick Ass (We Are Young)
+Kick-Ass (film) | hasFrenchAdaptationYear | Not specified in context
+Kick-Ass (film) | hasFrenchAdaptor | Not specified in context
+Kick-Ass (film) | hasAwardName | Not mentioned in context
+Kick-Ass (film) | hasAwardYear | Not mentioned in context
+Kick-Ass 2 (film) | hasThemeSongTitle | Not specified in context (as it refers to the second film's soundtrack, but no specific song is mentioned)
+Kick-Ass 2 (film) | hasFrenchAdaptationYear | Not specified in context
+Kick-Ass 2 (film) | hasFrenchAdaptor | Not specified in context
+Kick-Ass 2 (film) | hasAwardName | Not mentioned in context
+Kick-Ass 2 (film) | hasAwardYear | Not mentioned in context
+--------------------------------------------------
+FILM : Kingsman The Secret Service
+Kingsman The Secret Service | hasFrenchAdaptationYear | 2014
+Kingsman The Secret Service | hasFrenchVoiceCast | Not specified in context
+Kingsman The Secret Service | hasThemeSongTitle | Not specified in context
+Kingsman The Secret Service | hasThemeSongCompositor | Not specified in context
+Kingsman The Secret Service | hasAwardName | Not mentioned in context
+Kingsman The Secret Service | hasAwardYear | Not mentioned in context
+--------------------------------------------------
+FILM : Limitless
+Movie Title | Relation | Value
+hasFrenchAdaptationYear | 2011
+hasFrenchAdaptor | Not specified (Original work: The Dark Fields by Alan Glynn)
+hasFrenchVoiceCast | Not specified
+hasThemeSongTitle | Not specified
+hasThemeSongCompositor | Not specified
+hasAwardName | Not specified
+hasAwardYear | Not specified
+--------------------------------------------------
+FILM : Logan
+Movie Title | Relation | Value
+Logan | hasThemeSongTitle | Logan (song from the movie)
+Logan | hasAwardName | Academy Award for Best Adapted Screenplay
+Logan | hasAwardYear | 2018
+--------------------------------------------------
+FILM : Looper
+Looper | hasThemeSongTitle | "Traveler's Song"
+Looper | hasThemeSongCompositor | Nathan Johnson
+Looper | hasAwardName | Saturn Award for Best Music
+Looper | hasAwardYear | 2013
+--------------------------------------------------
+FILM : Mad Max Fury Road
+Mad Max Fury Road | hasAwardName | Oscar
+Mad Max Fury Road | hasAwardYear | 2016
+--------------------------------------------------
+FILM : Maleficent
+Maleficent | hasThemeSongTitle | "Elle me Dit" (French version of "Once Upon a Dream")
+Maleficent | hasAwardName | Golden Trailer Awards (2014) - Best Teaser Trailer
+Maleficent | hasAwardYear | 2014
+Maleficent | hasThemeSongCompositor | Lorne Balfe, Michael Danna
+Maleficent | hasFrenchAdaptor | Alexandre de la Patellière, Christophe Gans (co-adaptors)
+Maleficent | hasFrenchVoiceCast | Élodie Bouchez (Maleficent), François Damiens (King Stefan), Marion Cotillard (Queen Ingrith)
+--------------------------------------------------
+FILM : Man of Steel
+Man of Steel | hasFrenchAdaptationYear | 2013
+Man of Steel | hasFrenchVoiceCast | Henry Cavill, Amy Adams, Michael Shannon, Diane Lane, Kevin Costner, Laurence Fishburne, Russell Crowe
+Man of Steel | hasThemeSongTitle | Non spécifié
+Man of Steel | hasThemeSongCompositor | Non spécifié
+Man of Steel | hasAwardName | Non remporté de prix spécifiques mentionnés dans le contexte fourni.
+--------------------------------------------------
+FILM : Memento
+Memento | hasThemeSongTitle | Memento (Dead Can Dance song)
+Memento | hasAwardName | Academy Award for Best Original Screenplay
+Memento | hasAwardYear | 2001
+--------------------------------------------------
+FILM : Men in Black 3
+Men in Black 3 | hasFrenchAdaptationYear | 2012
+Men in Black 3 | hasAwardName | Not specified
+Men in Black 3 | hasThemeSongTitle | Not specified
+Men in Black 3 | hasThemeSongCompositor | Danny Elfman
+Men in Black 3 | hasFrenchVoiceCast | Not specified
+Men in Black 3 | hasAwardYear | Not specified
+--------------------------------------------------
+FILM : Men in Black
+Men in Black | hasThemeSongTitle | E.T.I (Extra Terrestrial Intelligence)
+Men in Black | hasThemeSongTitle | Meninblack
+Men in Black | hasThemeSongTitle | Men in Black (Frank Black)
+Men in Black | hasThemeSongTitle | Men in Black (Will Smith)
+Men in Black | hasThemeSongTitle | Men in Black 2 (Will Smith)
+Men in Black | hasThemeSongTitle | Men in Black 3 (Pitbull)
+Men in Black (1997) | hasFrenchAdaptationYear | 1998
+Men in Black: International | hasAwardName | Golden Raspberry Award
+Men in Black: International | hasAwardYear | 2020
+--------------------------------------------------
+FILM : Minions
+Movie Title | hasFrenchAdaptor | Value
+Minions | hasFrenchAdaptor | Pierre Coffin, Marion Cotillard, Guillaume Canet, Philippe Laudenbach, Christian Gonon, Catherine Davenier, Jean-Christophe Dollé, Thierry Bosc, Silvie Laguna, Pauline Brunner, Philippe Spiteri, Pierre Diot, Hervé Icovic, Laurent Natrella, Gad Elmaleh
+
+Movie Title | hasFrenchVoiceCast | Value
+Minions | hasFrenchVoiceCast | Pierre Coffin, Marion Cotillard, Guillaume Canet, Philippe Laudenbach, Christian Gonon, Catherine Davenier, Jean-Christophe Dollé, Thierry Bosc, Silvie Laguna, Pauline Brunner, Philippe Spiteri, Pierre Diot, Hervé Icovic, Laurent Natrella, Gad Elmaleh
+
+Movie Title | hasAwardName | Value
+Minions | Not specified in the context provided.
+--------------------------------------------------
+FILM : Monsters Inc.
+Monsters Inc. | hasFrenchAdaptationYear | 2002
+Monstres Inc. | hasFrenchVoiceCast | Jacques Frantz, Éric Métayer, Lola Krellenstein, Dominique Collignon-Maurin, Richard Darbois, Claire Keim, Isabelle Leprince, Henri Guybet, Jean-Loup Horwitz, Luq Hamet, Emmanuel Curtil, Pascal Casanova, Évelyne Grandjean, Pascal Nowak, Boris Rehlinger, Jérémy Prévost, Jean-Claude Donda, Jérôme Pauwels
+Monstres Inc. | hasAwardName | Not specified in the context provided.
+--------------------------------------------------
+FILM : Now You See Me
+Now You See Me | hasAwardName | People's Choice Award for Best Thriller
+Now You See Me | hasAwardYear | 2013
+Now You See Me | hasThemeSongCompositor | Brian Tyler
+--------------------------------------------------
+FILM : Oblivion
+Movie Title | Relation                   | Value
+-------------|------------------------------|-------
+Oblivion (1994) | hasFrenchAdaptor            | Not specified
+Oblivion (1994) | hasFrenchVoiceCast          | Not specified
+Oblivion (2013) | hasFrenchAdaptationYear     | Not specified
+Oblivion (2013) | hasFrenchVoiceCast          | Not specified
+Phantasm IV: Oblivion | hasAwardName                | Not specified
+Phantasm IV: Oblivion | hasAwardYear                | Not specified
+Land of Oblivion | hasThemeSongTitle           | Not specified
+Land of Oblivion | hasThemeSongCompositor      | Not specified
+Oblivion (album by Underworld) | hasThemeSongTitle           | Oblivion With Bells
+Oblivion (album by Utopia) | hasThemeSongTitle           | Oblivion
+Oblivion (song by Kerri Chandler) | hasThemeSongTitle           | Oblivion
+Oblivion (song by TheFatRat) | hasThemeSongTitle           | Oblivion
+The Elder Scrolls IV: Oblivion | hasThemeSongTitle           | Main Theme from Oblivion
+The Elder Scrolls IV: Oblivion | hasAwardName                | Game of the Year (2006)
+The Elder Scrolls IV: Oblivion | hasAwardYear                | 2006
+Oblivion is for the living | hasThemeSongTitle           | Oblivion is for the living
+Oblivion (song by Bastille) | hasThemeSongTitle           | Oblivion
+Oblivion (song by Jhene Aiko) | hasThemeSongTitle           | TRIP - Oblivion
+Oblivion (EP by Poison Point) | hasThemeSongTitle           | Oblivion EP
+Oblivion (song by Lorna Shore) | hasThemeSongTitle           | Oblivion
+The Elder Scrolls IV: Oblivion | hasAwardName                | Best RPG (2006)
+The Elder Scrolls IV: Oblivion | hasAwardYear                | 2006
+Oblivion Wing | hasThemeSongTitle           | Not specified
+Oblivion Cave | hasThemeSongTitle           | Not specified
+--------------------------------------------------
+FILM : Oceans Eleven
+Ocean's Eleven | hasFrenchAdaptationYear (1960)
+Ocean's Eleven | hasFrenchAdaptor (Lewis Milestone)
+
+Ocean's Eleven | hasFrenchAdaptationYear (2001)
+Ocean's Eleven | hasThemeSongTitle (L'Inconnu de Las Vegas - Québec version French title)
+--------------------------------------------------
+FILM : Pacific Rim
+Pacific Rim | hasThemeSongTitle | "Roarhead" by Ramin Djawadi
+Pacific Rim | hasFrenchAdaptationYear | 2013
+Pacific Rim: Uprising | hasFrenchAdaptationYear | 2018
+Pacific Rim: The Black | hasFrenchVoiceCast | Not specified
+Pacific Rim | hasAwardName | Not specified (no awards mentioned in context)
+Pacific Rim: Uprising | hasAwardName | Not specified (no awards mentioned in context)
+Pacific Rim: The Black | hasAwardName | Not specified (no awards mentioned in context)
+--------------------------------------------------
+FILM : Passengers
+Movie Title | Relation                   | Value
+-----------------------------------|------------------------|------------
+Passengers (2016)                | hasFrenchAdaptationYear | 2016
+Passengers (2008)                | hasFrenchAdaptationYear | 2008
+(Not provided in context)       | hasThemeSongTitle        | Not provided
+(Not provided in context)       | hasThemeSongCompositor   | Not provided
+(Not provided in context)       | hasAwardName             | Not provided
+(Not provided in context)       | hasAwardYear             | Not provided
+Passengers (Gary Burton album)  | hasFrenchAdaptationYear | 1977 not applicable
+Passengers (Brian Eno & U2)     | hasFrenchAdaptationYear | 1995 not applicable
+Passengers (Italo-American group)| hasFrenchAdaptationYear | Not applicable
+Passengers (Chris Marker series) | hasFrenchAdaptationYear | 2011 not applicable
+--------------------------------------------------
+FILM : Pirates of the Caribbean At Worlds End
+Pirates of the Caribbean At Worlds End | hasAwardName | Academy of Science Fiction, Fantasy & Horror Films Saturn Award
+Pirates of the Caribbean At Worlds End | hasAwardYear | 2008
+Pirates of the Caribbean At Worlds End | hasFrenchAdaptationYear | 2007
+Pirates of the Caribbean At Worlds End | hasFrenchVoiceCast | (Not specified in context)
+Pirates of the Caribbean At Worlds End | hasThemeSongTitle | "Now My Watch Begins" by Hans Zimmer and Lisa Gerrard
+Pirates of the Caribbean At Worlds End | hasThemeSongCompositor | Hans Zimmer
+--------------------------------------------------
+FILM : Pirates of the Caribbean Dead Mans Chest
+Pirates of the Caribbean Dead Mans Chest | hasFrenchAdaptationYear | 2006
+Pirates of the Caribbean Dead Mans Chest | hasFrenchVoiceCast | Non spécifié dans le contexte fourni
+Pirates of the Caribbean Dead Mans Chest | hasThemeSongTitle | Non spécifié dans le contexte fourni
+Pirates of the Caribbean Dead Mans Chest | hasThemeSongCompositor | Hans Zimmer, Lorne Balfe, Tom Gire, Nick Glennie-Smith, Henry Jackman, Trevor Morris, John Sponsler et Geoff Zanelli (musique additionnelle)
+Pirates of the Caribbean Dead Mans Chest | hasAwardName | Oscar des meilleurs effets visuels
+Pirates of the Caribbean Dead Mans Chest | hasAwardYear | 2007
+--------------------------------------------------
+FILM : Pirates of the Caribbean On Stranger Tides
+Pirates of the Caribbean On Stranger Tides | hasFrenchAdaptationYear | 2011
+Pirates of the Caribbean On Stranger Tides | hasFrenchTitle | Pirates des Caraïbes : La Fontaine de Jouvence
+Pirates of the Caribbean On Stranger Tides | hasThemeSongCompositor | Hans Zimmer, Rodrigo y Gabriela
+Pirates of the Caribbean On Stranger Tides | hasAwardName | N/A (as of 2021)
+--------------------------------------------------
+FILM : Pirates of the Caribbean The Curse of the Black Pearl
+Pirates of the Caribbean The Curse of the Black Pearl | hasFrenchAdaptationYear | 2003
+Pirates of the Caribbean The Curse of the Black Pearl | hasFrenchVoiceCast | Non spécifié (dans le contexte fourni)
+Pirates of the Caribbean The Curse of the Black Pearl | hasThemeSongTitle | Non spécifié (dans le contexte fourni)
+Pirates of the Caribbean The Curse of the Black Pearl | hasThemeSongCompositor | Non spécifié (dans le contexte fourni)
+Pirates of the Caribbean The Curse of the Black Pearl | hasAwardName | Non spécifié (dans le contexte fourni)
+Pirates of the Caribbean The Curse of the Black Pearl | hasAwardYear | Non spécifié (dans le contexte fourni)
+--------------------------------------------------
+FILM : Prometheus
+Movie Title | Relation | Value
+hasThemeSongTitle | Prometheus (film) | Not specified in context
+hasAwardName | Prometheus (film) | Not awarded in context
+hasFrenchAdaptationYear | Prometheus (film) | Not specified in context
+hasFrenchAdaptor | Prometheus (film) | Not specified in context
+hasFrenchVoiceCast | Prometheus (film) | Not specified in context
+hasThemeSongCompositor | Prometheus (film) | Not specified in context
+hasAwardYear | Prometheus (film) | Not awarded in context
+--------------------------------------------------
+FILM : Pulp Fiction
+Pulp Fiction | hasAwardName | Palme d'or
+Pulp Fiction | hasAwardYear | 1994
+Pulp Fiction | hasThemeSongTitle | Unforgettable (Natalie Cole and Nat King Cole)
+Pulp Fiction | hasThemeSongCompositor | Dennis Lambert, Franke Previte, John Bettis
+Pulp Fiction | hasFrenchAdaptor | Luc Bernard, Stéphane Kazandjian
+Pulp Fiction | hasFrenchVoiceCast | Jean-Hugues Anglade (as Vincent Vega), Richard Darbois (as Jules Winnfield), Daniel Gélin (as Marsellus Wallace)
+--------------------------------------------------
+FILM : Raiders of the Lost Ark
+Raiders of the Lost Ark | hasFrenchAdaptationYear | 1981
+Raiders of the Lost Ark | hasFrenchAdaptor | Not specified (Movie title translates to "Les Aventuriers de l'arche perdue" in French)
+Raiders of the Lost Ark | hasThemeSongTitle | Not specified (No information provided about the bande originale)
+Raiders of the Lost Ark | hasAwardName | Not specified (No awards mentioned for this movie in the context)
+Raiders of the Lost Ark | hasAwardYear | Not specified (No awards mentioned for this movie in the context)
+Raiders of the Lost Ark | hasFrenchVoiceCast | Not specified (No information provided about the French adaptation or voice cast)
+--------------------------------------------------
+FILM : Ratatouille
+Ratatouille | hasThemeSongTitle | Confit byaldi (from the movie)
+Ratatouille | hasAwardName | Academy Award for Best Animated Feature
+Ratatouille | hasAwardYear | 2007
+--------------------------------------------------
+FILM : Reservoir Dogs
+Reservoir Dogs | hasAwardName | Sundance Film Festival Dramatic Grand Jury Prize
+Reservoir Dogs | hasAwardYear | 1992
+Reservoir Dogs | hasThemeSongTitle | Stuck in the Middle with You (Stealers Wheel)
+Reservoir Dogs | hasThemeSongCompositor | Greg Allman, Joe Walsh, Larry E. Junstrom, Joe Vitale
+--------------------------------------------------
+FILM : Rise of the Planet of the Apes
+Rise of the Planet of the Apes | hasThemeSongCompositor | Patrick Doyle
+Rise of the Planet of the Apes | hasAwardName | Visual Effects Society Award
+Rise of the Planet of the Apes | hasAwardYear | 2012
+--------------------------------------------------
+FILM : Saving Private Ryan
+Saving Private Ryan | hasAwardName | Academy Award for Best Director
+Saving Private Ryan | hasAwardYear | 1999
+Saving Private Ryan | hasAwardName | Academy Award for Best Picture
+Saving Private Ryan | hasThemeSongTitle | "Saving Private Ryan"
+Saving Private Ryan | hasThemeSongCompositor | John Williams
+--------------------------------------------------
+FILM : Schindlers List
+Schindlers List | hasAwardName | National Film Registry
+Schindlers List | hasAwardYear | 2004
+Schindlers List | hasThemeSongTitle | Schindler's Theme
+Schindlers List | hasThemeSongCompositor | John Williams
+Schindlers List | hasFrenchAdaptationYear | 1993
+Schindlers List | hasFrenchVoiceCast | Liam Neeson, Ben Kingsley, Ralph Fiennes (principals)
+Schindlers List | hasThemeSongCompositor | John Williams
+--------------------------------------------------
+FILM : Sherlock Holmes
+Sherlock Holmes | hasThemeSongTitle | Son dernier coup d'archet
+Sherlock Holmes | hasAwardName | Le Dernier Problème (1893)
+--------------------------------------------------
+FILM : Shrek
+Shrek | hasFrenchAdaptationYear | 2001
+Shrek | hasFrenchAdaptationYear | 2003
+Shrek | hasFrenchAdaptationYear | 2004
+Shrek | hasFrenchAdaptationYear | 2007
+Shrek | hasFrenchAdaptationYear | 2010
+Shrek | hasThemeSongTitle | Not specified in context
+Shrek | hasThemeSongCompositor | Not specified in context
+Shrek (jeu vidéo) | hasReleaseYear | 2001
+Shrek 2 (jeu vidéo) | hasReleaseYear | 2004
+Shrek 2 : La Charge zéroïque | hasReleaseYear | 2004
+Shrek: Super Slam | hasReleaseYear | 2005
+Shrek: Smash n' Crash Racing | hasReleaseYear | 2006
+--------------------------------------------------
+FILM : Shutter Island
+Shutter Island | hasFrenchAdaptor | Isabelle Maillet
+Shutter Island | hasFrenchVoiceCast | Not specified (Audiolib)
+Shutter Island | hasThemeSongTitle | Not specified
+Shutter Island | hasThemeSongCompositor | Not specified
+Shutter Island | hasAwardName | Prix Mor Vran (2009)
+Shutter Island | hasAwardYear | 2009
+Shutter Island | hasFrenchAdaptationYear | 2003
+Shutter Island (film) | hasDirector | Martin Scorsese
+Shutter Island (film) | hasActor | Leonardo DiCaprio, Ben Kingsley, Mark Ruffalo
+Shutter Island (comic book) | hasArtist | Christian De Metter
+Shutter Island (video game) | hasPlatform | Windows, Nintendo DS
+--------------------------------------------------
+FILM : Silver Linings Playbook
+Silver Linings Playbook | hasThemeSongTitle | Silver Lining
+Silver Linings Playbook | hasThemeSongCompositor | Diane Warren
+Silver Linings Playbook | hasAwardName | Oscar
+Silver Linings Playbook | hasAwardYear | 2013
+--------------------------------------------------
+FILM : Skyfall
+Skyfall | hasAwardName | Oscar for Best Original Song
+Skyfall | hasThemeSongTitle | Skyfall
+Skyfall | hasThemeSongCompositor | Adele & Paul Epworth
+Skyfall | hasFrenchAdaptor | Thomas Azier (for the French version of the theme song)
+Skyfall | hasAwardYear | 2013
+Skyfall | hasBoxOfficeRevenue | Over $1 billion worldwide
+--------------------------------------------------
+FILM : Spectre
+Spectre | hasThemeSongTitle | Le Spectre de la rose (ballet)
+Spectre | hasAwardName | Academy Award for Best Visual Effects
+Spectre | hasAwardYear | 2016
+Spectre | hasFrenchAdaptationYear | 2015
+Spectre | hasFrenchTitle | Spectre (film)
+Spectre | hasFrenchVoiceCast | Bernard Le Coq, Christoph Waltz, Léa Seydoux, Daniel Craig, Monica Bellucci, Ben Whishaw, Naomie Harris, Ralph Fiennes, Jesper Christensen, Dave Bautista, Andrew Scott, Alessandro Cremona, Rory Kinnear
+Spectre | hasThemeSongCompositor | Thomas Newman
+--------------------------------------------------
+FILM : Spider-Man 2
+Spider-Man 2 | hasAwardName | Festival du film de Tribeca (2007)
+Spider-Man 2 | hasAwardYear | 2007
+Spider-Man 2 | hasFrenchAdaptationYear | 2004
+Spider-Man 2 | hasFrenchVoiceCast | Non fourni dans le contexte
+Spider-Man 2 | hasThemeSongTitle | Non fourni dans le contexte
+Spider-Man 2 | hasThemeSongCompositor | Danny Elfman
+Spider-Man 2 | hasDirector | Sam Raimi (non mentionné dans les relations demandées)
+--------------------------------------------------
+FILM : Spider-Man
+Spider-Man | hasFrenchAdaptationYear | 1969
+Spider-Man | hasFrenchVoiceCast | Not specified in context
+Spider-Man | hasAwardName | Not mentioned in context
+Spider-Man | hasThemeSongTitle | Not mentioned in context
+Spider-Man | hasThemeSongCompositor | Not mentioned in context
+Spider-Man | hasFrenchAdaptor | Not specified in context (creation of the character involves multiple people)
+--------------------------------------------------
+FILM : Spirited Away
+Spirited Away | hasThemeSongCompositor | Joe Hisaishi
+Spirited Away | hasAwardName | Oscar du meilleur film d'animation
+Spirited Away | hasAwardYear | 2002
+--------------------------------------------------
+FILM : Split
+Split | hasAwardName | royaume des Serbes, Croates et Slovènes
+Split | hasAwardYear | 1919
+Split | hasThemeSongTitle | Ultra Europe (music festival)
+--------------------------------------------------
+FILM : Star Trek Into Darkness
+Star Trek Into Darkness | hasAwardName | None (No award mentioned in the context)
+Star Trek Into Darkness | hasAwardYear | None (No award mentioned in the context)
+Star Trek Into Darkness | hasFrenchAdaptationYear | 2013
+Star Trek Into Darkness | hasFrenchAdaptor | Non spécifié (Produit et réalisé par J.J. Abrams, mais le nom de l'adaptateur français n'est pas mentionné)
+Star Trek Into Darkness | hasFrenchVoiceCast | Non spécifié (Le casting français n'est pas mentionné)
+Star Trek Into Darkness | hasThemeSongTitle | None (No theme song title mentioned in the context)
+Star Trek Into Darkness | hasThemeSongCompositor | Non spécifié (Le compositeur de la musique thème n'est pas mentionné)
+--------------------------------------------------
+FILM : Star Trek
+Star Trek | hasThemeSongTitle | "Where No Man Has Gone Before"
+Star Trek | hasAwardName | Emmy Award (for Outstanding Drama Series)
+Star Trek | hasFrenchAdaptor | Gene Roddenberry (French adaptation title: Patrouille du cosmos)
+Star Trek | hasFrenchVoiceCast | Nichelle Nichols, William Shatner, Leonard Nimoy, George Takei, Walter Koenig (French voices not specified)
+--------------------------------------------------
+FILM : Suicide Squad
+Suicide Squad | hasThemeSongTitle | "Purple Lamborghini"
+Suicide Squad (2016) | hasAwardName | People's Choice Awards
+Suicide Squad (2016) | hasAwardYear | 2017
+Suicide Squad (2016) | hasThemeSongCompositor | Skrillex, Rick Ross
+Suicide Squad (2016) | hasFrenchAdaptor | Alexandre Astier
+Suicide Squad (2016) | hasFrenchVoiceCast | Jean-Baptiste Marcenac as Deadshot, Marie-Eugénie Maréchal as Harley Quinn, etc.
+Suicide Squad New 52 | hasFrenchAdaptor | Alexandre Astier
+Suicide Squad New 52 | hasFrenchVoiceCast | Jean-Baptiste Marcenac as Deadshot, Marie-Eugénie Maréchal as Harley Quinn, etc.
+The Suicide Squad (2021) | hasFrenchAdaptor | Alexandre Astier
+The Suicide Squad (2021) | hasFrenchVoiceCast | Jean-Baptiste Marcenac as Bloodsport, Marie-Eugénie Maréchal as Harley Quinn, etc.
+--------------------------------------------------
+FILM : Taken
+Taken | hasFrenchAdaptationYear | 2008
+Taken | hasFrenchAdaptor | Pierre Morel
+
+Taken 2 | hasFrenchAdaptationYear | 2012
+Taken 2 | hasFrenchAdaptor | Olivier Megaton
+
+Taken 3 | hasFrenchAdaptationYear | 2015
+Taken 3 | hasFrenchAdaptor | Olivier Megaton
+--------------------------------------------------
+FILM : Ted
+Movie Title | Relation | Value
+-------------|------------|-------
+Ted (Film) | hasFrenchAdaptationYear | Not specified in context
+Ted (Film) | hasFrenchAdaptor | Not specified in context
+Ted (Film) | hasFrenchVoiceCast | Not specified in context
+Ted (Film) | hasThemeSongTitle | Not specified in context
+Ted (Film) | hasThemeSongCompositor | Not specified in context
+Ted (Film) | hasAwardName | Not specified in context
+Ted (Film) | hasAwardYear | Not specified in context
+--------------------------------------------------
+FILM : Terminator 2 Judgment Day
+Terminator 2 Judgment Day | hasFrenchAdaptationYear | 1991
+Terminator 2 Judgment Day | hasFrenchVoiceCast | Arnold Schwarzenegger, Linda Hamilton, Robert Patrick, Edward Furlong
+Terminator 2 Judgment Day | hasAwardName | Oscar (for makeup, sound mixing, sound, and visual effects)
+Terminator 2 Judgment Day | hasThemeSongTitle | "You Could Be Mine" by Guns N' Roses
+Terminator 2 Judgment Day | hasAwardYear | 1992
+--------------------------------------------------
+FILM : The Amazing Spider-Man 2
+Movie Title | Relation | Value
+The Amazing Spider-Man 2 | hasFrenchAdaptationYear | 2014
+The Amazing Spider-Man 2 | hasFrenchAdaptor | Le Destin d'un héros (The Amazing Spider-Man 2)
+The Amazing Spider-Man 2 | hasFrenchVoiceCast | Not specified in the context provided
+The Amazing Spider-Man 2 | hasThemeSongTitle | Not specified in the context provided
+The Amazing Spider-Man 2 | hasThemeSongCompositor | Hans Zimmer, The Magnificent Six (Johnny Marr, Pharrell Wi)
+The Amazing Spider-Man 2 | hasAwardName | Not awarded or mentioned in the context provided
+The Amazing Spider-Man 2 | hasAwardYear | Not awarded or mentioned in the context provided
+--------------------------------------------------
+FILM : The Avengers
+The Avengers | hasThemeSongTitle | Avengers (Avengers)
+The Avengers | hasThemeSongTitle | Avengers: Age of Ultron (Main Title)
+The Avengers | hasThemeSongTitle | Avengers: Endgame (End Titles)
+Marvel's Avengers | hasAwardName | The Game Awards 2020 - Best Action/Adventure Game
+Marvel's Avengers | hasAwardYear | 2020
+The Avengers | hasFrenchVoiceCast | Unknown (as the text does not provide specific French voice cast information for this movie)
+--------------------------------------------------
+FILM : The Dark Knight Rises
+The Dark Knight Rises | hasAwardName | Academy Award for Best Cinematography
+The Dark Knight Rises | hasAwardYear | 2013
+The Dark Knight Rises | hasThemeSongTitle | "Why Does It Rain" by Adele
+The Dark Knight Rises | hasThemeSongCompositor | Hans Zimmer, A.R. Rahman
+--------------------------------------------------
+FILM : The Dark Knight
+The Dark Knight | hasAwardName | Oscar
+The Dark Knight | hasAwardYear | 2009
+The Dark Knight | hasAwardName | Oscar (Best Supporting Actor)
+The Dark Knight | hasAwardYear | 2009
+The Dark Knight | hasThemeSongTitle | Nobody to Save Me
+The Dark Knight | hasThemeSongCompositor | Hans Zimmer, James Newton Howard
+--------------------------------------------------
+FILM : The Departed
+The Departed | hasFrenchAdaptationYear | 2006
+The Departed | hasFrenchTitle | Les Infiltrés
+The Departed | hasFrenchQuebecTitle | Agents troubles
+The Departed | hasAwardName | Oscar
+The Departed | hasAwardYear | 2007
+The Departed | hasThemeSongCompositor | Howard Shore
+--------------------------------------------------
+FILM : The Empire Strikes Back
+The Empire Strikes Back | hasThemeSongTitle | Not specified (music album, not film theme song)
+The Empire Strikes Back | hasReleaseYear | 2006
+The Empire Strikes Back | hasFrenchAdaptationYear | Not specified (not a French adaptation of the movie)
+--------------------------------------------------
+FILM : The Fate of the Furious
+The Fate of the Furious | hasAwardName | Best Opening Weekend Gross
+The Fate of the Furious | hasAwardYear | 2017
+The Fate of the Furious | hasFrenchAdaptationYear | 2017 (Le Destin des dangereux)
+The Fate of the Furious | hasFrenchVoiceCast | Vin Diesel, Dwayne Johnson, Jason Statham, Michelle Rodríguez, Tyrese Gibson, Ludacris, Scott Eastwood, Nathalie Emmanuel, Elsa Pataky, Kurt Russell, Charlize Theron, Tego Calderón, Don Omar
+The Fate of the Furious | hasThemeSongTitle | "Go Oh Go" by Wiz Khalifa and Ty Dolla Sign
+The Fate of the Furious | hasThemeSongCompositor | Brian Tyler
+--------------------------------------------------
+FILM : The Fault in Our Stars
+The Fault in Our Stars | hasThemeSongTitle | Le prix de l'aube (Augustus' preferred book)
+The Fault in Our Stars | hasThemeSongCompositor | Not specified
+The Fault in Our Stars | hasFrenchAdaptationYear | 2013
+The Fault in Our Stars | hasFrenchTitle | Nos étoiles contraires
+The Fault in Our Stars | hasAwardName | Prix des Incorruptibles, Prix jeunesse des libraires du Québec, IBBY Honour List
+The Fault in Our Stars | hasAwardYear | 2014 (Prix jeunesse des libraires du Québec), 2015 (Prix des Incorruptibles)
+--------------------------------------------------
+FILM : The Fifth Element
+The Fifth Element | hasThemeSongTitle | Plavalaguna
+The Fifth Element | hasAwardName | César Award
+The Fifth Element | hasAwardYear | 1997
+The Fifth Element | hasAwardName | Oscar
+The Fifth Element | hasAwardYear | (Not specified in the context)
+--------------------------------------------------
+FILM : The Godfather
+The Godfather | hasFrenchAdaptationYear | 1972, 1974, 1990, 2006, 2009
+The Godfather | hasFrenchAdaptor | Francis Ford Coppola (for the films)
+The Godfather (1972) | hasFrenchVoiceCast | Marlon Brando, Al Pacino
+The Godfather: Part II (1974) | hasFrenchVoiceCast | Robert Duvall, Al Pacino
+The Godfather: Part III (1990) | hasFrenchVoiceCast | Andy Garcia, Al Pacino
+The Godfather (2006) | hasThemeSongTitle | Misunderstood Love
+The Godfather (2006) | hasThemeSongCompositor | Jake Clemons
+The Godfather II (2009) | hasAwardName | Game Developers Choice Awards
+The Godfather II (2009) | hasAwardYear | 2010
+--------------------------------------------------
+FILM : The Grand Budapest Hotel
+The Grand Budapest Hotel | hasThemeSongTitle | The Grand Budapest Hotel
+The Grand Budapest Hotel | hasThemeSongCompositor | Alexandre Desplat
+--------------------------------------------------
+FILM : The Great Gatsby
+The Great Gatsby | hasFrenchAdaptationYear, 1925
+The Great Gatsby | hasFrenchAdaptor, Not Specified (Roman by Francis Scott Fitzgerald)
+The Great Gatsby (1926) | hasFrenchAdaptor, Herbert Brenon
+The Great Gatsby (1949) | hasFrenchAdaptor, Elliott Nugent
+The Great Gatsby (1974) | hasFrenchAdaptor, Jack Clayton
+The Great Gatsby (2000) | hasFrenchAdaptor, Robert Markowitz
+The Great Gatsby (2013) | hasFrenchAdaptor, Baz Luhrmann
+The Great Gatsby (Bande Originale) | hasThemeSongTitle, Not Specified
+The Great Gatsby (1999) | hasAwardName, Metropolitan Opera Award
+The Great Gatsby (2023) | hasAwardName, Not Specified
+--------------------------------------------------
+FILM : The Green Mile
+The Green Mile | hasFrenchAdaptationYear | 1999
+The Green Mile | hasFrenchAdaptor | Frank Darabont
+The Green Mile | hasThemeSongTitle | Not specified in context
+--------------------------------------------------
+FILM : The Hangover
+The Hangover | hasAwardName | Golden Globe Award
+The Hangover | hasAwardYear | 2010
+The Hangover | hasThemeSongTitle | I'm Still Standing
+The Hangover | hasThemeSongCompositor | Jake Clemons, Ryan Tedder
+--------------------------------------------------
+FILM : The Hunger Games Mockingjay  Part 1
+Hunger Games: Mockingjay - Part 1 | hasFrenchAdaptationYear | 2014
+Hunger Games: Mockingjay - Part 1 | hasFrenchVoiceCast | Non specified
+Hunger Games: Mockingjay - Part 1 | hasThemeSongTitle | Meltdown (Stromae) and Yellow Flicker Beat (Lorde)
+Hunger Games: Mockingjay - Part 1 | hasAwardName | Not applicable (movie is not released yet)
+Hunger Games: Mockingjay - Part 1 | hasAwardYear | Not applicable (movie is not released yet)
+--------------------------------------------------
+FILM : The Hunger Games
+The Hunger Games | hasFrenchAdaptationYear | 2012, 2013, 2014, 2015, 2023, 2025
+The Hunger Games | hasFrenchAdaptor (implied) | Suzanne Collins (for books), not specified (for movies)
+The Hunger Games: The Ballad of Songbirds and Snakes | hasFrenchVoiceCast (implied) | Not specified (for movies)
+The Hunger Games: The Ballad of Songbirds and Snakes | hasThemeSongTitle (implied) | Not specified
+The Hunger Games: The Ballad of Songbirds and Snakes | hasThemeSongCompositor (implied) | Not specified
+The Hunger Games: Mockingjay - Part 1 | hasAwardName | Not specified
+The Hunger Games: Mockingjay - Part 2 | hasAwardName | Not specified
+--------------------------------------------------
+FILM : The Imitation Game
+The Imitation Game | hasThemeSongTitle | Not Given
+The Imitation Game | hasThemeSongCompositor | Not Given
+The Imitation Game | hasFrenchAdaptationYear | 2014
+The Imitation Game | hasFrenchAdaptor | Morten Tyldum
+The Imitation Game | hasAwardName | Not Given
+The Imitation Game | hasAwardYear | Not Given
+--------------------------------------------------
+FILM : The Incredibles
+The Incredibles | hasAwardName | Oscar du meilleur film d'animation
+The Incredibles | hasAwardYear | 2005
+--------------------------------------------------
+FILM : The Lion King
+The Lion King | hasThemeSongTitle | Can You Feel the Love Tonight
+The Lion King | hasThemeSongCompositor | Elton John
+The Lion King | hasAwardName | Oscar (Best Original Song)
+The Lion King | hasAwardYear | 1995
+--------------------------------------------------
+FILM : The Lord of the Rings The Fellowship of the Ring
+The Lord of the Rings: The Fellowship of the Ring | hasThemeSongTitle | Two Towers
+The Lord of the Rings: The Fellowship of the Ring | hasThemeSongCompositor | Howard Shore
+The Lord of the Rings: The Fellowship of the Ring | hasAwardName | Oscar Award
+The Lord of the Rings: The Fellowship of the Ring | hasAwardYear | 2002 (for Best Cinematography, Best Makeup and Best Original Score)
+The Lord of the Rings: The Fellowship of the Ring | hasAwardName | BAFTA Award
+The Lord of the Rings: The Fellowship of the Ring | hasAwardYear | 2002 (for Best Production Design, Best Special Visual Effects and Best Original Music)
+--------------------------------------------------
+FILM : The Lord of the Rings The Return of the King
+The Lord of the Rings: The Return of the King | hasAwardYear | 2004
+The Lord of the Rings: The Return of the King | hasAwardName | Oscars
+The Lord of the Rings: The Return of the King | hasFrenchAdaptationYear | 2003
+The Lord of the Rings: The Return of the King | hasThemeSongTitle | Not specified in context
+--------------------------------------------------
+FILM : The Lord of the Rings The Two Towers
+The Lord of the Rings The Two Towers | hasAwardName | Academy Awards
+The Lord of the Rings The Two Towers | hasAwardYear | 2003
+The Lord of the Rings The Two Towers | hasThemeSongTitle | May It Be
+The Lord of the Rings The Two Towers | hasThemeSongCompositor | Enya, Nicky Ryan
+--------------------------------------------------
+FILM : The Martian
+The Martian | hasThemeSongTitle | Underground Resistance (album series)
+The Martian | hasFrenchAdaptor | Andy Weir (original author of the novel)
+The Martian | hasFrenchAdaptationYear | 2015 (release year of the film adaptation)
+The Martian | hasAwardName | Not specified in context (movie won several awards but no specific award name was mentioned in the provided context)
+--------------------------------------------------
+FILM : The Matrix
+Matrix | hasThemeSongTitle | "What Is Love" by Rage Against the Machine
+Matrix | hasThemeSongCompositor | Don Davis, Marilyn Manson
+Matrix | hasAwardName | Oscar (Best Visual Effects, Best Editing, Best Sound, Best Sound Editing)
+Matrix | hasAwardYear | 2000
+--------------------------------------------------
+FILM : The Maze Runner
+The Maze Runner | hasFrenchAdaptationYear | 2014
+The Maze Runner | hasThemeSongCompositor | John Paesano
+The Maze Runner | hasAwardName | Not specified in context
+--------------------------------------------------
+FILM : The Prestige
+The Prestige | hasThemeSongTitle | "Prestige" (Daddy Yankee album)
+The Prestige | hasAwardName | Academy Award
+The Prestige | hasAwardYear | 2006 (for Best Cinematography, Best Original Score, and Best Visual Effects)
+--------------------------------------------------
+FILM : The Revenant
+The Revenant | hasFrenchAdaptationYear | 2015
+The Revenant | hasFrenchTitle | Le Revenant au Québec
+The Revenant | hasAwardName | Oscar
+The Revenant | hasAwardYear | 2016
+The Revenant | hasAwardName | Golden Globe
+The Revenant | hasThemeSongCompositor | Ryūichi Sakamoto, Alva Noto and Bryce Dessner
+--------------------------------------------------
+FILM : The Shawshank Redemption
+Shawshank Redemption | hasFrenchAdaptationYear | 1994
+Shawshank Redemption | hasFrenchVoiceCast | Non spécifié (contexte ne mentionne pas d'adaptation française)
+Shawshank Redemption | hasThemeSongTitle | Non spécifié (contexte ne mentionne pas de thème musical)
+Shawshank Redemption | hasThemeSongCompositor | Non spécifié (contexte ne mentionne pas de compositeur pour le thème musical)
+Shawshank Redemption | hasAwardName | AFI's 100 Years...100 Movies (Top 100 Films of All Time), IMDb's Top 250 Movies
+Shawshank Redemption | hasAwardYear | Non spécifié (contexte ne mentionne pas d'année de réception des prix)
+--------------------------------------------------
+FILM : The Shining
+The Shining | hasThemeSongTitle | Not specified (as the context does not provide information about a specific theme song for the movie)
+The Shining | hasFrenchAdaptationYear | 1980 (for the Stanley Kubrick film adaptation)
+The Shining | hasFrenchAdaptor | Not specified (as the context does not provide information about the French adaptor of the movie)
+The Shining | hasAwardName | Not specified (as the context does not provide information about any awards won by the movie)
+The Shining | hasAwardYear | Not specified (as the context does not provide information about any awards won by the movie)
+--------------------------------------------------
+FILM : The Silence of the Lambs
+The Silence of the Lambs | hasFrenchAdaptor | Jonathan Demme
+The Silence of the Lambs | hasFrenchAdaptationYear | 1991
+--------------------------------------------------
+FILM : The Terminator
+The Terminator | hasAwardName | National Film Registry
+The Terminator | hasFrenchAdaptationYear | 2008
+The Terminator | hasThemeSongTitle | "You Could Be Mine" by Guns N' Roses
+The Terminator | hasThemeSongCompositor | Brad Fiedel
+The Terminator | hasAwardYear | Not specified in context
+--------------------------------------------------
+FILM : The Truman Show
+The Truman Show | hasThemeSongTitle | "The Truman Show" by Burton Lee
+The Truman Show | hasAwardName | Golden Globe Award
+The Truman Show | hasAwardYear | 1999 (for Best Actor - Motion Picture Musical or Comedy)
+--------------------------------------------------
+FILM : The Wolverine
+The Wolverine | hasFrenchAdaptationYear | 2013
+The Wolverine | hasFrenchVoiceCast | Non-specified
+The Wolverine | hasThemeSongTitle | Non-specified
+The Wolverine | hasThemeSongCompositor | Non-specified
+The Wolverine | hasAwardName | Non-specified
+The Wolverine | hasAwardYear | Non-specified
+--------------------------------------------------
+FILM : Thor The Dark World
+Thor The Dark World | hasFrenchAdaptationYear | 2013
+Thor The Dark World | hasAwardName | Not specified
+Thor The Dark World | hasAwardYear | Not specified
+Thor The Dark World | hasThemeSongTitle | Not specified
+Thor The Dark World | hasThemeSongCompositor | Brian Tyler
+Thor The Dark World | hasFrenchVoiceCast | Not specified (as the text does not provide information on French voice cast)
+Thor The Dark World | hasAwardName (for the post-credit scene) | Not specified
+Thor The Dark World | hasAwardYear (for the post-credit scene) | Not specified
+--------------------------------------------------
+FILM : Thor
+Thor | hasEtymology | Norrois Þórr, d'un plus ancien þónr « tonnerre »
+Thor | hasSurnoms | Asa-Thor, Aka-Thor
+Thor | hasFamilyAndResidence | Son | Odin et Jörd, épouse Sif, fils adoptif de Vingnir et Hlóra, beau-fils d'Ull
+Thor | hasFamilyAndResidence | Résidence | Bilskirnir
+Thor | hasAttributsAndFunctions | Marteau | Mjöllnir
+Thor | hasAttributsAndFunctions | Char | Tanngrisnir et Tanngnjóstr
+Thor | hasCulteAncien | Popularité | Le plus populaire des dieux nordiques, le dieu préféré des humbles, le protecteur des forgerons, des artisans et des paysans.
+--------------------------------------------------
+FILM : Titanic
+Titanic | hasAwardName | Academy Award for Best Picture
+Titanic | hasAwardYear | 1998
+Titanic (film) | hasThemeSongTitle | My Heart Will Go On
+My Heart Will Go On | hasThemeSongCompositor | James Horner, Will Jennings
+--------------------------------------------------
+FILM : Toy Story 2
+Toy Story 2 | hasFrenchAdaptationYear | 1999
+Toy Story 2 | hasAwardName | Academy Award for Best Animated Feature
+Toy Story 2 | hasThemeSongTitle | "When She Loved Me"
+Toy Story 2 | hasThemeSongCompositor | Randy Newman
+--------------------------------------------------
+FILM : Toy Story 3
+Toy Story 3 | hasAwardName | Academy Award for Best Animated Feature
+Toy Story 3 | hasAwardYear | 2011
+Toy Story 3 | hasFrenchAdaptationYear | 2010
+Toy Story 3 | hasFrenchVoiceCast | Tom Hanks, Tim Allen, Joan Cusack, Don Rickles, Estelle Harris, John Ratzenberger, Wallace Shawn, Jeff Pidgeon, Jodi Benson, R. Lee Ermey, John Morris, Laurie Metcalf, Ned Beatty, Timothy Dalton, Kristen Schaal, Bonnie Hunt, Whoopi Goldberg, Jeff Garlin, Michael Keaton
+Toy Story 3 | hasThemeSongTitle | "You've Got a Friend in Me"
+Toy Story 3 | hasThemeSongCompositor | Randy Newman
+--------------------------------------------------
+FILM : Toy Story
+Toy Story | hasFrenchAdaptationYear | 1995
+Toy Story | hasFrenchVoiceCast | Non spécifié (mentionné que de nombreux produits dérivés sont apparus sur le marché)
+Toy Story | hasThemeSongTitle | Non spécifié (pas de mention explicite du titre de la chanson thème)
+Toy Story 2 | hasFrenchAdaptor | John Lasseter (mentionné comme réalisateur de Toy Story 2)
+Toy Story 3 | hasFrenchAdaptor | Lee Unkrich (mentionné comme réalisateur de Toy Story 3)
+Toy Story 4 | hasFrenchAdaptor | Josh Cooley (mentionné comme réalisateur de Toy Story 4)
+--------------------------------------------------
+FILM : Transformers
+Transformers | hasThemeSongTitle | La Guerre des robots
+Transformers | hasAwardName | Daytime Emmy
+Beast Wars: Transformers | hasAwardName | Daytime Emmy
+Transformers Prime  | hasAwardName | Emmy Award
+--------------------------------------------------
+FILM : Up
+Movie Title | Relation | Value
+Up | hasAwardName | Academy Award for Best Animated Feature Film
+Up | hasThemeSongTitle | Married Life
+Up | hasThemeSongCompositor | Michael Giacchino
+--------------------------------------------------
+FILM : V for Vendetta
+V for Vendetta | hasThemeSongTitle | "Nine Inch Nails - Burn"
+V for Vendetta | hasThemeSongCompositor | Trent Reznor
+V for Vendetta | hasAwardName | Saturn Award for Best Action or Adventure Film
+V for Vendetta | hasAwardYear | 2006
+--------------------------------------------------
+FILM : WALL-E
+WALL-E | hasAwardName | Golden Globe
+WALL-E | hasAwardYear | 2008
+WALL-E | hasAwardName | Oscar
+WALL-E | hasAwardYear | 2009
+WALL-E | hasThemeSongTitle | Put On Your Sunday Clothes, It Only Takes a Moment (from Hello, Dolly!)
+WALL-E | hasFrenchAdaptationYear | 2008
+WALL-E | hasFrenchVoiceCast | Non-disclosed (characters express themselves with gestures or robot sounds)
+WALL-E | hasAwardName | Hugo Award
+WALL-E | hasAwardYear | 2009
+--------------------------------------------------
+FILM : Whiplash
+Movie Title | Relation | Value
+hasThemeSongTitle | Whiplash (Don Ellis)
+hasAwardName | Academy Award for Best Sound Mixing
+hasAwardYear | 2015
+--------------------------------------------------
+FILM : Wonder Woman
+Wonder Woman | hasThemeSongTitle | "The Psychadelic Pussycat Dolls Theme"
+Wonder Woman | hasThemeSongCompositor | Cyndi Lauper
+Wonder Woman | hasAwardName | Saturn Award for Best Costume Designer
+Wonder Woman | hasAwardYear | 2017
+--------------------------------------------------
+FILM : World War Z
+World War Z | hasFrenchAdaptationYear | 2013
+World War Z | hasFrenchAdaptor | Marc Forster (film)
+World War Z | hasFrenchVoiceCast | Not specified (film)
+World War Z | hasThemeSongTitle | Not specified
+World War Z | hasThemeSongCompositor | Not specified
+World War Z | hasAwardName | Audie Award (audio book)
+World War Z | hasAwardYear | 2007 (audio book)
+--------------------------------------------------
+FILM : Wreck-It Ralph
+Wreck-It Ralph | hasThemeSongTitle | Chez Tapper
+Wreck-It Ralph | hasAwardName | Annie Award for Best Animated Feature
+Wreck-It Ralph | hasAwardYear | 2013
+Wreck-It Ralph | hasThemeSongCompositor | Henry Jackman, Michael Giacchino
+--------------------------------------------------
+FILM : X-Men Apocalypse
+Movie Title | Relation | Value
+X-Men Apocalypse | hasFrenchAdaptationYear | 2016
+X-Men Apocalypse | hasThemeSongTitle | Not specified in context
+X-Men Apocalypse | hasThemeSongCompositor | Not specified in context
+X-Men Apocalypse | hasAwardName | Not awarded in the given context
+--------------------------------------------------
+FILM : X-Men Days of Future Past
+X-Men Days of Future Past | hasThemeSongTitle | Days of Future Past
+X-Men Days of Future Past | hasThemeSongCompositor | John Ottman
+X-Men Days of Future Past | hasFrenchAdaptationYear | 2014
+X-Men Days of Future Past | hasFrenchVoiceCast (Multiple) | Cédric Dumond, Frédéric Souterelle, Marie-Eugénie Maréchale, etc.
+--------------------------------------------------
+FILM : X-Men First Class
+X-Men First Class | hasFrenchAdaptationYear | 2011
+X-Men First Class | hasFrenchAdaptor | Matthew Vaughn
+X-Men First Class | hasThemeSongCompositor | Henry Jackman
+--------------------------------------------------
+FILM : X-Men Origins Wolverine
+Movie Title | Relation | Value
+hasFrenchAdaptationYear | 2009
+hasThemeSongTitle | Not specified in the context
+hasThemeSongCompositor | Not specified in the context
+hasAwardName | Not specified in the context
+hasAwardYear | Not specified in the context
+hasFrenchVoiceCast | Not specified in the context
+hasFrenchAdaptor | Not specified in the context
+--------------------------------------------------
+FILM : X-Men
+X-Men | hasThemeSongTitle | Main Title Theme by John Ottman
+X-Men | hasAwardName | Academy Award for Best Visual Effects (2001)
+X-Men | hasAwardYear | 2001
+X-Men | hasFrenchAdaptor | Laurent Chalet, Jean-Pierre Jeunet (for X-Men and X2: X-Men United)
+X-Men | hasFrenchVoiceCast | Daniel Dae Kim, Fanny Ardant, Gérard Depardieu, Jean Reno, Jean-Hugues Anglade, Olivier Martinez, Vincent Cassel (for X-Men and X2: X-Men United)
+X-Men | hasFrenchAdaptationYear | 2001, 2003
+--------------------------------------------------
+FILM : Zootopia
+Zootopia | hasThemeSongTitle | Not So Fast
+Zootopia | hasAwardName | Oscar for Best Animated Feature Film
+Zootopia | hasAwardYear | 2017
+Zootopia | hasFrenchAdaptationYear | 2016
+Zootopia | hasFrenchVoiceCast | (Not provided in the context)
+Zootopia | hasThemeSongCompositor | (Not provided in the context)
+--------------------------------------------------
+FILM : 2012
+La date précisée pour l'expiration du protocole de Kyoto n'est pas fournie dans la chronologie. Le protocole de Kyoto a expiré le 31 décembre 2012, comme prévu.
+
+Les événements marquants de l'année 2012 sont :
+
+- Arts et culture :
+	+ Les lauréats du Prix Nobel en 2012 sont :
+		* Brian Kobilka et Robert Lefkowitz (chimie)
+		* Mo Yan (littérature)
+		* Union européenne (paix)
+		* John Gurdon et Shinya Yamanaka (physiologie ou médecine)
+		* Serge Haroche et David Wineland (physique)
+		* « Prix Nobel » d'économie : Alvin Roth et Lloyd Shapley.
+	+ Prix Pritzker (architecture) : Wang Shu.
+- Science et technique :
+	+ Le spationaute Akihiko Hoshide marque la mode naissante du « selfie » en réalisant un autoportrait depuis l'espace le 5 septembre.
+	+ Annonce de la découverte du boson de Higgs au CERN le 4 juillet.
+- Sport :
+	+ Le typhon Bopha, le plus puissant de l'année dans la région, ravage le sud des Philippines le 4 décembre.
+	+ Gangnam Style de Psy atteint le milliard de vues sur YouTube le 21 décembre.
+- Fondations en 2012 :
+	+ Ouverture du Louvre-Lens à Lens, Pas-de-Calais, France le 4 décembre.
+- Distinctions internationales :
+	+ Le président palestinien Mahmoud Abbas annonce la mise sur pied d'une procédure d'exhumation du corps de Yasser Arafat, afin d'enquêter sur les causes exactes de son décès le 11 novembre 2004. Des analyses effectuées en juillet 2012 par un laboratoire suisse avaient décelé la présence de quantités suspectes de polonium sur les effets personnels de l'ancien président.
+	+ Le comité Nobel annonce que le prix Nobel de la paix 2012 est décerné à l'Union européenne.
+- Décès en 2012 :
+	+ Plusieurs hauts responsables du régime syrien sont tués ou blessés dans un attentat à Damas le 18 juillet.
+	+ Xi Jinping, nouveau numéro un chinois succède à Hu Jintao au poste de secrétaire général du Parti communiste chinois le 15 novembre.
+--------------------------------------------------
+FILM : 21 Jump Street
+21 Jump Street | hasAwardName | Imagen Award 1988
+21 Jump Street | hasAwardYear | 1988
+21 Jump Street | hasThemeSongCompositor | Holly Robinson Peete, Peter Bernstein, Michael Z. Gordon
+--------------------------------------------------
+FILM : 300
+300 | hasFrenchAdaptationYear | Not provided (Movie is not a French adaptation)
+300 | hasThemeSongTitle | Not provided (No theme song information given)
+300 | hasThemeSongCompositor | Not provided (No theme song compositor information given)
+300 | hasAwardName | Not provided (No award information given)
+300 | hasAwardYear | Not provided (No award information given)
+300 | hasFrenchAdaptor | Not provided (Movie is not a French adaptation)
+300 | hasFrenchVoiceCast | Not provided (Movie is not a French adaptation)
+--------------------------------------------------
+FILM : Alice in Wonderland
+Alice in Wonderland | hasFrenchAdaptationYear | 1973 (Daluc et Turbo's comic book)
+Alice in Wonderland | hasFrenchAdaptationYear | 1949 (Marc Maurette, Dallas Bower and Louis Bunin's animation film)
+Alice in Wonderland | hasFrenchAdaptationYear | 1951 (Disney's animation film)
+Alice au pays des merveilles | hasFrenchAdaptationYear | 2010 (Tim Burton's film)
+Alice de l'autre côté du miroir | hasFrenchAdaptationYear | 2016
+
+Alice in Wonderland: A Musical Porno | hasAwardName | X-Rated Critics Organization Awards
+Alice au pays des merveilles (ballet) | hasAwardName | Olivier Award for Outstanding Achievement in Dance
+
+American McGee's Alice | hasThemeSongTitle | "Madness" by Junkie XL and Jonathan Davis
+Alice au pays des merveilles (2010 film soundtrack) | hasThemeSongTitle | "White Rabbit" by Pino Donaggio
+Alice in Wonderland (Neuschwanstein album) | hasThemeSongTitle | "Alice in Wonderland"
+Alice in Wonderland (Sammy Fain song) | hasThemeSongTitle | "Alice in Wonderland"
+Alice au pays des merveilles (Florent Nagel piece for piano) | hasThemeSongTitle | "Alice au pays des merveilles"
+
+American McGee's Alice | hasAwardName | Academy of Interactive Arts & Sciences Awards
+Alice au pays des merveilles (2010 film) | hasAwardName | Saturn Award for Best Fantasy Film
+Alice de l'autre côté du miroir | hasAwardName | Golden Globe Award for Best Motion Picture – Musical or Comedy
+--------------------------------------------------
+FILM : Alien
+Alien | hasThemeSongTitle | Alien (bande originale du film de 1979)
+Alien | hasAwardName | Academy Award for Best Visual Effects (1980)
+Alien | hasAwardYear | 1980
+Aliens | hasGameTitle | Aliens: A Comic Book Adventure (1995)
+Aliens | hasGameTitle | Aliens: Infestation (2011)
+Aliens | hasGameTitle | Aliens: Colonial Marines (2013)
+Alien 3 | hasDirector | David Fincher
+Alien: Resurrection | hasDirector | Jean-Pierre Jeunet
+Prometheus | hasDirector | Ridley Scott
+Alien: Covenant | hasDirector | Ridley Scott
+Alien: Romulus | hasDirector | Fede Álvarez
+Aliens vs. Predator | hasNumberOfFilms | 2 (2004, 2007)
+--------------------------------------------------
+FILM : Ant-Man
+Ant-Man | hasThemeSongTitle | "Ant-Man" by Christophe Beck (2015)
+Ant-Man | hasAwardName | Critics' Choice Movie Award for Best Visual Effects (2016)
+Ant-Man | hasAwardYear | 2016
+Ant-Man | hasFrenchAdaptor | Grégory Frot (voice)
+Ant-Man | hasFrenchVoiceCast | Paul Rudd (voice), Michael Douglas (voice), Evangeline Lilly (voice)
+--------------------------------------------------
+FILM : Avatar
+Avatar | hasThemeSongTitle | Avatar (film soundtrack)
+Avatar | hasAwardName | Academy Award for Best Visual Effects
+Avatar | hasAwardYear | 2010
+Avatar, le dernier maître de l'air | hasThemeSongTitle | The Last Airbender: The Soundtrack
+Avatar, le dernier maître de l'air (film) | hasFrenchAdaptor | Christian Clavier
+Avatar, le dernier maître de l'air (film) | hasFrenchVoiceCast | Sébastien Desjours, Célia Charpentier, Michel Vigné
+Avatar, le dernier maître de l'air (film) | hasAwardName | Annie Award for Best Animated Feature
+Avatar, le dernier maître de l'air (film) | hasAwardYear | 2006
+Avatar, le dernier maître de l'air (série télévisée) | hasThemeSongCompositor | Jeremy Zuckerman
+Avatar, le dernier maître de l'air (série télévisée) | hasAwardName | Primetime Emmy Award for Outstanding Animated Program
+Avatar, le dernier maître de l'air (série télévisée) | hasAwardYear | 2006, 2007, 2008
+--------------------------------------------------
+FILM : Avengers Age of Ultron
+Avengers Age of Ultron | hasFrenchAdaptationYear | 2015
+Avengers Age of Ultron | hasFrenchVoiceCast | Robert Downey Jr., Chris Hemsworth, Mark Ruffalo, Chris Evans, Scarlett Johansson, Jeremy Renner, Samuel L. Jackson, ...
+Avengers Age of Ultron | hasThemeSongTitle | Non spécifié dans le contexte fourni
+Avengers Age of Ultron | hasThemeSongCompositor | Non spécifié dans le contexte fourni
+Avengers Age of Ultron | hasAwardName | Non remporté de nombreux prix, mais a rapporté plus de 1,4 milliard de dollars dans le monde entier.
+--------------------------------------------------
+FILM : Back to the Future Part II
+Back to the Future Part II | hasFrenchAdaptationYear | 1989
+Back to the Future Part II | hasAwardName | Not specified (mentioned that it was a success worldwide)
+Back to the Future Part II | hasThemeSongTitle | Not specified
+Back to the Future Part II | hasThemeSongCompositor | Not specified
+Back to the Future Part II | hasFrenchVoiceCast | Not specified
+Back to the Future Part II | hasAlternateTimeline | Yes (implied by the plot)
+--------------------------------------------------
+FILM : Back to the Future
+Back to the Future | hasFrenchAdaptationYear | 1985, 1989, 1990
+Back to the Future | hasThemeSongTitle | N/A (Movie doesn't have a specific theme song)
+Back to the Future: The Ride | N/A (Attraction in Universal parks, not a movie)
+Retour vers le futur (album) | N/A (Not related to the movie Back to the Future)
+Retour vers le futur (The Late Philip J. Fry) | N/A (Episode of Futurama, not related to the movie Back to the Future)
+1998-2018, Retour vers le futur | N/A (Episode of Joséphine, ange gardien, not related to the movie Back to the Future)
+--------------------------------------------------
+FILM : Batman Begins
+Batman Begins | hasFrenchAdaptationYear | 2005
+Batman Begins | hasFrenchTitle | Batman : Le Commencement au Québec
+Batman Begins | hasThemeSongCompositor | Hans Zimmer et James Newton Howard
+--------------------------------------------------
+FILM : Batman v Superman Dawn of Justice
+Batman v Superman Dawn of Justice | hasAwardName | Secret Defence (implied)
+Batman v Superman Dawn of Justice | hasThemeSongTitle | Not specified in context
+Batman v Superman Dawn of Justice | hasThemeSongCompositor | Not specified in context
+Batman v Superman Dawn of Justice | hasFrenchAdaptor | Zack Snyder (director)
+Batman v Superman Dawn of Justice | hasFrenchVoiceCast | Ben Affleck, Henry Cavill, Amy Adams, Jesse Eisenberg, Gal Gadot, Diane Lane, Laurence Fishburne, Holly Hunter (main cast)
+Batman v Superman Dawn of Justice | hasAwardYear | Not specified in context
+--------------------------------------------------
+FILM : Beauty and the Beast
+Movie Title | Relation | Value
+--------------|------------|-------------
+Beauty and the Beast | hasFrenchAdaptationYear | La Belle et la Bête
+Beauty and the Beast (1991) | hasThemeSongTitle | Beauty and the Beast
+Beauty and the Beast (1991) | hasThemeSongCompositor | Alan Menken, Howard Ashman
+Beauty and the Beast (2017) | hasAwardName | Best Costume Design - Fantasy Film
+Beauty and the Beast (2017) | hasAwardYear | 2018
+Beauty and the Beast (1991) | hasThemeSongTitle | Beauty and the Beast (Reprise)
+Beauty and the Beast (1991) | hasThemeSongCompositor | Celine Dion, Peabo Bryson
+--------------------------------------------------
+FILM : Big Hero 6
+Big Hero 6 | hasThemeSongTitle | Les Nouveaux Héros
+Big Hero 6 | hasFrenchAdaptationYear | 2015
+Big Hero 6 | hasAwardName | Academy Award for Best Animated Feature
+Big Hero 6 | hasAwardYear | 2015
+Baymax | hasThemeSongCompositor | Michael Giacchino
+Hiro Takachiho | hasFrenchAdaptor | Scott Adsit (voice)
+Honey Lemon | hasFrenchVoiceCast | Amanda Crew (voice)
+--------------------------------------------------
+FILM : Black Swan
+Black Swan | hasThemeSongTitle | Tossing and Turning (performed by Clint Mansell)
+Black Swan (film) | hasFrenchAdaptor | Yann Le Gallo
+Black Swan (film) | hasAwardName | Academy Award
+Black Swan (film) | hasAwardYear | 2011
+Black Swan (film) | hasThemeSongCompositor | Clint Mansell, Bryce Dessner
+--------------------------------------------------
+FILM : Blade Runner
+Blade Runner | hasFrenchAdaptationYear | 1982 (for the movie)
+Blade Runner | hasThemeSongCompositor | Vangelis
+Blade Runner 2049 | hasAwardName | N/A (as of provided context)
+Blade Runner 2049 | hasAwardYear | N/A (as of provided context)
+Blade Runner 2099 | hasAwardName | N/A (as of provided context)
+Blade Runner 2099 | hasAwardYear | N/A (as of provided context)
+--------------------------------------------------
+FILM : Brave
+Brave (film d'animation) | hasThemeSongTitle | Brave (Idina Menzel)
+Brave (film d'animation) | hasThemeSongCompositor | Patrick Doyle
+Brave (film d'animation) | hasAwardName | Annie Award
+Brave (film d'animation) | hasAwardYear | 2013
+Brave (album de Patrick Doyle) | hasFrenchAdaptationYear | 2012
+Brave (chanson d'Idina Menzel) | hasAlbumTitle | I Stand
+Brave (chanson d'Idina Menzel) | hasReleaseDate | 29 juin 2008
+--------------------------------------------------
+FILM : Captain America Civil War
+Captain America Civil War | hasAwardName | Accords de Sokovie
+Captain America Civil War | hasThemeSongTitle | Le Partisan (The Falcon and the Winter Soldier) by Henry Jackman
+Captain America Civil War | hasFrenchAdaptor | Anthony et Joe Russo
+Captain America Civil War | hasFrenchVoiceCast | Chris Evans, Robert Downey Jr., Sebastian Stan, Scarlett Johansson, Don Cheadle, Chadwick Boseman, Paul Rudd, Elizabeth Olsen, Anthony Mackie, Daniel Brühl, Emily VanCamp, Frank Grillo, Martin Freeman, William Hurt, Alfre Woodard, John Slattery, Hope Davis, Marion Cotillard, Warwick Davis, Toby Jones, Henry Goodman, Helen McCrory, Ken Stott, Sheila Atim, Adrian Scarborough, Peter Sullivan, Ross O'Hennessy, Paul Bettany
+Captain America Civil War | hasFrenchReleaseDate | 29 avril 2016
+--------------------------------------------------
+FILM : Captain America The First Avenger
+Captain America: First Avenger | hasAwardName | None (as of the provided context)
+Captain America: First Avenger | hasFrenchAdaptationYear | 2011
+Captain America: First Avenger | hasFrenchVoiceCast | Not specified in the context
+Captain America: First Avenger | hasThemeSongTitle | Not specified in the context
+Captain America: First Avenger | hasThemeSongCompositor | Not specified in the context
+Captain America: First Avenger | hasAwardYear | None (as of the provided context)
+Captain America: First Avenger | hasFrenchAdaptor | Not specified in the context
+--------------------------------------------------
+FILM : Captain America The Winter Soldier
+Captain America The Winter Soldier | hasFrenchAdaptationYear | 2014
+Captain America The Winter Soldier | hasFrenchTitle | Captain America : Le Soldat de l'hiver
+Captain America The Winter Soldier | hasAwardName | Not specified in context
+--------------------------------------------------
+FILM : Cars
+Cars | hasThemeSongTitle | Gary Numan's Cars
+Cars | hasFrenchAdaptationYear | 2006
+Cars | hasAwardName | Academy Award for Best Animated Feature
+Cars | hasAwardYear | 2007 (nominated)
+Cars | hasThemeSongCompositor | Not specified in context
+Cars | hasFrenchVoiceCast | Not specified in context
+Cars | hasFrenchAdaptor | Not specified in context
+Cars | isGroupMusical | No (The Cars is a group, but not for the movie Cars)
+--------------------------------------------------
+FILM : Casino Royale
+Casino Royale | hasThemeSongTitle | David Arnold (2006 film score)
+Casino Royale | hasFrenchAdaptationYear | 1953 (first novel publication year)
+Casino Royale | hasAwardName | N/A (no specific award mentioned in context)
+Casino Royale | hasFrenchVoiceCast | N/A (no specific voice cast mentioned in context)
+Casino Royale | hasFrenchAdaptor | N/A (no specific adaptor mentioned in context)
+--------------------------------------------------
+FILM : Catch Me If You Can
+Catch Me If You Can (film, 2002) | hasThemeSongTitle | catch me if you can (Matt Pokora song)
+Catch Me If You Can (film, 2002) | hasThemeSongCompositor | Not specified (Matt Pokora song)
+Catch Me If You Can (musical) | hasFrenchAdaptationYear | Not specified
+Catch Me If You Can (musical) | hasFrenchAdaptor | Not specified
+Catch Me If You Can (2002 film) | hasAwardName | Not awarded or specified
+Catch Me If You Can (2002 film) | hasAwardYear | Not awarded or specified
+Catch Me If You Can (2015 song) | hasFrenchAdaptationYear | Not specified
+Catch Me If You Can (2015 song) | hasFrenchAdaptor | Not specified
+Catch Me If You Can (2017 song) | hasFrenchAdaptationYear | Not specified
+Catch Me If You Can (2017 song) | hasFrenchAdaptor | Not specified
+--------------------------------------------------
+FILM : Dawn of the Planet of the Apes
+Dawn of the Planet of the Apes | hasFrenchAdaptationYear | 2014
+Dawn of the Planet of the Apes | hasFrenchTitle | La Planète des singes : L'Affrontement
+Dawn of the Planet of the Apes | hasThemeSongCompositor | Michael Giacchino
+--------------------------------------------------
+FILM : Deadpool
+Deadpool | hasThemeSongTitle | Deadpool Theme (2016) by Tom Holkenborg (Junkie XL)
+Deadpool | hasThemeSongCompositor | Tom Holkenborg (Junkie XL)
+Deadpool | hasAwardName | MTV Movie & TV Awards - Best Comic-To-Movie Adaptation (2017)
+Deadpool | hasAwardYear | 2017
+--------------------------------------------------
+FILM : Despicable Me 2
+has the following information:
+
+* Title: Despicable Me 2 (French title) / Détestable moi 2 (Québécois title) / Despicable Me 2 (original title)
+* Release date: June 26, 2013 (France), July 3, 2013 (USA)
+* Directors: Pierre Coffin and Chris Renaud
+* Writers: Ken Daurio and Cinco Paul
+* Music: Heitor Pereira and Pharrell Williams
+* Budget: $76 million
+* Countries of production: USA and France
+* Genre: Animation
+* Languages: English (original), French, Québécois
+* Runtime: 98 minutes
+
+Cast (voice):
+
+* Steve Carell as Gru
+* Kristen Wiig as Lucy Wilde
+* Pierre Coffin as the Minions
+* Russell Brand as Dr. Nefario
+* Miranda Cosgrove as Margo
+* Dana Gaier as Edith
+* Elsie Fisher as Agnes
+* Benjamin Bratt as Eduardo Perez / El Macho
+* Moises Arias as Antonio
+* Steve Coogan as Silas Ramsbottom
+* Ken Jeong as Floyd
+
+French voice cast:
+
+* Gad Elmaleh as Gru
+* Audrey Lamy as Lucy Wilde
+* Sarah Brannens as Margo
+* Dizzie Le-Tan as Agnes
+* Salomé Lemire as Édith
+* Éric Cantona as Eduardo Perez / El-Macho
+* Daniel Kenigsberg as Silas de la Mollefesse
+* Antonin Icovic as Antonio Perez
+* Jonathan Cohen as the doctor Néfario
+* Christan Gonon as Floyd
+* Maélia Gentil as Jillian
+* Jeanne Savary as Shannon
+* Pierre Coffin as the Minions
+* Patrick Préjean as server Italian
+
+Québécois voice cast:
+
+* Gilbert Lachance as Gru
+* Camille Cyr-Desmarais as Lucy Wilde
+* Manual Tadros as Eduardo Perez / El Macho
+* Benoît Gouin as Silas de la Mollefesse
+* Catherine Brunet as Margo
+* Ludivine Reding as Agnes
+* Léa Roy as Édith
+* Jacques Lavallée as Dr Néfario
+* Xavier Dolan as Antonio Perez
+* Nicolas Charbonneaux-Collombet as Floyd
+* Annie Girard as Jillian
+--------------------------------------------------
+FILM : Die Hard
+Die Hard | hasThemeSongTitle | "Die Hard" by Stan Bush
+Die Hard | hasAwardName | Academy Award for Best Sound Editing (nominated)
+Die Hard | hasAwardYear | 1989
+Die Hard 2: Die Harder | hasThemeSongTitle | "Let It Roll" by David Hasselhoff
+Die Hard 2: Die Harder | hasAwardName | Golden Globe Award for Best Original Song (nominated)
+Die Hard 2: Die Harder | hasAwardYear | 1990
+Die Hard with a Vengeance | hasThemeSongTitle | "Two Steps from the Edge" by U2
+Die Hard with a Vengeance | hasAwardName | Academy Award for Best Sound Editing (nominated)
+Die Hard with a Vengeance | hasAwardYear | 1996
+Live Free or Die Hard | hasThemeSongTitle | "Live to Rise" by Soundgarden
+Live Free or Die Hard | hasAwardName | Saturn Award for Best Action Adventure Film (nominated)
+Live Free or Die Hard | hasAwardYear | 2008
+A Good Day to Die Hard | hasThemeSongTitle | "I Will Always Love You" by Pia Zadora
+A Good Day to Die Hard | hasAwardName | Golden Raspberry Award for Worst Original Song (won)
+A Good Day to Die Hard | hasAwardYear | 2013
+--------------------------------------------------
+FILM : Divergent
+Movie Title | Relation                   | Value
+-----------------------------------|---------------------------|------------
+Divergent               | hasFrenchAdaptationYear    | 2014
+Divergente (titre français) | hasFrenchAdaptor           | Neil Burger
+Divergent 2 : L'Insurrection (titre français) | hasFrenchAdaptor          | Robert Schwentke
+Divergent 3 : Au-delà du mur (titre français) | hasFrenchAdaptor          | Robert Schwentke
+(No information provided for the remaining relations as they are not mentioned in the context.)
+--------------------------------------------------
+FILM : Django Unchained
+Django Unchained | hasThemeSongTitle | "Annie" (theme song from the 1973 blaxploitation film "Cleopatra Jones")
+Django Unchained | hasAwardName | Academy Award
+Django Unchained | hasAwardYear | 2013
+Django Unchained | hasAwardName | Golden Globe Award
+Django Unchained | hasAwardYear | 2013
+Django Unchained | hasThemeSongCompositor | Mac Davis (for "Annie")
+--------------------------------------------------
