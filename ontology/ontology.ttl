@@ -144,8 +144,6 @@
     rdfs:label "has vote count"@en ;
     rdfs:comment "Total number of votes received"@en .
 
-# Vote Average and Vote Count will be inferred from user ratings using SPARQL rules.
-
 :hasRevenue rdf:type owl:DatatypeProperty , owl:FunctionalProperty ;
     rdfs:domain :MovieResult ;
     rdfs:range xsd:float ;
