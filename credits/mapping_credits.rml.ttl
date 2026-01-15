@@ -1,0 +1,138 @@
+@base <http://example.com/rules/> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix movie: <http://saraaymericradhi.org/movie-ontology#> .
+
+# -----------------------------------------------------------------------------
+# TriplesMap: CastMember (acteur dans un film spécifique)
+# -----------------------------------------------------------------------------
+<#CastMemberMap>
+    rml:logicalSource [
+        rml:source "cast.csv" ;
+        rml:referenceFormulation ql:CSV
+    ] ;
+    
+    rr:subjectMap [
+        rr:template "http://saraaymericradhi.org/cast/{id}_{name}" ;
+        rr:class movie:CastMember
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate movie:personName ;
+        rr:objectMap [ rml:reference "name" ; rr:datatype xsd:string ]
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate movie:castOrder ;
+        rr:objectMap [ rml:reference "order" ; rr:datatype xsd:integer ]
+    ] .
+
+# -----------------------------------------------------------------------------
+# TriplesMap: Character (personnage joué)
+# -----------------------------------------------------------------------------
+<#CharacterMap>
+    rml:logicalSource [
+        rml:source "cast.csv" ;
+        rml:referenceFormulation ql:CSV
+    ] ;
+    
+    rr:subjectMap [
+        rr:template "http://saraaymericradhi.org/character/{id}_{character}" ;
+        rr:class movie:Character
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate movie:characterName ;
+        rr:objectMap [ rml:reference "character" ; rr:datatype xsd:string ]
+    ] .
+
+# -----------------------------------------------------------------------------
+# TriplesMap: CastMember plays Character
+# -----------------------------------------------------------------------------
+<#CastPlaysCharacterMap>
+    rml:logicalSource [
+        rml:source "cast.csv" ;
+        rml:referenceFormulation ql:CSV
+    ] ;
+    
+    rr:subjectMap [
+        rr:template "http://saraaymericradhi.org/cast/{id}_{name}" ;
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate movie:playsCharacter ;
+        rr:objectMap [ rr:template "http://saraaymericradhi.org/character/{id}_{character}" ]
+    ] .
+
+
+# -----------------------------------------------------------------------------
+# TriplesMap: MovieProduction has CastMember
+# -----------------------------------------------------------------------------
+<#ProductionHasCastMap>
+    rml:logicalSource [
+        rml:source "cast.csv" ;
+        rml:referenceFormulation ql:CSV
+    ] ;
+    
+    rr:subjectMap [
+        rr:template "http://saraaymericradhi.org/movie/{id}/production" ;
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate movie:hasCastMember ;
+        rr:objectMap [ rr:template "http://saraaymericradhi.org/cast/{id}_{name}" ]
+    ] .
+
+# -----------------------------------------------------------------------------
+# TriplesMap: CrewMember (autres jobs)
+# -----------------------------------------------------------------------------
+<#CrewMemberMap>
+    rml:logicalSource [
+        rml:source "crew.csv" ;
+        rml:referenceFormulation ql:CSV
+    ] ;
+    
+    rr:subjectMap [
+        rr:template "http://saraaymericradhi.org/crew/{id}_{name}" ;
+        rr:class movie:CrewMember
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate movie:personName ;
+        rr:objectMap [ rml:reference "name" ; rr:datatype xsd:string ]
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate movie:personGender ;
+        rr:objectMap [ rml:reference "gender" ; rr:datatype xsd:string ]
+    ] ;
+    
+    
+    rr:predicateObjectMap [
+        rr:predicate movie:job ;
+        rr:objectMap [ rml:reference "job" ; rr:datatype xsd:string ]
+    ] .
+
+
+# -----------------------------------------------------------------------------
+# TriplesMap: MovieProduction has CrewMember
+# -----------------------------------------------------------------------------
+<#ProductionHasCrewMap>
+    rml:logicalSource [
+        rml:source "crew.csv" ;
+        rml:referenceFormulation ql:CSV
+    ] ;
+    
+    rr:subjectMap [
+        rr:template "http://saraaymericradhi.org/movie/{id}/production" ;
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate movie:hasCrewMember ;
+        rr:objectMap [ rr:template "http://saraaymericradhi.org/crew/{id}_{name}" ]
+    ] .
