@@ -1,0 +1,13 @@
+### Ceci est un fichier de mapping pour le fichier credits_top200.csv 
+
+
+### @base <http://saraaymericradhi.org/movie-ontology#>.
+###@prefix owl: <http://www.w3.org/2002/07/owl#>.
+
+
+###<http://saraaymericradhi.org/movie-ontology> rdf:type owl:Ontology ;
+###    rdfs:label "Movie Ontology"@en ;
+###    rdfs:comment "An ontology for describing movies, created with the Semantic Web Project in Polytech Nice Sophia"@en ;
+###    owl:versionInfo "1.0 - Created 2026-01-10 by Sara Aymeric Radhi" .
+
+
