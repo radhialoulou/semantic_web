@@ -97,15 +97,16 @@ def step_wiki_matching(target_movies):
                 wiki_map[n_title] = []
             wiki_map[n_title].append(idx)
             
-        matched_indices = set()
+        matched_indices = {}  # Changed to dict to store (wiki_idx -> movie_id)
         
         for movie in target_movies:
+            movie_id = int(movie['id'])  # Use existing TMDb id
             n_title = normalize_title(movie['title'])
             candidates = wiki_map.get(n_title)
             
             if candidates:
                 if len(candidates) == 1:
-                     matched_indices.add(candidates[0])
+                     matched_indices[candidates[0]] = movie_id
                 else:
                     # Match by year if ambiguous
                     year = movie['release_year']
@@ -115,9 +116,11 @@ def step_wiki_matching(target_movies):
                             if abs(df_wiki.loc[idx, 'Release Year'] - year) <= 1:
                                 best_idx = idx
                                 break
-                    matched_indices.add(best_idx)
+                    matched_indices[best_idx] = movie_id
 
-        df_final = df_wiki.loc[sorted(list(matched_indices))]
+        # Create final dataframe with movie IDs
+        df_final = df_wiki.loc[sorted(list(matched_indices.keys()))].copy()
+        df_final.insert(0, 'id', [matched_indices[idx] for idx in sorted(list(matched_indices.keys()))])
         df_final.to_csv(WIKI_OUT, index=False)
         print(f"   -> Matched {len(df_final)} plots.")
         

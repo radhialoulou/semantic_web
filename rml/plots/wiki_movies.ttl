@@ -1,0 +1,573 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix movie: <http://saraaymericradhi.org/movie-ontology#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rml: <http://w3id.org/rml/> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://saraaymericradhi.org/movie/100402> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Captain_America:_The_Winter_Soldier"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/101299> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/The_Hunger_Games:_Catching_Fire"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/10138> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Iron_Man_2"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/10191> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/How_to_Train_Your_Dragon_(film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/10193> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Toy_Story_3"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/10195> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Thor_(film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/102382> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/The_Amazing_Spider-Man_2"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/102651> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Maleficent_(film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/102899> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Ant-Man_(film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/105> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Back_to_the_Future"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/10528> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Sherlock_Holmes_(2010_film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/106646> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/The_Wolf_of_Wall_Street_(2013_film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/10681> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/WALL-E"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/109445> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Frozen_(2013_film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/1124> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/The_Prestige_(film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/11324> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Shutter_Island_(film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/118340> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Guardians_of_the_Galaxy_(film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/119450> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Dawn_of_the_Planet_of_the_Apes"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/12> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Finding_Nemo"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/120> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/The_Lord_of_the_Rings:_The_Fellowship_of_the_Ring"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/120467> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/The_Grand_Budapest_Hotel"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/121> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/The_Lord_of_the_Rings:_The_Two_Towers"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/12155> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Alice_in_Wonderland_(2010_film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/122> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/The_Lord_of_the_Rings:_The_Return_of_the_King"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/12444> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Harry_Potter_and_the_Deathly_Hallows_%E2%80%93_Part_1"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/12445> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Harry_Potter_and_the_Deathly_Hallows:_Part_2"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/1271> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/300_(film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/127380> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Finding_Dory"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/127585> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/X-Men:_Days_of_Future_Past"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/129> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Spirited_Away"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/13> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Forrest_Gump"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/131634> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/The_Hunger_Games:_Mockingjay_%E2%80%93_Part_1"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/13475> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Star_Trek_(film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/135397> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Jurassic_World"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/137113> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Edge_of_Tomorrow_(film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/140607> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Star_Wars:_The_Force_Unleashed_II"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/14160> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Up_(2009_film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/14161> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/2012_(film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/1422> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/The_Departed"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/150540> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Inside_Out_(2015_film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/152601> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Her_(film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/155> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/The_Dark_Knight_(film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/157336> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Interstellar_(film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/157350> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Divergent_(film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/161> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Ocean%27s_Eleven_(2001_film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/165> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Back_to_the_Future_Part_II"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/168259> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Furious_7"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/16869> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Inglourious_Basterds"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/1726> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Iron_Man_(2008_film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/1771> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Captain_America:_The_First_Avenger"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/177572> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Big_Hero_6_(film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/18> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/The_Fifth_Element"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/1858> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Transformers_(film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/1865> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Pirates_of_the_Caribbean:_On_Stranger_Tides"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/18785> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/The_Hangover"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/1891> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/The_Empire_Strikes_Back"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/1892> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Return_of_the_Jedi"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/1893> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Star_Wars:_Episode_I_%E2%80%93_The_Phantom_Menace"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/1894> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Star_Wars:_Episode_II_%E2%80%93_Attack_of_the_Clones"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/1895> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Star_Wars:_Episode_III_%E2%80%93_Revenge_of_the_Sith"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/1930> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/The_Amazing_Spider-Man_(2012_film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/194662> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Birdman_(film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/198663> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/The_Maze_Runner_(film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/19995> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Avatar_(2009_film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/20352> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Despicable_Me"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/2048> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/I,_Robot_(film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/205596> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/The_Imitation_Game"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/2062> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Ratatouille_(film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/206647> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Spectre_(2015_film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/207703> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Kingsman:_The_Secret_Service"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/2080> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/X-Men_Origins:_Wolverine"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/209112> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Batman_v_Superman:_Dawn_of_Justice"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/210577> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Gone_Girl_(film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/211672> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Minions_(film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/218> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/The_Terminator"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/22> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Pirates_of_the_Caribbean:_The_Curse_of_the_Black_Pearl"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/222935> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/The_Fault_in_Our_Stars_(film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/228150> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Fury_(2014_film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/23483> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Kick-Ass_(film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/238> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/The_Godfather"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/24> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Kill_Bill#Volume_1"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/24428> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/The_Avengers_(2012_film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/244786> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Whiplash_(2014_film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/246655> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/X-Men:_Apocalypse"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/259316> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Fantastic_Beasts_and_Where_to_Find_Them_(film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/262500> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/The_Divergent_Series:_Insurgent"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/263115> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Logan_(2017_film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/264660> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Ex_Machina_(film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/269149> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Zootopia"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/271110> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Captain_America:_Civil_War"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/272> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Batman_Begins"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/27205> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Inception"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/273248> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Hate_Story_2"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/274> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/The_Silence_of_the_Lambs_(film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/274870> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Flight_Crew_(film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/278> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/The_Shawshank_Redemption"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/280> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Terminator_2:_Judgment_Day"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/281957> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/The_Revenant_(2015_film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/283995> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Guardians_of_the_Galaxy_Vol._2"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/285> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Pirates_of_the_Caribbean:_At_World%27s_End"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/286217> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/The_Martian_(film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/293660> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Deadpool_(film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/297761> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Suicide_Squad_(film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/297762> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Wonder_Woman_(2017_film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/321612> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Beauty_and_the_Beast_(2017_film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/329> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Jurassic_Park_(film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/330459> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Rogue_One"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/337339> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/The_Fate_of_the_Furious"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/348> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Alien_(film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/36557> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Casino_Royale_(2006_film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/36657> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/X-Men_(film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/37165> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/The_Truman_Show"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/37724> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Skyfall"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/381288> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Split_(2016_South_Korean_film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/393> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Kill_Bill#Volume_2"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/41154> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Men_in_Black_3"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/424> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Schindler%27s_List"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/425> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Ice_Age_(2002_film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/44214> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Black_Swan_(film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/45243> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/The_Hangover:_Part_II"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/49026> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/The_Dark_Knight_Rises"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/49047> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Gravity_(film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/49521> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Man_of_Steel_(film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/49538> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/X-Men:_First_Class"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/497> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/The_Green_Mile_(film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/500> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Reservoir_Dogs"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/51876> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Limitless_(film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/54138> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Star_Trek_Into_Darkness"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/550> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Fight_Club"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/557> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Spider-Man_(2002_film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/558> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Spider-Man_2"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/562> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Die_Hard"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/56292> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Mission:_Impossible_%E2%80%93_Ghost_Protocol"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/57158> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/The_Hobbit:_The_Desolation_of_Smaug"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/58> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Pirates_of_the_Caribbean:_Dead_Man%27s_Chest"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/585> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Monsters,_Inc."^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/58574> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Sherlock_Holmes:_A_Game_of_Shadows"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/597> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Titanic_(1996_TV_miniseries)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/59967> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Looper_(film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/603> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/The_Matrix"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/607> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Men_in_Black_(1997_film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/61791> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Rise_of_the_Planet_of_the_Apes"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/62177> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Brave_(2012_film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/640> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Catch_Me_If_You_Can"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/64682> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/The_Great_Gatsby_(2013_film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/64688> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/21_Jump_Street_(film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/64690> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Drive_(2011_film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/6479> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/I_Am_Legend_(film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/671> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Harry_Potter_and_the_Philosopher%27s_Stone_(film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/672> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Harry_Potter_and_the_Chamber_of_Secrets_(film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/673> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Harry_Potter_and_the_Prisoner_of_Azkaban_(film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/674> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Harry_Potter_and_the_Goblet_of_Fire_(film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/675> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Harry_Potter_and_the_Order_of_the_Phoenix_(film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/680> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Pulp_Fiction"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/68718> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Django_Unchained"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/68721> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Iron_Man_3"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/68726> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Pacific_Rim_(film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/694> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/The_Shining_(film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/70160> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/The_Hunger_Games_(film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/70981> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Prometheus_(2012_film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/72105> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Ted_(film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/72190> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/World_War_Z_(film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/752> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/V_for_Vendetta_(film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/75612> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Oblivion_(2013_film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/75656> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Now_You_See_Me_(film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/76170> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/The_Wolverine_(film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/76338> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Thor:_The_Dark_World"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/76341> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Mad_Max:_Fury_Road"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/767> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Harry_Potter_and_the_Half-Blood_Prince_(film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/77> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Memento_(film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/77338> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/The_Expendables_(2010_film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/78> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Blade_Runner"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/807> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Seven_(1995_film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/808> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Shrek"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/82690> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Wreck-It_Ralph"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/82693> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Silver_Linings_Playbook"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/82992> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Fast_%26_Furious_6"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/85> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Raiders_of_the_Lost_Ark"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/857> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Saving_Private_Ryan"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/8587> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/The_Lion_King"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/862> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Toy_Story"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/863> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Toy_Story_2"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/8681> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Taken_(film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/87827> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Life_of_Pi_(film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/920> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Cars_(film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/93456> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Despicable_Me_2"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/98> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Gladiator_(2000_film)"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/9806> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/The_Incredibles"^^xsd:anyURI .
+
+<http://saraaymericradhi.org/movie/99861> a movie:Movie;
+  movie:hasWikipediaPage "https://en.wikipedia.org/wiki/Avengers:_Age_of_Ultron"^^xsd:anyURI .

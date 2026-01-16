@@ -1,6 +1,14 @@
 @base <http://saraaymericradhi.org/movie-ontology#>.
 @prefix owl: <http://www.w3.org/2002/07/owl#>.
-
+@prefix schema: <http://schema.org/> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix dbp: <http://dbpedia.org/property/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix : <http://saraaymericradhi.org/movie-ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
 <http://saraaymericradhi.org/movie-ontology> rdf:type owl:Ontology ;
     rdfs:label "Movie Ontology"@en ;
@@ -110,7 +118,7 @@
     rdfs:label "has runtime"@en ;
     rdfs:comment "Duration of the movie in minutes"@en .
 
-:hasTitle rdf:type owl:DatatypeProperty , owl:FunctionalProperty ; owl:InverseFunctionalProperty ;
+:hasTitle rdf:type owl:DatatypeProperty, owl:FunctionalProperty, owl:InverseFunctionalProperty ;
     rdfs:domain :Movie ;
     rdfs:range xsd:string ;
     rdfs:label "has title"@en ;
@@ -203,7 +211,7 @@
     rdfs:domain :Person ;
     rdfs:range xsd:string ;
     rdfs:label "person name"@en ;
-    rdfs:comment "Name of the person"@en .
+    rdfs:comment "Name of the person"@en ;
     owl:sameAs foaf:name .
 
 :personGender rdf:type owl:DatatypeProperty ;
@@ -359,7 +367,7 @@
     rdfs:range :Movie ;
     rdfs:label "same collection"@en ;
     rdfs:comment "Movies belonging to the same franchise/collection"@en ;
-    owl:propertyChainAxiom ( :hasContent :hasCollection ^:hasCollection ^:hasContent ) .
+    owl:propertyChainAxiom ( :hasContent :hasCollection [ owl:inverseOf :hasCollection ] [ owl:inverseOf :hasContent ] ) .
     
 # Co-réalisateurs : deux personnes qui ont co-dirigé un film
 :coDirectedWith rdf:type owl:ObjectProperty , owl:SymmetricProperty ;
@@ -508,7 +516,7 @@
     rdfs:domain :User ;
     rdfs:range :Movie ;
     rdfs:label "rates movie"@en ;
-    rdfs:comment "Links a rating to the movie being rated"@en .
+    rdfs:comment "Links a rating to the movie being rated"@en ;
     owl:propertyChainAxiom ( :gaveRating :relatedMovie ) .
 
 :givenBy rdf:type owl:ObjectProperty ;
@@ -694,3 +702,35 @@
     rdfs:subClassOf :AwardWinningMovie ;
     rdfs:label "Oscar Winner"@en , "Oscarisé"@fr ;
     rdfs:comment "A movie that has won at least one Oscar (Academy Award)"@en .
+
+
+#    ALIGNEMENT DES CLASSES (Classes Alignment)
+
+:Movie owl:equivalentClass schema:Movie , dbo:Film .
+:Person owl:equivalentClass schema:Person , dbo:Person .
+foaf:Organization owl:equivalentClass schema:Organization , dbo:Organisation .
+
+:Genre rdfs:subClassOf dbo:TopicalConcept .
+:Song owl:equivalentClass schema:MusicRecording , dbo:MusicalWork .
+:Composer owl:equivalentClass dbo:MusicalArtist .
+:Award owl:equivalentClass schema:Award , dbo:Award .
+
+#    ALIGNEMENT DES PROPRIÉTÉS (Properties Alignment)
+:hasTitle owl:equivalentProperty schema:name , foaf:name .
+:hasBudget owl:equivalentProperty schema:budget , dbo:budget .
+:hasRevenue owl:equivalentProperty schema:boxOffice , dbo:gross .
+
+
+:hasRuntime owl:equivalentProperty dbo:runtime . 
+:hasReleaseDate owl:equivalentProperty schema:datePublished , dbo:releaseDate .
+:hasPlot owl:equivalentProperty schema:description , dbo:abstract .
+
+:hasDirector owl:equivalentProperty schema:director , dbo:director .
+:hasWriter owl:equivalentProperty schema:author , dbo:writer .
+:hasCastMember owl:equivalentProperty schema:actor , dbo:starring .
+:hasProductionCompany owl:equivalentProperty schema:productionCompany , dbo:productionCompany .
+:hasGenre owl:equivalentProperty schema:genre , dbo:genre .
+:hasComposer owl:equivalentProperty schema:musicBy , dbo:musicComposer .
+
+
+:hasVoteAverage rdfs:subPropertyOf schema:ratingValue .
