@@ -1,17 +1,22 @@
 import os
 import rdflib
 
-# Define all file paths
+# Base directory relative to this script
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+# Define all file paths relative to the project root
 GRAPH_FILES = [
-    r"d:\semantic_web\ontology\ontology.ttl",
-    r"d:\semantic_web\ontology\genres_skos.ttl",
-    r"d:\semantic_web\ontology\keywords_skos.ttl",
-    r"d:\semantic_web\unstructered_data_extraction\llm_unstructred.ttl",
-    r"d:\semantic_web\rml\metadata\movies_metadata.ttl",
-    r"d:\semantic_web\rml\keywords\keyword_triples_rml.ttl",
-    r"d:\semantic_web\rml\plots\wiki_movies.ttl",
-    r"d:\semantic_web\data_linking\movie_links_secure.ttl",
-    r"d:\semantic_web\ontology\suggested_alignments.ttl"
+    os.path.join(BASE_DIR, "ontology", "ontology.ttl"),
+    os.path.join(BASE_DIR, "ontology", "genres_skos.ttl"),
+    os.path.join(BASE_DIR, "ontology", "keywords_skos.ttl"),
+    os.path.join(BASE_DIR, "unstructered_data_extraction", "llm_unstructred.ttl"),
+    os.path.join(BASE_DIR, "rml", "metadata", "movies_metadata.ttl"),
+    os.path.join(BASE_DIR, "rml", "keywords", "keyword_triples_rml.ttl"),
+    os.path.join(BASE_DIR, "rml", "plots", "wiki_movies.ttl"),
+    os.path.join(BASE_DIR, "data_linking", "movie_links_secure.ttl"),
+    os.path.join(BASE_DIR, "ontology", "suggested_alignments.ttl"),
+    os.path.join(BASE_DIR, "credits", "credits.ttl"),
+    os.path.join(BASE_DIR, "rml", "ratings", "ratings_sample.ttl")
 ]
 
 def load_graph():
