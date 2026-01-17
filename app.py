@@ -8,7 +8,7 @@ from flask_cors import CORS
 import sys
 import logging
 
-from sparql_agent import sparql_pipeline, extract_sparql, PROMPT, LLM as SPARQL_LLM, ONTOLOGY_SCHEMA
+from sparql_agent import sparql_pipeline, extract_sparql, execute_sparql, PROMPT, LLM as SPARQL_LLM, ONTOLOGY_SCHEMA
 from graph_loader import load_graph
 from langchain_openai import ChatOpenAI
 from langchain_core.prompts import PromptTemplate
@@ -342,6 +342,53 @@ def compare_approaches():
         "question": question,
         "results": results
     })
+
+@app.route("/api/sparql", methods=["POST"])
+def execute_raw_sparql():
+    """Execute raw SPARQL query from frontend."""
+    app.logger.info("===== /api/sparql START =====")
+    
+    data = request.get_json(silent=True)
+    if not data or "query" not in data:
+        return jsonify({"error": "Missing 'query' field"}), 400
+    
+    query = data["query"]
+    app.logger.info("QUERY: %s", query)
+    
+    try:
+        # execute_sparql returns list of rdflib.query.ResultRow
+        rows = execute_sparql(graph, query)
+        
+        if isinstance(rows, str): # Error message
+            return jsonify({"error": rows}), 400
+            
+        # Convert to JSON-friendly format
+        json_results = []
+        for row in rows:
+            result_dict = {}
+            # row is ResultRow, can be accessed like dict but need to iterate variables
+            # or use .asdict() if available, but let's be safe with manual extraction
+            # rdflib ResultRow behaves like a dict of Variable -> Term
+            if hasattr(row, 'asdict'):
+                # New rdflib
+                d = row.asdict()
+                for k, v in d.items():
+                    result_dict[str(k)] = {"type": type(v).__name__, "value": str(v)}
+            else:
+                # Fallback
+                for k in row.labels: # labels are the variable names
+                    val = row[k]
+                    if val is not None:
+                        result_dict[k] = {"type": type(val).__name__, "value": str(val)}
+            
+            json_results.append(result_dict)
+            
+        app.logger.info("Returned %d rows", len(json_results))
+        return jsonify(json_results)
+        
+    except Exception as e:
+        app.logger.exception("SPARQL Endpoint Failed")
+        return jsonify({"error": str(e)}), 500
 
 # -----------------------------------------------------------------------------
 # Main
