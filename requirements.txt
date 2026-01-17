@@ -3,3 +3,6 @@ flask-cors
 langchain-openai
 langchain-core
 rdflib
+sentence-transformers
+faiss-cpu
+numpy

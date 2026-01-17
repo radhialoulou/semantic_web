@@ -1,140 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SPARQL Agent LLM - Movie Knowledge Graph</title>
-    <meta name="description" content="Ask natural language questions about movies and get AI-powered answers from our knowledge graph">
+    <title>GraphRAG - Movie Knowledge Graph</title>
+    <meta name="description" content="Ask natural language questions about movies using SPARQL or Embedding-based RAG">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <div class="background-gradient"></div>
-    
+
     <main class="container">
         <header class="header">
             <div class="logo-container">
                 <div class="logo-icon">🎬</div>
-                <h1 class="title">SPARQL Agent LLM</h1>
+                <h1 class="title">GraphRAG Demo</h1>
             </div>
-            <p class="subtitle">Ask questions about movies in natural language</p>
+            <p class="subtitle">Compare SPARQL and Embedding-based approaches</p>
             <div class="tech-badges">
                 <span class="badge">🧠 LLM Powered</span>
                 <span class="badge">📊 Knowledge Graph</span>
-                <span class="badge">⚡ SPARQL</span>
+                <span class="badge">⚡ Dual RAG</span>
             </div>
         </header>
 
-        <section class="question-section">
-            <form id="questionForm" class="question-form">
-                <div class="input-container">
-                    <label for="questionInput" class="input-label">Your Question</label>
-                    <textarea 
-                        id="questionInput" 
-                        class="question-input" 
-                        placeholder="e.g., Who directed Iron Man 2?"
-                        rows="3"
-                        required
-                    ></textarea>
-                </div>
-                <button type="submit" id="submitBtn" class="submit-btn">
-                    <span class="btn-text">Ask Question</span>
-                    <span class="btn-icon">→</span>
-                </button>
-            </form>
+        <!-- Tabs Navigation -->
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="sparql">
+                <span class="tab-icon">🔍</span>
+                <span>SPARQL Agent</span>
+            </button>
+            <button class="tab-btn" data-tab="embedding">
+                <span class="tab-icon">💬</span>
+                <span>Embedding Chat</span>
+            </button>
+        </div>
 
-            <div class="example-questions">
-                <p class="example-label">Try these examples:</p>
-                <div class="example-buttons">
-                    <button class="example-btn" data-question="Who directed Iron Man 2?">Who directed Iron Man 2?</button>
-                    <button class="example-btn" data-question="What is the budget of Thor?">What is the budget of Thor?</button>
-                    <button class="example-btn" data-question="List 5 action movies">List 5 action movies</button>
-                </div>
-            </div>
-        </section>
+        <!-- SPARQL Tab Content -->
+        <div class="tab-content active" id="sparql-tab">
+            <section class="question-section">
+                <form id="questionForm" class="question-form">
+                    <div class="input-container">
+                        <label for="questionInput" class="input-label">Your Question</label>
+                        <textarea id="questionInput" class="question-input" placeholder="e.g., Who directed Iron Man 2?"
+                            rows="3" required></textarea>
+                    </div>
+                    <button type="submit" id="submitBtn" class="submit-btn">
+                        <span class="btn-text">Ask Question</span>
+                        <span class="btn-icon">→</span>
+                    </button>
+                </form>
 
-        <section id="loadingSection" class="loading-section" style="display: none;">
-            <div class="loading-card">
-                <div class="loading-spinner"></div>
-                <p class="loading-text">Processing your question with AI...</p>
-                <div class="loading-steps">
-                    <div class="loading-step active">
-                        <div class="step-icon">1</div>
-                        <div class="step-text">Transforming to SPARQL</div>
-                    </div>
-                    <div class="loading-step">
-                        <div class="step-icon">2</div>
-                        <div class="step-text">Querying Knowledge Graph</div>
-                    </div>
-                    <div class="loading-step">
-                        <div class="step-icon">3</div>
-                        <div class="step-text">Formatting Answer</div>
+                <div class="example-questions">
+                    <p class="example-label">Try these examples:</p>
+                    <div class="example-buttons">
+                        <button class="example-btn" data-question="Who directed Iron Man 2?">Who directed Iron Man
+                            2?</button>
+                        <button class="example-btn" data-question="What is the budget of Thor?">What is the budget of
+                            Thor?</button>
+                        <button class="example-btn" data-question="List 5 action movies">List 5 action movies</button>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section id="errorSection" class="error-section" style="display: none;">
-            <div class="error-card">
-                <div class="error-icon">⚠️</div>
-                <h3 class="error-title">Oops! Something went wrong</h3>
-                <p id="errorMessage" class="error-message"></p>
-                <button id="retryBtn" class="retry-btn">Try Again</button>
-            </div>
-        </section>
-
-        <section id="resultsSection" class="results-section" style="display: none;">
-            <div class="results-header">
-                <h2 class="results-title">Answer</h2>
-                <button id="clearBtn" class="clear-btn">New Question</button>
-            </div>
-
-            <div class="answer-card">
-                <div class="card-header">
-                    <div class="header-icon">💡</div>
-                    <h3>Your Question</h3>
+            <section id="loadingSection" class="loading-section" style="display: none;">
+                <div class="loading-card">
+                    <div class="loading-spinner"></div>
+                    <p class="loading-text">Processing your question with AI...</p>
+                    <div class="loading-steps">
+                        <div class="loading-step active">
+                            <div class="step-icon">1</div>
+                            <div class="step-text">Transforming to SPARQL</div>
+                        </div>
+                        <div class="loading-step">
+                            <div class="step-icon">2</div>
+                            <div class="step-text">Querying Knowledge Graph</div>
+                        </div>
+                        <div class="loading-step">
+                            <div class="step-icon">3</div>
+                            <div class="step-text">Formatting Answer</div>
+                        </div>
+                    </div>
                 </div>
-                <p id="questionDisplay" class="question-display"></p>
+            </section>
+
+            <section id="errorSection" class="error-section" style="display: none;">
+                <div class="error-card">
+                    <div class="error-icon">⚠️</div>
+                    <h3 class="error-title">Oops! Something went wrong</h3>
+                    <p id="errorMessage" class="error-message"></p>
+                    <button id="retryBtn" class="retry-btn">Try Again</button>
+                </div>
+            </section>
+
+            <section id="resultsSection" class="results-section" style="display: none;">
+                <div class="results-header">
+                    <h2 class="results-title">Answer</h2>
+                    <button id="clearBtn" class="clear-btn">New Question</button>
+                </div>
+
+                <div class="answer-card">
+                    <div class="card-header">
+                        <div class="header-icon">💡</div>
+                        <h3>Your Question</h3>
+                    </div>
+                    <p id="questionDisplay" class="question-display"></p>
+                </div>
+
+                <div class="answer-card highlight">
+                    <div class="card-header">
+                        <div class="header-icon">✨</div>
+                        <h3>AI-Powered Answer</h3>
+                    </div>
+                    <div id="answerDisplay" class="answer-display"></div>
+                </div>
+
+                <details class="sparql-details">
+                    <summary class="sparql-summary">
+                        <span class="summary-icon">🔍</span>
+                        <span>View Generated SPARQL Query</span>
+                        <span class="summary-arrow">▼</span>
+                    </summary>
+                    <div class="sparql-container">
+                        <pre id="sparqlDisplay" class="sparql-code"></pre>
+                    </div>
+                </details>
+
+                <details class="raw-details">
+                    <summary class="raw-summary">
+                        <span class="summary-icon">📊</span>
+                        <span>View Raw Results</span>
+                        <span class="summary-arrow">▼</span>
+                    </summary>
+                    <div class="raw-container">
+                        <pre id="rawDisplay" class="raw-code"></pre>
+                    </div>
+                </details>
+            </section>
+        </div>
+
+        <!-- Embedding Chat Tab Content -->
+        <div class="tab-content" id="embedding-tab">
+            <div class="chat-container">
+                <div class="chat-header">
+                    <div class="chat-info">
+                        <h3>💬 Embedding-based Chat</h3>
+                        <p>Powered by vector similarity search</p>
+                    </div>
+                    <button id="clearChatBtn" class="clear-chat-btn">Clear Chat</button>
+                </div>
+
+                <div id="chatMessages" class="chat-messages">
+                    <div class="system-message">
+                        <div class="message-icon">🤖</div>
+                        <div class="message-content">
+                            <p>Hello! I'm your movie knowledge assistant powered by embedding-based RAG.</p>
+                            <p>Ask me anything about movies in our knowledge graph!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <form id="chatForm" class="chat-input-form">
+                    <div class="chat-input-container">
+                        <input type="text" id="chatInput" class="chat-input" placeholder="Type your question here..."
+                            autocomplete="off" required>
+                        <button type="submit" id="chatSubmitBtn" class="chat-submit-btn">
+                            <span class="btn-text">Send</span>
+                            <span class="btn-icon">→</span>
+                        </button>
+                    </div>
+                </form>
+
+                <div class="chat-examples">
+                    <p class="example-label">Quick questions:</p>
+                    <div class="chat-example-buttons">
+                        <button class="chat-example-btn" data-question="Tell me about Iron Man">Tell me about Iron
+                            Man</button>
+                        <button class="chat-example-btn" data-question="Who directed The Avengers?">Who directed The
+                            Avengers?</button>
+                        <button class="chat-example-btn" data-question="What are some action movies?">What are some
+                            action movies?</button>
+                    </div>
+                </div>
             </div>
-
-            <div class="answer-card highlight">
-                <div class="card-header">
-                    <div class="header-icon">✨</div>
-                    <h3>AI-Powered Answer</h3>
-                </div>
-                <div id="answerDisplay" class="answer-display"></div>
-            </div>
-
-            <details class="sparql-details">
-                <summary class="sparql-summary">
-                    <span class="summary-icon">🔍</span>
-                    <span>View Generated SPARQL Query</span>
-                    <span class="summary-arrow">▼</span>
-                </summary>
-                <div class="sparql-container">
-                    <pre id="sparqlDisplay" class="sparql-code"></pre>
-                </div>
-            </details>
-
-            <details class="raw-details">
-                <summary class="raw-summary">
-                    <span class="summary-icon">📊</span>
-                    <span>View Raw Results</span>
-                    <span class="summary-arrow">▼</span>
-                </summary>
-                <div class="raw-container">
-                    <pre id="rawDisplay" class="raw-code"></pre>
-                </div>
-            </details>
-        </section>
+        </div>
     </main>
 
     <footer class="footer">
-        <p>Powered by LangChain, RDFLib, and Ollama • Built with ❤️ for semantic web exploration</p>
+        <p>Powered by LangChain, RDFLib, FAISS, and Ollama • Built with ❤️ for semantic web exploration</p>
     </footer>
 
     <script src="script.js"></script>
 </body>
+
 </html>
