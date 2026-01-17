@@ -1,0 +1,96 @@
+@prefix : <http://saraaymericradhi.org/movie-ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix schema: <http://schema.org/> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix dbp: <http://dbpedia.org/property/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Semi-Automatic Ontology Alignment Suggestions
+# Generated: 2026-01-16
+# Minimum confidence: 70%
+# Total suggestions: 27
+
+# ========== CLASS ALIGNMENTS ==========
+
+:Movie owl:equivalentClass <http://schema.org/Movie> .
+    # Confidence: 100.00% - schema.org
+
+:Person owl:equivalentClass <http://schema.org/Person> .
+    # Confidence: 100.00% - schema.org
+
+:Person owl:equivalentClass <http://dbpedia.org/ontology/Person> .
+    # Confidence: 100.00% - DBpedia
+
+:Rating owl:equivalentClass <http://schema.org/Rating> .
+    # Confidence: 100.00% - schema.org
+
+:Award owl:equivalentClass <http://schema.org/Award> .
+    # Confidence: 100.00% - schema.org
+
+:Award owl:equivalentClass <http://dbpedia.org/ontology/Award> .
+    # Confidence: 100.00% - DBpedia
+
+:TeenMovie owl:equivalentClass <http://schema.org/Movie> .
+    # Confidence: 71.43% - schema.org
+
+# ========== PROPERTY ALIGNMENTS ==========
+
+:hasBudget owl:equivalentProperty <http://schema.org/budget> .
+    # Confidence: 100.00% - schema.org
+
+:hasBudget owl:equivalentProperty <http://dbpedia.org/ontology/budget> .
+    # Confidence: 100.00% - DBpedia
+
+:hasDirector owl:equivalentProperty <http://schema.org/director> .
+    # Confidence: 100.00% - schema.org
+
+:hasDirector owl:equivalentProperty <http://dbpedia.org/ontology/director> .
+    # Confidence: 100.00% - DBpedia
+
+:hasGenre owl:equivalentProperty <http://schema.org/genre> .
+    # Confidence: 100.00% - schema.org
+
+:hasGenre owl:equivalentProperty <http://dbpedia.org/ontology/genre> .
+    # Confidence: 100.00% - DBpedia
+
+:hasProductionCompany owl:equivalentProperty <http://schema.org/productionCompany> .
+    # Confidence: 100.00% - schema.org
+
+:hasProductionCompany owl:equivalentProperty <http://dbpedia.org/ontology/productionCompany> .
+    # Confidence: 100.00% - DBpedia
+
+:hasWriter owl:equivalentProperty <http://dbpedia.org/ontology/writer> .
+    # Confidence: 100.00% - DBpedia
+
+:hasReleaseDate owl:equivalentProperty <http://dbpedia.org/ontology/releaseDate> .
+    # Confidence: 100.00% - DBpedia
+
+:hasRuntime owl:equivalentProperty <http://dbpedia.org/ontology/runtime> .
+    # Confidence: 100.00% - DBpedia
+
+:hasGenreOf owl:equivalentProperty <http://schema.org/genre> .
+    # Confidence: 83.33% - schema.org
+
+:hasGenreOf owl:equivalentProperty <http://dbpedia.org/ontology/genre> .
+    # Confidence: 83.33% - DBpedia
+
+:hasProductionCountry owl:equivalentProperty <http://schema.org/productionCompany> .
+    # Confidence: 82.35% - schema.org
+
+:hasProductionCountry owl:equivalentProperty <http://dbpedia.org/ontology/productionCompany> .
+    # Confidence: 82.35% - DBpedia
+
+:hasComposer owl:equivalentProperty <http://dbpedia.org/ontology/musicComposer> .
+    # Confidence: 76.19% - DBpedia
+
+:hasProduction owl:equivalentProperty <http://schema.org/productionCompany> .
+    # Confidence: 74.07% - schema.org
+
+:hasProduction owl:equivalentProperty <http://dbpedia.org/ontology/productionCompany> .
+    # Confidence: 74.07% - DBpedia
+
+:hasRating owl:equivalentProperty <http://schema.org/duration> .
+    # Confidence: 71.43% - schema.org
+
+:hasRating owl:equivalentProperty <http://schema.org/ratingValue> .
+    # Confidence: 70.59% - schema.org

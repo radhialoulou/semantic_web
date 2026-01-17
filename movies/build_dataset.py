@@ -107,12 +107,13 @@ def step_wiki_matching(target_movies):
         # Compute Similarity
         cosine_scores = util.cos_sim(target_embeddings, wiki_embeddings)
         
-        matched_indices = set()
+        matched_indices = {}  # Changed to dict to store (wiki_idx -> movie_id)
         match_count = 0
         
         print("   -> Finding matches...")
         for i in range(len(target_movies)):
             movie = target_movies[i]
+            movie_id = int(movie['id'])  # Use existing TMDb id
             movie_year = movie['release_year']
             
             # Top 5 candidats
@@ -137,10 +138,12 @@ def step_wiki_matching(target_movies):
                     break 
             
             if best_idx is not None:
-                matched_indices.add(best_idx)
+                matched_indices[best_idx] = movie_id  # Store movie_id with index
                 match_count += 1
 
-        df_final = df_wiki.loc[sorted(list(matched_indices))]
+        # Create final dataframe with movie IDs
+        df_final = df_wiki.loc[sorted(list(matched_indices.keys()))].copy()
+        df_final.insert(0, 'id', [matched_indices[idx] for idx in sorted(list(matched_indices.keys()))])
         df_final.to_csv(WIKI_OUT, index=False)
         print(f"   -> Matched {len(df_final)} plots (Coverage: {match_count}/{len(target_movies)}).")
         

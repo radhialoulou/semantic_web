@@ -1,0 +1,5 @@
+flask
+flask-cors
+langchain-openai
+langchain-core
+rdflib

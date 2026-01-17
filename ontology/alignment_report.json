@@ -1,0 +1,999 @@
+{
+  "summary": {
+    "total_suggestions": 99,
+    "class_alignments": 27,
+    "property_alignments": 72
+  },
+  "suggestions": [
+    {
+      "type": "class",
+      "source": "http://saraaymericradhi.org/movie-ontology#Movie",
+      "source_label": "Movie",
+      "target": "http://schema.org/Movie",
+      "target_vocab": "schema.org",
+      "target_label": "Movie",
+      "confidence": 1.0,
+      "relation": "owl:equivalentClass"
+    },
+    {
+      "type": "class",
+      "source": "http://saraaymericradhi.org/movie-ontology#Person",
+      "source_label": "Person",
+      "target": "http://schema.org/Person",
+      "target_vocab": "schema.org",
+      "target_label": "Person",
+      "confidence": 1.0,
+      "relation": "owl:equivalentClass"
+    },
+    {
+      "type": "class",
+      "source": "http://saraaymericradhi.org/movie-ontology#Person",
+      "source_label": "Person",
+      "target": "http://dbpedia.org/ontology/Person",
+      "target_vocab": "DBpedia",
+      "target_label": "Person",
+      "confidence": 1.0,
+      "relation": "owl:equivalentClass"
+    },
+    {
+      "type": "class",
+      "source": "http://saraaymericradhi.org/movie-ontology#Rating",
+      "source_label": "Rating",
+      "target": "http://schema.org/Rating",
+      "target_vocab": "schema.org",
+      "target_label": "Rating",
+      "confidence": 1.0,
+      "relation": "owl:equivalentClass"
+    },
+    {
+      "type": "class",
+      "source": "http://saraaymericradhi.org/movie-ontology#Award",
+      "source_label": "Award",
+      "target": "http://schema.org/Award",
+      "target_vocab": "schema.org",
+      "target_label": "Award",
+      "confidence": 1.0,
+      "relation": "owl:equivalentClass"
+    },
+    {
+      "type": "class",
+      "source": "http://saraaymericradhi.org/movie-ontology#Award",
+      "source_label": "Award",
+      "target": "http://dbpedia.org/ontology/Award",
+      "target_vocab": "DBpedia",
+      "target_label": "Award",
+      "confidence": 1.0,
+      "relation": "owl:equivalentClass"
+    },
+    {
+      "type": "property",
+      "source": "http://saraaymericradhi.org/movie-ontology#hasBudget",
+      "source_label": "hasBudget",
+      "target": "http://schema.org/budget",
+      "target_vocab": "schema.org",
+      "target_label": "budget",
+      "confidence": 1.0,
+      "relation": "owl:equivalentProperty"
+    },
+    {
+      "type": "property",
+      "source": "http://saraaymericradhi.org/movie-ontology#hasBudget",
+      "source_label": "hasBudget",
+      "target": "http://dbpedia.org/ontology/budget",
+      "target_vocab": "DBpedia",
+      "target_label": "budget",
+      "confidence": 1.0,
+      "relation": "owl:equivalentProperty"
+    },
+    {
+      "type": "property",
+      "source": "http://saraaymericradhi.org/movie-ontology#hasDirector",
+      "source_label": "hasDirector",
+      "target": "http://schema.org/director",
+      "target_vocab": "schema.org",
+      "target_label": "director",
+      "confidence": 1.0,
+      "relation": "owl:equivalentProperty"
+    },
+    {
+      "type": "property",
+      "source": "http://saraaymericradhi.org/movie-ontology#hasDirector",
+      "source_label": "hasDirector",
+      "target": "http://dbpedia.org/ontology/director",
+      "target_vocab": "DBpedia",
+      "target_label": "director",
+      "confidence": 1.0,
+      "relation": "owl:equivalentProperty"
+    },
+    {
+      "type": "property",
+      "source": "http://saraaymericradhi.org/movie-ontology#hasGenre",
+      "source_label": "hasGenre",
+      "target": "http://schema.org/genre",
+      "target_vocab": "schema.org",
+      "target_label": "genre",
+      "confidence": 1.0,
+      "relation": "owl:equivalentProperty"
+    },
+    {
+      "type": "property",
+      "source": "http://saraaymericradhi.org/movie-ontology#hasGenre",
+      "source_label": "hasGenre",
+      "target": "http://dbpedia.org/ontology/genre",
+      "target_vocab": "DBpedia",
+      "target_label": "genre",
+      "confidence": 1.0,
+      "relation": "owl:equivalentProperty"
+    },
+    {
+      "type": "property",
+      "source": "http://saraaymericradhi.org/movie-ontology#hasProductionCompany",
+      "source_label": "hasProductionCompany",
+      "target": "http://schema.org/productionCompany",
+      "target_vocab": "schema.org",
+      "target_label": "productionCompany",
+      "confidence": 1.0,
+      "relation": "owl:equivalentProperty"
+    },
+    {
+      "type": "property",
+      "source": "http://saraaymericradhi.org/movie-ontology#hasProductionCompany",
+      "source_label": "hasProductionCompany",
+      "target": "http://dbpedia.org/ontology/productionCompany",
+      "target_vocab": "DBpedia",
+      "target_label": "productionCompany",
+      "confidence": 1.0,
+      "relation": "owl:equivalentProperty"
+    },
+    {
+      "type": "property",
+      "source": "http://saraaymericradhi.org/movie-ontology#hasWriter",
+      "source_label": "hasWriter",
+      "target": "http://dbpedia.org/ontology/writer",
+      "target_vocab": "DBpedia",
+      "target_label": "writer",
+      "confidence": 1.0,
+      "relation": "owl:equivalentProperty"
+    },
+    {
+      "type": "property",
+      "source": "http://saraaymericradhi.org/movie-ontology#hasReleaseDate",
+      "source_label": "hasReleaseDate",
+      "target": "http://dbpedia.org/ontology/releaseDate",
+      "target_vocab": "DBpedia",
+      "target_label": "releaseDate",
+      "confidence": 1.0,
+      "relation": "owl:equivalentProperty"
+    },
+    {
+      "type": "property",
+      "source": "http://saraaymericradhi.org/movie-ontology#hasRuntime",
+      "source_label": "hasRuntime",
+      "target": "http://dbpedia.org/ontology/runtime",
+      "target_vocab": "DBpedia",
+      "target_label": "runtime",
+      "confidence": 1.0,
+      "relation": "owl:equivalentProperty"
+    },
+    {
+      "type": "property",
+      "source": "http://saraaymericradhi.org/movie-ontology#hasGenreOf",
+      "source_label": "hasGenreOf",
+      "target": "http://schema.org/genre",
+      "target_vocab": "schema.org",
+      "target_label": "genre",
+      "confidence": 0.8333333333333334,
+      "relation": "owl:equivalentProperty"
+    },
+    {
+      "type": "property",
+      "source": "http://saraaymericradhi.org/movie-ontology#hasGenreOf",
+      "source_label": "hasGenreOf",
+      "target": "http://dbpedia.org/ontology/genre",
+      "target_vocab": "DBpedia",
+      "target_label": "genre",
+      "confidence": 0.8333333333333334,
+      "relation": "owl:equivalentProperty"
+    },
+    {
+      "type": "property",
+      "source": "http://saraaymericradhi.org/movie-ontology#hasProductionCountry",
+      "source_label": "hasProductionCountry",
+      "target": "http://schema.org/productionCompany",
+      "target_vocab": "schema.org",
+      "target_label": "productionCompany",
+      "confidence": 0.8235294117647058,
+      "relation": "owl:equivalentProperty"
+    },
+    {
+      "type": "property",
+      "source": "http://saraaymericradhi.org/movie-ontology#hasProductionCountry",
+      "source_label": "hasProductionCountry",
+      "target": "http://dbpedia.org/ontology/productionCompany",
+      "target_vocab": "DBpedia",
+      "target_label": "productionCompany",
+      "confidence": 0.8235294117647058,
+      "relation": "owl:equivalentProperty"
+    },
+    {
+      "type": "property",
+      "source": "http://saraaymericradhi.org/movie-ontology#hasComposer",
+      "source_label": "hasComposer",
+      "target": "http://dbpedia.org/ontology/musicComposer",
+      "target_vocab": "DBpedia",
+      "target_label": "musicComposer",
+      "confidence": 0.7619047619047619,
+      "relation": "owl:equivalentProperty"
+    },
+    {
+      "type": "property",
+      "source": "http://saraaymericradhi.org/movie-ontology#hasProduction",
+      "source_label": "hasProduction",
+      "target": "http://schema.org/productionCompany",
+      "target_vocab": "schema.org",
+      "target_label": "productionCompany",
+      "confidence": 0.7407407407407407,
+      "relation": "owl:equivalentProperty"
+    },
+    {
+      "type": "property",
+      "source": "http://saraaymericradhi.org/movie-ontology#hasProduction",
+      "source_label": "hasProduction",
+      "target": "http://dbpedia.org/ontology/productionCompany",
+      "target_vocab": "DBpedia",
+      "target_label": "productionCompany",
+      "confidence": 0.7407407407407407,
+      "relation": "owl:equivalentProperty"
+    },
+    {
+      "type": "class",
+      "source": "http://saraaymericradhi.org/movie-ontology#TeenMovie",
+      "source_label": "TeenMovie",
+      "target": "http://schema.org/Movie",
+      "target_vocab": "schema.org",
+      "target_label": "Movie",
+      "confidence": 0.7142857142857143,
+      "relation": "owl:equivalentClass"
+    },
+    {
+      "type": "property",
+      "source": "http://saraaymericradhi.org/movie-ontology#hasRating",
+      "source_label": "hasRating",
+      "target": "http://schema.org/duration",
+      "target_vocab": "schema.org",
+      "target_label": "duration",
+      "confidence": 0.7142857142857143,
+      "relation": "owl:equivalentProperty"
+    },
+    {
+      "type": "property",
+      "source": "http://saraaymericradhi.org/movie-ontology#hasRating",
+      "source_label": "hasRating",
+      "target": "http://schema.org/ratingValue",
+      "target_vocab": "schema.org",
+      "target_label": "ratingValue",
+      "confidence": 0.7058823529411765,
+      "relation": "owl:equivalentProperty"
+    },
+    {
+      "type": "property",
+      "source": "http://saraaymericradhi.org/movie-ontology#hasComposerOf",
+      "source_label": "hasComposerOf",
+      "target": "http://dbpedia.org/ontology/musicComposer",
+      "target_vocab": "DBpedia",
+      "target_label": "musicComposer",
+      "confidence": 0.6956521739130435,
+      "relation": "owl:equivalentProperty"
+    },
+    {
+      "type": "class",
+      "source": "http://saraaymericradhi.org/movie-ontology#AdultMovie",
+      "source_label": "AdultMovie",
+      "target": "http://schema.org/Movie",
+      "target_vocab": "schema.org",
+      "target_label": "Movie",
+      "confidence": 0.6666666666666666,
+      "relation": "owl:equivalentClass"
+    },
+    {
+      "type": "property",
+      "source": "http://saraaymericradhi.org/movie-ontology#writtenBy",
+      "source_label": "writtenBy",
+      "target": "http://dbpedia.org/ontology/writer",
+      "target_vocab": "DBpedia",
+      "target_label": "writer",
+      "confidence": 0.6666666666666666,
+      "relation": "owl:equivalentProperty"
+    },
+    {
+      "type": "property",
+      "source": "http://saraaymericradhi.org/movie-ontology#hasProduction",
+      "source_label": "hasProduction",
+      "target": "http://schema.org/duration",
+      "target_vocab": "schema.org",
+      "target_label": "duration",
+      "confidence": 0.6666666666666666,
+      "relation": "owl:equivalentProperty"
+    },
+    {
+      "type": "property",
+      "source": "http://saraaymericradhi.org/movie-ontology#directedBy",
+      "source_label": "directedBy",
+      "target": "http://schema.org/director",
+      "target_vocab": "schema.org",
+      "target_label": "director",
+      "confidence": 0.6666666666666666,
+      "relation": "owl:equivalentProperty"
+    },
+    {
+      "type": "property",
+      "source": "http://saraaymericradhi.org/movie-ontology#directedBy",
+      "source_label": "directedBy",
+      "target": "http://dbpedia.org/ontology/director",
+      "target_vocab": "DBpedia",
+      "target_label": "director",
+      "confidence": 0.6666666666666666,
+      "relation": "owl:equivalentProperty"
+    },
+    {
+      "type": "property",
+      "source": "http://saraaymericradhi.org/movie-ontology#hasAdaptor",
+      "source_label": "hasAdaptor",
+      "target": "http://schema.org/actor",
+      "target_vocab": "schema.org",
+      "target_label": "actor",
+      "confidence": 0.6666666666666666,
+      "relation": "owl:equivalentProperty"
+    },
+    {
+      "type": "property",
+      "source": "http://saraaymericradhi.org/movie-ontology#hasValue",
+      "source_label": "hasValue",
+      "target": "http://schema.org/ratingValue",
+      "target_vocab": "schema.org",
+      "target_label": "ratingValue",
+      "confidence": 0.631578947368421,
+      "relation": "owl:equivalentProperty"
+    },
+    {
+      "type": "property",
+      "source": "http://saraaymericradhi.org/movie-ontology#hasInformation",
+      "source_label": "hasInformation",
+      "target": "http://schema.org/duration",
+      "target_vocab": "schema.org",
+      "target_label": "duration",
+      "confidence": 0.631578947368421,
+      "relation": "owl:equivalentProperty"
+    },
+    {
+      "type": "class",
+      "source": "http://saraaymericradhi.org/movie-ontology#MovieResult",
+      "source_label": "MovieResult",
+      "target": "http://schema.org/Movie",
+      "target_vocab": "schema.org",
+      "target_label": "Movie",
+      "confidence": 0.625,
+      "relation": "owl:equivalentClass"
+    },
+    {
+      "type": "property",
+      "source": "http://saraaymericradhi.org/movie-ontology#hasDirector",
+      "source_label": "hasDirector",
+      "target": "http://schema.org/actor",
+      "target_vocab": "schema.org",
+      "target_label": "actor",
+      "confidence": 0.625,
+      "relation": "owl:equivalentProperty"
+    },
+    {
+      "type": "property",
+      "source": "http://saraaymericradhi.org/movie-ontology#awardName",
+      "source_label": "awardName",
+      "target": "http://schema.org/name",
+      "target_vocab": "schema.org",
+      "target_label": "name",
+      "confidence": 0.6153846153846154,
+      "relation": "owl:equivalentProperty"
+    },
+    {
+      "type": "property",
+      "source": "http://saraaymericradhi.org/movie-ontology#hasAdaptor",
+      "source_label": "hasAdaptor",
+      "target": "http://schema.org/author",
+      "target_vocab": "schema.org",
+      "target_label": "author",
+      "confidence": 0.6153846153846154,
+      "relation": "owl:equivalentProperty"
+    },
+    {
+      "type": "class",
+      "source": "http://saraaymericradhi.org/movie-ontology#Song",
+      "source_label": "Song",
+      "target": "http://schema.org/Person",
+      "target_vocab": "schema.org",
+      "target_label": "Person",
+      "confidence": 0.6,
+      "relation": "owl:equivalentClass"
+    },
+    {
+      "type": "class",
+      "source": "http://saraaymericradhi.org/movie-ontology#Song",
+      "source_label": "Song",
+      "target": "http://dbpedia.org/ontology/Person",
+      "target_vocab": "DBpedia",
+      "target_label": "Person",
+      "confidence": 0.6,
+      "relation": "owl:equivalentClass"
+    },
+    {
+      "type": "class",
+      "source": "http://saraaymericradhi.org/movie-ontology#MovieContent",
+      "source_label": "MovieContent",
+      "target": "http://schema.org/Movie",
+      "target_vocab": "schema.org",
+      "target_label": "Movie",
+      "confidence": 0.5882352941176471,
+      "relation": "owl:equivalentClass"
+    },
+    {
+      "type": "property",
+      "source": "http://saraaymericradhi.org/movie-ontology#hasRating",
+      "source_label": "hasRating",
+      "target": "http://dbpedia.org/ontology/starring",
+      "target_vocab": "DBpedia",
+      "target_label": "starring",
+      "confidence": 0.5882352941176471,
+      "relation": "owl:equivalentProperty"
+    },
+    {
+      "type": "property",
+      "source": "http://saraaymericradhi.org/movie-ontology#hasRating",
+      "source_label": "hasRating",
+      "target": "http://dbpedia.org/ontology/abstract",
+      "target_vocab": "DBpedia",
+      "target_label": "abstract",
+      "confidence": 0.5882352941176471,
+      "relation": "owl:equivalentProperty"
+    },
+    {
+      "type": "property",
+      "source": "http://saraaymericradhi.org/movie-ontology#dubsCharacter",
+      "source_label": "dubsCharacter",
+      "target": "http://dbpedia.org/ontology/abstract",
+      "target_vocab": "DBpedia",
+      "target_label": "abstract",
+      "confidence": 0.5714285714285714,
+      "relation": "owl:equivalentProperty"
+    },
+    {
+      "type": "property",
+      "source": "http://saraaymericradhi.org/movie-ontology#personName",
+      "source_label": "personName",
+      "target": "http://schema.org/name",
+      "target_vocab": "schema.org",
+      "target_label": "name",
+      "confidence": 0.5714285714285714,
+      "relation": "owl:equivalentProperty"
+    },
+    {
+      "type": "property",
+      "source": "http://saraaymericradhi.org/movie-ontology#castOrder",
+      "source_label": "castOrder",
+      "target": "http://schema.org/actor",
+      "target_vocab": "schema.org",
+      "target_label": "actor",
+      "confidence": 0.5714285714285714,
+      "relation": "owl:equivalentProperty"
+    },
+    {
+      "type": "class",
+      "source": "http://saraaymericradhi.org/movie-ontology#ChildrenMovie",
+      "source_label": "ChildrenMovie",
+      "target": "http://schema.org/Movie",
+      "target_vocab": "schema.org",
+      "target_label": "Movie",
+      "confidence": 0.5555555555555556,
+      "relation": "owl:equivalentClass"
+    },
+    {
+      "type": "class",
+      "source": "http://saraaymericradhi.org/movie-ontology#Rating",
+      "source_label": "Rating",
+      "target": "http://schema.org/Organization",
+      "target_vocab": "schema.org",
+      "target_label": "Organization",
+      "confidence": 0.5555555555555556,
+      "relation": "owl:equivalentClass"
+    },
+    {
+      "type": "class",
+      "source": "http://saraaymericradhi.org/movie-ontology#Rating",
+      "source_label": "Rating",
+      "target": "http://dbpedia.org/ontology/Organisation",
+      "target_vocab": "DBpedia",
+      "target_label": "Organisation",
+      "confidence": 0.5555555555555556,
+      "relation": "owl:equivalentClass"
+    },
+    {
+      "type": "property",
+      "source": "http://saraaymericradhi.org/movie-ontology#hasTagline",
+      "source_label": "hasTagline",
+      "target": "http://dbpedia.org/ontology/starring",
+      "target_vocab": "DBpedia",
+      "target_label": "starring",
+      "confidence": 0.5555555555555556,
+      "relation": "owl:equivalentProperty"
+    },
+    {
+      "type": "property",
+      "source": "http://saraaymericradhi.org/movie-ontology#awardCategory",
+      "source_label": "awardCategory",
+      "target": "http://schema.org/actor",
+      "target_vocab": "schema.org",
+      "target_label": "actor",
+      "confidence": 0.5555555555555556,
+      "relation": "owl:equivalentProperty"
+    },
+    {
+      "type": "class",
+      "source": "http://saraaymericradhi.org/movie-ontology#Director",
+      "source_label": "Director",
+      "target": "http://schema.org/MusicRecording",
+      "target_vocab": "schema.org",
+      "target_label": "MusicRecording",
+      "confidence": 0.5454545454545454,
+      "relation": "owl:equivalentClass"
+    },
+    {
+      "type": "class",
+      "source": "http://saraaymericradhi.org/movie-ontology#VoiceActor",
+      "source_label": "VoiceActor",
+      "target": "http://schema.org/CreativeWork",
+      "target_vocab": "schema.org",
+      "target_label": "CreativeWork",
+      "confidence": 0.5454545454545454,
+      "relation": "owl:equivalentClass"
+    },
+    {
+      "type": "property",
+      "source": "http://saraaymericradhi.org/movie-ontology#adaptationYear",
+      "source_label": "adaptationYear",
+      "target": "http://schema.org/duration",
+      "target_vocab": "schema.org",
+      "target_label": "duration",
+      "confidence": 0.5454545454545454,
+      "relation": "owl:equivalentProperty"
+    },
+    {
+      "type": "property",
+      "source": "http://saraaymericradhi.org/movie-ontology#coDirectedWith",
+      "source_label": "coDirectedWith",
+      "target": "http://schema.org/director",
+      "target_vocab": "schema.org",
+      "target_label": "director",
+      "confidence": 0.5454545454545454,
+      "relation": "owl:equivalentProperty"
+    },
+    {
+      "type": "property",
+      "source": "http://saraaymericradhi.org/movie-ontology#coDirectedWith",
+      "source_label": "coDirectedWith",
+      "target": "http://dbpedia.org/ontology/director",
+      "target_vocab": "DBpedia",
+      "target_label": "director",
+      "confidence": 0.5454545454545454,
+      "relation": "owl:equivalentProperty"
+    },
+    {
+      "type": "property",
+      "source": "http://saraaymericradhi.org/movie-ontology#hasTitle",
+      "source_label": "hasTitle",
+      "target": "http://dbpedia.org/ontology/writer",
+      "target_vocab": "DBpedia",
+      "target_label": "writer",
+      "confidence": 0.5454545454545454,
+      "relation": "owl:equivalentProperty"
+    },
+    {
+      "type": "property",
+      "source": "http://saraaymericradhi.org/movie-ontology#hasRuntime",
+      "source_label": "hasRuntime",
+      "target": "http://schema.org/name",
+      "target_vocab": "schema.org",
+      "target_label": "name",
+      "confidence": 0.5454545454545454,
+      "relation": "owl:equivalentProperty"
+    },
+    {
+      "type": "property",
+      "source": "http://saraaymericradhi.org/movie-ontology#playsCharacter",
+      "source_label": "playsCharacter",
+      "target": "http://dbpedia.org/ontology/abstract",
+      "target_vocab": "DBpedia",
+      "target_label": "abstract",
+      "confidence": 0.5454545454545454,
+      "relation": "owl:equivalentProperty"
+    },
+    {
+      "type": "property",
+      "source": "http://saraaymericradhi.org/movie-ontology#actedIn",
+      "source_label": "actedIn",
+      "target": "http://schema.org/duration",
+      "target_vocab": "schema.org",
+      "target_label": "duration",
+      "confidence": 0.5333333333333333,
+      "relation": "owl:equivalentProperty"
+    },
+    {
+      "type": "property",
+      "source": "http://saraaymericradhi.org/movie-ontology#castOrder",
+      "source_label": "castOrder",
+      "target": "http://schema.org/author",
+      "target_vocab": "schema.org",
+      "target_label": "author",
+      "confidence": 0.5333333333333333,
+      "relation": "owl:equivalentProperty"
+    },
+    {
+      "type": "property",
+      "source": "http://saraaymericradhi.org/movie-ontology#hasAdaptor",
+      "source_label": "hasAdaptor",
+      "target": "http://schema.org/director",
+      "target_vocab": "schema.org",
+      "target_label": "director",
+      "confidence": 0.5333333333333333,
+      "relation": "owl:equivalentProperty"
+    },
+    {
+      "type": "property",
+      "source": "http://saraaymericradhi.org/movie-ontology#hasAdaptor",
+      "source_label": "hasAdaptor",
+      "target": "http://dbpedia.org/ontology/director",
+      "target_vocab": "DBpedia",
+      "target_label": "director",
+      "confidence": 0.5333333333333333,
+      "relation": "owl:equivalentProperty"
+    },
+    {
+      "type": "property",
+      "source": "http://saraaymericradhi.org/movie-ontology#hasDirector",
+      "source_label": "hasDirector",
+      "target": "http://dbpedia.org/ontology/abstract",
+      "target_vocab": "DBpedia",
+      "target_label": "abstract",
+      "confidence": 0.5263157894736842,
+      "relation": "owl:equivalentProperty"
+    },
+    {
+      "type": "property",
+      "source": "http://saraaymericradhi.org/movie-ontology#hasTitle",
+      "source_label": "hasTitle",
+      "target": "http://schema.org/ratingValue",
+      "target_vocab": "schema.org",
+      "target_label": "ratingValue",
+      "confidence": 0.5263157894736842,
+      "relation": "owl:equivalentProperty"
+    },
+    {
+      "type": "property",
+      "source": "http://saraaymericradhi.org/movie-ontology#hasLanguage",
+      "source_label": "hasLanguage",
+      "target": "http://schema.org/ratingValue",
+      "target_vocab": "schema.org",
+      "target_label": "ratingValue",
+      "confidence": 0.5263157894736842,
+      "relation": "owl:equivalentProperty"
+    },
+    {
+      "type": "property",
+      "source": "http://saraaymericradhi.org/movie-ontology#awardCategory",
+      "source_label": "awardCategory",
+      "target": "http://dbpedia.org/ontology/writer",
+      "target_vocab": "DBpedia",
+      "target_label": "writer",
+      "confidence": 0.5263157894736842,
+      "relation": "owl:equivalentProperty"
+    },
+    {
+      "type": "class",
+      "source": "http://saraaymericradhi.org/movie-ontology#MovieInformation",
+      "source_label": "MovieInformation",
+      "target": "http://schema.org/Organization",
+      "target_vocab": "schema.org",
+      "target_label": "Organization",
+      "confidence": 0.5,
+      "relation": "owl:equivalentClass"
+    },
+    {
+      "type": "class",
+      "source": "http://saraaymericradhi.org/movie-ontology#MovieInformation",
+      "source_label": "MovieInformation",
+      "target": "http://dbpedia.org/ontology/Organisation",
+      "target_vocab": "DBpedia",
+      "target_label": "Organisation",
+      "confidence": 0.5,
+      "relation": "owl:equivalentClass"
+    },
+    {
+      "type": "class",
+      "source": "http://saraaymericradhi.org/movie-ontology#MovieProduction",
+      "source_label": "MovieProduction",
+      "target": "http://schema.org/Movie",
+      "target_vocab": "schema.org",
+      "target_label": "Movie",
+      "confidence": 0.5,
+      "relation": "owl:equivalentClass"
+    },
+    {
+      "type": "class",
+      "source": "http://saraaymericradhi.org/movie-ontology#Director",
+      "source_label": "Director",
+      "target": "http://schema.org/CreativeWork",
+      "target_vocab": "schema.org",
+      "target_label": "CreativeWork",
+      "confidence": 0.5,
+      "relation": "owl:equivalentClass"
+    },
+    {
+      "type": "class",
+      "source": "http://saraaymericradhi.org/movie-ontology#Keyword",
+      "source_label": "Keyword",
+      "target": "http://schema.org/Award",
+      "target_vocab": "schema.org",
+      "target_label": "Award",
+      "confidence": 0.5,
+      "relation": "owl:equivalentClass"
+    },
+    {
+      "type": "class",
+      "source": "http://saraaymericradhi.org/movie-ontology#Keyword",
+      "source_label": "Keyword",
+      "target": "http://dbpedia.org/ontology/Award",
+      "target_vocab": "DBpedia",
+      "target_label": "Award",
+      "confidence": 0.5,
+      "relation": "owl:equivalentClass"
+    },
+    {
+      "type": "class",
+      "source": "http://saraaymericradhi.org/movie-ontology#ProfitableMovie",
+      "source_label": "ProfitableMovie",
+      "target": "http://schema.org/Movie",
+      "target_vocab": "schema.org",
+      "target_label": "Movie",
+      "confidence": 0.5,
+      "relation": "owl:equivalentClass"
+    },
+    {
+      "type": "class",
+      "source": "http://saraaymericradhi.org/movie-ontology#FrenchAdaptation",
+      "source_label": "FrenchAdaptation",
+      "target": "http://schema.org/Organization",
+      "target_vocab": "schema.org",
+      "target_label": "Organization",
+      "confidence": 0.5,
+      "relation": "owl:equivalentClass"
+    },
+    {
+      "type": "class",
+      "source": "http://saraaymericradhi.org/movie-ontology#FrenchAdaptation",
+      "source_label": "FrenchAdaptation",
+      "target": "http://dbpedia.org/ontology/Organisation",
+      "target_vocab": "DBpedia",
+      "target_label": "Organisation",
+      "confidence": 0.5,
+      "relation": "owl:equivalentClass"
+    },
+    {
+      "type": "class",
+      "source": "http://saraaymericradhi.org/movie-ontology#VoiceActor",
+      "source_label": "VoiceActor",
+      "target": "http://schema.org/MusicRecording",
+      "target_vocab": "schema.org",
+      "target_label": "MusicRecording",
+      "confidence": 0.5,
+      "relation": "owl:equivalentClass"
+    },
+    {
+      "type": "property",
+      "source": "http://saraaymericradhi.org/movie-ontology#hasFrenchVoiceActor",
+      "source_label": "hasFrenchVoiceActor",
+      "target": "http://schema.org/director",
+      "target_vocab": "schema.org",
+      "target_label": "director",
+      "confidence": 0.5,
+      "relation": "owl:equivalentProperty"
+    },
+    {
+      "type": "property",
+      "source": "http://saraaymericradhi.org/movie-ontology#hasFrenchVoiceActor",
+      "source_label": "hasFrenchVoiceActor",
+      "target": "http://dbpedia.org/ontology/director",
+      "target_vocab": "DBpedia",
+      "target_label": "director",
+      "confidence": 0.5,
+      "relation": "owl:equivalentProperty"
+    },
+    {
+      "type": "property",
+      "source": "http://saraaymericradhi.org/movie-ontology#hasCollection",
+      "source_label": "hasCollection",
+      "target": "http://schema.org/description",
+      "target_vocab": "schema.org",
+      "target_label": "description",
+      "confidence": 0.5,
+      "relation": "owl:equivalentProperty"
+    },
+    {
+      "type": "property",
+      "source": "http://saraaymericradhi.org/movie-ontology#hasVoteCount",
+      "source_label": "hasVoteCount",
+      "target": "http://dbpedia.org/ontology/abstract",
+      "target_vocab": "DBpedia",
+      "target_label": "abstract",
+      "confidence": 0.5,
+      "relation": "owl:equivalentProperty"
+    },
+    {
+      "type": "property",
+      "source": "http://saraaymericradhi.org/movie-ontology#songTitle",
+      "source_label": "songTitle",
+      "target": "http://dbpedia.org/ontology/runtime",
+      "target_vocab": "DBpedia",
+      "target_label": "runtime",
+      "confidence": 0.5,
+      "relation": "owl:equivalentProperty"
+    },
+    {
+      "type": "property",
+      "source": "http://saraaymericradhi.org/movie-ontology#hasYearOfAwardGiving",
+      "source_label": "hasYearOfAwardGiving",
+      "target": "http://dbpedia.org/ontology/starring",
+      "target_vocab": "DBpedia",
+      "target_label": "starring",
+      "confidence": 0.5,
+      "relation": "owl:equivalentProperty"
+    },
+    {
+      "type": "property",
+      "source": "http://saraaymericradhi.org/movie-ontology#hasGenreOf",
+      "source_label": "hasGenreOf",
+      "target": "http://dbpedia.org/ontology/gross",
+      "target_vocab": "DBpedia",
+      "target_label": "gross",
+      "confidence": 0.5,
+      "relation": "owl:equivalentProperty"
+    },
+    {
+      "type": "property",
+      "source": "http://saraaymericradhi.org/movie-ontology#hasRating",
+      "source_label": "hasRating",
+      "target": "http://schema.org/description",
+      "target_vocab": "schema.org",
+      "target_label": "description",
+      "confidence": 0.5,
+      "relation": "owl:equivalentProperty"
+    },
+    {
+      "type": "property",
+      "source": "http://saraaymericradhi.org/movie-ontology#hasFrenchAdaptation",
+      "source_label": "hasFrenchAdaptation",
+      "target": "http://schema.org/duration",
+      "target_vocab": "schema.org",
+      "target_label": "duration",
+      "confidence": 0.5,
+      "relation": "owl:equivalentProperty"
+    },
+    {
+      "type": "property",
+      "source": "http://saraaymericradhi.org/movie-ontology#actedIn",
+      "source_label": "actedIn",
+      "target": "http://schema.org/actor",
+      "target_vocab": "schema.org",
+      "target_label": "actor",
+      "confidence": 0.5,
+      "relation": "owl:equivalentProperty"
+    },
+    {
+      "type": "property",
+      "source": "http://saraaymericradhi.org/movie-ontology#hasTitle",
+      "source_label": "hasTitle",
+      "target": "http://dbpedia.org/ontology/abstract",
+      "target_vocab": "DBpedia",
+      "target_label": "abstract",
+      "confidence": 0.5,
+      "relation": "owl:equivalentProperty"
+    },
+    {
+      "type": "property",
+      "source": "http://saraaymericradhi.org/movie-ontology#hasTitle",
+      "source_label": "hasTitle",
+      "target": "http://dbpedia.org/ontology/runtime",
+      "target_vocab": "DBpedia",
+      "target_label": "runtime",
+      "confidence": 0.5,
+      "relation": "owl:equivalentProperty"
+    },
+    {
+      "type": "property",
+      "source": "http://saraaymericradhi.org/movie-ontology#awardName",
+      "source_label": "awardName",
+      "target": "http://dbpedia.org/ontology/runtime",
+      "target_vocab": "DBpedia",
+      "target_label": "runtime",
+      "confidence": 0.5,
+      "relation": "owl:equivalentProperty"
+    },
+    {
+      "type": "property",
+      "source": "http://saraaymericradhi.org/movie-ontology#hasTagline",
+      "source_label": "hasTagline",
+      "target": "http://schema.org/genre",
+      "target_vocab": "schema.org",
+      "target_label": "genre",
+      "confidence": 0.5,
+      "relation": "owl:equivalentProperty"
+    },
+    {
+      "type": "property",
+      "source": "http://saraaymericradhi.org/movie-ontology#hasTagline",
+      "source_label": "hasTagline",
+      "target": "http://dbpedia.org/ontology/genre",
+      "target_vocab": "DBpedia",
+      "target_label": "genre",
+      "confidence": 0.5,
+      "relation": "owl:equivalentProperty"
+    },
+    {
+      "type": "property",
+      "source": "http://saraaymericradhi.org/movie-ontology#hasProduction",
+      "source_label": "hasProduction",
+      "target": "http://schema.org/description",
+      "target_vocab": "schema.org",
+      "target_label": "description",
+      "confidence": 0.5,
+      "relation": "owl:equivalentProperty"
+    },
+    {
+      "type": "property",
+      "source": "http://saraaymericradhi.org/movie-ontology#isNomination",
+      "source_label": "isNomination",
+      "target": "http://schema.org/duration",
+      "target_vocab": "schema.org",
+      "target_label": "duration",
+      "confidence": 0.5,
+      "relation": "owl:equivalentProperty"
+    },
+    {
+      "type": "property",
+      "source": "http://saraaymericradhi.org/movie-ontology#hasComposer",
+      "source_label": "hasComposer",
+      "target": "http://schema.org/actor",
+      "target_vocab": "schema.org",
+      "target_label": "actor",
+      "confidence": 0.5,
+      "relation": "owl:equivalentProperty"
+    },
+    {
+      "type": "property",
+      "source": "http://saraaymericradhi.org/movie-ontology#givenBy",
+      "source_label": "givenBy",
+      "target": "http://schema.org/genre",
+      "target_vocab": "schema.org",
+      "target_label": "genre",
+      "confidence": 0.5,
+      "relation": "owl:equivalentProperty"
+    },
+    {
+      "type": "property",
+      "source": "http://saraaymericradhi.org/movie-ontology#givenBy",
+      "source_label": "givenBy",
+      "target": "http://dbpedia.org/ontology/genre",
+      "target_vocab": "DBpedia",
+      "target_label": "genre",
+      "confidence": 0.5,
+      "relation": "owl:equivalentProperty"
+    }
+  ]
+}
