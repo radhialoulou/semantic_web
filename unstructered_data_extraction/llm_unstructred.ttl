@@ -105,7 +105,7 @@
 
 <http://saraaymericradhi.org/award/19995_Primetime_Emmy_Award> a movie:Award;
   movie:awardName "Primetime Emmy Award";
-  movie:hasYearOfAwardGiving "2006, 2007, 2008"^^xsd:gYear .
+  movie:hasYearOfAwardGiving "2006"^^xsd:gYear .
 
 <http://saraaymericradhi.org/award/2062_Academy_Award_for_Best_Animated_Feature>
   a movie:Award;
@@ -383,7 +383,7 @@
   movie:hasThemeSong <http://saraaymericradhi.org/song/105_theme> .
 
 <http://saraaymericradhi.org/movie/105/french-adaptation> a movie:FrenchAdaptation;
-  movie:adaptationYear "1985, 1989, 1990"^^xsd:gYear .
+  movie:adaptationYear "1985"^^xsd:gYear .
 
 <http://saraaymericradhi.org/movie/10528> movie:hasAward <http://saraaymericradhi.org/award/10528_Le_Dernier_Problème_(1893)>;
   movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/10528/french-adaptation>;
@@ -666,7 +666,7 @@
   movie:hasThemeSong <http://saraaymericradhi.org/song/238_theme> .
 
 <http://saraaymericradhi.org/movie/238/french-adaptation> a movie:FrenchAdaptation;
-  movie:adaptationYear "1972, 1974, 1990, 2006, 2009"^^xsd:gYear .
+  movie:adaptationYear "1972"^^xsd:gYear .
 
 <http://saraaymericradhi.org/movie/24428> movie:hasAward <http://saraaymericradhi.org/award/24428_The_Game_Awards_2020_-_Best_Action/Adventure_Game>;
   movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/24428/french-adaptation>;
@@ -772,8 +772,8 @@
   movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/321612/french-adaptation>;
   movie:hasThemeSong <http://saraaymericradhi.org/song/321612_theme> .
 
-<http://saraaymericradhi.org/movie/321612/french-adaptation> a movie:FrenchAdaptation;
-  movie:adaptationYear "La Belle et la Bête"^^xsd:gYear .
+<http://saraaymericradhi.org/movie/321612/french-adaptation> a movie:FrenchAdaptation .
+# INVALID GYEAR REMOVED:   movie:adaptationYear "La Belle et la Bête"^^xsd:gYear .
 
 <http://saraaymericradhi.org/movie/329> movie:hasAward <http://saraaymericradhi.org/award/329_Oscar>;
   movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/329/french-adaptation>;
@@ -805,7 +805,7 @@
   movie:hasThemeSong <http://saraaymericradhi.org/song/36657_theme> .
 
 <http://saraaymericradhi.org/movie/36657/french-adaptation> a movie:FrenchAdaptation;
-  movie:adaptationYear "2001, 2003"^^xsd:gYear .
+  movie:adaptationYear "2001"^^xsd:gYear .
 
 <http://saraaymericradhi.org/movie/37165> movie:hasAward <http://saraaymericradhi.org/award/37165_Golden_Globe_Award>;
   movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/37165/french-adaptation>;
@@ -1026,7 +1026,7 @@
   movie:hasThemeSong <http://saraaymericradhi.org/song/70160_theme> .
 
 <http://saraaymericradhi.org/movie/70160/french-adaptation> a movie:FrenchAdaptation;
-  movie:adaptationYear "2012, 2013, 2014, 2015, 2023, 2025"^^xsd:gYear .
+  movie:adaptationYear "2012"^^xsd:gYear .
 
 <http://saraaymericradhi.org/movie/70981> movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/70981/french-adaptation>;
   movie:hasThemeSong <http://saraaymericradhi.org/song/70981_theme> .
