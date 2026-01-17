@@ -6,11 +6,11 @@ from langchain_core.prompts import PromptTemplate
 from graph_loader import load_graph
 
 # Configure Local LLM (Ollama)
-# User specified model: gpt-oss:20b
+# User specified model: llama3.2:3b
 LLM = ChatOpenAI(
     base_url="http://localhost:11434/v1",
     api_key="ollama",  # Required but ignored
-    model="gpt-oss:20b",
+    model="llama3.2:3b",
     temperature=0
 )
 
