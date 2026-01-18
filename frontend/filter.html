@@ -417,7 +417,7 @@
                 }
 
                 // --- 2. BUILD OUTER QUERY (Display) ---
-                // We take the fixed 500 movies and fetch their deep details.
+                // We take the fixed 200 movies and fetch their deep details.
 
                 const query = `PREFIX : <http://saraaymericradhi.org/movie-ontology#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
@@ -426,12 +426,12 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 SELECT DISTINCT ?movie ?title ?year ?duration ?rating 
     (GROUP_CONCAT(DISTINCT COALESCE(?directorName, ""); separator=", ") AS ?directors)
     (GROUP_CONCAT(DISTINCT COALESCE(?genreLabel, ""); separator=", ") AS ?genres)
-    (GROUP_CONCAT(DISTINCT COALESCE(?actorName, ""); separator=", ") AS ?cast)
+
 WHERE {
   {
     SELECT DISTINCT ?movie WHERE {
       ${innerWhere}
-    } LIMIT 500
+    } LIMIT 200
   }
 
   # --- Fetch Display Data ---
@@ -447,7 +447,6 @@ WHERE {
   # Aggregates (Optimized: only runs for the 500 selected movies)
   OPTIONAL { ?movie :hasProduction [ :hasCrewMember [ :personName ?directorName; :job "Director" ] ] }
   OPTIONAL { ?movie :hasContent [ :hasGenre [ skos:prefLabel ?genreLabel ] ] }
-  OPTIONAL { ?movie :hasProduction [ :hasCastMember [ :personName ?actorName ] ] }
 
 } GROUP BY ?movie ?title ?year ?duration ?rating`;
 
@@ -492,7 +491,7 @@ WHERE {
                     rate: parseFloat(r.rating?.value || 0).toFixed(1),
                     dir: r.directors?.value || "", // Use empty string if missing
                     genres: r.genres?.value ? r.genres.value.split(', ') : [],
-                    cast: r.cast?.value ? r.cast.value.split(', ') : [],
+                    cast: [], // Optimized out
                     color: stringToColor(r.title?.value || "")
                 };
 
