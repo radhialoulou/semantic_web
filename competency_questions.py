@@ -136,6 +136,37 @@ COMPETENCY_QUESTIONS = [
         ORDER BY DESC(?appearanceCount)
         LIMIT 1
         """
+    },
+    {
+        "id": "CQ_FED",
+        "question": "Federated Query: Find birth date of 'Christopher Nolan' from Wikidata.",
+        "description": "Optimized Federated Query: Uses a local subquery to isolate the name and strict type constraints (Human) on Wikidata to ensure fast execution.",
+        "query": """
+        PREFIX : <http://saraaymericradhi.org/movie-ontology#>
+        PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+        PREFIX wd: <http://www.wikidata.org/entity/>
+        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+        SELECT DISTINCT ?directorName ?birthDate
+        WHERE {
+            # 1. Local Subquery: Isolate the local match execution
+            {
+                SELECT ?directorName WHERE {
+                    ?d :personName ?directorName .
+                    FILTER (?directorName = "Christopher Nolan")
+                }
+            }
+
+            # 2. Remote Service: strict typing (Human) + LIMIT 1
+            SERVICE <https://query.wikidata.org/sparql> {
+                SELECT * WHERE {
+                    ?res rdfs:label "Christopher Nolan"@en ;
+                         wdt:P31 wd:Q5 ; # Must be Human (speeds up index lookup)
+                         wdt:P569 ?birthDate .
+                } LIMIT 1
+            }
+        }
+        """
     }
 ]
 
