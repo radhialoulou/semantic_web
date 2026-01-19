@@ -263,27 +263,7 @@
             border: 1px solid #444;
         }
 
-        /* Explanation Banner */
-        .explanation-banner {
-            background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
-            border-left: 4px solid var(--accent);
-            padding: 20px;
-            margin-bottom: 30px;
-            border-radius: 8px;
-        }
-
-        .explanation-banner h3 {
-            margin: 0 0 10px 0;
-            color: var(--accent);
-            font-size: 18px;
-        }
-
-        .explanation-banner p {
-            margin: 0;
-            line-height: 1.6;
-            color: #ccc;
-        }
-
+     
         .algo-breakdown {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -551,13 +531,7 @@
             </div>
         </div>
 
-        <div class="explanation-banner" id="explanation-banner" style="display:none;">
-            <h3 id="banner-title">Recommandations Hybrides</h3>
-            <p id="banner-description">
-                Le système analyse vos préférences à travers l'ontologie (genres, réalisateurs) 
-                et les combine avec les patterns collaboratifs d'utilisateurs similaires.
-            </p>
-        </div>
+        
 
         <div id="results-container" class="movie-grid"></div>
 
@@ -658,7 +632,6 @@
             const data = await response.json();
             renderRecommendations(data.recommendations);
             hideLoading();
-            showExplanationBanner();
             
         } catch (error) {
             console.error('Error generating recommendations:', error);
@@ -863,36 +836,7 @@
         document.getElementById('algo-badge').innerHTML = `<i class="fas fa-rocket"></i> Algorithme: ${algoNames[algo]}`;
     }
 
-    function showExplanationBanner() {
-        const banner = document.getElementById('explanation-banner');
-        const title = document.getElementById('banner-title');
-        const description = document.getElementById('banner-description');
-        
-        const ratingsCount = currentProfileDetails?.stats?.totalRatings || 0;
-        
-        if (currentAlgorithm === 'semantic') {
-            title.textContent = ' Recommandations Sémantiques';
-            description.textContent = 'Basées uniquement sur l\'analyse de l\'ontologie: genres, réalisateurs, acteurs et autres métadonnées des films.';
-        } else if (currentAlgorithm === 'collaborative') {
-            title.textContent = 'Recommandations Collaboratives';
-            description.textContent = 'Basées sur la popularité globale et les patterns de notation similaires entre utilisateurs.';
-        } else {
-            // Hybrid - adapt message based on user type
-            if (ratingsCount < 5) {
-                title.textContent = ' Mode Cold Start (Nouveau Utilisateur)';
-                description.textContent = 'Peu d\'historique disponible. Le système privilégie la similarité sémantique (70%) pour compenser le manque de données collaboratives (30%).';
-            } else if (ratingsCount < 15) {
-                title.textContent = '⚡ Mode Utilisateur Actif';
-                description.textContent = 'Équilibre optimal entre sémantique (50%) et collaboratif (50%) pour des recommandations précises.';
-            } else {
-                title.textContent = 'Mode Expert';
-                description.textContent = 'Profil riche établi. Utilisation avancée de l\'ontologie (60%) combinée au collaboratif (40%) pour des suggestions ultra-personnalisées.';
-            }
-        }
-        
-        banner.style.display = 'block';
-    }
-
+   
     // ===========================
     // UTILITY FUNCTIONS
     // ===========================
@@ -901,7 +845,6 @@
         document.getElementById('loading-state').style.display = 'block';
         document.getElementById('results-container').innerHTML = '';
         document.getElementById('error-state').style.display = 'none';
-        document.getElementById('explanation-banner').style.display = 'none';
     }
 
     function hideLoading() {

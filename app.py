@@ -856,9 +856,6 @@ def calculate_movie_score(movie, user_profile, algorithm, all_users_ratings, use
     
     return score, reasons[:3]
 
-# -----------------------------------------------------------------------------
-# Main
-# -----------------------------------------------------------------------------
 
 if __name__ == "__main__":
     app.logger.info("=" * 60)
