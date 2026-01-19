@@ -9,13 +9,13 @@ GRAPH_FILES = [
     os.path.join(BASE_DIR, "ontology", "ontology.ttl"),
     os.path.join(BASE_DIR, "ontology", "genres_skos.ttl"),
     os.path.join(BASE_DIR, "ontology", "keywords_skos.ttl"),
-    os.path.join(BASE_DIR, "unstructered_data_extraction", "llm_unstructred.ttl"),
+    os.path.join(BASE_DIR, "rml", "unstructured_data_extraction", "llm_unstructred.ttl"),
     os.path.join(BASE_DIR, "rml", "metadata", "movies_metadata.ttl"),
     os.path.join(BASE_DIR, "rml", "keywords", "keyword_triples_rml.ttl"),
     os.path.join(BASE_DIR, "rml", "plots", "wiki_movies.ttl"),
     os.path.join(BASE_DIR, "data_linking", "movie_links_secure.ttl"),
     os.path.join(BASE_DIR, "ontology", "suggested_alignments.ttl"),
-    os.path.join(BASE_DIR, "credits", "credits.ttl"),
+    os.path.join(BASE_DIR, "rml", "credits", "credits.ttl"),
     os.path.join(BASE_DIR, "rml", "ratings", "ratings_sample.ttl")
 ]
 
