@@ -244,6 +244,12 @@
                 <h3>Équipe</h3>
                 <input type="text" id="f-director" placeholder="Réalisateur" oninput="debouncedFilterMovies()">
                 <input type="text" id="f-actor" placeholder="Acteur" oninput="debouncedFilterMovies()">
+                <div class="checkbox-label" style="margin-top:5px; color:#46d369;">
+                    <label><input type="checkbox" id="f-smart-mode" onchange="filterMovies()"> Mode Lien 🔗</label>
+                </div>
+                <div style="font-size:11px; color:#888; margin-top:3px; line-height:1.2;">
+                    Trouve le lien (réalisateur favori) entre cet acteur et d'autres films.
+                </div>
             </div>
 
             <button onclick="resetFilters()"
@@ -359,6 +365,8 @@
                 const minRat = document.getElementById('f-rating').value;
                 const dir = document.getElementById('f-director').value.trim();
                 const act = document.getElementById('f-actor').value.trim();
+                const smartMode = document.getElementById('f-smart-mode').checked;
+
                 const genreCbs = document.querySelectorAll('#genre-container input:checked');
                 const genres = Array.from(genreCbs).map(cb => cb.value);
                 const minYear = document.getElementById('f-year-min').value;
@@ -366,89 +374,149 @@
 
                 debug.textContent = `Filtres actifs: ${genres.length ? genres.join(', ') : 'Aucun genre'} | Note > ${minRat} (Req #${myRequestId})`;
 
-                // --- 1. BUILD INNER QUERY (Filtering) ---
-                // We find the TOP 500 matching Movie URIs first.
-                // This avoids joining ALL actors/genres/directors for movies we won't show.
+                let query = "";
 
-                let innerWhere = `  ?movie a :Movie . \n`;
+                // --- SMART MODE (Complex Recommendation) ---
+                if (smartMode && act) {
+                    debug.textContent = `MODE LIEN ACTIVÉ pour: ${act}`;
 
-                if (search) {
-                    innerWhere += `
-  ?movie :hasTitle ?searchTitle . 
-  FILTER(CONTAINS(LCASE(?searchTitle), "${search}"))
-`;
-                }
-
-                if (genres.length > 0) {
-                    const genreList = genres.map(g => `"${g.toLowerCase()}"`).join(', ');
-                    innerWhere += `
-  ?movie :hasContent [ :hasGenre [ skos:prefLabel ?filterGenre ] ] .
-  FILTER(LCASE(STR(?filterGenre)) IN (${genreList}))
-`;
-                }
-
-                if (dir) {
-                    innerWhere += `
-  ?movie :hasProduction [ :hasCrewMember [ :personName ?filterDir; :job "Director" ] ] .
-  FILTER(CONTAINS(LCASE(STR(?filterDir)), "${dir.toLowerCase()}"))
-`;
-                }
-
-                if (act) {
-                    innerWhere += `
-  ?movie :hasProduction [ :hasCastMember [ :personName ?filterAct ] ] .
-  FILTER(CONTAINS(LCASE(STR(?filterAct)), "${act.toLowerCase()}"))
-`;
-                }
-
-                if (minYear && maxYear && minYear !== "Min" && maxYear !== "Max") {
-                    innerWhere += `
-  ?movie :hasInformation [ :hasReleaseDate ?filterDate ] .
-  BIND(YEAR(?filterDate) as ?filterYear)
-  FILTER(?filterYear >= ${minYear} && ?filterYear <= ${maxYear})
-`;
-                }
-
-                if (minRat > 0) {
-                    innerWhere += `
-  ?movie :hasResult [ :hasVoteAverage ?filterRate ] .
-  FILTER(?filterRate >= ${minRat})
-`;
-                }
-
-                // --- 2. BUILD OUTER QUERY (Display) ---
-                // We take the fixed 200 movies and fetch their deep details.
-
-                const query = `PREFIX : <http://saraaymericradhi.org/movie-ontology#>
-PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+                    query = `PREFIX : <http://saraaymericradhi.org/movie-ontology#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
-SELECT DISTINCT ?movie ?title ?year ?duration ?rating 
-    (GROUP_CONCAT(DISTINCT COALESCE(?directorName, ""); separator=", ") AS ?directors)
+SELECT DISTINCT ?movie ?title ?year ?duration ?rating (?directorName AS ?directors)
     (GROUP_CONCAT(DISTINCT COALESCE(?genreLabel, ""); separator=", ") AS ?genres)
-
 WHERE {
-  {
-    SELECT DISTINCT ?movie WHERE {
-      ${innerWhere}
-    } LIMIT 200
-  }
+    # 1. SEARCH: Find Directors with MAX collaborations (Handling Ties)
+    {
+         # A. Calculate count per director
+        SELECT ?targetDirector (COUNT(?collabMovie) as ?count) WHERE {
+            ?collabMovie :hasProduction [ :hasCastMember [ :personName ?inputActor ] ] .
+            FILTER(CONTAINS(LCASE(STR(?inputActor)), "${act.toLowerCase()}"))
+            ?collabMovie :hasProduction [ :hasCrewMember [ :personName ?targetDirector; :job "Director" ] ] .
+        } GROUP BY ?targetDirector
+    }
+    {
+         # B. Find the global Max Count
+        SELECT (MAX(?cnt) as ?maxCount) WHERE {
+            {
+               SELECT ?dir (COUNT(?m) as ?cnt) WHERE {
+                   ?m :hasProduction [ :hasCastMember [ :personName ?ia ] ] .
+                   FILTER(CONTAINS(LCASE(STR(?ia)), "${act.toLowerCase()}"))
+                   ?m :hasProduction [ :hasCrewMember [ :personName ?dir; :job "Director" ] ] .
+               } GROUP BY ?dir
+            }
+        }
+    }
+    FILTER (?count = ?maxCount)
+    BIND(?targetDirector as ?directorName)
 
-  # --- Fetch Display Data ---
-  OPTIONAL { ?movie :hasTitle ?titleTmp } BIND(COALESCE(?titleTmp, "Sans Titre") AS ?title)
-  
-  OPTIONAL { 
+    # 2. MATCH: Find movies by this director
+    ?movie :hasProduction [ :hasCrewMember [ :personName ?targetDirector; :job "Director" ] ] .
+
+    # 3. FILTER: Exclude the input actor (we want NEW suggestions)
+    FILTER NOT EXISTS {
+        ?movie :hasProduction [ :hasCastMember [ :personName ?exActor ] ] .
+        FILTER(CONTAINS(LCASE(STR(?exActor)), "${act.toLowerCase()}"))
+    }
+
+    # 4. FETCH: Display Info
+    OPTIONAL { ?movie :hasTitle ?title }
+    OPTIONAL { 
       ?movie :hasInformation ?info .
       OPTIONAL { ?info :hasReleaseDate ?date . BIND(YEAR(?date) as ?year) }
       OPTIONAL { ?info :hasRuntime ?duration }
-  }
-  OPTIONAL { ?movie :hasResult [ :hasVoteAverage ?rating ] }
+    }
+    OPTIONAL { ?movie :hasResult [ :hasVoteAverage ?rating ] }
+    OPTIONAL { ?movie :hasContent [ :hasGenre [ skos:prefLabel ?genreLabel ] ] }
 
-  # Aggregates (Optimized: only runs for the 500 selected movies)
-  OPTIONAL { ?movie :hasProduction [ :hasCrewMember [ :personName ?directorName; :job "Director" ] ] }
-  OPTIONAL { ?movie :hasContent [ :hasGenre [ skos:prefLabel ?genreLabel ] ] }
+}
+GROUP BY ?movie ?title ?year ?duration ?rating ?directorName
+LIMIT 50`;
 
-} GROUP BY ?movie ?title ?year ?duration ?rating`;
+                }
+                else {
+                    // --- STANDARD FILTER MODE ---
+
+                    // --- 1. BUILD INNER QUERY (Filtering) ---
+                    // We find the TOP 200 matching Movie URIs first.
+                    let innerWhere = `  ?movie a :Movie . \n`;
+
+                    if (search) {
+                        innerWhere += `
+      ?movie :hasTitle ?searchTitle . 
+      FILTER(CONTAINS(LCASE(?searchTitle), "${search}"))
+    `;
+                    }
+
+                    if (genres.length > 0) {
+                        const genreList = genres.map(g => `"${g.toLowerCase()}"`).join(', ');
+                        innerWhere += `
+      ?movie :hasContent [ :hasGenre [ skos:prefLabel ?filterGenre ] ] .
+      FILTER(LCASE(STR(?filterGenre)) IN (${genreList}))
+    `;
+                    }
+
+                    if (dir) {
+                        innerWhere += `
+      ?movie :hasProduction [ :hasCrewMember [ :personName ?filterDir; :job "Director" ] ] .
+      FILTER(CONTAINS(LCASE(STR(?filterDir)), "${dir.toLowerCase()}"))
+    `;
+                    }
+
+                    if (act) {
+                        innerWhere += `
+      ?movie :hasProduction [ :hasCastMember [ :personName ?filterAct ] ] .
+      FILTER(CONTAINS(LCASE(STR(?filterAct)), "${act.toLowerCase()}"))
+    `;
+                    }
+
+                    if (minYear && maxYear && minYear !== "Min" && maxYear !== "Max") {
+                        innerWhere += `
+      ?movie :hasInformation [ :hasReleaseDate ?filterDate ] .
+      BIND(YEAR(?filterDate) as ?filterYear)
+      FILTER(?filterYear >= ${minYear} && ?filterYear <= ${maxYear})
+    `;
+                    }
+
+                    if (minRat > 0) {
+                        innerWhere += `
+      ?movie :hasResult [ :hasVoteAverage ?filterRate ] .
+      FILTER(?filterRate >= ${minRat})
+    `;
+                    }
+
+                    // --- 2. BUILD OUTER QUERY (Display) ---
+                    query = `PREFIX : <http://saraaymericradhi.org/movie-ontology#>
+    PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+    PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+    
+    SELECT DISTINCT ?movie ?title ?year ?duration ?rating 
+        (GROUP_CONCAT(DISTINCT COALESCE(?directorName, ""); separator=", ") AS ?directors)
+        (GROUP_CONCAT(DISTINCT COALESCE(?genreLabel, ""); separator=", ") AS ?genres)
+    
+    WHERE {
+      {
+        SELECT DISTINCT ?movie WHERE {
+          ${innerWhere}
+        } LIMIT 200
+      }
+    
+      # --- Fetch Display Data ---
+      OPTIONAL { ?movie :hasTitle ?titleTmp } BIND(COALESCE(?titleTmp, "Sans Titre") AS ?title)
+      
+      OPTIONAL { 
+          ?movie :hasInformation ?info .
+          OPTIONAL { ?info :hasReleaseDate ?date . BIND(YEAR(?date) as ?year) }
+          OPTIONAL { ?info :hasRuntime ?duration }
+      }
+      OPTIONAL { ?movie :hasResult [ :hasVoteAverage ?rating ] }
+    
+      # Aggregates
+      OPTIONAL { ?movie :hasProduction [ :hasCrewMember [ :personName ?directorName; :job "Director" ] ] }
+      OPTIONAL { ?movie :hasContent [ :hasGenre [ skos:prefLabel ?genreLabel ] ] }
+    
+    } GROUP BY ?movie ?title ?year ?duration ?rating`;
+                }
 
                 document.getElementById('sparql-container').textContent = query;
                 console.log(`SPARQL [${myRequestId}]:`, query);
