@@ -1,7 +1,6 @@
 """
-Flask web server for SPARQL Agent LLM demonstration.
-Enhanced with Recommendation System - FULLY CORRECTED VERSION.
-Adapted for existing data structure with RDFlib Literal fixes.
+Flask web server for SPARQL Agent LLM demonstration - Enhanced with Recommendations.
+Robust logging + safe JSON handling + no silent failures.
 """
 
 from flask import Flask, request, jsonify, send_from_directory
@@ -24,7 +23,7 @@ app = Flask(__name__, static_folder="frontend", template_folder="frontend")
 CORS(app)
 
 # -----------------------------------------------------------------------------
-# Logging
+# Logging (THIS IS THE IMPORTANT PART)
 # -----------------------------------------------------------------------------
 
 logging.basicConfig(
@@ -59,31 +58,6 @@ graph = load_graph()
 app.logger.info("Graph loaded (%d triples)", len(graph))
 
 # -----------------------------------------------------------------------------
-# UTILITY FUNCTION: Safe extraction from RDFlib Literals
-# -----------------------------------------------------------------------------
-
-def safe_extract(value, target_type=str):
-    """Safely extract value from RDFlib Literal or other types."""
-    if value is None:
-        return None
-    
-    # If it's an RDFlib Literal, extract the value
-    if hasattr(value, 'value'):
-        value = value.value
-    
-    # Convert to string first, then to target type
-    try:
-        str_value = str(value)
-        if target_type == int:
-            return int(float(str_value))  # Convert via float first for safety
-        elif target_type == float:
-            return float(str_value)
-        else:
-            return str_value
-    except (ValueError, TypeError):
-        return None
-
-# -----------------------------------------------------------------------------
 # Embedding RAG setup (lazy-loaded)
 # -----------------------------------------------------------------------------
 
@@ -98,6 +72,7 @@ def get_embedding_rag():
         app.logger.info("Loading embedding RAG components...")
         from embedding_rag import load_vector_store, build_vector_store
         
+        # Check if vector store exists
         if os.path.exists("vector_store/entity_index.faiss"):
             vector_store, embedding_gen = load_vector_store()
             app.logger.info("Loaded existing vector store")
@@ -151,7 +126,7 @@ def format_answer(question: str, raw_results: str) -> str:
         return f"Formatting error: {e}\nRaw:\n{raw_results}"
 
 # -----------------------------------------------------------------------------
-# Standard Routes
+# Routes
 # -----------------------------------------------------------------------------
 
 @app.route("/")
@@ -187,6 +162,11 @@ def ask_question():
 
     app.logger.info("QUESTION: %s", question)
 
+    # -------------------------------------------------------------------------
+    # STEP 1 – Generate SPARQL
+    # -------------------------------------------------------------------------
+    app.logger.info("STEP 1: Generating SPARQL query")
+
     try:
         chain = PROMPT | SPARQL_LLM
         response = chain.invoke({
@@ -204,6 +184,11 @@ def ask_question():
 
     app.logger.info("SPARQL QUERY:\n%s", sparql_query)
 
+    # -------------------------------------------------------------------------
+    # STEP 2 – Execute SPARQL
+    # -------------------------------------------------------------------------
+    app.logger.info("STEP 2: Executing SPARQL")
+
     try:
         raw_results = sparql_pipeline(question, graph)
     except Exception:
@@ -211,6 +196,11 @@ def ask_question():
         return jsonify({"error": "SPARQL execution failed"}), 500
 
     app.logger.info("RAW RESULTS:\n%s", raw_results)
+
+    # -------------------------------------------------------------------------
+    # STEP 3 – Format answer
+    # -------------------------------------------------------------------------
+    app.logger.info("STEP 3: Formatting answer")
 
     answer = format_answer(question, raw_results)
 
@@ -241,6 +231,7 @@ def ask_question_embedding():
     
     app.logger.info("QUESTION: %s", question)
     
+    # Load embedding RAG components
     try:
         start_time = time.time()
         vs, emb_gen = get_embedding_rag()
@@ -250,6 +241,7 @@ def ask_question_embedding():
         app.logger.exception("Failed to load embedding RAG")
         return jsonify({"error": "Failed to load embedding RAG"}), 500
     
+    # Run embedding RAG pipeline
     try:
         start_time = time.time()
         from embedding_rag import embedding_rag_pipeline
@@ -291,6 +283,9 @@ def compare_approaches():
     
     results = {}
     
+    # --------------------------------------------------
+    # SPARQL Approach
+    # --------------------------------------------------
     app.logger.info("Running SPARQL approach...")
     try:
         start_time = time.time()
@@ -317,6 +312,9 @@ def compare_approaches():
         app.logger.exception("SPARQL approach failed")
         results["sparql"] = {"error": str(e)}
     
+    # --------------------------------------------------
+    # Embedding Approach
+    # --------------------------------------------------
     app.logger.info("Running Embedding approach...")
     try:
         start_time = time.time()
@@ -358,20 +356,27 @@ def execute_raw_sparql():
     app.logger.info("QUERY: %s", query)
     
     try:
+        # execute_sparql returns list of rdflib.query.ResultRow
         rows = execute_sparql(graph, query)
         
-        if isinstance(rows, str):
+        if isinstance(rows, str): # Error message
             return jsonify({"error": rows}), 400
             
+        # Convert to JSON-friendly format
         json_results = []
         for row in rows:
             result_dict = {}
+            # row is ResultRow, can be accessed like dict but need to iterate variables
+            # or use .asdict() if available, but let's be safe with manual extraction
+            # rdflib ResultRow behaves like a dict of Variable -> Term
             if hasattr(row, 'asdict'):
+                # New rdflib
                 d = row.asdict()
                 for k, v in d.items():
                     result_dict[str(k)] = {"type": type(v).__name__, "value": str(v)}
             else:
-                for k in row.labels:
+                # Fallback
+                for k in row.labels: # labels are the variable names
                     val = row[k]
                     if val is not None:
                         result_dict[k] = {"type": type(val).__name__, "value": str(val)}
@@ -386,69 +391,50 @@ def execute_raw_sparql():
         return jsonify({"error": str(e)}), 500
 
 # -----------------------------------------------------------------------------
-# RECOMMENDATION SYSTEM ENDPOINTS - OPTIMIZED & CORRECTED
+# NEW: Recommendation System Endpoints
 # -----------------------------------------------------------------------------
 
 @app.route("/api/recommendations/users", methods=["GET"])
 def get_user_profiles():
-    """Get all user profiles from the graph - OPTIMIZED VERSION."""
+    """Get all user profiles from the graph."""
     app.logger.info("===== /api/recommendations/users START =====")
     
     try:
-        # STEP 1: Get users FAST (no aggregations)
-        users_query = """
+        query = """
         PREFIX : <http://saraaymericradhi.org/movie-ontology#>
+        PREFIX foaf: <http://xmlns.com/foaf/0.1/>
         
-        SELECT DISTINCT ?user ?userId WHERE {
+        SELECT DISTINCT ?user ?name 
+            (COUNT(DISTINCT ?rating) as ?ratingsCount)
+            (AVG(?ratingValue) as ?avgRating)
+        WHERE {
             ?user a :User ;
-                  :hasUserId ?userId .
+                  foaf:name ?name .
+            
+            OPTIONAL {
+                ?rating a :Rating ;
+                       :ratedBy ?user ;
+                       :hasRatingValue ?ratingValue .
+            }
         }
-        ORDER BY ?userId
-        LIMIT 50
+        GROUP BY ?user ?name
+        ORDER BY DESC(?ratingsCount)
         """
         
-        start = time.time()
-        rows = execute_sparql(graph, users_query)
-        query_time = time.time() - start
-        app.logger.info(f"Users query took {query_time:.2f}s")
+        rows = execute_sparql(graph, query)
         
         users = []
         for row in rows:
             user_data = row.asdict() if hasattr(row, 'asdict') else {k: row[k] for k in row.labels if row[k] is not None}
             
-            user_uri = str(user_data.get('user', ''))
-            user_id = str(user_data.get('userId', ''))
-            
-            # STEP 2: For each user, count ratings individually (much faster)
-            count_query = f"""
-            PREFIX : <http://saraaymericradhi.org/movie-ontology#>
-            
-            SELECT (COUNT(?rating) as ?count) (AVG(?value) as ?avg) WHERE {{
-                ?rating a :Rating ;
-                       :givenBy <{user_uri}> ;
-                       :hasValue ?value .
-            }}
-            """
-            
-            count_rows = execute_sparql(graph, count_query)
-            count_data = count_rows[0].asdict() if count_rows else {}
-            
-            # FIXED: Use safe_extract
-            ratings_count = safe_extract(count_data.get('count'), int) or 0
-            avg_rating = safe_extract(count_data.get('avg'), float) or 0
-            
             users.append({
-                "id": user_uri,
-                "name": f"User {user_id}",
-                "ratingsCount": ratings_count,
-                "avgRating": round(avg_rating, 1)
+                "id": str(user_data.get('user', '')),
+                "name": str(user_data.get('name', 'Unknown')),
+                "ratingsCount": int(user_data.get('ratingsCount', 0)),
+                "avgRating": float(user_data.get('avgRating', 0))
             })
         
-        # Sort by ratings count (most active first)
-        users.sort(key=lambda x: x['ratingsCount'], reverse=True)
-        
-        total_time = time.time() - start
-        app.logger.info(f"Found {len(users)} users in {total_time:.2f}s")
+        app.logger.info(f"Found {len(users)} users")
         return jsonify(users)
         
     except Exception as e:
@@ -457,10 +443,11 @@ def get_user_profiles():
 
 @app.route("/api/recommendations/user/<path:user_id>/profile", methods=["GET"])
 def get_user_profile_details(user_id):
-    """Get detailed profile for a specific user - CORRECTED."""
+    """Get detailed profile for a specific user including preferences."""
     app.logger.info(f"===== /api/recommendations/user/{user_id}/profile START =====")
     
     try:
+        # Get user ratings
         ratings_query = f"""
         PREFIX : <http://saraaymericradhi.org/movie-ontology#>
         PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
@@ -470,11 +457,11 @@ def get_user_profile_details(user_id):
             ?director
         WHERE {{
             ?rating a :Rating ;
-                   :givenBy <{user_id}> ;
-                   :hasValue ?ratingValue .
+                   :ratedBy <{user_id}> ;
+                   :ratesMovie ?movie ;
+                   :hasRatingValue ?ratingValue .
             
-            ?movie :hasRating ?rating ;
-                   :hasTitle ?title .
+            ?movie :hasTitle ?title .
             
             OPTIONAL {{
                 ?movie :hasContent [ :hasGenre [ skos:prefLabel ?genreLabel ] ] .
@@ -497,8 +484,7 @@ def get_user_profile_details(user_id):
         for row in ratings_rows:
             row_data = row.asdict() if hasattr(row, 'asdict') else {k: row[k] for k in row.labels if row[k] is not None}
             
-            # FIXED: Safe extraction
-            rating_value = safe_extract(row_data.get('ratingValue'), float) or 0
+            rating_value = float(row_data.get('ratingValue', 0))
             genres_str = str(row_data.get('genres', ''))
             director = str(row_data.get('director', ''))
             
@@ -508,15 +494,18 @@ def get_user_profile_details(user_id):
                 "rating": rating_value
             })
             
+            # Count genres (weighted by rating)
             if genres_str:
                 for genre in genres_str.split(', '):
                     genre = genre.strip()
                     if genre:
                         genre_counts[genre] = genre_counts.get(genre, 0) + rating_value
             
+            # Count directors (weighted by rating)
             if director:
                 director_counts[director] = director_counts.get(director, 0) + rating_value
         
+        # Normalize preferences to 0-1 scale
         max_genre_score = max(genre_counts.values()) if genre_counts else 1
         max_director_score = max(director_counts.values()) if director_counts else 1
         
@@ -543,7 +532,7 @@ def get_user_profile_details(user_id):
 
 @app.route("/api/recommendations/generate", methods=["POST"])
 def generate_recommendations():
-    """Generate movie recommendations for a user - CORRECTED."""
+    """Generate movie recommendations for a user."""
     app.logger.info("===== /api/recommendations/generate START =====")
     
     data = request.get_json(silent=True)
@@ -551,35 +540,26 @@ def generate_recommendations():
         return jsonify({"error": "Missing 'userId' field"}), 400
     
     user_id = data["userId"]
-    algorithm = data.get("algorithm", "hybrid")
+    algorithm = data.get("algorithm", "hybrid")  # hybrid, semantic, collaborative
     limit = data.get("limit", 12)
     
     app.logger.info(f"Generating recommendations for user {user_id} using {algorithm} algorithm")
     
     try:
-        # Get user's rated movies
+        # Get user's rated movies to exclude them
         rated_query = f"""
         PREFIX : <http://saraaymericradhi.org/movie-ontology#>
         
         SELECT DISTINCT ?movie WHERE {{
-            ?rating :givenBy <{user_id}> .
-            ?movie :hasRating ?rating .
+            ?rating :ratedBy <{user_id}> ;
+                   :ratesMovie ?movie .
         }}
         """
         
         rated_rows = execute_sparql(graph, rated_query)
-        rated_movie_ids = []
-        for row in rated_rows:
-            movie_uri = row.asdict()['movie'] if hasattr(row, 'asdict') else row['movie']
-            rated_movie_ids.append(str(movie_uri))
+        rated_movie_ids = [str(row.asdict()['movie'] if hasattr(row, 'asdict') else row['movie']) for row in rated_rows]
         
-        if rated_movie_ids:
-            rated_uris = '>, <'.join(rated_movie_ids)
-            filter_clause = f"FILTER(?movie NOT IN (<{rated_uris}>))"
-        else:
-            filter_clause = ""
-        
-        # Get candidate movies
+        # Get candidate movies (not rated by user)
         candidates_query = f"""
         PREFIX : <http://saraaymericradhi.org/movie-ontology#>
         PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
@@ -588,6 +568,7 @@ def generate_recommendations():
             (GROUP_CONCAT(DISTINCT ?genreLabel; separator=", ") as ?genres)
             ?director
             ?runtime
+            ?posterColor
         WHERE {{
             ?movie a :Movie ;
                    :hasTitle ?title .
@@ -612,37 +593,40 @@ def generate_recommendations():
                 ?movie :hasProduction [ :hasCrewMember [ :personName ?director ; :job "Director" ] ] .
             }}
             
-            {filter_clause}
+            OPTIONAL {{
+                ?movie :hasPosterColor ?posterColor .
+            }}
+            
+            FILTER(?movie NOT IN (<{''>, <'.join(rated_movie_ids)}>))
         }}
-        GROUP BY ?movie ?title ?year ?rating ?director ?runtime
+        GROUP BY ?movie ?title ?year ?rating ?director ?runtime ?posterColor
         LIMIT 100
         """
         
         candidates_rows = execute_sparql(graph, candidates_query)
         
+        # Get user preferences
         user_profile_response = get_user_profile_details(user_id)
         user_profile = user_profile_response.get_json()
         
+        # Score each candidate movie
         recommendations = []
         
         for row in candidates_rows:
             row_data = row.asdict() if hasattr(row, 'asdict') else {k: row[k] for k in row.labels if row[k] is not None}
             
-            # FIXED: Safe extraction of values
             movie = {
                 "id": str(row_data.get('movie', '')),
                 "title": str(row_data.get('title', '')),
-                "year": safe_extract(row_data.get('year'), int),
-                "rating": safe_extract(row_data.get('rating'), float) or 0,
+                "year": int(row_data.get('year', 0)) if row_data.get('year') else None,
+                "rating": float(row_data.get('rating', 0)) if row_data.get('rating') else 0,
                 "genres": str(row_data.get('genres', '')).split(', ') if row_data.get('genres') else [],
                 "director": str(row_data.get('director', '')),
-                "runtime": safe_extract(row_data.get('runtime'), int) or 0,
-                "posterColor": "#333"
+                "runtime": int(row_data.get('runtime', 0)) if row_data.get('runtime') else 0,
+                "posterColor": str(row_data.get('posterColor', '#333'))
             }
             
-            # Filter out empty genres
-            movie["genres"] = [g for g in movie["genres"] if g.strip()]
-            
+            # Calculate similarity score
             score, reasons = calculate_movie_score(movie, user_profile, algorithm)
             
             recommendations.append({
@@ -651,6 +635,7 @@ def generate_recommendations():
                 "reasons": reasons
             })
         
+        # Sort by score and return top N
         recommendations.sort(key=lambda x: x["score"], reverse=True)
         top_recommendations = recommendations[:limit]
         
@@ -666,7 +651,7 @@ def generate_recommendations():
         return jsonify({"error": str(e)}), 500
 
 def calculate_movie_score(movie, user_profile, algorithm):
-    """Calculate similarity score between a movie and user profile - CORRECTED."""
+    """Calculate similarity score between a movie and user profile."""
     score = 0
     reasons = []
     
@@ -675,17 +660,18 @@ def calculate_movie_score(movie, user_profile, algorithm):
     director_prefs = user_prefs.get("directors", {})
     avg_rating = user_profile.get("stats", {}).get("avgRating", 7.0)
     
+    # Semantic similarity (content-based)
     semantic_score = 0
     
     # Genre matching
     if movie["genres"]:
-        genre_scores = [genre_prefs.get(g, 0) for g in movie["genres"] if g]
+        genre_scores = [genre_prefs.get(g, 0) for g in movie["genres"]]
         if genre_scores:
             genre_match = sum(genre_scores) / len(genre_scores)
             semantic_score += genre_match * 0.5
             
             if genre_match > 0.5:
-                top_genres = [g for g in movie["genres"] if g and genre_prefs.get(g, 0) > 0.5]
+                top_genres = [g for g in movie["genres"] if genre_prefs.get(g, 0) > 0.5]
                 if top_genres:
                     reasons.append(f"Genres similaires: {', '.join(top_genres[:2])}")
     
@@ -698,12 +684,12 @@ def calculate_movie_score(movie, user_profile, algorithm):
             reasons.append(f"Réalisateur favori: {movie['director']}")
     
     # Rating similarity
-    if movie["rating"] and movie["rating"] > 0:
+    if movie["rating"]:
         rating_diff = abs(movie["rating"] - avg_rating)
         rating_score = max(0, 1 - rating_diff / 5)
         semantic_score += rating_score * 0.2
     
-    # Collaborative filtering
+    # Collaborative filtering (simplified - based on popularity)
     collaborative_score = movie["rating"] / 10 if movie["rating"] else 0.5
     
     # Combine scores based on algorithm
@@ -712,17 +698,18 @@ def calculate_movie_score(movie, user_profile, algorithm):
     elif algorithm == "collaborative":
         score = collaborative_score
         if movie["rating"] > 8.0:
-            reasons.append(f"Film hautement noté ({movie['rating']:.1f}/10)")
+            reasons.append(f"Film hautement noté ({movie['rating']}/10)")
     else:  # hybrid
+        # Weight based on number of user ratings
         ratings_count = user_profile.get("stats", {}).get("totalRatings", 0)
         
-        if ratings_count < 5:
+        if ratings_count < 5:  # Cold start
             semantic_weight = 0.7
             collaborative_weight = 0.3
-        elif ratings_count < 15:
+        elif ratings_count < 15:  # Active user
             semantic_weight = 0.5
             collaborative_weight = 0.5
-        else:
+        else:  # Expert user
             semantic_weight = 0.6
             collaborative_weight = 0.4
         
@@ -731,7 +718,7 @@ def calculate_movie_score(movie, user_profile, algorithm):
     # Normalize score to percentage
     score = min(score * 100, 100)
     
-    return score, reasons[:3]
+    return score, reasons[:3]  # Return top 3 reasons
 
 # -----------------------------------------------------------------------------
 # Main
@@ -739,8 +726,9 @@ def calculate_movie_score(movie, user_profile, algorithm):
 
 if __name__ == "__main__":
     app.logger.info("=" * 60)
-    app.logger.info("SPARQL Agent Server Starting (with Recommendations)")
+    app.logger.info("SPARQL Agent Server Starting (Enhanced with Recommendations)")
     app.logger.info("http://localhost:5000")
     app.logger.info("=" * 60)
 
+    # IMPORTANT: debug=True + use_reloader=False for stable logs
     app.run(host="0.0.0.0", port=5000, debug=True, use_reloader=False)

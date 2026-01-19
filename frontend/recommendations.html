@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineSemantic - Système de Recommandation Hybride</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #e50914;
+            --dark: #141414;
+            --light: #f5f5f1;
+            --gray: #808080;
+            --accent: #46d369;
+            --blue: #2980b9;
+            --purple: #8e44ad;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: var(--dark);
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        .app-container {
+            display: grid;
+            grid-template-columns: 400px 1fr;
+            min-height: 100vh;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            background-color: #000;
+            padding: 30px;
+            border-right: 1px solid #333;
+            overflow-y: auto;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-size: 14px;
+            text-transform: uppercase;
+            color: var(--gray);
+            margin-bottom: 15px;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Profile Selector */
+        .profile-selector {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .profile-card {
+            background: #1a1a1a;
+            padding: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .profile-card:hover {
+            background: #2a2a2a;
+            border-color: #444;
+        }
+
+        .profile-card.active {
+            background: #2a2a2a;
+            border-color: var(--primary);
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+
+        .profile-avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: bold;
+            background: var(--primary);
+        }
+
+        .profile-info h4 {
+            margin: 0;
+            font-size: 16px;
+        }
+
+        .profile-info p {
+            margin: 3px 0 0 0;
+            font-size: 11px;
+            color: #888;
+        }
+
+        .profile-stats-mini {
+            display: flex;
+            gap: 15px;
+            font-size: 11px;
+            color: #aaa;
+        }
+
+        .profile-stats-mini span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Profile Visualization */
+        .profile-viz {
+            background: #1a1a1a;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .viz-title {
+            font-size: 13px;
+            color: var(--accent);
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .pref-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .pref-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+        }
+
+        .pref-bar {
+            flex: 1;
+            height: 6px;
+            background: #333;
+            border-radius: 3px;
+            margin: 0 10px;
+            overflow: hidden;
+        }
+
+        .pref-fill {
+            height: 100%;
+            background: var(--primary);
+            border-radius: 3px;
+            transition: width 0.5s;
+        }
+
+        .algo-selector {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .algo-option {
+            background: #1a1a1a;
+            padding: 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 2px solid transparent;
+            font-size: 13px;
+        }
+
+        .algo-option:hover {
+            background: #2a2a2a;
+        }
+
+        .algo-option.active {
+            border-color: var(--accent);
+            background: #2a2a2a;
+        }
+
+        .algo-option strong {
+            color: var(--accent);
+            display: block;
+            margin-bottom: 3px;
+        }
+
+        .btn {
+            padding: 12px 20px;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.2s;
+            width: 100%;
+            font-weight: bold;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+        .btn-primary:hover { background: #c40812; }
+        .btn-primary:disabled {
+            background: #555;
+            cursor: not-allowed;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 40px;
+            background: #181818;
+            overflow-y: auto;
+        }
+
+        .header-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .header-bar h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        .algo-badge {
+            background: #2a2a2a;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            border: 1px solid #444;
+        }
+
+        /* Explanation Banner */
+        .explanation-banner {
+            background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+            border-left: 4px solid var(--accent);
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+        }
+
+        .explanation-banner h3 {
+            margin: 0 0 10px 0;
+            color: var(--accent);
+            font-size: 18px;
+        }
+
+        .explanation-banner p {
+            margin: 0;
+            line-height: 1.6;
+            color: #ccc;
+        }
+
+        .algo-breakdown {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .breakdown-card {
+            background: #1a1a1a;
+            padding: 12px;
+            border-radius: 6px;
+            border-top: 3px solid var(--primary);
+        }
+
+        .breakdown-card.collaborative {
+            border-top-color: var(--blue);
+        }
+
+        .breakdown-card.content {
+            border-top-color: var(--purple);
+        }
+
+        .breakdown-card strong {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 13px;
+        }
+
+        .breakdown-card span {
+            font-size: 11px;
+            color: #aaa;
+        }
+
+        /* Movie Grid */
+        .movie-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .movie-card {
+            background: #2f2f2f;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .movie-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+            z-index: 10;
+        }
+
+        .card-image {
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #555;
+            font-size: 40px;
+            position: relative;
+        }
+
+        .similarity-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: var(--primary);
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .card-rating {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0,0,0,0.9);
+            border: 1px solid #444;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-weight: bold;
+            color: var(--accent);
+            font-size: 13px;
+        }
+
+        .card-content {
+            padding: 15px;
+        }
+
+        .card-title {
+            font-size: 15px;
+            font-weight: bold;
+            margin: 0 0 8px 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-meta {
+            font-size: 11px;
+            color: #aaa;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .card-genres {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-bottom: 10px;
+        }
+
+        .genre-pill {
+            font-size: 9px;
+            padding: 3px 8px;
+            border-radius: 10px;
+            background: #444;
+            color: #ddd;
+        }
+
+        .match-reasons {
+            background: #1a1a1a;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 4px;
+            font-size: 11px;
+            line-height: 1.5;
+        }
+
+        .match-reasons .reason {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 4px;
+            color: #bbb;
+        }
+
+        .match-reasons .reason i {
+            color: var(--accent);
+            width: 12px;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 80px 20px;
+            color: #666;
+        }
+
+        .empty-state i {
+            font-size: 64px;
+            margin-bottom: 20px;
+        }
+
+        .empty-state h3 {
+            margin: 0 0 10px 0;
+            color: #888;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #888;
+        }
+
+        .spinner {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border: 4px solid #333;
+            border-top-color: var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .error-message {
+            background: #5a1a1a;
+            border-left: 4px solid #c40812;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="app-container">
+    <!-- Sidebar: Profile Selection & Settings -->
+    <aside class="sidebar">
+        <div class="logo">
+            <i class="fas fa-brain"></i> CineSemantic
+        </div>
+
+        <!-- User Profile Selector -->
+        <div class="section">
+            <div class="section-title">
+                <i class="fas fa-users"></i> Sélectionner un Profil
+            </div>
+            <div class="profile-selector" id="profile-list">
+                <div class="loading">
+                    <div class="spinner"></div>
+                    <p>Chargement des profils...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Profile Visualization -->
+        <div class="profile-viz" id="profile-viz" style="display:none;">
+            <div class="viz-title">Analyse du Profil</div>
+            <div id="viz-content">
+                <!-- Generated by JS -->
+            </div>
+        </div>
+
+        <!-- Algorithm Selection -->
+        <div class="section">
+            <div class="section-title">
+                <i class="fas fa-cogs"></i> Algorithme
+            </div>
+            <div class="algo-selector">
+                <div class="algo-option active" data-algo="hybrid" onclick="selectAlgorithm('hybrid')">
+                    <strong> Hybride (Défaut)</strong>
+                    Combine sémantique + collaboratif
+                </div>
+                <div class="algo-option" data-algo="semantic" onclick="selectAlgorithm('semantic')">
+                    <strong> Sémantique Pur</strong>
+                    Basé sur l'ontologie
+                </div>
+                <div class="algo-option" data-algo="collaborative" onclick="selectAlgorithm('collaborative')">
+                    <strong> Collaboratif Pur</strong>
+                    Basé sur les utilisateurs similaires
+                </div>
+            </div>
+        </div>
+
+        <!-- Generate Button -->
+        <div class="section">
+            <button class="btn btn-primary" id="generateBtn" onclick="generateRecommendations()" disabled>
+                <i class="fas fa-magic"></i> Générer les Recommandations
+            </button>
+        </div>
+
+        <div style="margin-top:30px; font-size:11px; color:#555; line-height:1.5;">
+            <p><strong>Info:</strong> Ce système hybride combine la similarité sémantique (ontologie) avec le filtrage collaboratif (préférences utilisateurs).</p>
+        </div>
+    </aside>
+
+    <!-- Main Content: Results -->
+    <main class="main-content">
+        <div class="header-bar">
+            <h1>Système de Recommandation</h1>
+            <div class="algo-badge" id="algo-badge">
+                <i class="fas fa-rocket"></i> Algorithme: Hybride
+            </div>
+        </div>
+
+        <div class="explanation-banner" id="explanation-banner" style="display:none;">
+            <h3 id="banner-title">Recommandations Hybrides</h3>
+            <p id="banner-description">
+                Le système analyse vos préférences à travers l'ontologie (genres, réalisateurs) 
+                et les combine avec les patterns collaboratifs d'utilisateurs similaires.
+            </p>
+        </div>
+
+        <div id="results-container" class="movie-grid"></div>
+
+        <div id="empty-state" class="empty-state">
+            <i class="fas fa-user-circle"></i>
+            <h3>Sélectionnez un profil utilisateur</h3>
+            <p>Choisissez un profil dans la barre latérale pour voir les recommandations personnalisées.</p>
+        </div>
+
+        <div id="loading-state" class="loading" style="display:none;">
+            <div class="spinner"></div>
+            <p style="margin-top:20px;">Génération des recommandations depuis le graphe RDF...</p>
+        </div>
+
+        <div id="error-state" class="error-message" style="display:none;">
+            <strong>Erreur</strong>
+            <p id="error-message"></p>
+        </div>
+    </main>
+</div>
+
+<script>
+    // ===========================
+    // STATE MANAGEMENT
+    // ===========================
+    let userProfiles = [];
+    let currentProfile = null;
+    let currentProfileDetails = null;
+    let currentAlgorithm = "hybrid";
+
+    // ===========================
+    // INITIALIZATION
+    // ===========================
+    window.onload = async () => {
+        await loadUserProfiles();
+    };
+
+    // ===========================
+    // API CALLS
+    // ===========================
+    async function loadUserProfiles() {
+        try {
+            const response = await fetch('/api/recommendations/users');
+            if (!response.ok) throw new Error('Failed to load user profiles');
+            
+            userProfiles = await response.json();
+            renderProfileList();
+            
+        } catch (error) {
+            console.error('Error loading profiles:', error);
+            showError('Impossible de charger les profils utilisateurs: ' + error.message);
+        }
+    }
+
+    async function loadUserProfileDetails(userId) {
+        try {
+            const response = await fetch(`/api/recommendations/user/${encodeURIComponent(userId)}/profile`);
+            if (!response.ok) throw new Error('Failed to load user profile details');
+            
+            currentProfileDetails = await response.json();
+            renderProfileVisualization();
+            
+            // Enable generate button
+            document.getElementById('generateBtn').disabled = false;
+            
+        } catch (error) {
+            console.error('Error loading profile details:', error);
+            showError('Impossible de charger les détails du profil: ' + error.message);
+        }
+    }
+
+    async function generateRecommendations() {
+        if (!currentProfile) {
+            alert('Veuillez sélectionner un profil utilisateur.');
+            return;
+        }
+        
+        showLoading();
+        
+        try {
+            const response = await fetch('/api/recommendations/generate', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    userId: currentProfile.id,
+                    algorithm: currentAlgorithm,
+                    limit: 12
+                })
+            });
+            
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData.error || 'Failed to generate recommendations');
+            }
+            
+            const data = await response.json();
+            renderRecommendations(data.recommendations);
+            hideLoading();
+            showExplanationBanner();
+            
+        } catch (error) {
+            console.error('Error generating recommendations:', error);
+            showError('Erreur lors de la génération des recommandations: ' + error.message);
+            hideLoading();
+        }
+    }
+
+    // ===========================
+    // RENDERING FUNCTIONS
+    // ===========================
+    function renderProfileList() {
+        const container = document.getElementById('profile-list');
+        container.innerHTML = '';
+
+        if (userProfiles.length === 0) {
+            container.innerHTML = '<p style="text-align:center; color:#666;">Aucun profil trouvé</p>';
+            return;
+        }
+
+        userProfiles.forEach(profile => {
+            const card = document.createElement('div');
+            card.className = 'profile-card';
+            card.onclick = () => selectProfile(profile);
+            
+            // Determine user type based on ratings count
+            let userType = 'Nouveau';
+            if (profile.ratingsCount >= 20) userType = 'Expert';
+            else if (profile.ratingsCount >= 10) userType = 'Actif';
+            
+            // Generate avatar from name initials
+            const initials = profile.name.split(' ').map(n => n[0]).join('').toUpperCase();
+            
+            card.innerHTML = `
+                <div class="profile-header">
+                    <div class="profile-avatar">
+                        ${initials}
+                    </div>
+                    <div class="profile-info">
+                        <h4>${profile.name}</h4>
+                        <p>${userType}</p>
+                    </div>
+                </div>
+                <div class="profile-stats-mini">
+                    <span><i class="fas fa-star"></i> ${profile.ratingsCount} films</span>
+                    <span><i class="fas fa-heart"></i> ⌀ ${profile.avgRating.toFixed(1)}</span>
+                </div>
+            `;
+            
+            container.appendChild(card);
+        });
+    }
+
+    function selectProfile(profile) {
+        currentProfile = profile;
+        
+        // Update UI
+        document.querySelectorAll('.profile-card').forEach(card => {
+            card.classList.remove('active');
+        });
+        event.currentTarget.classList.add('active');
+        
+        // Load detailed profile
+        loadUserProfileDetails(profile.id);
+        
+        // Hide empty state
+        document.getElementById('empty-state').style.display = 'none';
+        document.getElementById('results-container').innerHTML = '';
+    }
+
+    function renderProfileVisualization() {
+        const viz = document.getElementById('profile-viz');
+        const content = document.getElementById('viz-content');
+        
+        if (!currentProfileDetails) {
+            viz.style.display = 'none';
+            return;
+        }
+        
+        viz.style.display = 'block';
+        
+        const prefs = currentProfileDetails.preferences;
+        
+        // Genre preferences
+        let genreHtml = '<div style="margin-bottom:15px;"><strong style="font-size:11px; color:#888;">GENRES PRÉFÉRÉS</strong></div><div class="pref-list">';
+        
+        const topGenres = Object.entries(prefs.genres || {})
+            .sort((a, b) => b[1] - a[1])
+            .slice(0, 5);
+        
+        if (topGenres.length > 0) {
+            topGenres.forEach(([genre, score]) => {
+                const percentage = Math.round(score * 100);
+                genreHtml += `
+                    <div class="pref-item">
+                        <span style="width:100px; font-size:11px;">${genre}</span>
+                        <div class="pref-bar">
+                            <div class="pref-fill" style="width:${percentage}%"></div>
+                        </div>
+                        <span style="width:40px; text-align:right;">${percentage}%</span>
+                    </div>
+                `;
+            });
+        } else {
+            genreHtml += '<p style="font-size:11px; color:#666;">Aucune préférence de genre</p>';
+        }
+        genreHtml += '</div>';
+        
+        // Director preferences
+        let directorHtml = '<div style="margin-top:15px; margin-bottom:10px;"><strong style="font-size:11px; color:#888;">RÉALISATEURS FAVORIS</strong></div><div class="pref-list">';
+        
+        const topDirectors = Object.entries(prefs.directors || {})
+            .sort((a, b) => b[1] - a[1])
+            .slice(0, 3);
+        
+        if (topDirectors.length > 0) {
+            topDirectors.forEach(([director, score]) => {
+                const percentage = Math.round(score * 100);
+                directorHtml += `
+                    <div class="pref-item">
+                        <span style="flex:1; font-size:11px;">${director}</span>
+                        <div class="pref-bar" style="flex:0.6;">
+                            <div class="pref-fill" style="width:${percentage}%; background:#3498db;"></div>
+                        </div>
+                        <span style="width:40px; text-align:right;">${percentage}%</span>
+                    </div>
+                `;
+            });
+        } else {
+            directorHtml += '<p style="font-size:11px; color:#666;">Aucune préférence de réalisateur</p>';
+        }
+        directorHtml += '</div>';
+        
+        content.innerHTML = genreHtml + directorHtml;
+    }
+
+    function renderRecommendations(recommendations) {
+        const container = document.getElementById('results-container');
+        container.innerHTML = '';
+        
+        if (!recommendations || recommendations.length === 0) {
+            container.innerHTML = '<div class="empty-state"><p>Aucune recommandation disponible.</p></div>';
+            return;
+        }
+        
+        recommendations.forEach((rec) => {
+            const m = rec.movie;
+            const similarityPercent = Math.round(rec.score);
+            
+            const card = document.createElement('div');
+            card.className = 'movie-card';
+            
+            const pills = m.genres.slice(0, 3).map(g => `<span class="genre-pill">${g}</span>`).join('');
+            
+            const reasonsHtml = rec.reasons && rec.reasons.length > 0 ? `
+                <div class="match-reasons">
+                    ${rec.reasons.map(r => `<div class="reason"><i class="fas fa-check"></i> ${r}</div>`).join('')}
+                </div>
+            ` : '';
+            
+            const duration = m.runtime ? `${Math.floor(m.runtime / 60)}h${m.runtime % 60}` : 'N/A';
+            
+            card.innerHTML = `
+                <div class="card-image" style="background:${m.posterColor || '#333'}">
+                    <i class="fas fa-film"></i>
+                    <div class="similarity-badge">
+                        <i class="fas fa-fire"></i> ${similarityPercent}%
+                    </div>
+                    <div class="card-rating">${m.rating ? m.rating.toFixed(1) : 'N/A'}</div>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title" title="${m.title}">${m.title}</h3>
+                    <div class="card-meta">
+                        <span>${m.year || 'N/A'}</span>
+                        <span>${duration}</span>
+                    </div>
+                    <div class="card-genres">${pills}</div>
+                    <div style="font-size:11px; color:#aaa; margin-top:8px;">
+                        <div><i class="fas fa-video" style="width:12px; color:var(--primary);"></i> ${m.director || 'Inconnu'}</div>
+                    </div>
+                    ${reasonsHtml}
+                </div>
+            `;
+            
+            container.appendChild(card);
+        });
+    }
+
+    function selectAlgorithm(algo) {
+        currentAlgorithm = algo;
+        
+        document.querySelectorAll('.algo-option').forEach(opt => {
+            opt.classList.toggle('active', opt.dataset.algo === algo);
+        });
+        
+        // Update badge
+        const algoNames = {
+            'hybrid': 'Hybride',
+            'semantic': 'Sémantique',
+            'collaborative': 'Collaboratif'
+        };
+        document.getElementById('algo-badge').innerHTML = `<i class="fas fa-rocket"></i> Algorithme: ${algoNames[algo]}`;
+    }
+
+    function showExplanationBanner() {
+        const banner = document.getElementById('explanation-banner');
+        const title = document.getElementById('banner-title');
+        const description = document.getElementById('banner-description');
+        
+        const ratingsCount = currentProfileDetails?.stats?.totalRatings || 0;
+        
+        if (currentAlgorithm === 'semantic') {
+            title.textContent = ' Recommandations Sémantiques';
+            description.textContent = 'Basées uniquement sur l\'analyse de l\'ontologie: genres, réalisateurs, acteurs et autres métadonnées des films.';
+        } else if (currentAlgorithm === 'collaborative') {
+            title.textContent = 'Recommandations Collaboratives';
+            description.textContent = 'Basées sur la popularité globale et les patterns de notation similaires entre utilisateurs.';
+        } else {
+            // Hybrid - adapt message based on user type
+            if (ratingsCount < 5) {
+                title.textContent = ' Mode Cold Start (Nouveau Utilisateur)';
+                description.textContent = 'Peu d\'historique disponible. Le système privilégie la similarité sémantique (70%) pour compenser le manque de données collaboratives (30%).';
+            } else if (ratingsCount < 15) {
+                title.textContent = '⚡ Mode Utilisateur Actif';
+                description.textContent = 'Équilibre optimal entre sémantique (50%) et collaboratif (50%) pour des recommandations précises.';
+            } else {
+                title.textContent = 'Mode Expert';
+                description.textContent = 'Profil riche établi. Utilisation avancée de l\'ontologie (60%) combinée au collaboratif (40%) pour des suggestions ultra-personnalisées.';
+            }
+        }
+        
+        banner.style.display = 'block';
+    }
+
+    // ===========================
+    // UTILITY FUNCTIONS
+    // ===========================
+    function showLoading() {
+        document.getElementById('empty-state').style.display = 'none';
+        document.getElementById('loading-state').style.display = 'block';
+        document.getElementById('results-container').innerHTML = '';
+        document.getElementById('error-state').style.display = 'none';
+        document.getElementById('explanation-banner').style.display = 'none';
+    }
+
+    function hideLoading() {
+        document.getElementById('loading-state').style.display = 'none';
+    }
+
+    function showError(message) {
+        document.getElementById('error-message').textContent = message;
+        document.getElementById('error-state').style.display = 'block';
+        document.getElementById('loading-state').style.display = 'none';
+    }
+</script>
+
+</body>
+</html>
