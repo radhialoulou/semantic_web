@@ -15,6 +15,8 @@ from langchain_openai import ChatOpenAI
 from langchain_core.prompts import PromptTemplate
 import time
 import os
+import math
+from collections import defaultdict
 
 # -----------------------------------------------------------------------------
 # Flask setup
@@ -386,7 +388,79 @@ def execute_raw_sparql():
         return jsonify({"error": str(e)}), 500
 
 # -----------------------------------------------------------------------------
-# RECOMMENDATION SYSTEM ENDPOINTS - OPTIMIZED & CORRECTED
+# RECOMMENDATION SYSTEM ALGORITHMS
+# -----------------------------------------------------------------------------
+
+def jaccard_similarity(set1, set2):
+    """Calcule la similarité de Jaccard entre deux ensembles."""
+    if not set1 or not set2:
+        return 0.0
+    intersection = len(set1.intersection(set2))
+    union = len(set1.union(set2))
+    return intersection / union if union > 0 else 0.0
+
+def cosine_similarity(vec1, vec2):
+    """Calcule la similarité cosinus entre deux vecteurs."""
+    if not vec1 or not vec2:
+        return 0.0
+    
+    dot_product = sum(vec1.get(k, 0) * vec2.get(k, 0) for k in set(vec1.keys()).union(vec2.keys()))
+    
+    mag1 = math.sqrt(sum(v**2 for v in vec1.values()))
+    mag2 = math.sqrt(sum(v**2 for v in vec2.values()))
+    
+    if mag1 == 0 or mag2 == 0:
+        return 0.0
+    
+    return dot_product / (mag1 * mag2)
+
+def pearson_correlation(ratings1, ratings2):
+    """Calcule la corrélation de Pearson entre deux ensembles de notes."""
+    common_movies = set(ratings1.keys()).intersection(set(ratings2.keys()))
+    
+    if len(common_movies) < 2:
+        return 0.0
+    
+    sum1 = sum(ratings1[m] for m in common_movies)
+    sum2 = sum(ratings2[m] for m in common_movies)
+    
+    sum1_sq = sum(ratings1[m]**2 for m in common_movies)
+    sum2_sq = sum(ratings2[m]**2 for m in common_movies)
+    
+    p_sum = sum(ratings1[m] * ratings2[m] for m in common_movies)
+    
+    n = len(common_movies)
+    num = p_sum - (sum1 * sum2 / n)
+    den = math.sqrt((sum1_sq - sum1**2 / n) * (sum2_sq - sum2**2 / n))
+    
+    if den == 0:
+        return 0.0
+    
+    return num / den
+
+def knn_predict_rating(target_user_ratings, all_users_ratings, movie_id, k=10):
+    """Prédit la note d'un film en utilisant K-Nearest Neighbors."""
+    similarities = []
+    
+    for user_id, user_ratings in all_users_ratings.items():
+        if movie_id in user_ratings:
+            sim = pearson_correlation(target_user_ratings, user_ratings)
+            if sim > 0:
+                similarities.append((sim, user_ratings[movie_id]))
+    
+    if not similarities:
+        return 0.0
+    
+    similarities.sort(reverse=True, key=lambda x: x[0])
+    top_k = similarities[:k]
+    
+    weighted_sum = sum(sim * rating for sim, rating in top_k)
+    sum_weights = sum(sim for sim, rating in top_k)
+    
+    return weighted_sum / sum_weights if sum_weights > 0 else 0.0
+
+# -----------------------------------------------------------------------------
+# RECOMMENDATION SYSTEM ENDPOINTS
 # -----------------------------------------------------------------------------
 
 @app.route("/api/recommendations/users", methods=["GET"])
@@ -395,7 +469,6 @@ def get_user_profiles():
     app.logger.info("===== /api/recommendations/users START =====")
     
     try:
-        # STEP 1: Get users FAST (no aggregations)
         users_query = """
         PREFIX : <http://saraaymericradhi.org/movie-ontology#>
         
@@ -419,7 +492,6 @@ def get_user_profiles():
             user_uri = str(user_data.get('user', ''))
             user_id = str(user_data.get('userId', ''))
             
-            # STEP 2: For each user, count ratings individually (much faster)
             count_query = f"""
             PREFIX : <http://saraaymericradhi.org/movie-ontology#>
             
@@ -433,7 +505,6 @@ def get_user_profiles():
             count_rows = execute_sparql(graph, count_query)
             count_data = count_rows[0].asdict() if count_rows else {}
             
-            # FIXED: Use safe_extract
             ratings_count = safe_extract(count_data.get('count'), int) or 0
             avg_rating = safe_extract(count_data.get('avg'), float) or 0
             
@@ -444,7 +515,6 @@ def get_user_profiles():
                 "avgRating": round(avg_rating, 1)
             })
         
-        # Sort by ratings count (most active first)
         users.sort(key=lambda x: x['ratingsCount'], reverse=True)
         
         total_time = time.time() - start
@@ -457,7 +527,7 @@ def get_user_profiles():
 
 @app.route("/api/recommendations/user/<path:user_id>/profile", methods=["GET"])
 def get_user_profile_details(user_id):
-    """Get detailed profile for a specific user - CORRECTED."""
+    """Get detailed profile for a specific user."""
     app.logger.info(f"===== /api/recommendations/user/{user_id}/profile START =====")
     
     try:
@@ -497,7 +567,6 @@ def get_user_profile_details(user_id):
         for row in ratings_rows:
             row_data = row.asdict() if hasattr(row, 'asdict') else {k: row[k] for k in row.labels if row[k] is not None}
             
-            # FIXED: Safe extraction
             rating_value = safe_extract(row_data.get('ratingValue'), float) or 0
             genres_str = str(row_data.get('genres', ''))
             director = str(row_data.get('director', ''))
@@ -543,7 +612,7 @@ def get_user_profile_details(user_id):
 
 @app.route("/api/recommendations/generate", methods=["POST"])
 def generate_recommendations():
-    """Generate movie recommendations for a user - CORRECTED."""
+    """Generate movie recommendations for a user."""
     app.logger.info("===== /api/recommendations/generate START =====")
     
     data = request.get_json(silent=True)
@@ -557,7 +626,6 @@ def generate_recommendations():
     app.logger.info(f"Generating recommendations for user {user_id} using {algorithm} algorithm")
     
     try:
-        # Get user's rated movies
         rated_query = f"""
         PREFIX : <http://saraaymericradhi.org/movie-ontology#>
         
@@ -579,7 +647,6 @@ def generate_recommendations():
         else:
             filter_clause = ""
         
-        # Get candidate movies
         candidates_query = f"""
         PREFIX : <http://saraaymericradhi.org/movie-ontology#>
         PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
@@ -623,12 +690,13 @@ def generate_recommendations():
         user_profile_response = get_user_profile_details(user_id)
         user_profile = user_profile_response.get_json()
         
+        all_users_ratings = get_all_users_ratings() if algorithm in ["knn", "pearson", "hybrid"] else {}
+        
         recommendations = []
         
         for row in candidates_rows:
             row_data = row.asdict() if hasattr(row, 'asdict') else {k: row[k] for k in row.labels if row[k] is not None}
             
-            # FIXED: Safe extraction of values
             movie = {
                 "id": str(row_data.get('movie', '')),
                 "title": str(row_data.get('title', '')),
@@ -640,10 +708,9 @@ def generate_recommendations():
                 "posterColor": "#333"
             }
             
-            # Filter out empty genres
             movie["genres"] = [g for g in movie["genres"] if g.strip()]
             
-            score, reasons = calculate_movie_score(movie, user_profile, algorithm)
+            score, reasons = calculate_movie_score(movie, user_profile, algorithm, all_users_ratings, user_id)
             
             recommendations.append({
                 "movie": movie,
@@ -665,8 +732,33 @@ def generate_recommendations():
         app.logger.exception("Failed to generate recommendations")
         return jsonify({"error": str(e)}), 500
 
-def calculate_movie_score(movie, user_profile, algorithm):
-    """Calculate similarity score between a movie and user profile - CORRECTED."""
+def get_all_users_ratings():
+    """Récupère toutes les notes de tous les utilisateurs."""
+    query = """
+    PREFIX : <http://saraaymericradhi.org/movie-ontology#>
+    
+    SELECT ?user ?movie ?rating WHERE {
+        ?ratingNode a :Rating ;
+                   :givenBy ?user ;
+                   :hasValue ?rating .
+        ?movie :hasRating ?ratingNode .
+    }
+    """
+    
+    rows = execute_sparql(graph, query)
+    all_ratings = defaultdict(dict)
+    
+    for row in rows:
+        row_data = row.asdict() if hasattr(row, 'asdict') else {k: row[k] for k in row.labels if row[k] is not None}
+        user = str(row_data.get('user', ''))
+        movie = str(row_data.get('movie', ''))
+        rating = safe_extract(row_data.get('rating'), float) or 0
+        all_ratings[user][movie] = rating
+    
+    return dict(all_ratings)
+
+def calculate_movie_score(movie, user_profile, algorithm, all_users_ratings, user_id):
+    """Calculate similarity score between a movie and user profile."""
     score = 0
     reasons = []
     
@@ -675,61 +767,92 @@ def calculate_movie_score(movie, user_profile, algorithm):
     director_prefs = user_prefs.get("directors", {})
     avg_rating = user_profile.get("stats", {}).get("avgRating", 7.0)
     
-    semantic_score = 0
+    user_ratings = {r["movieId"]: r["rating"] for r in user_profile.get("ratings", [])}
+    user_genres = set(genre_prefs.keys())
+    movie_genres = set(movie["genres"])
     
-    # Genre matching
-    if movie["genres"]:
-        genre_scores = [genre_prefs.get(g, 0) for g in movie["genres"] if g]
-        if genre_scores:
-            genre_match = sum(genre_scores) / len(genre_scores)
-            semantic_score += genre_match * 0.5
+    if algorithm == "jaccard":
+        score = jaccard_similarity(user_genres, movie_genres) * 100
+        if score > 50:
+            common_genres = user_genres.intersection(movie_genres)
+            reasons.append(f"Genres en commun: {', '.join(list(common_genres)[:2])}")
+    
+    elif algorithm == "cosine":
+        user_vector = genre_prefs
+        movie_vector = {g: 1.0 for g in movie["genres"]}
+        score = cosine_similarity(user_vector, movie_vector) * 100
+        if score > 50:
+            reasons.append(f"Similarité vectorielle des genres élevée")
+    
+    elif algorithm == "pearson":
+        if all_users_ratings and user_id in all_users_ratings:
+            other_users = {uid: ratings for uid, ratings in all_users_ratings.items() if uid != user_id}
+            correlations = []
+            for other_id, other_ratings in other_users.items():
+                if movie["id"] in other_ratings:
+                    corr = pearson_correlation(user_ratings, other_ratings)
+                    if corr > 0:
+                        correlations.append((corr, other_ratings[movie["id"]]))
             
-            if genre_match > 0.5:
-                top_genres = [g for g in movie["genres"] if g and genre_prefs.get(g, 0) > 0.5]
-                if top_genres:
-                    reasons.append(f"Genres similaires: {', '.join(top_genres[:2])}")
+            if correlations:
+                correlations.sort(reverse=True)
+                top_corr = correlations[:5]
+                weighted_sum = sum(corr * rating for corr, rating in top_corr)
+                sum_weights = sum(corr for corr, rating in top_corr)
+                predicted_rating = weighted_sum / sum_weights if sum_weights > 0 else 5.0
+                score = (predicted_rating / 10) * 100
+                reasons.append(f"Note prédite: {predicted_rating:.1f}/10")
+        else:
+            score = (movie["rating"] / 10) * 100 if movie["rating"] else 50
     
-    # Director matching
-    if movie["director"]:
-        director_match = director_prefs.get(movie["director"], 0)
-        semantic_score += director_match * 0.3
+    elif algorithm == "knn":
+        if all_users_ratings and user_id in all_users_ratings:
+            predicted_rating = knn_predict_rating(user_ratings, all_users_ratings, movie["id"], k=10)
+            score = (predicted_rating / 10) * 100 if predicted_rating > 0 else (movie["rating"] / 10) * 100
+            if predicted_rating > 0:
+                reasons.append(f"KNN note prédite: {predicted_rating:.1f}/10")
+        else:
+            score = (movie["rating"] / 10) * 100 if movie["rating"] else 50
+    
+    elif algorithm == "hybrid":
+        jaccard_score = jaccard_similarity(user_genres, movie_genres)
         
-        if director_match > 0.5:
-            reasons.append(f"Réalisateur favori: {movie['director']}")
-    
-    # Rating similarity
-    if movie["rating"] and movie["rating"] > 0:
-        rating_diff = abs(movie["rating"] - avg_rating)
-        rating_score = max(0, 1 - rating_diff / 5)
-        semantic_score += rating_score * 0.2
-    
-    # Collaborative filtering
-    collaborative_score = movie["rating"] / 10 if movie["rating"] else 0.5
-    
-    # Combine scores based on algorithm
-    if algorithm == "semantic":
-        score = semantic_score
-    elif algorithm == "collaborative":
-        score = collaborative_score
-        if movie["rating"] > 8.0:
-            reasons.append(f"Film hautement noté ({movie['rating']:.1f}/10)")
-    else:  # hybrid
+        user_vector = genre_prefs
+        movie_vector = {g: 1.0 for g in movie["genres"]}
+        cosine_score = cosine_similarity(user_vector, movie_vector)
+        
+        knn_score = 0
+        if all_users_ratings and user_id in all_users_ratings:
+            predicted_rating = knn_predict_rating(user_ratings, all_users_ratings, movie["id"], k=10)
+            knn_score = predicted_rating / 10 if predicted_rating > 0 else 0
+        
         ratings_count = user_profile.get("stats", {}).get("totalRatings", 0)
         
         if ratings_count < 5:
-            semantic_weight = 0.7
-            collaborative_weight = 0.3
+            w_content = 0.7
+            w_collab = 0.3
         elif ratings_count < 15:
-            semantic_weight = 0.5
-            collaborative_weight = 0.5
+            w_content = 0.5
+            w_collab = 0.5
         else:
-            semantic_weight = 0.6
-            collaborative_weight = 0.4
+            w_content = 0.4
+            w_collab = 0.6
         
-        score = semantic_score * semantic_weight + collaborative_score * collaborative_weight
+        content_score = (jaccard_score * 0.5 + cosine_score * 0.5)
+        collab_score = knn_score if knn_score > 0 else (movie["rating"] / 10)
+        
+        score = (content_score * w_content + collab_score * w_collab) * 100
+        
+        if jaccard_score > 0.5:
+            reasons.append(f"Genres similaires (Jaccard: {jaccard_score:.2f})")
+        if knn_score > 7:
+            reasons.append(f"Fortement recommandé par KNN ({knn_score:.1f}/10)")
     
-    # Normalize score to percentage
-    score = min(score * 100, 100)
+    else:
+        score = (movie["rating"] / 10) * 100 if movie["rating"] else 50
+        reasons.append("Algorithme par défaut")
+    
+    score = min(score, 100)
     
     return score, reasons[:3]
 
