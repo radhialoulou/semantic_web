@@ -1,0 +1,1494 @@
+@prefix movie: <http://saraaymericradhi.org/movie-ontology#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rml: <http://w3id.org/rml/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://saraaymericradhi.org/award/10193_Academy_Award_for_Best_Animated_Feature>
+  a movie:Award;
+  movie:awardName "Academy Award for Best Animated Feature";
+  movie:hasYearOfAwardGiving "2011"^^xsd:gYear .
+
+<http://saraaymericradhi.org/award/102651_Golden_Trailer_Awards_(2014)>
+  a movie:Award;
+  movie:awardName "Golden Trailer Awards (2014)";
+  movie:hasYearOfAwardGiving "2014"^^xsd:gYear .
+
+<http://saraaymericradhi.org/award/102899_Critics'_Choice_Movie_Award_(2016)>
+  a movie:Award;
+  movie:awardName "Critics' Choice Movie Award (2016)";
+  movie:hasYearOfAwardGiving "2016"^^xsd:gYear .
+
+<http://saraaymericradhi.org/award/10528_Le_Dernier_Problème_(1893)>
+  a movie:Award;
+  movie:awardName "Le Dernier Problème (1893)" .
+
+<http://saraaymericradhi.org/award/109445_Academy_Award_for_Best_Animated_Feature_Film>
+  a movie:Award;
+  movie:awardName "Academy Award for Best Animated Feature Film";
+  movie:hasYearOfAwardGiving "2014"^^xsd:gYear .
+
+<http://saraaymericradhi.org/award/1124_Academy_Award> a movie:Award;
+  movie:awardName "Academy Award";
+  movie:hasYearOfAwardGiving "2006"^^xsd:gYear .
+
+<http://saraaymericradhi.org/award/11324_Prix_Mor_Vran_(2009)> a movie:Award;
+  movie:awardName "Prix Mor Vran (2009)";
+  movie:hasYearOfAwardGiving "2009"^^xsd:gYear .
+
+<http://saraaymericradhi.org/award/118340_People's_Choice_Award> a movie:Award;
+  movie:awardName "People's Choice Award";
+  movie:hasYearOfAwardGiving "2015"^^xsd:gYear .
+
+<http://saraaymericradhi.org/award/12155_Golden_Globe_Award_for_Best_Motion_Picture>
+  a movie:Award;
+  movie:awardName "Golden Globe Award for Best Motion Picture" .
+
+<http://saraaymericradhi.org/award/129_Oscar_du_meilleur_film_d'animation>
+  a movie:Award;
+  movie:awardName "Oscar du meilleur film d'animation";
+  movie:hasYearOfAwardGiving "2002"^^xsd:gYear .
+
+<http://saraaymericradhi.org/award/12_Oscar_for_Best_Animated_Feature_Film>
+  a movie:Award;
+  movie:awardName "Oscar for Best Animated Feature Film";
+  movie:hasYearOfAwardGiving "2004"^^xsd:gYear .
+
+<http://saraaymericradhi.org/award/13475_Emmy_Award> a movie:Award;
+  movie:awardName "Emmy Award" .
+
+<http://saraaymericradhi.org/award/13_Oscar> a movie:Award;
+  movie:awardName "Oscar";
+  movie:hasYearOfAwardGiving "1995"^^xsd:gYear .
+
+<http://saraaymericradhi.org/award/14160_Academy_Award_for_Best_Animated_Feature_Film>
+  a movie:Award;
+  movie:awardName "Academy Award for Best Animated Feature Film" .
+
+<http://saraaymericradhi.org/award/1422_Oscar> a movie:Award;
+  movie:awardName "Oscar";
+  movie:hasYearOfAwardGiving "2007"^^xsd:gYear .
+
+<http://saraaymericradhi.org/award/152601_Academy_Award_for_Best_Original_Screenplay>
+  a movie:Award;
+  movie:awardName "Academy Award for Best Original Screenplay";
+  movie:hasYearOfAwardGiving "2014"^^xsd:gYear .
+
+<http://saraaymericradhi.org/award/155_Oscar_(Best_Supporting_Actor)> a
+    movie:Award;
+  movie:awardName "Oscar (Best Supporting Actor)";
+  movie:hasYearOfAwardGiving "2009"^^xsd:gYear .
+
+<http://saraaymericradhi.org/award/157336_Academy_Award_for_Best_Visual_Effects>
+  a movie:Award;
+  movie:awardName "Academy Award for Best Visual Effects";
+  movie:hasYearOfAwardGiving "2015"^^xsd:gYear .
+
+<http://saraaymericradhi.org/award/16869_Multiple_awards_for_Best_Supporting_Actor>
+  a movie:Award;
+  movie:awardName "Multiple awards for Best Supporting Actor";
+  movie:hasYearOfAwardGiving "2009"^^xsd:gYear .
+
+<http://saraaymericradhi.org/award/177572_Academy_Award_for_Best_Animated_Feature>
+  a movie:Award;
+  movie:awardName "Academy Award for Best Animated Feature";
+  movie:hasYearOfAwardGiving "2015"^^xsd:gYear .
+
+<http://saraaymericradhi.org/award/1858_Emmy_Award> a movie:Award;
+  movie:awardName "Emmy Award" .
+
+<http://saraaymericradhi.org/award/18785_Golden_Globe_Award> a movie:Award;
+  movie:awardName "Golden Globe Award";
+  movie:hasYearOfAwardGiving "2010"^^xsd:gYear .
+
+<http://saraaymericradhi.org/award/18_Oscar> a movie:Award;
+  movie:awardName "Oscar" .
+
+<http://saraaymericradhi.org/award/19995_Primetime_Emmy_Award> a movie:Award;
+  movie:awardName "Primetime Emmy Award";
+  movie:hasYearOfAwardGiving "2006, 2007, 2008"^^xsd:gYear .
+
+<http://saraaymericradhi.org/award/2062_Academy_Award_for_Best_Animated_Feature>
+  a movie:Award;
+  movie:awardName "Academy Award for Best Animated Feature";
+  movie:hasYearOfAwardGiving "2007"^^xsd:gYear .
+
+<http://saraaymericradhi.org/award/206647_Academy_Award_for_Best_Visual_Effects>
+  a movie:Award;
+  movie:awardName "Academy Award for Best Visual Effects";
+  movie:hasYearOfAwardGiving "2016"^^xsd:gYear .
+
+<http://saraaymericradhi.org/award/210577_British_Academy_Film_Award> a movie:Award;
+  movie:awardName "British Academy Film Award" .
+
+<http://saraaymericradhi.org/award/218_National_Film_Registry> a movie:Award;
+  movie:awardName "National Film Registry" .
+
+<http://saraaymericradhi.org/award/222935_Prix_des_Incorruptibles,_Prix_jeunesse_des_libraires_du_Québec,_IBBY_Honour_List>
+  a movie:Award;
+  movie:awardName "Prix des Incorruptibles, Prix jeunesse des libraires du Québec, IBBY Honour List";
+  movie:hasYearOfAwardGiving "2014"^^xsd:gYear .
+
+<http://saraaymericradhi.org/award/228150_Academy_Award_for_Best_Sound_Editing>
+  a movie:Award;
+  movie:awardName "Academy Award for Best Sound Editing";
+  movie:hasYearOfAwardGiving "2015"^^xsd:gYear .
+
+<http://saraaymericradhi.org/award/238_Game_Developers_Choice_Awards> a movie:Award;
+  movie:awardName "Game Developers Choice Awards";
+  movie:hasYearOfAwardGiving "2010"^^xsd:gYear .
+
+<http://saraaymericradhi.org/award/24428_The_Game_Awards_2020_-_Best_Action/Adventure_Game>
+  a movie:Award;
+  movie:awardName "The Game Awards 2020 - Best Action/Adventure Game";
+  movie:hasYearOfAwardGiving "2020"^^xsd:gYear .
+
+<http://saraaymericradhi.org/award/263115_Academy_Award_for_Best_Adapted_Screenplay>
+  a movie:Award;
+  movie:awardName "Academy Award for Best Adapted Screenplay";
+  movie:hasYearOfAwardGiving "2018"^^xsd:gYear .
+
+<http://saraaymericradhi.org/award/264660_Saturn_Award> a movie:Award;
+  movie:awardName "Saturn Award";
+  movie:hasYearOfAwardGiving "2016"^^xsd:gYear .
+
+<http://saraaymericradhi.org/award/269149_Oscar_for_Best_Animated_Feature_Film>
+  a movie:Award;
+  movie:awardName "Oscar for Best Animated Feature Film";
+  movie:hasYearOfAwardGiving "2017"^^xsd:gYear .
+
+<http://saraaymericradhi.org/award/27205_Oscar> a movie:Award;
+  movie:awardName "Oscar";
+  movie:hasYearOfAwardGiving "2011"^^xsd:gYear .
+
+<http://saraaymericradhi.org/award/278_AFI's_100_Years...100_Movies,_IMDb's_Top_250_Movies>
+  a movie:Award;
+  movie:awardName "AFI's 100 Years...100 Movies, IMDb's Top 250 Movies" .
+
+<http://saraaymericradhi.org/award/281957_Golden_Globe> a movie:Award;
+  movie:awardName "Golden Globe";
+  movie:hasYearOfAwardGiving "2016"^^xsd:gYear .
+
+<http://saraaymericradhi.org/award/293660_MTV_Movie_&_TV_Awards> a movie:Award;
+  movie:awardName "MTV Movie & TV Awards";
+  movie:hasYearOfAwardGiving "2017"^^xsd:gYear .
+
+<http://saraaymericradhi.org/award/297761_People's_Choice_Awards> a movie:Award;
+  movie:awardName "People's Choice Awards";
+  movie:hasYearOfAwardGiving "2017"^^xsd:gYear .
+
+<http://saraaymericradhi.org/award/297762_Saturn_Award> a movie:Award;
+  movie:awardName "Saturn Award";
+  movie:hasYearOfAwardGiving "2017"^^xsd:gYear .
+
+<http://saraaymericradhi.org/award/321612_Best_Costume_Design> a movie:Award;
+  movie:awardName "Best Costume Design";
+  movie:hasYearOfAwardGiving "2018"^^xsd:gYear .
+
+<http://saraaymericradhi.org/award/329_Oscar> a movie:Award;
+  movie:awardName "Oscar";
+  movie:hasYearOfAwardGiving "1994"^^xsd:gYear .
+
+<http://saraaymericradhi.org/award/337339_Best_Opening_Weekend_Gross> a movie:Award;
+  movie:awardName "Best Opening Weekend Gross";
+  movie:hasYearOfAwardGiving "2017"^^xsd:gYear .
+
+<http://saraaymericradhi.org/award/348_Academy_Award_for_Best_Visual_Effects_(1980)>
+  a movie:Award;
+  movie:awardName "Academy Award for Best Visual Effects (1980)";
+  movie:hasYearOfAwardGiving "1980"^^xsd:gYear .
+
+<http://saraaymericradhi.org/award/36657_Academy_Award_for_Best_Visual_Effects_(2001)>
+  a movie:Award;
+  movie:awardName "Academy Award for Best Visual Effects (2001)";
+  movie:hasYearOfAwardGiving "2001"^^xsd:gYear .
+
+<http://saraaymericradhi.org/award/37165_Golden_Globe_Award> a movie:Award;
+  movie:awardName "Golden Globe Award";
+  movie:hasYearOfAwardGiving "1999"^^xsd:gYear .
+
+<http://saraaymericradhi.org/award/37724_Oscar_for_Best_Original_Song> a movie:Award;
+  movie:awardName "Oscar for Best Original Song";
+  movie:hasYearOfAwardGiving "2013"^^xsd:gYear .
+
+<http://saraaymericradhi.org/award/44214_Academy_Award> a movie:Award;
+  movie:awardName "Academy Award";
+  movie:hasYearOfAwardGiving "2011"^^xsd:gYear .
+
+<http://saraaymericradhi.org/award/49026_Academy_Award_for_Best_Cinematography>
+  a movie:Award;
+  movie:awardName "Academy Award for Best Cinematography";
+  movie:hasYearOfAwardGiving "2013"^^xsd:gYear .
+
+<http://saraaymericradhi.org/award/500_Sundance_Film_Festival_Dramatic_Grand_Jury_Prize>
+  a movie:Award;
+  movie:awardName "Sundance Film Festival Dramatic Grand Jury Prize";
+  movie:hasYearOfAwardGiving "1992"^^xsd:gYear .
+
+<http://saraaymericradhi.org/award/550_Academy_Award_for_Best_Sound_Editing>
+  a movie:Award;
+  movie:awardName "Academy Award for Best Sound Editing";
+  movie:hasYearOfAwardGiving "1999"^^xsd:gYear .
+
+<http://saraaymericradhi.org/award/558_Festival_du_film_de_Tribeca_(2007)>
+  a movie:Award;
+  movie:awardName "Festival du film de Tribeca (2007)";
+  movie:hasYearOfAwardGiving "2007"^^xsd:gYear .
+
+<http://saraaymericradhi.org/award/562_Golden_Raspberry_Award_for_Worst_Original_Song_(won)>
+  a movie:Award;
+  movie:awardName "Golden Raspberry Award for Worst Original Song (won)";
+  movie:hasYearOfAwardGiving "2013"^^xsd:gYear .
+
+<http://saraaymericradhi.org/award/597_Academy_Award_for_Best_Picture> a movie:Award;
+  movie:awardName "Academy Award for Best Picture";
+  movie:hasYearOfAwardGiving "1998"^^xsd:gYear .
+
+<http://saraaymericradhi.org/award/59967_Saturn_Award_for_Best_Music> a movie:Award;
+  movie:awardName "Saturn Award for Best Music";
+  movie:hasYearOfAwardGiving "2013"^^xsd:gYear .
+
+<http://saraaymericradhi.org/award/603_Oscar_(Best_Visual_Effects,_Best_Editing,_Best_Sound,_Best_Sound_Editing)>
+  a movie:Award;
+  movie:awardName "Oscar (Best Visual Effects, Best Editing, Best Sound, Best Sound Editing)";
+  movie:hasYearOfAwardGiving "2000"^^xsd:gYear .
+
+<http://saraaymericradhi.org/award/607_Golden_Raspberry_Award> a movie:Award;
+  movie:awardName "Golden Raspberry Award";
+  movie:hasYearOfAwardGiving "2020"^^xsd:gYear .
+
+<http://saraaymericradhi.org/award/61791_Visual_Effects_Society_Award> a movie:Award;
+  movie:awardName "Visual Effects Society Award";
+  movie:hasYearOfAwardGiving "2012"^^xsd:gYear .
+
+<http://saraaymericradhi.org/award/62177_Annie_Award> a movie:Award;
+  movie:awardName "Annie Award";
+  movie:hasYearOfAwardGiving "2013"^^xsd:gYear .
+
+<http://saraaymericradhi.org/award/64688_Imagen_Award_1988> a movie:Award;
+  movie:awardName "Imagen Award 1988";
+  movie:hasYearOfAwardGiving "1988"^^xsd:gYear .
+
+<http://saraaymericradhi.org/award/674_Tournoi_des_Trois_Sorciers> a movie:Award;
+  movie:awardName "Tournoi des Trois Sorciers" .
+
+<http://saraaymericradhi.org/award/680_Palme_d'or> a movie:Award;
+  movie:awardName "Palme d'or";
+  movie:hasYearOfAwardGiving "1994"^^xsd:gYear .
+
+<http://saraaymericradhi.org/award/68718_Golden_Globe_Award> a movie:Award;
+  movie:awardName "Golden Globe Award";
+  movie:hasYearOfAwardGiving "2013"^^xsd:gYear .
+
+<http://saraaymericradhi.org/award/68721_PG-13> a movie:Award;
+  movie:awardName "PG-13" .
+
+<http://saraaymericradhi.org/award/72190_Audie_Award_(audio_book)> a movie:Award;
+  movie:awardName "Audie Award (audio book)";
+  movie:hasYearOfAwardGiving "2007"^^xsd:gYear .
+
+<http://saraaymericradhi.org/award/752_Saturn_Award_for_Best_Action_or_Adventure_Film>
+  a movie:Award;
+  movie:awardName "Saturn Award for Best Action or Adventure Film";
+  movie:hasYearOfAwardGiving "2006"^^xsd:gYear .
+
+<http://saraaymericradhi.org/award/75612_Best_RPG_(2006)> a movie:Award;
+  movie:awardName "Best RPG (2006)";
+  movie:hasYearOfAwardGiving "2006"^^xsd:gYear .
+
+<http://saraaymericradhi.org/award/75656_People's_Choice_Award_for_Best_Thriller>
+  a movie:Award;
+  movie:awardName "People's Choice Award for Best Thriller";
+  movie:hasYearOfAwardGiving "2013"^^xsd:gYear .
+
+<http://saraaymericradhi.org/award/77_Academy_Award_for_Best_Original_Screenplay>
+  a movie:Award;
+  movie:awardName "Academy Award for Best Original Screenplay";
+  movie:hasYearOfAwardGiving "2001"^^xsd:gYear .
+
+<http://saraaymericradhi.org/award/82690_Annie_Award_for_Best_Animated_Feature>
+  a movie:Award;
+  movie:awardName "Annie Award for Best Animated Feature";
+  movie:hasYearOfAwardGiving "2013"^^xsd:gYear .
+
+<http://saraaymericradhi.org/award/82693_Oscar> a movie:Award;
+  movie:awardName "Oscar";
+  movie:hasYearOfAwardGiving "2013"^^xsd:gYear .
+
+<http://saraaymericradhi.org/award/857_Academy_Award_for_Best_Picture> a movie:Award;
+  movie:awardName "Academy Award for Best Picture";
+  movie:hasYearOfAwardGiving "1999"^^xsd:gYear .
+
+<http://saraaymericradhi.org/award/8587_Oscar_(Best_Original_Song)> a movie:Award;
+  movie:awardName "Oscar (Best Original Song)";
+  movie:hasYearOfAwardGiving "1995"^^xsd:gYear .
+
+<http://saraaymericradhi.org/award/863_Academy_Award_for_Best_Animated_Feature>
+  a movie:Award;
+  movie:awardName "Academy Award for Best Animated Feature" .
+
+<http://saraaymericradhi.org/award/920_Academy_Award_for_Best_Animated_Feature>
+  a movie:Award;
+  movie:awardName "Academy Award for Best Animated Feature";
+  movie:hasYearOfAwardGiving "2007"^^xsd:gYear .
+
+<http://saraaymericradhi.org/award/9806_Oscar_du_meilleur_film_d'animation>
+  a movie:Award;
+  movie:awardName "Oscar du meilleur film d'animation";
+  movie:hasYearOfAwardGiving "2005"^^xsd:gYear .
+
+<http://saraaymericradhi.org/movie/10138> movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/10138/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/10138_theme> .
+
+<http://saraaymericradhi.org/movie/10138/french-adaptation> a movie:FrenchAdaptation;
+  movie:adaptationYear "2010"^^xsd:gYear .
+
+<http://saraaymericradhi.org/movie/10191> movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/10191/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/10191_theme> .
+
+<http://saraaymericradhi.org/movie/10191/french-adaptation> a movie:FrenchAdaptation;
+  movie:adaptationYear "2025"^^xsd:gYear;
+  rdfs:label "Dragons"@fr .
+
+<http://saraaymericradhi.org/movie/10193> movie:hasAward <http://saraaymericradhi.org/award/10193_Academy_Award_for_Best_Animated_Feature>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/10193/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/10193_theme> .
+
+<http://saraaymericradhi.org/movie/10193/french-adaptation> a movie:FrenchAdaptation;
+  movie:adaptationYear "2010"^^xsd:gYear .
+
+<http://saraaymericradhi.org/movie/10195> movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/10195/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/10195_theme> .
+
+<http://saraaymericradhi.org/movie/10195/french-adaptation> a movie:FrenchAdaptation .
+
+<http://saraaymericradhi.org/movie/102382> movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/102382/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/102382_theme> .
+
+<http://saraaymericradhi.org/movie/102382/french-adaptation> a movie:FrenchAdaptation;
+  movie:adaptationYear "2014"^^xsd:gYear .
+
+<http://saraaymericradhi.org/movie/102651> movie:hasAward <http://saraaymericradhi.org/award/102651_Golden_Trailer_Awards_(2014)>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/102651/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/102651_theme> .
+
+<http://saraaymericradhi.org/movie/102651/french-adaptation> a movie:FrenchAdaptation .
+
+<http://saraaymericradhi.org/movie/102899> movie:hasAward <http://saraaymericradhi.org/award/102899_Critics'_Choice_Movie_Award_(2016)>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/102899/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/102899_theme> .
+
+<http://saraaymericradhi.org/movie/102899/french-adaptation> a movie:FrenchAdaptation .
+
+<http://saraaymericradhi.org/movie/105> movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/105/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/105_theme> .
+
+<http://saraaymericradhi.org/movie/105/french-adaptation> a movie:FrenchAdaptation;
+  movie:adaptationYear "1985, 1989, 1990"^^xsd:gYear .
+
+<http://saraaymericradhi.org/movie/10528> movie:hasAward <http://saraaymericradhi.org/award/10528_Le_Dernier_Problème_(1893)>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/10528/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/10528_theme> .
+
+<http://saraaymericradhi.org/movie/10528/french-adaptation> a movie:FrenchAdaptation .
+
+<http://saraaymericradhi.org/movie/109445> movie:hasAward <http://saraaymericradhi.org/award/109445_Academy_Award_for_Best_Animated_Feature_Film>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/109445/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/109445_theme> .
+
+<http://saraaymericradhi.org/movie/109445/french-adaptation> a movie:FrenchAdaptation .
+
+<http://saraaymericradhi.org/movie/1124> movie:hasAward <http://saraaymericradhi.org/award/1124_Academy_Award>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/1124/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/1124_theme> .
+
+<http://saraaymericradhi.org/movie/1124/french-adaptation> a movie:FrenchAdaptation .
+
+<http://saraaymericradhi.org/movie/11324> movie:hasAward <http://saraaymericradhi.org/award/11324_Prix_Mor_Vran_(2009)>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/11324/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/11324_theme> .
+
+<http://saraaymericradhi.org/movie/11324/french-adaptation> a movie:FrenchAdaptation;
+  movie:adaptationYear "2003"^^xsd:gYear .
+
+<http://saraaymericradhi.org/movie/118340> movie:hasAward <http://saraaymericradhi.org/award/118340_People's_Choice_Award>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/118340/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/118340_theme> .
+
+<http://saraaymericradhi.org/movie/118340/french-adaptation> a movie:FrenchAdaptation .
+
+<http://saraaymericradhi.org/movie/119450> movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/119450/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/119450_theme> .
+
+<http://saraaymericradhi.org/movie/119450/french-adaptation> a movie:FrenchAdaptation;
+  movie:adaptationYear "2014"^^xsd:gYear;
+  rdfs:label "La Planète des singes : L'Affrontement"@fr .
+
+<http://saraaymericradhi.org/movie/12> movie:hasAward <http://saraaymericradhi.org/award/12_Oscar_for_Best_Animated_Feature_Film>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/12/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/12_theme> .
+
+<http://saraaymericradhi.org/movie/12/french-adaptation> a movie:FrenchAdaptation;
+  movie:adaptationYear "2003"^^xsd:gYear .
+
+<http://saraaymericradhi.org/movie/120467> movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/120467/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/120467_theme> .
+
+<http://saraaymericradhi.org/movie/120467/french-adaptation> a movie:FrenchAdaptation .
+
+<http://saraaymericradhi.org/movie/12155> movie:hasAward <http://saraaymericradhi.org/award/12155_Golden_Globe_Award_for_Best_Motion_Picture>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/12155/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/12155_theme> .
+
+<http://saraaymericradhi.org/movie/12155/french-adaptation> a movie:FrenchAdaptation;
+  movie:adaptationYear "2016"^^xsd:gYear .
+
+<http://saraaymericradhi.org/movie/1271> movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/1271/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/1271_theme> .
+
+<http://saraaymericradhi.org/movie/1271/french-adaptation> a movie:FrenchAdaptation .
+
+<http://saraaymericradhi.org/movie/127380> movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/127380/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/127380_theme> .
+
+<http://saraaymericradhi.org/movie/127380/french-adaptation> a movie:FrenchAdaptation;
+  movie:adaptationYear "2016"^^xsd:gYear;
+  movie:hasFrenchQuebecTitle "Trouver Doris"@fr-CA;
+  rdfs:label "Le Monde de Dory"@fr .
+
+<http://saraaymericradhi.org/movie/129> movie:hasAward <http://saraaymericradhi.org/award/129_Oscar_du_meilleur_film_d'animation>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/129/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/129_theme> .
+
+<http://saraaymericradhi.org/movie/129/french-adaptation> a movie:FrenchAdaptation .
+
+<http://saraaymericradhi.org/movie/13> movie:hasAward <http://saraaymericradhi.org/award/13_Oscar>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/13/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/13_theme> .
+
+<http://saraaymericradhi.org/movie/13/french-adaptation> a movie:FrenchAdaptation;
+  movie:adaptationYear "1994"^^xsd:gYear .
+
+<http://saraaymericradhi.org/movie/13475> movie:hasAward <http://saraaymericradhi.org/award/13475_Emmy_Award>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/13475/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/13475_theme> .
+
+<http://saraaymericradhi.org/movie/13475/french-adaptation> a movie:FrenchAdaptation .
+
+<http://saraaymericradhi.org/movie/135397> movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/135397/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/135397_theme> .
+
+<http://saraaymericradhi.org/movie/135397/french-adaptation> a movie:FrenchAdaptation;
+  movie:adaptationYear "2015"^^xsd:gYear .
+
+<http://saraaymericradhi.org/movie/137113> movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/137113/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/137113_theme> .
+
+<http://saraaymericradhi.org/movie/137113/french-adaptation> a movie:FrenchAdaptation;
+  movie:adaptationYear "2014"^^xsd:gYear .
+
+<http://saraaymericradhi.org/movie/14160> movie:hasAward <http://saraaymericradhi.org/award/14160_Academy_Award_for_Best_Animated_Feature_Film>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/14160/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/14160_theme> .
+
+<http://saraaymericradhi.org/movie/14160/french-adaptation> a movie:FrenchAdaptation .
+
+<http://saraaymericradhi.org/movie/14161> movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/14161/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/14161_theme> .
+
+<http://saraaymericradhi.org/movie/14161/french-adaptation> a movie:FrenchAdaptation .
+
+<http://saraaymericradhi.org/movie/1422> movie:hasAward <http://saraaymericradhi.org/award/1422_Oscar>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/1422/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/1422_theme> .
+
+<http://saraaymericradhi.org/movie/1422/french-adaptation> a movie:FrenchAdaptation;
+  movie:adaptationYear "2006"^^xsd:gYear;
+  movie:hasFrenchQuebecTitle "Agents troubles"@fr-CA;
+  rdfs:label "Les Infiltrés"@fr .
+
+<http://saraaymericradhi.org/movie/150540> movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/150540/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/150540_theme> .
+
+<http://saraaymericradhi.org/movie/150540/french-adaptation> a movie:FrenchAdaptation .
+
+<http://saraaymericradhi.org/movie/152601> movie:hasAward <http://saraaymericradhi.org/award/152601_Academy_Award_for_Best_Original_Screenplay>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/152601/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/152601_theme> .
+
+<http://saraaymericradhi.org/movie/152601/french-adaptation> a movie:FrenchAdaptation .
+
+<http://saraaymericradhi.org/movie/155> movie:hasAward <http://saraaymericradhi.org/award/155_Oscar_(Best_Supporting_Actor)>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/155/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/155_theme> .
+
+<http://saraaymericradhi.org/movie/155/french-adaptation> a movie:FrenchAdaptation .
+
+<http://saraaymericradhi.org/movie/157336> movie:hasAward <http://saraaymericradhi.org/award/157336_Academy_Award_for_Best_Visual_Effects>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/157336/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/157336_theme> .
+
+<http://saraaymericradhi.org/movie/157336/french-adaptation> a movie:FrenchAdaptation;
+  movie:adaptationYear "2014"^^xsd:gYear .
+
+<http://saraaymericradhi.org/movie/157350> movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/157350/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/157350_theme> .
+
+<http://saraaymericradhi.org/movie/157350/french-adaptation> a movie:FrenchAdaptation;
+  movie:adaptationYear "2014"^^xsd:gYear .
+
+<http://saraaymericradhi.org/movie/165> movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/165/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/165_theme> .
+
+<http://saraaymericradhi.org/movie/165/french-adaptation> a movie:FrenchAdaptation;
+  movie:adaptationYear "1989"^^xsd:gYear .
+
+<http://saraaymericradhi.org/movie/168259> movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/168259/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/168259_theme> .
+
+<http://saraaymericradhi.org/movie/168259/french-adaptation> a movie:FrenchAdaptation;
+  movie:adaptationYear "2015"^^xsd:gYear .
+
+<http://saraaymericradhi.org/movie/16869> movie:hasAward <http://saraaymericradhi.org/award/16869_Multiple_awards_for_Best_Supporting_Actor>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/16869/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/16869_theme> .
+
+<http://saraaymericradhi.org/movie/16869/french-adaptation> a movie:FrenchAdaptation;
+  movie:adaptationYear "2009"^^xsd:gYear .
+
+<http://saraaymericradhi.org/movie/1726> movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/1726/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/1726_theme> .
+
+<http://saraaymericradhi.org/movie/1726/french-adaptation> a movie:FrenchAdaptation .
+
+<http://saraaymericradhi.org/movie/177572> movie:hasAward <http://saraaymericradhi.org/award/177572_Academy_Award_for_Best_Animated_Feature>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/177572/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/177572_theme> .
+
+<http://saraaymericradhi.org/movie/177572/french-adaptation> a movie:FrenchAdaptation;
+  movie:adaptationYear "2015"^^xsd:gYear .
+
+<http://saraaymericradhi.org/movie/18> movie:hasAward <http://saraaymericradhi.org/award/18_Oscar>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/18/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/18_theme> .
+
+<http://saraaymericradhi.org/movie/18/french-adaptation> a movie:FrenchAdaptation .
+
+<http://saraaymericradhi.org/movie/1858> movie:hasAward <http://saraaymericradhi.org/award/1858_Emmy_Award>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/1858/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/1858_theme> .
+
+<http://saraaymericradhi.org/movie/1858/french-adaptation> a movie:FrenchAdaptation .
+
+<http://saraaymericradhi.org/movie/18785> movie:hasAward <http://saraaymericradhi.org/award/18785_Golden_Globe_Award>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/18785/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/18785_theme> .
+
+<http://saraaymericradhi.org/movie/18785/french-adaptation> a movie:FrenchAdaptation .
+
+<http://saraaymericradhi.org/movie/1891> movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/1891/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/1891_theme> .
+
+<http://saraaymericradhi.org/movie/1891/french-adaptation> a movie:FrenchAdaptation .
+
+<http://saraaymericradhi.org/movie/198663> movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/198663/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/198663_theme> .
+
+<http://saraaymericradhi.org/movie/198663/french-adaptation> a movie:FrenchAdaptation;
+  movie:adaptationYear "2014"^^xsd:gYear .
+
+<http://saraaymericradhi.org/movie/19995> movie:hasAward <http://saraaymericradhi.org/award/19995_Primetime_Emmy_Award>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/19995/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/19995_theme> .
+
+<http://saraaymericradhi.org/movie/19995/french-adaptation> a movie:FrenchAdaptation .
+
+<http://saraaymericradhi.org/movie/205596> movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/205596/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/205596_theme> .
+
+<http://saraaymericradhi.org/movie/205596/french-adaptation> a movie:FrenchAdaptation;
+  movie:adaptationYear "2014"^^xsd:gYear .
+
+<http://saraaymericradhi.org/movie/2062> movie:hasAward <http://saraaymericradhi.org/award/2062_Academy_Award_for_Best_Animated_Feature>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/2062/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/2062_theme> .
+
+<http://saraaymericradhi.org/movie/2062/french-adaptation> a movie:FrenchAdaptation .
+
+<http://saraaymericradhi.org/movie/206647> movie:hasAward <http://saraaymericradhi.org/award/206647_Academy_Award_for_Best_Visual_Effects>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/206647/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/206647_theme> .
+
+<http://saraaymericradhi.org/movie/206647/french-adaptation> a movie:FrenchAdaptation;
+  movie:adaptationYear "2015"^^xsd:gYear;
+  rdfs:label "Spectre (film)"@fr .
+
+<http://saraaymericradhi.org/movie/210577> movie:hasAward <http://saraaymericradhi.org/award/210577_British_Academy_Film_Award>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/210577/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/210577_theme> .
+
+<http://saraaymericradhi.org/movie/210577/french-adaptation> a movie:FrenchAdaptation;
+  movie:adaptationYear "2014"^^xsd:gYear;
+  rdfs:label "Les Apparences au Québec"@fr .
+
+<http://saraaymericradhi.org/movie/211672> movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/211672/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/211672_theme> .
+
+<http://saraaymericradhi.org/movie/211672/french-adaptation> a movie:FrenchAdaptation .
+
+<http://saraaymericradhi.org/movie/218> movie:hasAward <http://saraaymericradhi.org/award/218_National_Film_Registry>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/218/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/218_theme> .
+
+<http://saraaymericradhi.org/movie/218/french-adaptation> a movie:FrenchAdaptation;
+  movie:adaptationYear "2008"^^xsd:gYear .
+
+<http://saraaymericradhi.org/movie/222935> movie:hasAward <http://saraaymericradhi.org/award/222935_Prix_des_Incorruptibles,_Prix_jeunesse_des_libraires_du_Québec,_IBBY_Honour_List>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/222935/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/222935_theme> .
+
+<http://saraaymericradhi.org/movie/222935/french-adaptation> a movie:FrenchAdaptation;
+  movie:adaptationYear "2013"^^xsd:gYear;
+  rdfs:label "Nos étoiles contraires"@fr .
+
+<http://saraaymericradhi.org/movie/228150> movie:hasAward <http://saraaymericradhi.org/award/228150_Academy_Award_for_Best_Sound_Editing>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/228150/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/228150_theme> .
+
+<http://saraaymericradhi.org/movie/228150/french-adaptation> a movie:FrenchAdaptation .
+
+<http://saraaymericradhi.org/movie/23483> movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/23483/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/23483_theme> .
+
+<http://saraaymericradhi.org/movie/23483/french-adaptation> a movie:FrenchAdaptation .
+
+<http://saraaymericradhi.org/movie/238> movie:hasAward <http://saraaymericradhi.org/award/238_Game_Developers_Choice_Awards>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/238/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/238_theme> .
+
+<http://saraaymericradhi.org/movie/238/french-adaptation> a movie:FrenchAdaptation;
+  movie:adaptationYear "1972, 1974, 1990, 2006, 2009"^^xsd:gYear .
+
+<http://saraaymericradhi.org/movie/24428> movie:hasAward <http://saraaymericradhi.org/award/24428_The_Game_Awards_2020_-_Best_Action/Adventure_Game>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/24428/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/24428_theme> .
+
+<http://saraaymericradhi.org/movie/24428/french-adaptation> a movie:FrenchAdaptation .
+
+<http://saraaymericradhi.org/movie/244786> movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/244786/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/244786_theme> .
+
+<http://saraaymericradhi.org/movie/244786/french-adaptation> a movie:FrenchAdaptation .
+
+<http://saraaymericradhi.org/movie/259316> movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/259316/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/259316_theme> .
+
+<http://saraaymericradhi.org/movie/259316/french-adaptation> a movie:FrenchAdaptation;
+  movie:adaptationYear "2016"^^xsd:gYear .
+
+<http://saraaymericradhi.org/movie/263115> movie:hasAward <http://saraaymericradhi.org/award/263115_Academy_Award_for_Best_Adapted_Screenplay>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/263115/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/263115_theme> .
+
+<http://saraaymericradhi.org/movie/263115/french-adaptation> a movie:FrenchAdaptation .
+
+<http://saraaymericradhi.org/movie/264660> movie:hasAward <http://saraaymericradhi.org/award/264660_Saturn_Award>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/264660/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/264660_theme> .
+
+<http://saraaymericradhi.org/movie/264660/french-adaptation> a movie:FrenchAdaptation .
+
+<http://saraaymericradhi.org/movie/269149> movie:hasAward <http://saraaymericradhi.org/award/269149_Oscar_for_Best_Animated_Feature_Film>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/269149/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/269149_theme> .
+
+<http://saraaymericradhi.org/movie/269149/french-adaptation> a movie:FrenchAdaptation;
+  movie:adaptationYear "2016"^^xsd:gYear .
+
+<http://saraaymericradhi.org/movie/272> movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/272/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/272_theme> .
+
+<http://saraaymericradhi.org/movie/272/french-adaptation> a movie:FrenchAdaptation;
+  movie:adaptationYear "2005"^^xsd:gYear;
+  rdfs:label "Batman : Le Commencement au Québec"@fr .
+
+<http://saraaymericradhi.org/movie/27205> movie:hasAward <http://saraaymericradhi.org/award/27205_Oscar>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/27205/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/27205_theme> .
+
+<http://saraaymericradhi.org/movie/27205/french-adaptation> a movie:FrenchAdaptation .
+
+<http://saraaymericradhi.org/movie/274> movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/274/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/274_theme> .
+
+<http://saraaymericradhi.org/movie/274/french-adaptation> a movie:FrenchAdaptation;
+  movie:adaptationYear "1991"^^xsd:gYear .
+
+<http://saraaymericradhi.org/movie/274870> movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/274870/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/274870_theme> .
+
+<http://saraaymericradhi.org/movie/274870/french-adaptation> a movie:FrenchAdaptation;
+  movie:adaptationYear "2011"^^xsd:gYear .
+
+<http://saraaymericradhi.org/movie/278> movie:hasAward <http://saraaymericradhi.org/award/278_AFI's_100_Years...100_Movies,_IMDb's_Top_250_Movies>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/278/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/278_theme> .
+
+<http://saraaymericradhi.org/movie/278/french-adaptation> a movie:FrenchAdaptation;
+  movie:adaptationYear "1994"^^xsd:gYear .
+
+<http://saraaymericradhi.org/movie/281957> movie:hasAward <http://saraaymericradhi.org/award/281957_Golden_Globe>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/281957/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/281957_theme> .
+
+<http://saraaymericradhi.org/movie/281957/french-adaptation> a movie:FrenchAdaptation;
+  movie:adaptationYear "2015"^^xsd:gYear;
+  rdfs:label "Le Revenant au Québec"@fr .
+
+<http://saraaymericradhi.org/movie/286217> movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/286217/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/286217_theme> .
+
+<http://saraaymericradhi.org/movie/286217/french-adaptation> a movie:FrenchAdaptation;
+  movie:adaptationYear "2015"^^xsd:gYear .
+
+<http://saraaymericradhi.org/movie/293660> movie:hasAward <http://saraaymericradhi.org/award/293660_MTV_Movie_&_TV_Awards>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/293660/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/293660_theme> .
+
+<http://saraaymericradhi.org/movie/293660/french-adaptation> a movie:FrenchAdaptation .
+
+<http://saraaymericradhi.org/movie/297761> movie:hasAward <http://saraaymericradhi.org/award/297761_People's_Choice_Awards>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/297761/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/297761_theme> .
+
+<http://saraaymericradhi.org/movie/297761/french-adaptation> a movie:FrenchAdaptation .
+
+<http://saraaymericradhi.org/movie/297762> movie:hasAward <http://saraaymericradhi.org/award/297762_Saturn_Award>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/297762/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/297762_theme> .
+
+<http://saraaymericradhi.org/movie/297762/french-adaptation> a movie:FrenchAdaptation .
+
+<http://saraaymericradhi.org/movie/321612> movie:hasAward <http://saraaymericradhi.org/award/321612_Best_Costume_Design>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/321612/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/321612_theme> .
+
+<http://saraaymericradhi.org/movie/321612/french-adaptation> a movie:FrenchAdaptation;
+  movie:adaptationYear "La Belle et la Bête"^^xsd:gYear .
+
+<http://saraaymericradhi.org/movie/329> movie:hasAward <http://saraaymericradhi.org/award/329_Oscar>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/329/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/329_theme> .
+
+<http://saraaymericradhi.org/movie/329/french-adaptation> a movie:FrenchAdaptation .
+
+<http://saraaymericradhi.org/movie/337339> movie:hasAward <http://saraaymericradhi.org/award/337339_Best_Opening_Weekend_Gross>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/337339/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/337339_theme> .
+
+<http://saraaymericradhi.org/movie/337339/french-adaptation> a movie:FrenchAdaptation;
+  movie:adaptationYear "2017"^^xsd:gYear .
+
+<http://saraaymericradhi.org/movie/348> movie:hasAward <http://saraaymericradhi.org/award/348_Academy_Award_for_Best_Visual_Effects_(1980)>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/348/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/348_theme> .
+
+<http://saraaymericradhi.org/movie/348/french-adaptation> a movie:FrenchAdaptation .
+
+<http://saraaymericradhi.org/movie/36557> movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/36557/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/36557_theme> .
+
+<http://saraaymericradhi.org/movie/36557/french-adaptation> a movie:FrenchAdaptation;
+  movie:adaptationYear "1953"^^xsd:gYear .
+
+<http://saraaymericradhi.org/movie/36657> movie:hasAward <http://saraaymericradhi.org/award/36657_Academy_Award_for_Best_Visual_Effects_(2001)>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/36657/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/36657_theme> .
+
+<http://saraaymericradhi.org/movie/36657/french-adaptation> a movie:FrenchAdaptation;
+  movie:adaptationYear "2001, 2003"^^xsd:gYear .
+
+<http://saraaymericradhi.org/movie/37165> movie:hasAward <http://saraaymericradhi.org/award/37165_Golden_Globe_Award>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/37165/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/37165_theme> .
+
+<http://saraaymericradhi.org/movie/37165/french-adaptation> a movie:FrenchAdaptation .
+
+<http://saraaymericradhi.org/movie/37724> movie:hasAward <http://saraaymericradhi.org/award/37724_Oscar_for_Best_Original_Song>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/37724/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/37724_theme> .
+
+<http://saraaymericradhi.org/movie/37724/french-adaptation> a movie:FrenchAdaptation .
+
+<http://saraaymericradhi.org/movie/381288> movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/381288/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/381288_theme> .
+
+<http://saraaymericradhi.org/movie/381288/french-adaptation> a movie:FrenchAdaptation .
+
+<http://saraaymericradhi.org/movie/41154> movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/41154/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/41154_theme> .
+
+<http://saraaymericradhi.org/movie/41154/french-adaptation> a movie:FrenchAdaptation;
+  movie:adaptationYear "2012"^^xsd:gYear .
+
+<http://saraaymericradhi.org/movie/425> movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/425/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/425_theme> .
+
+<http://saraaymericradhi.org/movie/425/french-adaptation> a movie:FrenchAdaptation;
+  movie:adaptationYear "2002"^^xsd:gYear .
+
+<http://saraaymericradhi.org/movie/44214> movie:hasAward <http://saraaymericradhi.org/award/44214_Academy_Award>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/44214/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/44214_theme> .
+
+<http://saraaymericradhi.org/movie/44214/french-adaptation> a movie:FrenchAdaptation .
+
+<http://saraaymericradhi.org/movie/49026> movie:hasAward <http://saraaymericradhi.org/award/49026_Academy_Award_for_Best_Cinematography>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/49026/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/49026_theme> .
+
+<http://saraaymericradhi.org/movie/49026/french-adaptation> a movie:FrenchAdaptation .
+
+<http://saraaymericradhi.org/movie/49047> movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/49047/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/49047_theme> .
+
+<http://saraaymericradhi.org/movie/49047/french-adaptation> a movie:FrenchAdaptation .
+
+<http://saraaymericradhi.org/movie/49521> movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/49521/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/49521_theme> .
+
+<http://saraaymericradhi.org/movie/49521/french-adaptation> a movie:FrenchAdaptation .
+
+<http://saraaymericradhi.org/movie/497> movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/497/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/497_theme> .
+
+<http://saraaymericradhi.org/movie/497/french-adaptation> a movie:FrenchAdaptation;
+  movie:adaptationYear "1999"^^xsd:gYear .
+
+<http://saraaymericradhi.org/movie/500> movie:hasAward <http://saraaymericradhi.org/award/500_Sundance_Film_Festival_Dramatic_Grand_Jury_Prize>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/500/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/500_theme> .
+
+<http://saraaymericradhi.org/movie/500/french-adaptation> a movie:FrenchAdaptation .
+
+<http://saraaymericradhi.org/movie/51876> movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/51876/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/51876_theme> .
+
+<http://saraaymericradhi.org/movie/51876/french-adaptation> a movie:FrenchAdaptation .
+
+<http://saraaymericradhi.org/movie/54138> movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/54138/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/54138_theme> .
+
+<http://saraaymericradhi.org/movie/54138/french-adaptation> a movie:FrenchAdaptation;
+  movie:adaptationYear "2013"^^xsd:gYear .
+
+<http://saraaymericradhi.org/movie/550> movie:hasAward <http://saraaymericradhi.org/award/550_Academy_Award_for_Best_Sound_Editing>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/550/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/550_theme> .
+
+<http://saraaymericradhi.org/movie/550/french-adaptation> a movie:FrenchAdaptation .
+
+<http://saraaymericradhi.org/movie/557> movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/557/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/557_theme> .
+
+<http://saraaymericradhi.org/movie/557/french-adaptation> a movie:FrenchAdaptation;
+  movie:adaptationYear "1969"^^xsd:gYear .
+
+<http://saraaymericradhi.org/movie/558> movie:hasAward <http://saraaymericradhi.org/award/558_Festival_du_film_de_Tribeca_(2007)>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/558/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/558_theme> .
+
+<http://saraaymericradhi.org/movie/558/french-adaptation> a movie:FrenchAdaptation;
+  movie:adaptationYear "2004"^^xsd:gYear .
+
+<http://saraaymericradhi.org/movie/562> movie:hasAward <http://saraaymericradhi.org/award/562_Golden_Raspberry_Award_for_Worst_Original_Song_(won)>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/562/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/562_theme> .
+
+<http://saraaymericradhi.org/movie/562/french-adaptation> a movie:FrenchAdaptation .
+
+<http://saraaymericradhi.org/movie/597> movie:hasAward <http://saraaymericradhi.org/award/597_Academy_Award_for_Best_Picture>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/597/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/597_theme> .
+
+<http://saraaymericradhi.org/movie/597/french-adaptation> a movie:FrenchAdaptation .
+
+<http://saraaymericradhi.org/movie/59967> movie:hasAward <http://saraaymericradhi.org/award/59967_Saturn_Award_for_Best_Music>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/59967/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/59967_theme> .
+
+<http://saraaymericradhi.org/movie/59967/french-adaptation> a movie:FrenchAdaptation .
+
+<http://saraaymericradhi.org/movie/603> movie:hasAward <http://saraaymericradhi.org/award/603_Oscar_(Best_Visual_Effects,_Best_Editing,_Best_Sound,_Best_Sound_Editing)>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/603/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/603_theme> .
+
+<http://saraaymericradhi.org/movie/603/french-adaptation> a movie:FrenchAdaptation .
+
+<http://saraaymericradhi.org/movie/607> movie:hasAward <http://saraaymericradhi.org/award/607_Golden_Raspberry_Award>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/607/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/607_theme> .
+
+<http://saraaymericradhi.org/movie/607/french-adaptation> a movie:FrenchAdaptation;
+  movie:adaptationYear "1998"^^xsd:gYear .
+
+<http://saraaymericradhi.org/movie/61791> movie:hasAward <http://saraaymericradhi.org/award/61791_Visual_Effects_Society_Award>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/61791/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/61791_theme> .
+
+<http://saraaymericradhi.org/movie/61791/french-adaptation> a movie:FrenchAdaptation .
+
+<http://saraaymericradhi.org/movie/62177> movie:hasAward <http://saraaymericradhi.org/award/62177_Annie_Award>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/62177/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/62177_theme> .
+
+<http://saraaymericradhi.org/movie/62177/french-adaptation> a movie:FrenchAdaptation;
+  movie:adaptationYear "2012"^^xsd:gYear .
+
+<http://saraaymericradhi.org/movie/640> movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/640/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/640_theme> .
+
+<http://saraaymericradhi.org/movie/640/french-adaptation> a movie:FrenchAdaptation .
+
+<http://saraaymericradhi.org/movie/64682> movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/64682/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/64682_theme> .
+
+<http://saraaymericradhi.org/movie/64682/french-adaptation> a movie:FrenchAdaptation .
+
+<http://saraaymericradhi.org/movie/64688> movie:hasAward <http://saraaymericradhi.org/award/64688_Imagen_Award_1988>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/64688/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/64688_theme> .
+
+<http://saraaymericradhi.org/movie/64688/french-adaptation> a movie:FrenchAdaptation .
+
+<http://saraaymericradhi.org/movie/6479> movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/6479/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/6479_theme> .
+
+<http://saraaymericradhi.org/movie/6479/french-adaptation> a movie:FrenchAdaptation;
+  movie:adaptationYear "2007"^^xsd:gYear;
+  rdfs:label "Je suis une légende"@fr .
+
+<http://saraaymericradhi.org/movie/672> movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/672/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/672_theme> .
+
+<http://saraaymericradhi.org/movie/672/french-adaptation> a movie:FrenchAdaptation;
+  movie:adaptationYear "1999"^^xsd:gYear .
+
+<http://saraaymericradhi.org/movie/673> movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/673/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/673_theme> .
+
+<http://saraaymericradhi.org/movie/673/french-adaptation> a movie:FrenchAdaptation;
+  movie:adaptationYear "1999"^^xsd:gYear .
+
+<http://saraaymericradhi.org/movie/674> movie:hasAward <http://saraaymericradhi.org/award/674_Tournoi_des_Trois_Sorciers>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/674/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/674_theme> .
+
+<http://saraaymericradhi.org/movie/674/french-adaptation> a movie:FrenchAdaptation;
+  movie:adaptationYear "2000"^^xsd:gYear .
+
+<http://saraaymericradhi.org/movie/675> movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/675/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/675_theme> .
+
+<http://saraaymericradhi.org/movie/675/french-adaptation> a movie:FrenchAdaptation .
+
+<http://saraaymericradhi.org/movie/680> movie:hasAward <http://saraaymericradhi.org/award/680_Palme_d'or>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/680/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/680_theme> .
+
+<http://saraaymericradhi.org/movie/680/french-adaptation> a movie:FrenchAdaptation .
+
+<http://saraaymericradhi.org/movie/68718> movie:hasAward <http://saraaymericradhi.org/award/68718_Golden_Globe_Award>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/68718/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/68718_theme> .
+
+<http://saraaymericradhi.org/movie/68718/french-adaptation> a movie:FrenchAdaptation .
+
+<http://saraaymericradhi.org/movie/68721> movie:hasAward <http://saraaymericradhi.org/award/68721_PG-13>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/68721/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/68721_theme> .
+
+<http://saraaymericradhi.org/movie/68721/french-adaptation> a movie:FrenchAdaptation;
+  movie:adaptationYear "2013"^^xsd:gYear .
+
+<http://saraaymericradhi.org/movie/68726> movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/68726/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/68726_theme> .
+
+<http://saraaymericradhi.org/movie/68726/french-adaptation> a movie:FrenchAdaptation;
+  movie:adaptationYear "2018"^^xsd:gYear .
+
+<http://saraaymericradhi.org/movie/694> movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/694/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/694_theme> .
+
+<http://saraaymericradhi.org/movie/694/french-adaptation> a movie:FrenchAdaptation;
+  movie:adaptationYear "1980"^^xsd:gYear .
+
+<http://saraaymericradhi.org/movie/70160> movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/70160/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/70160_theme> .
+
+<http://saraaymericradhi.org/movie/70160/french-adaptation> a movie:FrenchAdaptation;
+  movie:adaptationYear "2012, 2013, 2014, 2015, 2023, 2025"^^xsd:gYear .
+
+<http://saraaymericradhi.org/movie/70981> movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/70981/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/70981_theme> .
+
+<http://saraaymericradhi.org/movie/70981/french-adaptation> a movie:FrenchAdaptation .
+
+<http://saraaymericradhi.org/movie/72105> movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/72105/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/72105_theme> .
+
+<http://saraaymericradhi.org/movie/72105/french-adaptation> a movie:FrenchAdaptation .
+
+<http://saraaymericradhi.org/movie/72190> movie:hasAward <http://saraaymericradhi.org/award/72190_Audie_Award_(audio_book)>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/72190/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/72190_theme> .
+
+<http://saraaymericradhi.org/movie/72190/french-adaptation> a movie:FrenchAdaptation;
+  movie:adaptationYear "2013"^^xsd:gYear .
+
+<http://saraaymericradhi.org/movie/752> movie:hasAward <http://saraaymericradhi.org/award/752_Saturn_Award_for_Best_Action_or_Adventure_Film>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/752/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/752_theme> .
+
+<http://saraaymericradhi.org/movie/752/french-adaptation> a movie:FrenchAdaptation .
+
+<http://saraaymericradhi.org/movie/75612> movie:hasAward <http://saraaymericradhi.org/award/75612_Best_RPG_(2006)>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/75612/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/75612_theme> .
+
+<http://saraaymericradhi.org/movie/75612/french-adaptation> a movie:FrenchAdaptation .
+
+<http://saraaymericradhi.org/movie/75656> movie:hasAward <http://saraaymericradhi.org/award/75656_People's_Choice_Award_for_Best_Thriller>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/75656/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/75656_theme> .
+
+<http://saraaymericradhi.org/movie/75656/french-adaptation> a movie:FrenchAdaptation .
+
+<http://saraaymericradhi.org/movie/76170> movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/76170/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/76170_theme> .
+
+<http://saraaymericradhi.org/movie/76170/french-adaptation> a movie:FrenchAdaptation;
+  movie:adaptationYear "2013"^^xsd:gYear .
+
+<http://saraaymericradhi.org/movie/767> movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/767/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/767_theme> .
+
+<http://saraaymericradhi.org/movie/767/french-adaptation> a movie:FrenchAdaptation;
+  movie:adaptationYear "2005"^^xsd:gYear .
+
+<http://saraaymericradhi.org/movie/77> movie:hasAward <http://saraaymericradhi.org/award/77_Academy_Award_for_Best_Original_Screenplay>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/77/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/77_theme> .
+
+<http://saraaymericradhi.org/movie/77/french-adaptation> a movie:FrenchAdaptation .
+
+<http://saraaymericradhi.org/movie/78> movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/78/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/78_theme> .
+
+<http://saraaymericradhi.org/movie/78/french-adaptation> a movie:FrenchAdaptation;
+  movie:adaptationYear "1982"^^xsd:gYear .
+
+<http://saraaymericradhi.org/movie/808> movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/808/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/808_theme> .
+
+<http://saraaymericradhi.org/movie/808/french-adaptation> a movie:FrenchAdaptation;
+  movie:adaptationYear "2010"^^xsd:gYear .
+
+<http://saraaymericradhi.org/movie/82690> movie:hasAward <http://saraaymericradhi.org/award/82690_Annie_Award_for_Best_Animated_Feature>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/82690/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/82690_theme> .
+
+<http://saraaymericradhi.org/movie/82690/french-adaptation> a movie:FrenchAdaptation .
+
+<http://saraaymericradhi.org/movie/82693> movie:hasAward <http://saraaymericradhi.org/award/82693_Oscar>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/82693/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/82693_theme> .
+
+<http://saraaymericradhi.org/movie/82693/french-adaptation> a movie:FrenchAdaptation .
+
+<http://saraaymericradhi.org/movie/85> movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/85/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/85_theme> .
+
+<http://saraaymericradhi.org/movie/85/french-adaptation> a movie:FrenchAdaptation;
+  movie:adaptationYear "1981"^^xsd:gYear .
+
+<http://saraaymericradhi.org/movie/857> movie:hasAward <http://saraaymericradhi.org/award/857_Academy_Award_for_Best_Picture>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/857/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/857_theme> .
+
+<http://saraaymericradhi.org/movie/857/french-adaptation> a movie:FrenchAdaptation .
+
+<http://saraaymericradhi.org/movie/8587> movie:hasAward <http://saraaymericradhi.org/award/8587_Oscar_(Best_Original_Song)>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/8587/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/8587_theme> .
+
+<http://saraaymericradhi.org/movie/8587/french-adaptation> a movie:FrenchAdaptation .
+
+<http://saraaymericradhi.org/movie/862> movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/862/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/862_theme> .
+
+<http://saraaymericradhi.org/movie/862/french-adaptation> a movie:FrenchAdaptation;
+  movie:adaptationYear "1995"^^xsd:gYear .
+
+<http://saraaymericradhi.org/movie/863> movie:hasAward <http://saraaymericradhi.org/award/863_Academy_Award_for_Best_Animated_Feature>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/863/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/863_theme> .
+
+<http://saraaymericradhi.org/movie/863/french-adaptation> a movie:FrenchAdaptation;
+  movie:adaptationYear "1999"^^xsd:gYear .
+
+<http://saraaymericradhi.org/movie/8681> movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/8681/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/8681_theme> .
+
+<http://saraaymericradhi.org/movie/8681/french-adaptation> a movie:FrenchAdaptation;
+  movie:adaptationYear "2015"^^xsd:gYear .
+
+<http://saraaymericradhi.org/movie/920> movie:hasAward <http://saraaymericradhi.org/award/920_Academy_Award_for_Best_Animated_Feature>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/920/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/920_theme> .
+
+<http://saraaymericradhi.org/movie/920/french-adaptation> a movie:FrenchAdaptation;
+  movie:adaptationYear "2006"^^xsd:gYear .
+
+<http://saraaymericradhi.org/movie/93456> movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/93456/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/93456_theme> .
+
+<http://saraaymericradhi.org/movie/93456/french-adaptation> a movie:FrenchAdaptation .
+
+<http://saraaymericradhi.org/movie/98> movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/98/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/98_theme> .
+
+<http://saraaymericradhi.org/movie/98/french-adaptation> a movie:FrenchAdaptation .
+
+<http://saraaymericradhi.org/movie/9806> movie:hasAward <http://saraaymericradhi.org/award/9806_Oscar_du_meilleur_film_d'animation>;
+  movie:hasFrenchAdaptation <http://saraaymericradhi.org/movie/9806/french-adaptation>;
+  movie:hasThemeSong <http://saraaymericradhi.org/song/9806_theme> .
+
+<http://saraaymericradhi.org/movie/9806/french-adaptation> a movie:FrenchAdaptation .
+
+<http://saraaymericradhi.org/song/10138_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/10191_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/10193_theme> a movie:Song;
+  movie:songTitle "\"You've Got a Friend in Me\"" .
+
+<http://saraaymericradhi.org/song/10195_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/102382_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/102651_theme> a movie:Song;
+  movie:songTitle "\"Elle me Dit\"" .
+
+<http://saraaymericradhi.org/song/102899_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/10528_theme> a movie:Song;
+  movie:songTitle "Son dernier coup d'archet" .
+
+<http://saraaymericradhi.org/song/105_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/109445_theme> a movie:Song;
+  movie:songTitle "Let It Go" .
+
+<http://saraaymericradhi.org/song/1124_theme> a movie:Song;
+  movie:songTitle "\"Prestige\" (Daddy Yankee album)" .
+
+<http://saraaymericradhi.org/song/11324_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/118340_theme> a movie:Song;
+  movie:songTitle "Awesome Mix Vol. 1" .
+
+<http://saraaymericradhi.org/song/119450_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/120467_theme> a movie:Song;
+  movie:songTitle "The Grand Budapest Hotel" .
+
+<http://saraaymericradhi.org/song/12155_theme> a movie:Song;
+  movie:songTitle "\"Alice au pays des merveilles\"" .
+
+<http://saraaymericradhi.org/song/1271_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/127380_theme> a movie:Song;
+  movie:songTitle "Blackbird, Cheek To Cheek From Top Hat, The Tra La La Song, Theme From S.W.A.T., (Every Time I Turn Around) Back In Love Again, The Planets Op 32 - Mars, C.C. Rider, Everybody Loves Babies, Viva Las Vegas, Alla En El Rancho Grande, Ladies Night, What The World Needs Now Is Love" .
+
+<http://saraaymericradhi.org/song/129_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/12_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/13475_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/135397_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/137113_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/13_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/14160_theme> a movie:Song;
+  movie:songTitle "Married Life" .
+
+<http://saraaymericradhi.org/song/14161_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/1422_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/150540_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/152601_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/155_theme> a movie:Song;
+  movie:songTitle "Nobody to Save Me" .
+
+<http://saraaymericradhi.org/song/157336_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/157350_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/165_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/168259_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/16869_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/1726_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/177572_theme> a movie:Song;
+  movie:songTitle "Les Nouveaux Héros" .
+
+<http://saraaymericradhi.org/song/1858_theme> a movie:Song;
+  movie:songTitle "La Guerre des robots" .
+
+<http://saraaymericradhi.org/song/18785_theme> a movie:Song;
+  movie:songTitle "I'm Still Standing" .
+
+<http://saraaymericradhi.org/song/1891_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/18_theme> a movie:Song;
+  movie:songTitle "Plavalaguna" .
+
+<http://saraaymericradhi.org/song/198663_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/19995_theme> a movie:Song;
+  movie:songTitle "The Last Airbender: The Soundtrack" .
+
+<http://saraaymericradhi.org/song/205596_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/2062_theme> a movie:Song;
+  movie:songTitle "Confit byaldi (from the movie)" .
+
+<http://saraaymericradhi.org/song/206647_theme> a movie:Song;
+  movie:songTitle "Le Spectre de la rose (ballet)" .
+
+<http://saraaymericradhi.org/song/210577_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/211672_theme> a movie:Song;
+  movie:songTitle " Philippe Laudenbach" .
+
+<http://saraaymericradhi.org/song/218_theme> a movie:Song;
+  movie:songTitle "\"You Could Be Mine\" by Guns N' Roses" .
+
+<http://saraaymericradhi.org/song/222935_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/228150_theme> a movie:Song;
+  movie:songTitle "\"Red, Red Kroovy\"" .
+
+<http://saraaymericradhi.org/song/23483_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/238_theme> a movie:Song;
+  movie:songTitle "Jake Clemons" .
+
+<http://saraaymericradhi.org/song/24428_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/244786_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/259316_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/263115_theme> a movie:Song;
+  movie:songTitle "Logan (song from the movie)" .
+
+<http://saraaymericradhi.org/song/264660_theme> a movie:Song;
+  movie:songTitle "\"Closer to the Edge\" (by Sia)" .
+
+<http://saraaymericradhi.org/song/269149_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/27205_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/272_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/274870_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/274_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/278_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/281957_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/286217_theme> a movie:Song;
+  movie:songTitle "Underground Resistance (album series)" .
+
+<http://saraaymericradhi.org/song/293660_theme> a movie:Song;
+  movie:songTitle "Deadpool Theme (2016)" .
+
+<http://saraaymericradhi.org/song/297761_theme> a movie:Song;
+  movie:songTitle "Skrillex" .
+
+<http://saraaymericradhi.org/song/297762_theme> a movie:Song;
+  movie:songTitle "\"The Psychadelic Pussycat Dolls Theme\"" .
+
+<http://saraaymericradhi.org/song/321612_theme> a movie:Song;
+  movie:songTitle "Beauty and the Beast (Reprise)" .
+
+<http://saraaymericradhi.org/song/329_theme> a movie:Song;
+  movie:songTitle "\"Adventures in the Unknown\"" .
+
+<http://saraaymericradhi.org/song/337339_theme> a movie:Song;
+  movie:songTitle "\"Go Oh Go\"" .
+
+<http://saraaymericradhi.org/song/348_theme> a movie:Song;
+  movie:songTitle "Alien (bande originale du film de 1979)" .
+
+<http://saraaymericradhi.org/song/36557_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/36657_theme> a movie:Song;
+  movie:songTitle "Main Title Theme by John Ottman" .
+
+<http://saraaymericradhi.org/song/37165_theme> a movie:Song;
+  movie:songTitle "\"The Truman Show\" by Burton Lee" .
+
+<http://saraaymericradhi.org/song/37724_theme> a movie:Song;
+  movie:songTitle "Skyfall" .
+
+<http://saraaymericradhi.org/song/381288_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/41154_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/425_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/44214_theme> a movie:Song;
+  movie:songTitle "Tossing and Turning (performed by Clint Mansell)" .
+
+<http://saraaymericradhi.org/song/49026_theme> a movie:Song;
+  movie:songTitle "\"Why Does It Rain\" by Adele" .
+
+<http://saraaymericradhi.org/song/49047_theme> a movie:Song;
+  movie:songTitle "Bullet for My Valentine (2018 album)" .
+
+<http://saraaymericradhi.org/song/49521_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/497_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/500_theme> a movie:Song;
+  movie:songTitle "Stuck in the Middle with You (Stealers Wheel)" .
+
+<http://saraaymericradhi.org/song/51876_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/54138_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/550_theme> a movie:Song;
+  movie:songTitle "\"Nobody's Here\" by the Dust Brothers" .
+
+<http://saraaymericradhi.org/song/557_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/558_theme> a movie:Song;
+  movie:songTitle "Danny Elfman" .
+
+<http://saraaymericradhi.org/song/562_theme> a movie:Song;
+  movie:songTitle "\"I Will Always Love You\" by Pia Zadora" .
+
+<http://saraaymericradhi.org/song/597_theme> a movie:Song;
+  movie:songTitle "My Heart Will Go On" .
+
+<http://saraaymericradhi.org/song/59967_theme> a movie:Song;
+  movie:songTitle "\"Traveler's Song\"" .
+
+<http://saraaymericradhi.org/song/603_theme> a movie:Song;
+  movie:songTitle "\"What Is Love\" by Rage Against the Machine" .
+
+<http://saraaymericradhi.org/song/607_theme> a movie:Song;
+  movie:songTitle "Men in Black 3 (Pitbull)" .
+
+<http://saraaymericradhi.org/song/61791_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/62177_theme> a movie:Song;
+  movie:songTitle "Brave (Idina Menzel)" .
+
+<http://saraaymericradhi.org/song/640_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/64682_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/64688_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/6479_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/672_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/673_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/674_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/675_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/680_theme> a movie:Song;
+  movie:songTitle "Unforgettable (Natalie Cole and Nat King Cole)" .
+
+<http://saraaymericradhi.org/song/68718_theme> a movie:Song;
+  movie:songTitle "\"Annie\" (theme song from the 1973 blaxploitation film \"Cleopatra Jones\")" .
+
+<http://saraaymericradhi.org/song/68721_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/68726_theme> a movie:Song;
+  movie:songTitle "\"Roarhead\" by Ramin Djawadi" .
+
+<http://saraaymericradhi.org/song/694_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/70160_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/70981_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/72105_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/72190_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/752_theme> a movie:Song;
+  movie:songTitle "\"Nine Inch Nails - Burn\"" .
+
+<http://saraaymericradhi.org/song/75612_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/75656_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/76170_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/767_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/77_theme> a movie:Song;
+  movie:songTitle "Memento (Dead Can Dance song)" .
+
+<http://saraaymericradhi.org/song/78_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/808_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/82690_theme> a movie:Song;
+  movie:songTitle "Chez Tapper" .
+
+<http://saraaymericradhi.org/song/82693_theme> a movie:Song;
+  movie:songTitle "Silver Lining" .
+
+<http://saraaymericradhi.org/song/857_theme> a movie:Song;
+  movie:songTitle "\"Saving Private Ryan\"" .
+
+<http://saraaymericradhi.org/song/8587_theme> a movie:Song;
+  movie:songTitle "Can You Feel the Love Tonight" .
+
+<http://saraaymericradhi.org/song/85_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/862_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/863_theme> a movie:Song;
+  movie:songTitle "\"When She Loved Me\"" .
+
+<http://saraaymericradhi.org/song/8681_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/920_theme> a movie:Song;
+  movie:songTitle "Gary Numan's Cars" .
+
+<http://saraaymericradhi.org/song/93456_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/9806_theme> a movie:Song .
+
+<http://saraaymericradhi.org/song/98_theme> a movie:Song .
