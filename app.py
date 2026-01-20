@@ -1,12 +1,12 @@
 """
 Flask web server for SPARQL Agent LLM demonstration.
-Enhanced with Recommendation System - FULLY CORRECTED VERSION.
-Adapted for existing data structure with RDFlib Literal fixes.
+Enhanced with Recommendation System + TransE Link Prediction.
 """
 
 from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 import sys
+from link_prediction import MovieLinkPredictor
 import logging
 
 from sparql_agent import sparql_pipeline, extract_sparql, execute_sparql, PROMPT, LLM as SPARQL_LLM, ONTOLOGY_SCHEMA
@@ -111,6 +111,29 @@ def get_embedding_rag():
             app.logger.info("Vector store built successfully")
     
     return vector_store, embedding_gen
+
+# -----------------------------------------------------------------------------
+# Link Prediction Model (lazy-loaded)
+# -----------------------------------------------------------------------------
+
+link_predictor = None
+
+def get_link_predictor():
+    """Lazy-load link prediction model."""
+    global link_predictor
+    
+    if link_predictor is None:
+        app.logger.info("Initializing link prediction model...")
+        link_predictor = MovieLinkPredictor()
+        
+        # Try to load existing model
+        try:
+            link_predictor.load_model()
+            app.logger.info("Loaded existing TransE model")
+        except FileNotFoundError:
+            app.logger.info("No existing model found. Train it using /api/link_prediction/train")
+    
+    return link_predictor
 
 # -----------------------------------------------------------------------------
 # LLM for answer formatting
@@ -460,6 +483,55 @@ def knn_predict_rating(target_user_ratings, all_users_ratings, movie_id, k=10):
     return weighted_sum / sum_weights if sum_weights > 0 else 0.0
 
 # -----------------------------------------------------------------------------
+# LINK PREDICTION ENDPOINTS
+# -----------------------------------------------------------------------------
+
+@app.route("/api/link_prediction/train", methods=["POST"])
+def train_link_prediction():
+    """Train TransE model on the RDF graph."""
+    app.logger.info("===== /api/link_prediction/train START =====")
+    
+    data = request.get_json(silent=True) or {}
+    epochs = data.get("epochs", 50)
+    embedding_dim = data.get("embedding_dim", 128)
+    
+    try:
+        predictor = get_link_predictor()
+        
+        app.logger.info(f"Training TransE with {epochs} epochs, dim={embedding_dim}")
+        result = predictor.train(
+            graph, 
+            epochs=epochs, 
+            embedding_dim=embedding_dim
+        )
+        
+        return jsonify({
+            "status": "success",
+            "message": "Model trained successfully",
+            "metrics": {
+                "hits@10": float(result.metric_results.get_metric('hits@10')),
+                "mrr": float(result.metric_results.get_metric('mean_reciprocal_rank')),
+            }
+        })
+        
+    except Exception as e:
+        app.logger.exception("Failed to train model")
+        return jsonify({"error": str(e)}), 500
+
+@app.route("/api/link_prediction/status", methods=["GET"])
+def link_prediction_status():
+    """Check if TransE model is trained."""
+    try:
+        predictor = get_link_predictor()
+        return jsonify({
+            "trained": predictor.trained,
+            "model_path": predictor.model_path,
+            "model_exists": os.path.exists(predictor.model_path)
+        })
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+# -----------------------------------------------------------------------------
 # RECOMMENDATION SYSTEM ENDPOINTS
 # -----------------------------------------------------------------------------
 
@@ -625,6 +697,126 @@ def generate_recommendations():
     
     app.logger.info(f"Generating recommendations for user {user_id} using {algorithm} algorithm")
     
+    # ========== TRANSE ALGORITHM ==========
+    if algorithm == "transe":
+        try:
+            predictor = get_link_predictor()
+            
+            if not predictor.trained:
+                return jsonify({
+                    "error": "TransE model not trained. Please train it first using /api/link_prediction/train"
+                }), 400
+            
+            # Get already rated movies
+            rated_query = f"""
+            PREFIX : <http://saraaymericradhi.org/movie-ontology#>
+            SELECT DISTINCT ?movie WHERE {{
+                ?rating :givenBy <{user_id}> .
+                ?movie :hasRating ?rating .
+            }}
+            """
+            rated_rows = execute_sparql(graph, rated_query)
+            rated_movies = [str(row.asdict()['movie'] if hasattr(row, 'asdict') else row['movie']).split('#')[-1].split('/')[-1]
+                          for row in rated_rows]
+            
+            app.logger.info(f"User has rated {len(rated_movies)} movies")
+            
+            # Predict links
+            predictions = predictor.predict_for_user(
+                user_id, 
+                relation="hasRated",
+                top_k=limit * 2,  # Get more to account for filtering
+                exclude_movies=rated_movies
+            )
+            
+            app.logger.info(f"TransE predicted {len(predictions)} movies")
+            
+            # Convert predictions to recommendation format
+            recommendations = []
+            for movie_id, score in predictions:
+                # Construct movie URI
+                movie_uri = f"http://saraaymericradhi.org/movie-ontology#{movie_id}"
+                
+                # Fetch movie details
+                movie_query = f"""
+                PREFIX : <http://saraaymericradhi.org/movie-ontology#>
+                PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+                
+                SELECT ?title ?year ?rating
+                    (GROUP_CONCAT(DISTINCT ?genreLabel; separator=", ") as ?genres)
+                    ?director ?runtime
+                WHERE {{
+                    <{movie_uri}> :hasTitle ?title .
+                    
+                    OPTIONAL {{
+                        <{movie_uri}> :hasInformation [
+                            :hasReleaseDate ?date ;
+                            :hasRuntime ?runtime
+                        ] .
+                        BIND(YEAR(?date) as ?year)
+                    }}
+                    
+                    OPTIONAL {{
+                        <{movie_uri}> :hasResult [ :hasVoteAverage ?rating ] .
+                    }}
+                    
+                    OPTIONAL {{
+                        <{movie_uri}> :hasContent [ :hasGenre [ skos:prefLabel ?genreLabel ] ] .
+                    }}
+                    
+                    OPTIONAL {{
+                        <{movie_uri}> :hasProduction [ :hasCrewMember [ :personName ?director ; :job "Director" ] ] .
+                    }}
+                }}
+                GROUP BY ?title ?year ?rating ?director ?runtime
+                """
+                
+                movie_rows = execute_sparql(graph, movie_query)
+                if movie_rows:
+                    row_data = movie_rows[0].asdict() if hasattr(movie_rows[0], 'asdict') else {k: movie_rows[0][k] for k in movie_rows[0].labels if movie_rows[0][k] is not None}
+                    
+                    movie = {
+                        "id": movie_uri,
+                        "title": str(row_data.get('title', movie_id)),
+                        "year": safe_extract(row_data.get('year'), int),
+                        "rating": safe_extract(row_data.get('rating'), float) or 0,
+                        "genres": str(row_data.get('genres', '')).split(', ') if row_data.get('genres') else [],
+                        "director": str(row_data.get('director', '')),
+                        "runtime": safe_extract(row_data.get('runtime'), int) or 0,
+                        "posterColor": "#333"
+                    }
+                    
+                    movie["genres"] = [g for g in movie["genres"] if g.strip()]
+                    
+                    # Normalize score to [0, 100]
+                    # TransE scores are negative distances, so we need to transform them
+                    normalized_score = min(max((score + 10) * 5, 0), 100)  # Simple transformation
+                    
+                    recommendations.append({
+                        "movie": movie,
+                        "score": normalized_score,
+                        "reasons": [
+                            f"TransE link prediction (score: {score:.2f})",
+                            "Prédit par apprentissage sur le graphe RDF"
+                        ]
+                    })
+                
+                if len(recommendations) >= limit:
+                    break
+            
+            app.logger.info(f"Returning {len(recommendations)} TransE recommendations")
+            
+            return jsonify({
+                "userId": user_id,
+                "algorithm": "transe",
+                "recommendations": recommendations
+            })
+            
+        except Exception as e:
+            app.logger.exception("TransE prediction failed")
+            return jsonify({"error": str(e)}), 500
+    
+    # ========== CLASSIC ALGORITHMS ==========
     try:
         rated_query = f"""
         PREFIX : <http://saraaymericradhi.org/movie-ontology#>
@@ -859,7 +1051,7 @@ def calculate_movie_score(movie, user_profile, algorithm, all_users_ratings, use
 
 if __name__ == "__main__":
     app.logger.info("=" * 60)
-    app.logger.info("SPARQL Agent Server Starting (with Recommendations)")
+    app.logger.info("SPARQL Agent Server Starting (with Recommendations + TransE)")
     app.logger.info("http://localhost:5000")
     app.logger.info("=" * 60)
 
